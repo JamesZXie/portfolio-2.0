@@ -37,7 +37,7 @@ const header = (props) => {
 
   const setup = (p, canvasParentRef) => {
     canvasInfo = document.getElementById(props.id ? props.id : 'default-header').getBoundingClientRect();
-    pts = font.textToPoints(props.title ? props.title : 'missing title', 0, 0, 50, {
+    pts = font.textToPoints(props.title ? props.title : 'missing title', 0, 0, props.size ? props.size : 50, {
       sampleFactor: 0.5,
       simplifyThreshold: 0,
     });
