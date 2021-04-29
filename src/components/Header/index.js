@@ -3,16 +3,10 @@ import Sketch from 'react-p5';
 import Roboto from '../../assets/fonts/Roboto/Roboto-Regular.ttf';
 
 const header = (props) => {
-  // const a = 300;
-  // const b = 300;
-  // const setup = (p, canvasParentRef) => {
-  //   console.log({ ...p });
-  //   // Canvas of size 1000x800
-  //   const xyz = createCanvas(1000, 800).parent(canvasParentRef);
-  // };
-  // const draw = (p) => {
-  //   p.background('rgb(100%,0%,10%)');
-  // };
+  /**
+   * required props: title, id
+   * optional props: font, size
+   */
 
   let pts;
   let font;
