@@ -1,12 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Sketch from 'react-p5';
 import Roboto from '../../assets/fonts/Roboto/Roboto-Regular.ttf';
 
-const header = (props) => {
-  /**
-   * required props: title, id
-   * optional props: font, size
-   */
+const Header = (props) => {
+  const { id } = props;
 
   let pts;
   let font;
@@ -26,12 +24,16 @@ const header = (props) => {
   const mouseOnCanvas = true;
 
   const preload = (p) => {
-    font = p.loadFont(props.font ? props.font : Roboto);
+    const { loadFont } = props;
+
+    font = p.loadFont(loadFont);
   };
 
   const setup = (p, canvasParentRef) => {
+    const { title, fontSize } = props;
+
     canvasInfo = document.getElementById(props.id ? props.id : 'default-header').getBoundingClientRect();
-    pts = font.textToPoints(props.title ? props.title : 'missing title', 0, 0, props.size ? props.size : 50, {
+    pts = font.textToPoints(title, 0, 0, fontSize, {
       sampleFactor: 0.5,
       simplifyThreshold: 0,
     });
@@ -54,12 +56,11 @@ const header = (props) => {
   };
 
   const draw = (p) => {
-    const { bg } = props;
-    if (bg) p.background(bg.r, bg.g, bg.b);
-    else p.background(300);
+    const { fontColor } = props;
+    p.clear();
     p.translate(xTranslate, yTranslate);
     p.noFill();
-    p.stroke(100);
+    p.stroke(fontColor.r, fontColor.g, fontColor.b);
     p.beginShape();
 
     const rMouseX = p.mouseX;
@@ -100,11 +101,27 @@ const header = (props) => {
     }
     p.endShape(p.CLOSE);
   };
+
   return (
-    <div className="header" id={props.id ? props.id : 'default-header'}>
+    <div className="header" id={id}>
       <Sketch preload={preload} setup={setup} draw={draw} />
     </div>
   );
 };
 
-export default header;
+Header.propTypes = {
+  id: PropTypes.string,
+  loadFont: PropTypes.object,
+  fontSize: PropTypes.number,
+  title: PropTypes.string.isRequired,
+  fontColor: PropTypes.object,
+};
+
+Header.defaultProps = {
+  id: 'default-header',
+  loadFont: Roboto,
+  fontSize: 50,
+  fontColor: { r: 0, g: 0, b: 0 },
+};
+
+export default Header;
