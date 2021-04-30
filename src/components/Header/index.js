@@ -61,6 +61,7 @@ const Header = (props) => {
     p.translate(xTranslate, yTranslate);
     p.noFill();
     p.stroke(fontColor.r, fontColor.g, fontColor.b);
+    p.strokeWeight(2);
     p.beginShape();
 
     const rMouseX = p.mouseX;
@@ -111,7 +112,7 @@ const Header = (props) => {
 
 Header.propTypes = {
   id: PropTypes.string,
-  loadFont: PropTypes.object,
+  loadFont: PropTypes.string,
   fontSize: PropTypes.number,
   title: PropTypes.string.isRequired,
   fontColor: PropTypes.object,

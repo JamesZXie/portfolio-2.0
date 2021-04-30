@@ -7,40 +7,126 @@ const Hero = (props) => {
   let canvas;
   let dimensions;
 
-  const setDimensions = (ref) => {
+  const setDimensions = (p, ref) => {
     dimensions = ref.childNodes[0].getBoundingClientRect();
+    canvas = p.createCanvas(
+      dimensions.width, dimensions.height,
+    ).parent(ref);
   };
 
   const setup = (p, canvasParentRef) => {
     canvas = p.createCanvas(
-      1, 1, // these will be changed in the scss to 100% the second its rendered
+      10, 10, // these will be changed in the scss to 100% the second its rendered
     ).parent(canvasParentRef);
 
-    setDimensions(canvasParentRef);
+    setDimensions(p, canvasParentRef);
 
-    window.addEventListener('resize', (e) => {
-      setDimensions(canvasParentRef);
+    window.addEventListener('resize', (e) => { // TODO: add a removeEventListener
+      setDimensions(p, canvasParentRef);
     }, true);
   };
 
   const draw = (p) => {
-    p.background(300);
-    p.stroke(0);
-    const { width, height } = dimensions;
-    const padding = 10;
-    const columns = 5;
+    p.clear();
 
-    // create vertical grid
-    for (let x = 0; x <= width; x += width / columns) {
-      p.line(x, 0, x, height);
+    const { width, height } = dimensions;
+    const gutter = 16;
+    const numColumns = 12;
+    const numRows = 11;
+
+    // assign points to the columns and rows
+    const columns = [];
+    const rows = [];
+    const sampleFactor = 20; // how many points do you want per line
+
+    // columns (goes across half the width, full height)
+    for (let x = 0; x <= width; x += width / numColumns) {
+      const leftColumn = [];
+      const rightColumn = [];
+
+      for (let y = height; y >= 0; y -= height / numRows / sampleFactor) {
+        leftColumn.push({ x: x - gutter / 2, y });
+        rightColumn.push({ x: x + gutter / 2, y });
+      }
+
+      columns.push(leftColumn);
+      columns.push(rightColumn);
     }
+
+    // rows (goes over half the height, full width)
+    for (let y = height; y >= 0; y -= height / numRows) {
+      const topRow = [];
+      const bottomRow = [];
+
+      for (let x = 0; x <= width; x += width / numColumns / sampleFactor) {
+        topRow.push({ x, y: y - gutter / 2 });
+        bottomRow.push({ x, y: y + gutter / 2 });
+      }
+
+      rows.push(topRow);
+      rows.push(bottomRow);
+    }
+
+    const gradientIntensyity = 3;
+
+    /**-------------------------------------------
+     * ------------- START DRAWING ---------------
+     * -------------------------------------------
+     */
+
+    p.noFill();
+
+    const rMouseX = p.mouseX;
+    const rMouseY = p.mouseY;
+
+    columns.map((column) => {
+      p.stroke(column[0].x / gradientIntensyity);
+
+      p.beginShape();
+      column.map((pt, i) => {
+        const mouseScaleDistance = 0.3
+        / (
+          1 + Math.abs(p.dist(rMouseX, rMouseY, pt.x, pt.y))
+        );
+        const mouseScaleCap = 0.05;
+        const mouseScale = mouseScaleDistance > mouseScaleCap ? mouseScaleCap : mouseScaleDistance;
+        const noiseScale = 500;
+
+        p.vertex(
+          pt.x + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+          pt.y + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+        );
+      });
+      p.endShape();
+    });
+
+    rows.map((row) => {
+      p.stroke(row[0].y / (gradientIntensyity * 0.75));
+
+      p.beginShape();
+      row.map((pt, i) => {
+        const mouseScaleDistance = 0.3
+          / (
+            1 + Math.abs(p.dist(rMouseX, rMouseY, pt.x, pt.y))
+          );
+        const mouseScaleCap = 0.05;
+        const mouseScale = mouseScaleDistance > mouseScaleCap ? mouseScaleCap : mouseScaleDistance;
+        const noiseScale = 500;
+
+        p.vertex(
+          pt.x + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+          pt.y + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+        );
+      });
+      p.endShape();
+    });
   };
 
   return (
     <div className="hero">
       <div className="hero__name-header">
-        <Header title="JAMES XIE" />
-        design and technology
+        <Header title="JAMES XIE" fontSize={100} />
+        blending design with technology
       </div>
       <div className="hero__background" id="helloo">
         <Sketch setup={setup} draw={draw} />
