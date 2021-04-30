@@ -5,13 +5,14 @@ import './hero.scss';
 
 const Hero = (props) => {
   let canvas;
+  let canvasParent;
   let dimensions;
 
-  const setDimensions = (p, ref) => {
-    dimensions = ref.childNodes[0].getBoundingClientRect();
+  const setDimensions = (p) => {
+    dimensions = canvasParent.childNodes[0].getBoundingClientRect();
     canvas = p.createCanvas(
       dimensions.width, dimensions.height,
-    ).parent(ref);
+    ).parent(canvasParent);
   };
 
   const setup = (p, canvasParentRef) => {
@@ -19,16 +20,19 @@ const Hero = (props) => {
       10, 10, // these will be changed in the scss to 100% the second its rendered
     ).parent(canvasParentRef);
 
-    setDimensions(p, canvasParentRef);
+    canvasParent = canvasParentRef;
+
+    setDimensions(p);
 
     window.addEventListener('resize', (e) => { // TODO: add a removeEventListener
-      setDimensions(p, canvasParentRef);
+      setDimensions(p);
     }, true);
   };
 
   const draw = (p) => {
     p.clear();
 
+    if (!dimensions) setDimensions(p);
     const { width, height } = dimensions;
     const gutter = 16;
     const numColumns = 12;
