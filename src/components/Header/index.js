@@ -4,7 +4,7 @@ import Sketch from 'react-p5';
 import Roboto from '../../assets/fonts/Roboto/Roboto-Regular.ttf';
 
 const Header = (props) => {
-  const { id } = props;
+  const { id, ariaLevel, title } = props;
 
   let pts;
   let font;
@@ -56,12 +56,12 @@ const Header = (props) => {
   };
 
   const draw = (p) => {
-    const { fontColor } = props;
+    const { fontColor, strokeWeight } = props;
     p.clear();
     p.translate(xTranslate, yTranslate);
     p.noFill();
     p.stroke(fontColor.r, fontColor.g, fontColor.b);
-    p.strokeWeight(2);
+    p.strokeWeight(strokeWeight);
     p.beginShape();
 
     const rMouseX = p.mouseX;
@@ -104,7 +104,7 @@ const Header = (props) => {
   };
 
   return (
-    <div className="header" id={id}>
+    <div className="header" id={id} role="heading" aria-level={ariaLevel} aria-label={title}>
       <Sketch preload={preload} setup={setup} draw={draw} />
     </div>
   );
@@ -116,6 +116,8 @@ Header.propTypes = {
   fontSize: PropTypes.number,
   title: PropTypes.string.isRequired,
   fontColor: PropTypes.object,
+  strokeWeight: PropTypes.number,
+  ariaLevel: PropTypes.number,
 };
 
 Header.defaultProps = {
@@ -123,6 +125,8 @@ Header.defaultProps = {
   loadFont: Roboto,
   fontSize: 50,
   fontColor: { r: 0, g: 0, b: 0 },
+  strokeWeight: 1,
+  ariaLevel: 2,
 };
 
 export default Header;
