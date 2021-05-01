@@ -9,6 +9,7 @@ const Hero = (props) => {
   let stopDrawing = false;
 
   const setDimensions = (p, canvasParent) => {
+    console.log(document.getElementsByClassName('hero')[0]);
     dimensions = canvasParent.childNodes[0].getBoundingClientRect();
     if (dimensions.width <= 768) {
       stopDrawing = true;
@@ -17,6 +18,8 @@ const Hero = (props) => {
     canvas = p.createCanvas(
       dimensions.width, dimensions.height,
     ).parent(canvasParent);
+
+    p.redraw();
   };
 
   const setup = (p, canvasParentRef) => {
@@ -133,7 +136,7 @@ const Hero = (props) => {
     <div className="hero">
       <div className="hero__name-header">
         <Header title="JAMES XIE" fontSize={100} />
-        blending design with technology
+        design ~ technology
       </div>
       <div className="hero__background" id="helloo">
         <Sketch setup={setup} draw={draw} />

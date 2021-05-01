@@ -32,7 +32,7 @@ const Header = (props) => {
   const setup = (p, canvasParentRef) => {
     const { title, fontSize } = props;
 
-    canvasInfo = document.getElementById(props.id ? props.id : 'default-header').getBoundingClientRect();
+    canvasInfo = document.getElementById(props.id).getBoundingClientRect();
     pts = font.textToPoints(title, 0, 0, fontSize, {
       sampleFactor: 0.5,
       simplifyThreshold: 0,
