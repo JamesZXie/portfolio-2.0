@@ -11,18 +11,8 @@ const Projects = (props) => (
     textAlign={['center', 'left', 'left']}
     padding={2}
   >
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
-    <Box w="100%" h="10" bg="blue.500" />
+    <GridItem className="grid-placeholder" colSpan={1} />
+    <GridItem colSpan={5} rowSpan={5} bg="blue" />
   </Grid>
 );
 

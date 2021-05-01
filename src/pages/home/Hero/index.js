@@ -88,47 +88,56 @@ const Hero = (props) => {
 
     const rMouseX = p.mouseX;
     const rMouseY = p.mouseY;
+    const gradientCutoff = 220;
 
     columns.map((column) => {
-      p.stroke(column[0].x / gradientIntensyity);
-
-      p.beginShape();
-      column.map((pt, i) => {
-        const mouseScaleDistance = 0.3
+      const strokeWeight = column[0].x / gradientIntensyity;
+      if (strokeWeight < gradientCutoff) {
+        p.stroke(strokeWeight);
+        p.beginShape();
+        column.map((pt, i) => {
+          const mouseScaleDistance = 0.3
         / (
           1 + Math.abs(p.dist(rMouseX, rMouseY, pt.x, pt.y))
         );
-        const mouseScaleCap = 0.05;
-        const mouseScale = mouseScaleDistance > mouseScaleCap ? mouseScaleCap : mouseScaleDistance;
-        const noiseScale = 500;
+          const mouseScaleCap = 0.05;
+          const mouseScale = mouseScaleDistance > mouseScaleCap
+            ? mouseScaleCap : mouseScaleDistance;
+          const noiseScale = 500;
 
-        p.vertex(
-          pt.x + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
-          pt.y + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
-        );
-      });
-      p.endShape();
+          p.vertex(
+            pt.x + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+            pt.y + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+          );
+        });
+        p.endShape();
+      }
     });
 
     rows.map((row) => {
-      p.stroke(row[0].y / (gradientIntensyity * 0.75));
+      const strokeWeight = row[0].y / (gradientIntensyity * 0.75);
 
-      p.beginShape();
-      row.map((pt, i) => {
-        const mouseScaleDistance = 0.3
+      if (strokeWeight < gradientCutoff) {
+        p.stroke(strokeWeight);
+
+        p.beginShape();
+        row.map((pt, i) => {
+          const mouseScaleDistance = 0.3
           / (
             1 + Math.abs(p.dist(rMouseX, rMouseY, pt.x, pt.y))
           );
-        const mouseScaleCap = 0.05;
-        const mouseScale = mouseScaleDistance > mouseScaleCap ? mouseScaleCap : mouseScaleDistance;
-        const noiseScale = 500;
+          const mouseScaleCap = 0.05;
+          const mouseScale = mouseScaleDistance > mouseScaleCap
+            ? mouseScaleCap : mouseScaleDistance;
+          const noiseScale = 500;
 
-        p.vertex(
-          pt.x + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
-          pt.y + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
-        );
-      });
-      p.endShape();
+          p.vertex(
+            pt.x + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+            pt.y + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+          );
+        });
+        p.endShape();
+      }
     });
   };
 
