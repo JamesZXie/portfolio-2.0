@@ -18,7 +18,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <Router>
         <div className="App">
-          <Nav />
+          {/* <Nav /> */}
           <Switch>
             <Route path="/" component={Home} />
           </Switch>
