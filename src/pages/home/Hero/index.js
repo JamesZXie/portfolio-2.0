@@ -142,10 +142,10 @@ const Hero = (props) => {
 
   return (
     <div className="hero">
-      {/* <div className="hero__name-header">
+      <div className="hero__name-header">
         <Header title="JAMES XIE" fontSize={100} ariaLevel={1} />
         design ~ technology
-      </div> */}
+      </div>
       <div className="hero__background" id="helloo">
         <Sketch setup={setup} draw={draw} />
       </div>
