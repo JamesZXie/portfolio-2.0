@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Sketch from 'react-p5';
 import Roboto from '../../assets/fonts/Roboto/Roboto-Regular.ttf';
+import Girassol from '../../assets/fonts/Girassol/Girassol-Regular.ttf';
+import Knewave from '../../assets/fonts/Knewave/Knewave-Regular.ttf';
 
 const Header = (props) => {
   const { id, ariaLevel, title } = props;
@@ -122,7 +124,7 @@ Header.propTypes = {
 
 Header.defaultProps = {
   id: 'default-header',
-  loadFont: Roboto,
+  loadFont: Knewave,
   fontSize: 50,
   fontColor: { r: 0, g: 0, b: 0 },
   strokeWeight: 1,

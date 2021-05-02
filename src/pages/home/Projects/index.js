@@ -10,12 +10,19 @@ const Projects = (props) => {
 
   const projects = [{
     title: 'AustinCold',
+    caption: 'A website for crowdsourcing help during the 2021 Texas Freeze',
   },
   {
-    title: 'PowerGlove',
+    title: 'Project PowerGlove',
+    caption: 'An IoT art project',
+  },
+  {
+    title: 'Craft Con',
+    caption: 'A celebration of making things',
   },
   {
     title: 'Doodles',
+    caption: 'An ever-growing collection of generative art',
   }];
 
   return (

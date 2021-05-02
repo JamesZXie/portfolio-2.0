@@ -9,8 +9,7 @@ const Hero = (props) => {
   let stopDrawing = false;
 
   const setDimensions = (p, canvasParent) => {
-    console.log(document.getElementsByClassName('hero')[0]);
-    dimensions = canvasParent.childNodes[0].getBoundingClientRect();
+    dimensions = document.getElementsByClassName('hero__background')[0].getBoundingClientRect();
     if (dimensions.width <= 768) {
       stopDrawing = true;
     }
@@ -50,7 +49,7 @@ const Hero = (props) => {
     const sampleFactor = 20; // how many points do you want per line
 
     // columns (goes across half the width, full height)
-    for (let x = 0; x <= width; x += width / numColumns) {
+    for (let x = 0; x <= width / 2; x += width / numColumns) {
       const leftColumn = [];
       const rightColumn = [];
 
@@ -88,7 +87,7 @@ const Hero = (props) => {
 
     const rMouseX = p.mouseX;
     const rMouseY = p.mouseY;
-    const gradientCutoff = 220;
+    const gradientCutoff = 240;
 
     columns.map((column) => {
       const strokeWeight = column[0].x / gradientIntensyity;
@@ -143,10 +142,10 @@ const Hero = (props) => {
 
   return (
     <div className="hero">
-      <div className="hero__name-header">
+      {/* <div className="hero__name-header">
         <Header title="JAMES XIE" fontSize={100} ariaLevel={1} />
         design ~ technology
-      </div>
+      </div> */}
       <div className="hero__background" id="helloo">
         <Sketch setup={setup} draw={draw} />
       </div>
