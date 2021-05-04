@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Sketch from 'react-p5';
-import Roboto from '../../assets/fonts/Roboto/Roboto-Regular.ttf';
-import Girassol from '../../assets/fonts/Girassol/Girassol-Regular.ttf';
+import {
+  Box,
+} from '@chakra-ui/react';
 import Knewave from '../../assets/fonts/Knewave/Knewave-Regular.ttf';
 
 const Header = (props) => {
@@ -106,9 +107,14 @@ const Header = (props) => {
   };
 
   return (
-    <div className="header" id={id} role="heading" aria-level={ariaLevel} aria-label={title}>
-      <Sketch preload={preload} setup={setup} draw={draw} />
-    </div>
+    <>
+      <Box display={['block', 'none', 'none']} className="header">
+        <h1>{title}</h1>
+      </Box>
+      <Box display={['none', 'block', 'block']} className="header" id={id} role="heading" aria-level={ariaLevel} aria-label={title}>
+        <Sketch preload={preload} setup={setup} draw={draw} />
+      </Box>
+    </>
   );
 };
 

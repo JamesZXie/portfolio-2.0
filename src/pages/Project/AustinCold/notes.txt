@@ -1,0 +1,19 @@
+In Febuary Texas froze as three simultaneous winter storms demolished the power grid. Two friends and I who still had power teamed up with the nonprofit Community Resilience Trust (https://communityresiliencetrust.org/crt-cares/) to build austincold.com, a website that served as the center of an emergency relief effort that raised $1.5 million for aid and deployed community volunteers to rescue over 400 people and families who were left without shelter.
+
+We had 3 focuses: 
+1. Rescue - we needed bodies on the ground and drivers with weather equipped cars to transport people and resources.
+2. Aid - we needed to know who needed help.
+3. Information - For those who didn’t need a community volunteer but still needed to find resources or shelter
+
+We prioritized accessibility and communities who needed it most, communities usually overlooked in times of crisis. 
+
+[ images of translations ] 
+
+After that, we prioritized speed - we used a rapid deployment pipeline to get website updates and fixes onto the website the instant they were pushed, and started telling communities about the site right away. The faster we could get our volunteers to people who needed help, the more lives we could save. 
+We maintained the website for about two weeks, updating information about food and water after the storms subsided.
+
+
+The team: 
+Josefina Mancilla (a climber of rocks)  
+Alexander Melo (an NYC bodega enthusiast)
+Me
