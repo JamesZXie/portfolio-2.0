@@ -15,18 +15,22 @@ const Projects = (props) => {
     title: 'AustinCold',
     caption: 'A website for crowdsourcing rescue and resources during the 2021 Texas Freeze',
     image: AustinCold,
+    to: '/austin-cold',
   },
   {
     title: 'Project PowerGlove',
     caption: 'An IoT art project',
+    to: '/power-glove',
   },
   {
     title: 'Craft Con',
     caption: 'A celebration of making things',
+    to: '/craft-con',
   },
   {
     title: 'Doodles',
     caption: 'An ever-growing collection of generative art',
+    to: '/doodles',
   }];
 
   return (
@@ -40,22 +44,29 @@ const Projects = (props) => {
       paddingTop="2rem"
       position="relative"
     >
-      <GridItem colSpan={1} />
-      <GridItem colSpan={[10, 10, 10, 10]}>
-        <Header title="PROJECTS" size={20} />
-      </GridItem>
-      <GridItem colSpan={1} />
-      <Box position="absolute" paddingBottom={4} border="2px dashed" borderRadius="5px" width="calc(100% - 8rem)" marginLeft="4rem" bg="white" height="100%" paddingLeft={2} zIndex={-1} />
-      <GridItem className="grid-placeholder" colSpan={1} />
-      <GridItem colSpan={[0, 10, 10, 5]} rowSpan={5} display={['none', 'none', 'block']}>
-        <ProjectDisplay activeProject={projects[activeProject]} />
-      </GridItem>
-      <GridItem className="grid-placeholder" colSpan={1} display={['block', 'block', 'block', 'none']} />
-
-      <GridItem colSpan={[10, 10, 5]} rowSpan={5}>
-        <ProjectMenu projects={projects} setActiveProject={setActiveProject} />
-      </GridItem>
-      <GridItem className="grid-placeholder" colSpan={1} />
+      <Box position="absolute" paddingBottom={4} border="2px dashed" borderRadius="5px" width="90%" marginLeft="5%" bg="white" height="100%" paddingLeft={2} zIndex={-1} />
+      <>
+        <GridItem colSpan={1} />
+        <GridItem colSpan={10}>
+          <Header title="PROJECTS" size={20} />
+        </GridItem>
+        <GridItem colSpan={1} />
+      </>
+      <>
+        <GridItem className="grid-placeholder" colSpan={1} />
+        <GridItem colSpan={[0, 10, 10, 5]}>
+          <ProjectDisplay activeProject={projects[activeProject]} />
+        </GridItem>
+        <GridItem className="grid-placeholder" colSpan={1} display={['block', 'block', 'block', 'none']} />
+      </>
+      <>
+        <GridItem className="grid-placeholder" colSpan={1} display={['block', 'block', 'block', 'none']} />
+        <GridItem colSpan={[10, 10, 5]}>
+          <ProjectMenu projects={projects} setActiveProject={setActiveProject} />
+        </GridItem>
+        <GridItem className="grid-placeholder" colSpan={1} />
+        <GridItem />
+      </>
     </Grid>
   );
 };

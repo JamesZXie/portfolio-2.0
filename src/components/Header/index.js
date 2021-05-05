@@ -33,7 +33,7 @@ const Header = (props) => {
   };
 
   const setup = (p, canvasParentRef) => {
-    const { title, fontSize } = props;
+    const { fontSize } = props;
 
     canvasInfo = document.getElementById(props.id).getBoundingClientRect();
     pts = font.textToPoints(title, 0, 0, fontSize, {

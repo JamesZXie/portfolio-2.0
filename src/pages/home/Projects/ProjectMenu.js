@@ -3,6 +3,7 @@ import {
   Box, Flex, List, ListItem, ListIcon,
 } from '@chakra-ui/react';
 import { ChevronRightIcon } from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 
@@ -14,15 +15,17 @@ const ProjectMenu = (props) => {
   const renderProjects = () => (
     <List spacing={6}>
       {projects.map((project) => (
-        <ListItem>
-          <Flex direction="columns" align="center">
-            <ListIcon as={ChevronRightIcon} />
-            <Box display="inline-block">
-              <h3>{project.title}</h3>
-              <p>{project.caption}</p>
-            </Box>
-          </Flex>
-        </ListItem>
+        <Link to={project.to}>
+          <ListItem>
+            <Flex direction="columns" align="center">
+              <ListIcon as={ChevronRightIcon} />
+              <Box display="inline-block">
+                <h3>{project.title}</h3>
+                <p>{project.caption}</p>
+              </Box>
+            </Flex>
+          </ListItem>
+        </Link>
       ))}
     </List>
   );
