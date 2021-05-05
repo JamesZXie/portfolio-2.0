@@ -9,10 +9,10 @@ import './austin-cold.scss';
 import LandingImage from '../../../assets/images/AustinCold/landing.png';
 import HelpFormSpanishImage from '../../../assets/images/AustinCold/help-form--spanish.png';
 import InfoArabicImage from '../../../assets/images/AustinCold/info--arabic.png';
-import NeedHelpTile from '../../../assets/images/AustinCold/need-help-tile.png';
-import WantToHelpTile from '../../../assets/images/AustinCold/want-to-help-tile.png';
-import SheltersMap from '../../../assets/images/AustinCold/shelters-map.png';
+import Flow from '../../../assets/images/AustinCold/flow.png';
 import AustinSnow from '../../../assets/images/AustinCold/austin-snow-air.jpg';
+
+const imageBottomPadding = '1rem';
 
 const AustinCold = ({}) => (
   <Grid
@@ -31,8 +31,11 @@ const AustinCold = ({}) => (
 
       <Header title="Austin Cold" fontSize={100} center />
 
-      <Text as="h3">PROBLEM</Text>
+      <Text as="h3">THE PROBLEM</Text>
       <Image src={AustinSnow} height="30rem" objectFit="cover" width="100%" />
+      <Center paddingBottom={imageBottomPadding}>
+        <Text as="h5">Satellite image of Austin frozen</Text>
+      </Center>
       <Text>
         In Febuary of 2021, Texas froze as three simultaneous winter storms
         relentlessly battered the state for days on end, killing over 100 people and
@@ -47,12 +50,12 @@ const AustinCold = ({}) => (
         <Image
           src={LandingImage}
           alt="landing page of austincold.com"
-          marginBottom="1rem"
+          paddingBottom={imageBottomPadding}
         />
       </Link>
       <Text>
-        Two of my best friends and I who still had
-        power teamed up with the nonprofit
+        Two of my best friends and I still had
+        power, so we teamed up with the nonprofit
         {' '}
         <Link color="blue" href="https://communityresiliencetrust.org/" isExternal>Community Resilience Trust </Link>
         {' '}
@@ -80,7 +83,7 @@ const AustinCold = ({}) => (
         Our main limitation was time; we knew people would soon begin
         to freeze and starve by the time we began the project.
         We started pushing the website the same night we started it, with traffic
-        spiking early the next day as
+        spiking from thousands of views as
         {' '}
         <Link
           color="blue"
@@ -91,43 +94,35 @@ const AustinCold = ({}) => (
         </Link>
         .
       </Text>
+      <Center>
+        <Image
+          height="%"
+          objectFit="cover"
+          src={Flow}
+          padding="2rem"
+        />
+      </Center>
+      <Center paddingBottom={imageBottomPadding}>
+        <Text as="h5">Simplified flow of how austincold.com helped CRT coordinate efforts</Text>
+      </Center>
+
       <Text>
         We had 3 focuses:
       </Text>
       <OrderedList paddingBottom="1rem">
         <ListItem>
-          Identify Victims - we needed to know who required immediate assistance from a person.
+          Identify victims - we needed to know who required immediate assistance from a person.
         </ListItem>
         <ListItem>
-          Organize Volunteers - we needed bodies on the ground for emergency relief.
+          Organize volunteers - we needed bodies on the ground for emergency relief.
         </ListItem>
         <ListItem>
-          Distribute information on resources - for those who could
-          find food and shelter themselves.
+          Surface geo information on resources - for our volunteers and those who could
+          gather resources themselves.
         </ListItem>
       </OrderedList>
-      <Flex>
-        <Center>
-          <Image
-            height="100%"
-            src={NeedHelpTile}
-          />
-        </Center>
-        <Center>
-          <Image
-            height="100%"
-            src={WantToHelpTile}
-          />
-        </Center>
-        <Center>
-          <Image
-            height="100%"
-            src={SheltersMap}
-          />
-        </Center>
-      </Flex>
 
-      <Flex wrap="wrap" paddingTop="1rem" paddingBottom="1rem">
+      <Flex wrap="wrap" paddingTop="1rem" paddingBottom={imageBottomPadding}>
         <Center flex="1">
           <Image
             src={InfoArabicImage}
@@ -154,6 +149,15 @@ const AustinCold = ({}) => (
     <GridItem colSpan={2} />
     <GridItem colSpan={2} />
     <GridItem colSpan={8}>
+      <Text>
+        We maintained the website for about two weeks,
+        updating information about food and water after the storms subsided.
+      </Text>
+    </GridItem>
+    <GridItem colSpan={2} />
+    <GridItem colSpan={2} />
+    <GridItem colSpan={8}>
+      <Text as="h3">HOW IT WORKED</Text>
       <Text>
         We maintained the website for about two weeks,
         updating information about food and water after the storms subsided.
