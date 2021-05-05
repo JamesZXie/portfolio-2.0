@@ -103,24 +103,28 @@ const AustinCold = ({}) => (
         />
       </Center>
       <Center paddingBottom={imageBottomPadding}>
-        <Text as="h5">Simplified flow of how austincold.com helped CRT coordinate efforts</Text>
+        <Text as="h5">How austincold.com helped CRT coordinate efforts</Text>
       </Center>
 
       <Text>
-        We had 3 focuses:
+        We had 3 main focuses:
       </Text>
       <OrderedList paddingBottom="1rem">
         <ListItem>
-          Identify victims - we needed to know who required immediate assistance from a person.
+          Identify victims
         </ListItem>
         <ListItem>
-          Organize volunteers - we needed bodies on the ground for emergency relief.
+          Organize volunteers
         </ListItem>
         <ListItem>
-          Surface geo information on resources - for our volunteers and those who could
-          gather resources themselves.
+          Surface geographical information on resources
         </ListItem>
       </OrderedList>
+
+      <Text>
+        After that, we tried to include as much information as possible on
+        safety and resource management for the general public.
+      </Text>
 
       <Flex wrap="wrap" paddingTop="1rem" paddingBottom={imageBottomPadding}>
         <Center flex="1">
