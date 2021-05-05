@@ -11,6 +11,8 @@ const Background = (props) => {
   let dimensions;
   let stopDrawing = false;
   let outerHeight;
+  let columns = [];
+  let rows = [];
 
   const setDimensions = (p, canvasParent) => {
     dimensions = document.getElementsByClassName('hero__background')[0].getBoundingClientRect();
@@ -23,35 +25,15 @@ const Background = (props) => {
     ).parent(canvasParent);
     outerHeight = window.outerHeight;
 
-    p.redraw();
-  };
-
-  const setup = (p, canvasParentRef) => {
-    canvas = p.createCanvas(
-      10, 10, // these will be changed in the scss to 100% the second its rendered
-    ).parent(canvasParentRef);
-
-    setDimensions(p, canvasParentRef);
-
-    window.addEventListener('resize', (e) => { // TODO: add a removeEventListener
-      setDimensions(p, canvasParentRef);
-    }, true);
-  };
-
-  const draw = (p) => {
-    p.clear();
-
-    if (!dimensions || stopDrawing) return;
-
     const { width, height } = dimensions;
-    // const height = outerWindowHeight;
     const gutter = 16;
     const numColumns = 12;
     const numRows = 11;
 
+    columns = [];
+    rows = [];
+
     // assign points to the columns and rows
-    const columns = [];
-    const rows = [];
     const sampleFactor = 20; // how many points do you want per line
 
     // columns (goes across half the width, full height)
@@ -81,6 +63,26 @@ const Background = (props) => {
       rows.push(topRow);
       rows.push(bottomRow);
     }
+
+    p.redraw();
+  };
+
+  const setup = (p, canvasParentRef) => {
+    canvas = p.createCanvas(
+      10, 10, // these will be changed in the scss to 100% the second its rendered
+    ).parent(canvasParentRef);
+
+    setDimensions(p, canvasParentRef);
+
+    window.addEventListener('resize', (e) => { // TODO: add a removeEventListener
+      setDimensions(p, canvasParentRef);
+    }, true);
+  };
+
+  const draw = (p) => {
+    p.clear();
+
+    if (!dimensions || stopDrawing) return;
 
     const gradientIntensyity = 3;
 
