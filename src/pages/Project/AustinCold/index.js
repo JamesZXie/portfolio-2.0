@@ -31,7 +31,7 @@ const AustinCold = ({}) => (
 
       <Header title="Austin Cold" fontSize={100} center />
 
-      <Text as="h3">THE PROBLEM</Text>
+      <Text as="h2">THE PROBLEM</Text>
       <Image src={AustinSnow} height="30rem" objectFit="cover" width="100%" />
       <Center paddingBottom={imageBottomPadding}>
         <Text as="h5">Satellite image of Austin frozen</Text>
@@ -45,7 +45,7 @@ const AustinCold = ({}) => (
     <GridItem colSpan={2} />
     <GridItem colSpan={2} />
     <GridItem colSpan={8}>
-      <Text as="h3">WHAT WE DID</Text>
+      <Text as="h2">WHAT WE DID</Text>
       <Link href="https://www.austincold.com" target="blank">
         <Image
           src={LandingImage}
@@ -78,7 +78,7 @@ const AustinCold = ({}) => (
     <GridItem colSpan={2} />
     <GridItem colSpan={2} />
     <GridItem colSpan={8}>
-      <Text as="h3">OUR PROCESS</Text>
+      <Text as="h2">OUR PROCESS</Text>
       <Text paddingBottom="1rem">
         Our main limitation was time; we knew people would soon begin
         to freeze and starve by the time we began the project.
@@ -161,16 +161,7 @@ const AustinCold = ({}) => (
     <GridItem colSpan={2} />
     <GridItem colSpan={2} />
     <GridItem colSpan={8}>
-      <Text as="h3">HOW IT WORKED</Text>
-      <Text>
-        We maintained the website for about two weeks,
-        updating information about food and water after the storms subsided.
-      </Text>
-    </GridItem>
-    <GridItem colSpan={2} />
-    <GridItem colSpan={2} />
-    <GridItem colSpan={8}>
-      <Text as="h3">THE TEAM</Text>
+      <Text as="h2">THE TEAM</Text>
       <UnorderedList>
         <ListItem>
           <Link
