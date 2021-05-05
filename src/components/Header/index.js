@@ -6,9 +6,11 @@ import {
 } from '@chakra-ui/react';
 import Knewave from '../../assets/fonts/Knewave/Knewave-Regular.ttf';
 
-const Header = (props) => {
-  const { id, ariaLevel, title } = props;
+import './header.scss';
 
+const Header = ({
+  id, ariaLevel, title, center, fontSize, fontColor, strokeWeight, loadFont,
+}) => {
   let pts;
   let font;
 
@@ -27,15 +29,11 @@ const Header = (props) => {
   const mouseOnCanvas = true;
 
   const preload = (p) => {
-    const { loadFont } = props;
-
     font = p.loadFont(loadFont);
   };
 
   const setup = (p, canvasParentRef) => {
-    const { fontSize } = props;
-
-    canvasInfo = document.getElementById(props.id).getBoundingClientRect();
+    canvasInfo = document.getElementById(id).getBoundingClientRect();
     pts = font.textToPoints(title, 0, 0, fontSize, {
       sampleFactor: 0.5,
       simplifyThreshold: 0,
@@ -59,7 +57,6 @@ const Header = (props) => {
   };
 
   const draw = (p) => {
-    const { fontColor, strokeWeight } = props;
     p.clear();
     p.translate(xTranslate, yTranslate);
     p.noFill();
@@ -108,11 +105,11 @@ const Header = (props) => {
 
   return (
     <>
-      <Box display={['block', 'none', 'none']} className="header">
+      <Box display={['inherit', 'none', 'none']} className="header">
         <h1>{title}</h1>
       </Box>
-      <Box display={['none', 'block', 'block']} className="header" id={id} role="heading" aria-level={ariaLevel} aria-label={title}>
-        <Sketch preload={preload} setup={setup} draw={draw} />
+      <Box display={['none', 'inherit', 'inherit']} className="header" id={id} role="heading" aria-level={ariaLevel} aria-label={title}>
+        <Sketch preload={preload} setup={setup} draw={draw} className={`react-p5--center-${center}`} />
       </Box>
     </>
   );
@@ -126,6 +123,7 @@ Header.propTypes = {
   fontColor: PropTypes.object,
   strokeWeight: PropTypes.number,
   ariaLevel: PropTypes.number,
+  center: PropTypes.bool,
 };
 
 Header.defaultProps = {
@@ -135,6 +133,7 @@ Header.defaultProps = {
   fontColor: { r: 0, g: 0, b: 0 },
   strokeWeight: 1,
   ariaLevel: 2,
+  center: false,
 };
 
 export default Header;

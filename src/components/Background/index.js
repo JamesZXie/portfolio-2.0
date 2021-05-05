@@ -10,7 +10,7 @@ const Background = (props) => {
   let canvas;
   let dimensions;
   let stopDrawing = false;
-  let outerHeight;
+  let outerHeight = 867;
   let columns = [];
   let rows = [];
 
@@ -63,6 +63,8 @@ const Background = (props) => {
       rows.push(topRow);
       rows.push(bottomRow);
     }
+
+    console.log(JSON.stringify(rows));
 
     p.redraw();
   };

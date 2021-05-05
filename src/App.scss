@@ -22,3 +22,32 @@ body {
         font-size: 48px;
     }
 }
+
+.dashed-container {
+    position: absolute;
+    border: 2px dashed;
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+    z-index:-1;
+}
+
+h5 {
+    font-size: 12px !important;
+    font-weight: 100;
+    max-width: 90%;
+    text-align: center;
+    color: #525252;
+}
+
+h3 {
+    font-weight: bold !important;
+}
+
+
+ol {
+    margin-left: 2rem !important;
+    margin-right: 2rem !important;
+}

@@ -3,3 +3,14 @@
         font-family: Knewave;
     }
 }
+
+.react-p5--center-true{
+    text-align: center;
+
+    canvas {
+        display: inline !important;
+    }
+}
+
+.react-p5--center-false{
+}
