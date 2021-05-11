@@ -63,9 +63,6 @@ const Background = (props) => {
       rows.push(topRow);
       rows.push(bottomRow);
     }
-
-    console.log(JSON.stringify(rows));
-
     p.redraw();
   };
 
@@ -151,9 +148,7 @@ const Background = (props) => {
   };
 
   return (
-    <Box className="hero__background" id="helloo">
-      <Sketch setup={setup} draw={draw} />
-    </Box>
+    <Box className="hero__background" id="helloo" display="none" />
   );
 };
 

@@ -7,7 +7,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './pages/Home';
 import AustinCold from './pages/Project/AustinCold';
+import PowerGlove from './pages/Project/PowerGlove';
 import Background from './components/Background';
+import ScrollToTop from './components/ScrollToTop';
 
 const fonts = {
   body: 'Roboto Mono',
@@ -21,10 +23,11 @@ function App() {
       <Router>
         <Nav />
         <Background />
+        <ScrollToTop />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/austin-cold" component={AustinCold} />
-          <Route exact path="/power-glove" component={AustinCold} />
+          <Route exact path="/power-glove" component={PowerGlove} />
           <Route exact path="/doodles" component={AustinCold} />
         </Switch>
       </Router>
