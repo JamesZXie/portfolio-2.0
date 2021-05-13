@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { Box, Image } from '@chakra-ui/react';
 
@@ -11,4 +12,9 @@ const ProjectDisplay = ({ activeProject }) => {
     </Box>
   );
 };
+
+ProjectDisplay.propTypes = {
+  activeProject: PropTypes.object.isRequired,
+};
+
 export default ProjectDisplay;

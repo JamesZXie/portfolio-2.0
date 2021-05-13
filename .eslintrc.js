@@ -25,5 +25,6 @@ module.exports = {
     'no-mixed-operators': 0,
     'no-empty-pattern': 0,
     'max-len': 0,
+    'react/forbid-prop-types': 0,
   },
 };

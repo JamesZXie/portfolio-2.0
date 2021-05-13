@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Grid,
 } from '@chakra-ui/react';
 
-const AustinCold = ({ children, className }) => (
+const Section = ({ children, className }) => (
   <Grid
     templateColumns="repeat(12, 1fr)"
     className={className}
@@ -20,4 +21,12 @@ const AustinCold = ({ children, className }) => (
   </Grid>
 );
 
-export default AustinCold;
+Section.propTypes = {
+  children: PropTypes.element.isRequired,
+  className: PropTypes.string,
+};
+
+Section.defaultProps = {
+  className: '',
+};
+export default Section;
