@@ -71,8 +71,6 @@ const Background = (props) => {
       10, 10, // these will be changed in the scss to 100% the second its rendered
     ).parent(canvasParentRef);
 
-    console.log(p.map(3, -1 * maxOffset, maxOffset, -1 * p.PI, p.PI));
-
     setDimensions(p, canvasParentRef);
 
     for (let i = 0; i < numLeaves; i += 1) {
