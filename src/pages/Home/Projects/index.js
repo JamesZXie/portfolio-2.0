@@ -23,16 +23,12 @@ const Projects = (props) => {
     caption: 'An IoT art project',
     to: '/power-glove',
   },
-  {
-    title: 'Craft Con',
-    caption: 'A celebration of making things',
-    to: '/craft-con',
-  },
-  {
-    title: 'Doodles',
-    caption: 'An ever-growing collection of generative art',
-    to: '/doodles',
-  }];
+  // {
+  //   title: 'Doodles',
+  //   caption: 'An ever-growing collection of generative art',
+  //   to: '/doodles',
+  // }
+  ];
 
   return (
     <Section

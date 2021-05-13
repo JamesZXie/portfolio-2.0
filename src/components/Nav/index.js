@@ -9,7 +9,9 @@ const Nav = (props) => {
 
   return (
     <Box className="nav-container" paddingLeft="4rem" paddingRight="4rem">
-      <Box className="nav" />
+      <Box className="nav">
+        You&apos;re watching the cookie get made - this site is heavily WIP, please excuse the mess...
+      </Box>
     </Box>
   );
 };
