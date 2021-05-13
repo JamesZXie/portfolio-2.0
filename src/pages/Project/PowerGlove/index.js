@@ -4,8 +4,10 @@ import {
   Grid, GridItem, Box, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
 import Header from '../../../components/Header';
+import Section from '../../../components/Section';
 import FlexSensorCircuit from '../../../assets/images/PowerGlove/flex-sensor-circuit.png';
 import GloveComplete from '../../../assets/images/PowerGlove/completed-glove.jpg';
+import GloveExample from '../../../assets/images/PowerGlove/glove-example.gif';
 import GloveSkeleton from '../../../assets/images/PowerGlove/glove-skeleton.jpg';
 import NESPowerGlove from '../../../assets/images/PowerGlove/NES-power-glove.jpg';
 
@@ -18,17 +20,9 @@ const PowerGlove = ({}) => (
     <Box paddingTop="6rem">
       <Header title="Power Glove" fontSize={100} center />
     </Box>
-    <Grid
-      templateColumns="repeat(12, 1fr)"
+    <Section
       className="power-glove"
-      gap="1rem"
-      textAlign={['center', 'left', 'left']}
-      minHeight="100vh"
-      paddingTop={['2rem', '2rem', '6rem', '6rem']}
-      position="relative"
     >
-      <Box className="dashed-container" marginTop="6rem" />
-
       <GridItem colSpan={2} />
       <GridItem colSpan={8} paddingTop="1rem">
         <Text as="h2">NINTENDO&apos;S POWER GLOVE</Text>
@@ -57,11 +51,21 @@ const PowerGlove = ({}) => (
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       /> */}
+        <Center>
+          <Image src={GloveExample} width="50%" />
+        </Center>
+        <Center paddingBottom={imageBottomPadding}>
+          <Text as="h5">The Power Glove hooked up to a WebGL sketch</Text>
+        </Center>
         <Text marginTop="1rem">
-          The PowerGlove measures voltage changes that occur when fingers bend, and
+          The PowerGlove measures the voltage change that occurs when a finger bends, and
           interprets it. Thanks to node, johnny-five.js and the power of
           websockets we can take that information and run it through a javascript
-          application in real time.
+          application in real time. Check out the code, an example, and a pseudo-api
+          {' '}
+          {' '}
+          <Link isExternal color="blue" href="https://github.com/JamesZXie/power-glove">here</Link>
+          .
         </Text>
       </GridItem>
       <GridItem colSpan={2} />
@@ -86,24 +90,27 @@ const PowerGlove = ({}) => (
           airsoft glove because they have padding you can easily cut up to create
           a quick shell to protect the sensors, but you can use anything.
         </Text>
-        <Center marginTop="1rem">
+        <Center marginTop="2rem">
           <Image src={GloveSkeleton} objectFit="cover" width="35%" />
           <Image src={GloveComplete} objectFit="cover" width="35%" />
         </Center>
         <Center paddingBottom={imageBottomPadding}>
-          <Text as="h5">Completed circuit</Text>
+          <Text as="h5">Completed glove</Text>
         </Center>
         <Text>
-          If you&apos;re getting a lot of noise, try playing around with the paired
-          resistor. Generally flex sensors will have a resistance of 10K,
-          so pairing it with another 10K is a good place to start testing; personally,
-          I used 22K for all fingers except the thumb.
+          I meant to open up the power glove to the community after I created it, hosting a few
+          classes and creating a pseudo-api for it so that other developers at IBM could
+          make their own sketches for an upcoming event. Unfortuantely, Covid cut that project
+          very, very short, as we only had one glove to work with, and as you can imagine
+          passing it around was not an option. You can find a copy of that repo linked above or
+          {' '}
+          <Link color="blue" isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
+          .
         </Text>
       </GridItem>
       <GridItem colSpan={2} />
-    </Grid>
+    </Section>
   </>
-
 );
 
 export default PowerGlove;

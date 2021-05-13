@@ -8,7 +8,7 @@ const Nav = (props) => {
   const [test, setTest] = useState('hello');
 
   return (
-    <Box className="nav-container">
+    <Box className="nav-container" paddingLeft="4rem" paddingRight="4rem">
       <Box className="nav" />
     </Box>
   );

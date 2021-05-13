@@ -4,6 +4,7 @@ import {
   Grid, GridItem, Box, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
 import Header from '../../../components/Header';
+import Section from '../../../components/Section';
 
 import './austin-cold.scss';
 import LandingImage from '../../../assets/images/AustinCold/landing.png';
@@ -19,16 +20,9 @@ const AustinCold = ({}) => (
     <Box paddingTop="6rem">
       <Header title="Austin Cold" fontSize={100} center />
     </Box>
-    <Grid
-      templateColumns="repeat(12, 1fr)"
+    <Section
       className="austin-cold"
-      gap="1rem"
-      textAlign={['center', 'left', 'left']}
-      minHeight="100vh"
-      paddingTop={['2rem', '2rem', '6rem', '6rem']}
-      position="relative"
     >
-      <Box className="dashed-container" marginTop="6rem" />
 
       <GridItem colSpan={2} />
       <GridItem colSpan={8} paddingTop="1rem">
@@ -195,7 +189,7 @@ const AustinCold = ({}) => (
           on the ground and thousands who donated.
         </Text>
       </GridItem>
-    </Grid>
+    </Section>
   </>
 );
 
