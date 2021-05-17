@@ -11,10 +11,9 @@ const Background = (props) => {
   let dimensions;
   let stopDrawing = false;
   let outerHeight;
-  const numLeaves = 1;
+  const numLeaves = 30;
   let leaves = [];
-  const leafSize = 15;
-  const maxOffset = 2;
+  const offsetScale = 5;
 
   const setDimensions = (p, canvasParent) => {
     dimensions = document.getElementsByClassName('hero__background')[0].getBoundingClientRect();
@@ -28,41 +27,33 @@ const Background = (props) => {
     outerHeight = window.outerHeight;
   };
 
-  const createLeaf = (p, vector, offset = 0) => {
+  const createLeaf = (p, leaf) => {
     // offset is a number between -maxOffset to maxOffset
     p.push();
-    p.translate(vector.x, vector.y);
-    p.translate(offset, 0);
-    p.rotate(offset);
+    p.translate(leaf.x, leaf.y);
+    p.translate(leaf.offset, 0);
+    // p.rotate();
     p.noFill();
     p.stroke(0);
-    p.arc(
-      0,
-      2.5,
-      leafSize,
-      leafSize,
-      -p.PI / 180 * 30, p.PI / 180 * 210,
-    );
-    p.arc(
-      0,
-      -2.5,
-      leafSize,
-      leafSize, p.PI / 180 * 12, p.PI / 180 * 168,
-    );
+    p.circle(0, 0, leaf.leafSize);
     p.pop();
   };
 
   const createLeaves = (p) => {
-    leaves.map((leaf) => {
-      createLeaf(p, leaf, leaf.offset);
+    leaves.map((l) => {
+      const leaf = l;
+      if (leaf.y > dimensions.height) leaf.y = p.int(p.random(-dimensions.height, 0));
+      createLeaf(p, leaf);
     });
   };
 
   const animateLeaves = (p) => {
     leaves = leaves.map((leaf) => ({
       x: leaf.x,
-      y: leaf.y + 1,
-      offset: p.map(p.noise(leaf.x, leaf.y), 0, 1, -maxOffset, maxOffset),
+      y: leaf.y + p.map(leaf.initialOffset, -offsetScale, offsetScale, 1, 2),
+      offset: leaf.offset + offsetScale * p.sin(p.frameCount * 0.1 + leaf.initialOffset),
+      initialOffset: leaf.initialOffset,
+      leafSize: leaf.leafSize,
     }));
   };
 
@@ -76,8 +67,10 @@ const Background = (props) => {
     for (let i = 0; i < numLeaves; i += 1) {
       leaves.push({
         x: p.int(p.random(0, dimensions.width)),
-        y: 100,
+        y: p.int(p.random(-dimensions.height, 0)),
         offset: 0,
+        initialOffset: p.int(p.random(-offsetScale, offsetScale)),
+        leafSize: p.int(p.random(5, 20)),
       });
     }
 
@@ -94,7 +87,7 @@ const Background = (props) => {
 
   return (
     <Box display={['none', 'inherit', 'inherit']} className="hero__background" role="heading">
-      {/* <Sketch setup={setup} draw={draw} /> */}
+      <Sketch setup={setup} draw={draw} />
     </Box>
   );
 };
