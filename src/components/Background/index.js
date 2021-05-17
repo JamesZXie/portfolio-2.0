@@ -90,7 +90,7 @@ const Background = (props) => {
 
   return (
     <Box display={['none', 'inherit', 'inherit']} className="hero__background" role="heading">
-      <Sketch setup={setup} draw={draw} />
+      {/* <Sketch setup={setup} draw={draw} /> */}
     </Box>
   );
 };
