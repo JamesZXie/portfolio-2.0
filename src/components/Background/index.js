@@ -16,7 +16,7 @@ const Background = (props) => {
   const offsetScale = 5;
 
   const setDimensions = (p, canvasParent) => {
-    dimensions = document.getElementsByClassName('hero__background')[0].getBoundingClientRect();
+    dimensions = document.documentElement.getBoundingClientRect();
     if (dimensions.width <= 768) {
       stopDrawing = true;
     }
@@ -58,8 +58,9 @@ const Background = (props) => {
   };
 
   const setup = (p, canvasParentRef) => {
+    const d = document.documentElement.getBoundingClientRect();
     canvas = p.createCanvas(
-      10, 10, // these will be changed in the scss to 100% the second its rendered
+      d.x, d.y, // these will be changed in the scss to 100% the second its rendered
     ).parent(canvasParentRef);
 
     setDimensions(p, canvasParentRef);
@@ -80,9 +81,11 @@ const Background = (props) => {
   };
 
   const draw = (p) => {
-    p.background(300);
-    createLeaves(p);
-    animateLeaves(p);
+    if (!stopDrawing) {
+      p.background(300);
+      createLeaves(p);
+      animateLeaves(p);
+    }
   };
 
   return (
