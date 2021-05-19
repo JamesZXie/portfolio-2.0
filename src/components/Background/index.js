@@ -42,7 +42,8 @@ const Background = (props) => {
     const speed = 10;
     return 3 * p.map(p.noise(i + p.frameCount / 10), 0, 1, -1, 1);
   };
-  const transformSpeed = 40;
+  const transformSpeed = 80;
+  const timejump = 2200;
 
   // x = cos(at) - cos(bt)^j;
   // y = sin(ct) - sin(dt)^k;
@@ -50,9 +51,9 @@ const Background = (props) => {
     const j = 3;
     const k = 3;
     const a = 1;
-    const b = p.frameCount / transformSpeed;
+    const b = (p.frameCount + timejump) / transformSpeed;
     const c = 1;
-    const d = p.frameCount / transformSpeed / 2;
+    const d = (p.frameCount + timejump) / transformSpeed / 2;
 
     const x = p.cos(a * i) - p.pow(p.cos(b * i), j);
     const y = p.sin(c * i) - p.pow(p.sin(d * i), k);
@@ -65,9 +66,9 @@ const Background = (props) => {
     const j = 3;
     const k = 3;
     const a = 1;
-    const b = p.frameCount / transformSpeed;
+    const b = (p.frameCount + timejump) / transformSpeed;
     const c = 1;
-    const d = p.frameCount / transformSpeed / 2;
+    const d = (p.frameCount + timejump) / transformSpeed / 2;
 
     const x = p.cos(a * i) - p.pow(p.cos(b * i), j);
     const y = p.sin(c * i) - p.pow(p.sin(d * i), k);
