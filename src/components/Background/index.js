@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Sketch from 'react-p5';
 import './background.scss';
 

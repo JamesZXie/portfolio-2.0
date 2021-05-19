@@ -9,7 +9,6 @@ import Home from './pages/Home';
 import AustinCold from './pages/Project/AustinCold';
 import PowerGlove from './pages/Project/PowerGlove';
 import Doodles from './pages/Project/Doodles';
-import Background from './components/Background';
 import ScrollToTop from './components/ScrollToTop';
 
 const fonts = {
@@ -23,7 +22,6 @@ function App() {
     <ChakraProvider theme={theme}>
       <Router>
         <Nav />
-        <Background />
         <ScrollToTop />
         <Switch>
           <Route exact path="/" component={Home} />
