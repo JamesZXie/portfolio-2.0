@@ -42,8 +42,8 @@ const Background = (props) => {
     const speed = 10;
     return 3 * p.map(p.noise(i + p.frameCount / 10), 0, 1, -1, 1);
   };
-  const transformSpeed = 80;
-  const timejump = 2200;
+  const transformSpeed = 50;
+  const timejump = 0;
 
   // x = cos(at) - cos(bt)^j;
   // y = sin(ct) - sin(dt)^k;
