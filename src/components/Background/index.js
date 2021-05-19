@@ -52,11 +52,11 @@ const Background = (props) => {
     const a = 1;
     const b = p.frameCount / transformSpeed;
     const c = 1;
-    const d = p.frameCount / transformSpeed;
+    const d = p.frameCount / transformSpeed / 2;
 
     const x = p.cos(a * i) - p.pow(p.cos(b * i), j);
     const y = p.sin(c * i) - p.pow(p.sin(d * i), k);
-    p.curveVertex(scale * x, scale * y);
+    p.curveVertex(-1 * scale * x, scale * y);
   };
 
   // x = cos(at) - cos(bt)^j;
@@ -64,10 +64,10 @@ const Background = (props) => {
   const addVertexB = (p, i, scale) => {
     const j = 3;
     const k = 3;
-    const a = p.frameCount / transformSpeed;
-    const b = 1;
-    const c = p.frameCount / transformSpeed;
-    const d = 1;
+    const a = 1;
+    const b = p.frameCount / transformSpeed;
+    const c = 1;
+    const d = p.frameCount / transformSpeed / 2;
 
     const x = p.cos(a * i) - p.pow(p.cos(b * i), j);
     const y = p.sin(c * i) - p.pow(p.sin(d * i), k);
@@ -75,9 +75,9 @@ const Background = (props) => {
   };
 
   const draw = (p) => {
-    const transformScale = p.sin(p.frameCount / (2 * transformSpeed));
-    const sizeScaleA = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2), -1, 1, 50, 100);
-    const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
+    // const transformScale = p.sin(p.frameCount / (2 * transformSpeed));
+    // const sizeScaleA = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2), -1, 1, 50, 100);
+    // const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
     if (!stopDrawing) {
       p.background(300);
       p.noFill();
