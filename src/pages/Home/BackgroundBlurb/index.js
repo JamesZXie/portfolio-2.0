@@ -22,7 +22,7 @@ const BackgroundBlurb = ({ isOpen, onClose }) => (
       width={['100%', '50%', '50%']}
     >
       <Text>
-        A graph of mathematical equation I found that represents my experience with the design process.
+        A graph of a set of equations I found that represents my experience with the design process.
         <br />
         <br />
         The big picture is always unclear when first defining the problem. Once the frame forms, we
@@ -31,10 +31,11 @@ const BackgroundBlurb = ({ isOpen, onClose }) => (
         messy again, the product becomes more complex... and so on.
         <br />
         <br />
-        But its as much an science as it is an art.
+        But as you know, doing good design is not an art. It&apos;s methodical, rooted in research, and reproducible.
+        Its a science.
         <br />
         <br />
-        If you&apos;re into math:
+        If you&apos;re into math, the set of equations is:
         <br />
         <br />
         x = cos(i) - cos(t * i)^3
