@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import {
   Box, Text, Button,
 } from '@chakra-ui/react';
+import { InfoOutlineIcon } from '@chakra-ui/icons';
 import Header from '../../../components/Header';
 import BackgroundBlurb from '../BackgroundBlurb';
 import './hero.scss';
-import { InfoOutlineIcon } from '@chakra-ui/icons';
 
 const Hero = (props) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);

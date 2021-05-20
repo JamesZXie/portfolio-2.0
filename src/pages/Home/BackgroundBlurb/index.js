@@ -32,7 +32,7 @@ const BackgroundBlurb = ({ isOpen, onClose }) => (
         <br />
         <br />
         But as you know, doing good design is not an art. It&apos;s methodical, rooted in research, and reproducible.
-        Its a science.
+        It&apos;s a science.
         <br />
         <br />
         If you&apos;re into math, the set of equations is:
