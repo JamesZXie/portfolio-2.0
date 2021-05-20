@@ -1,8 +1,6 @@
 .hero {
-    position: absolute;
     height: 100%;
     width: 100%;
-    z-index: -1;
 
     &__name-header {
         position: absolute;
@@ -13,6 +11,12 @@
 
         text-align: center;
         z-index: 1;
+    }
+
+    &__anim-tooltip {
+        z-index: 100;
+        margin-left: 4rem;
+        margin-top: 5rem;
     }
     
 }

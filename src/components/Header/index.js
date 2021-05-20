@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Sketch from 'react-p5';
 import {
@@ -11,6 +11,13 @@ import './header.scss';
 const Header = ({
   id, ariaLevel, title, center, fontSize, fontColor, strokeWeight, loadFont,
 }) => {
+  const [, updateState] = useState();
+  const forceUpdate = useCallback(() => updateState({}), []);
+
+  useEffect(() => {
+    updateState();
+  });
+
   let pts;
   let font;
 
@@ -67,37 +74,40 @@ const Header = ({
     const rMouseX = p.mouseX;
     const rMouseY = p.mouseY;
 
-    for (let i = 0; i < pts.length; i += 1) {
-      if (i > 0) {
-        const distanceCheck = p.dist(pts[i].x, pts[i].y, pts[i - 1].x, pts[i - 1].y);
-        if (distanceCheck > 3) {
-          p.endShape(p.CLOSE);
-          p.beginShape();
+    if (!pts) forceUpdate();
+    else {
+      for (let i = 0; i < pts.length; i += 1) {
+        if (i > 0) {
+          const distanceCheck = p.dist(pts[i].x, pts[i].y, pts[i - 1].x, pts[i - 1].y);
+          if (distanceCheck > 3) {
+            p.endShape(p.CLOSE);
+            p.beginShape();
+          }
         }
-      }
 
-      if (mouseOnCanvas) {
-        const mouseScaleDistance = 0.3
-        / (
-          1 + Math.abs(p.dist(rMouseX, rMouseY, pts[i].x + xTranslate, pts[i].y + yTranslate))
-        );
-        const mouseScaleCap = 0.05;
+        if (mouseOnCanvas) {
+          const mouseScaleDistance = 0.3
+          / (
+            1 + Math.abs(p.dist(rMouseX, rMouseY, pts[i].x + xTranslate, pts[i].y + yTranslate))
+          );
+          const mouseScaleCap = 0.05;
 
-        const mouseScale = mouseScaleDistance > mouseScaleCap ? mouseScaleCap : mouseScaleDistance;
+          const mouseScale = mouseScaleDistance > mouseScaleCap ? mouseScaleCap : mouseScaleDistance;
 
-        const noiseScale = 500;
+          const noiseScale = 500;
 
-        // if the mouse is close to a point, it should be more heavily distorted.
-        // base + noise(time + displacement) * noiseScale
-        p.vertex(
-          pts[i].x + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
-          pts[i].y + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
-        );
-      } else {
-        p.vertex(
-          pts[i].x,
-          pts[i].y,
-        );
+          // if the mouse is close to a point, it should be more heavily distorted.
+          // base + noise(time + displacement) * noiseScale
+          p.vertex(
+            pts[i].x + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+            pts[i].y + (p.noise(p.frameCount / 40 + i / 10) - 0.5) * noiseScale * mouseScale,
+          );
+        } else {
+          p.vertex(
+            pts[i].x,
+            pts[i].y,
+          );
+        }
       }
     }
     p.endShape(p.CLOSE);

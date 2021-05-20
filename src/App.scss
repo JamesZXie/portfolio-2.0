@@ -42,3 +42,12 @@ ol {
     margin-left: 2rem !important;
     margin-right: 2rem !important;
 }
+
+button {
+    background-color: transparent;
+
+    &:hover {
+        border: 2px solid blue;
+        background-color: transparent !important;
+    }
+}
