@@ -5,6 +5,7 @@ import {
 import Header from '../../../components/Header';
 import BackgroundBlurb from '../BackgroundBlurb';
 import './hero.scss';
+import { InfoOutlineIcon } from '@chakra-ui/icons';
 
 const Hero = (props) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);
@@ -31,6 +32,7 @@ const Hero = (props) => {
         onClick={() => setIsBlurbOpen(true)}
       >
         What am I looking at?
+        <InfoOutlineIcon marginLeft="1rem" />
       </Button>
       <BackgroundBlurb isOpen={isBlurbOpen} onClose={() => setIsBlurbOpen(false)} />
     </Box>
