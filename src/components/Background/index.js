@@ -85,7 +85,7 @@ const Background = (props) => {
 
       p.push();
       p.beginShape();
-      p.translate(dimensions.width / 2 - dimensions.width / 3, outerHeight / 2);
+      p.translate(dimensions.width / 2 - dimensions.width / 3, outerHeight / 2 - 25);
       p.strokeWeight(0.5);
       p.stroke(0);
       for (let i = -5; i < 5; i += 0.01) {
@@ -95,9 +95,9 @@ const Background = (props) => {
       p.pop();
       p.push();
       p.beginShape();
-      p.translate(dimensions.width / 2 + dimensions.width / 3, outerHeight / 2);
+      p.translate(dimensions.width / 2 + dimensions.width / 3, outerHeight / 2 - 25);
       p.strokeWeight(0.5);
-      for (let i = -5; i < 5; i += 0.01) {
+      for (let i = -4; i < 4; i += 0.01) {
         addVertexB(p, i, 100);
       }
       p.endShape();

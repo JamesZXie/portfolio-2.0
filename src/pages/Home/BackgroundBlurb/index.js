@@ -22,20 +22,20 @@ const BackgroundBlurb = ({ isOpen, onClose }) => (
       width={['100%', '50%', '50%']}
     >
       <Text>
-
-        This is a mathematical / artistic representation of the design process.
-
+        A graph of a set of equations I found that represents my experience with the design process.
         <br />
         <br />
         The big picture is always unclear when first defining the problem. Once the frame forms, we
         get into the cycle of breaking the product down, building, exploring, and then after we draw insights
-        we refine the product - catching a brief glimpse of clarity.
+        we refine the product - catching a brief glimpse of clarity. Then we iterate, and everything becomes
+        messy again, the product becomes more complex... and so on.
         <br />
         <br />
-        And then we iterate, and everything becomes messy again, the product becomes more complex... and so on.
+        But as you know, doing good design is not an art. It&apos;s methodical, rooted in research, and reproducible.
+        It&apos;s a science.
         <br />
         <br />
-        If you&apos;re into math:
+        If you&apos;re into math, the set of equations is:
         <br />
         <br />
         x = cos(i) - cos(t * i)^3

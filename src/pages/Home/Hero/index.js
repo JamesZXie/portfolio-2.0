@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
   Box, Text, Button,
 } from '@chakra-ui/react';
+import { InfoOutlineIcon } from '@chakra-ui/icons';
 import Header from '../../../components/Header';
 import BackgroundBlurb from '../BackgroundBlurb';
 import './hero.scss';
@@ -31,6 +32,7 @@ const Hero = (props) => {
         onClick={() => setIsBlurbOpen(true)}
       >
         What am I looking at?
+        <InfoOutlineIcon marginLeft="1rem" />
       </Button>
       <BackgroundBlurb isOpen={isBlurbOpen} onClose={() => setIsBlurbOpen(false)} />
     </Box>
