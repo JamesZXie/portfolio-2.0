@@ -17,9 +17,10 @@ const Hero = (props) => {
           title="JAMES XIE"
           fontSize={100}
           ariaLevel={1}
+          fontColor={{ r: 255, g: 255, b: 255 }}
           key={isBlurbOpen}
         />
-        <Text>
+        <Text className="hero__caption" fontWeight="bold">
           design ~ technology
         </Text>
       </Box>

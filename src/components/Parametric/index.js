@@ -6,7 +6,7 @@ import {
   Box,
 } from '@chakra-ui/react';
 
-const Background = (props) => {
+const Parametric = (props) => {
   let canvas;
   let dimensions;
   let stopDrawing = false;
@@ -37,42 +37,23 @@ const Background = (props) => {
     }, true);
   };
 
-  const noise = (p, i) => {
-    const scale = 3;
-    const speed = 10;
-    return 3 * p.map(p.noise(i + p.frameCount / 10), 0, 1, -1, 1);
-  };
   const transformSpeed = 50;
   const timejump = 0;
+  const size = 100;
 
   // x = cos(at) - cos(bt)^j;
   // y = sin(ct) - sin(dt)^k;
-  const addVertexA = (p, i, scale) => {
+  const addVertex = (p, i, scale) => {
     const j = 3;
     const k = 3;
     const a = 1;
     const b = (p.frameCount + timejump) / transformSpeed;
     const c = 1;
-    const d = (p.frameCount + timejump) / transformSpeed / 2;
+    const d = (p.frameCount + timejump) / transformSpeed;
 
     const x = p.cos(a * i) - p.pow(p.cos(b * i), j);
     const y = p.sin(c * i) - p.pow(p.sin(d * i), k);
     p.curveVertex(-1 * scale * x, scale * y);
-  };
-
-  // x = cos(at) - cos(bt)^j;
-  // y = sin(ct) - sin(dt)^k;
-  const addVertexB = (p, i, scale) => {
-    const j = 3;
-    const k = 3;
-    const a = 1;
-    const b = (p.frameCount + timejump) / transformSpeed;
-    const c = 1;
-    const d = (p.frameCount + timejump) / transformSpeed / 2;
-
-    const x = p.cos(a * i) - p.pow(p.cos(b * i), j);
-    const y = p.sin(c * i) - p.pow(p.sin(d * i), k);
-    p.curveVertex(scale * x, scale * y);
   };
 
   const draw = (p) => {
@@ -86,19 +67,10 @@ const Background = (props) => {
 
       p.push();
       p.beginShape();
-      p.translate(dimensions.width / 2 - dimensions.width / 3, outerHeight / 2 - 25);
+      p.translate(size / 2, size / 2);
       p.strokeWeight(0.5);
       for (let i = -5; i < 5; i += 0.01) {
-        addVertexA(p, i, 100);
-      }
-      p.endShape();
-      p.pop();
-      p.push();
-      p.beginShape();
-      p.translate(dimensions.width / 2 + dimensions.width / 3, outerHeight / 2 - 25);
-      p.strokeWeight(0.5);
-      for (let i = -4; i < 4; i += 0.01) {
-        addVertexB(p, i, 100);
+        addVertex(p, i, size);
       }
       p.endShape();
       p.pop();
@@ -112,6 +84,6 @@ const Background = (props) => {
   );
 };
 
-Background.propTypes = {};
+Parametric.propTypes = {};
 
-export default Background;
+export default Parametric;

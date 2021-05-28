@@ -36,23 +36,22 @@ const Projects = (props) => {
     >
       <>
         <GridItem colSpan={1} />
-        <GridItem colSpan={10} paddingTop="2rem">
+        <GridItem colSpan={10} paddingTop="2rem" paddingLeft=".5rem">
           <Header title="PROJECTS" size={20} />
         </GridItem>
         <GridItem colSpan={1} />
-
         <GridItem className="grid-placeholder" colSpan={1} />
-        <GridItem colSpan={[0, 10, 10, 5]}>
-          <ProjectDisplay activeProject={projects[activeProject]} />
-        </GridItem>
-        <GridItem className="grid-placeholder" colSpan={1} display={['block', 'block', 'block', 'none']} />
-
         <GridItem className="grid-placeholder" colSpan={1} display={['block', 'block', 'block', 'none']} />
         <GridItem colSpan={[10, 10, 5]}>
           <ProjectMenu projects={projects} setActiveProject={setActiveProject} />
         </GridItem>
+
+        <GridItem colSpan={[0, 10, 10, 5]}>
+          <ProjectDisplay activeProject={projects[activeProject]} />
+        </GridItem>
+        <GridItem className="grid-placeholder" colSpan={1} display={['block', 'block', 'block', 'none']} />
         <GridItem className="grid-placeholder" colSpan={1} />
-        <GridItem />
+
       </>
     </Section>
   );

@@ -22,28 +22,12 @@ const BackgroundBlurb = ({ isOpen, onClose }) => (
       width={['100%', '50%', '50%']}
     >
       <Text>
-        A graph of a set of equations I found that represents my experience with the design process.
+        This is a set of equations representing the design process. Can you spot cycles of insight and iteration?
         <br />
         <br />
-        The big picture is always unclear when first defining the problem. Once the frame forms, we
-        get into the cycle of breaking the product down, building, exploring, and then after we draw insights
-        we refine the product - catching a brief glimpse of clarity. Then we iterate, and everything becomes
-        messy again, the product becomes more complex... and so on.
-        <br />
-        <br />
-        But as you know, doing good design is not an art. It&apos;s methodical, rooted in research, and reproducible.
-        It&apos;s a science.
-        <br />
-        <br />
-        If you&apos;re into math, the set of equations is:
-        <br />
-        <br />
-        x = cos(i) - cos(t * i)^3
-        <br />
-        y = sin(i) - cos(t/2 * i)^3
-        <br />
-        <br />
-        where t is time and i is the index.
+        If you stick on this page for a bit, you&apos;ll start to see some very interesting formations as the
+        design process refines our product. Feel free to ask me how the math behind this works!
+
       </Text>
 
       <Button
