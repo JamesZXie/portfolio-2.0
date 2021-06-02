@@ -4,48 +4,46 @@ import './background.scss';
 import {
   Box, Circle,
 } from '@chakra-ui/react';
-import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf';
+import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf';
+import ExploreStripe from './ExploreStripe';
 
 const Background = (props) => {
   let canvas;
   let font;
   const speed = 5;
   const textSize = 48;
-  const changeDelay = 0;
-  const box = { height: 200, width: 400 };
-  const currDelay = 0;
+  const box = { height: 220, width: 420 };
   let dimensions;
   let stopDrawing = false;
-  let outerHeight;
+  const boxOffset = 25;
   let text = [
     {
-      l: 'J', x: 20, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'J', x: 0 + boxOffset, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
     {
-      l: 'A', x: 60, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'A', x: 40 + boxOffset, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
     {
-      l: 'M', x: 108, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'M', x: 88 + boxOffset, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
     {
-      l: 'E', x: 163, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'E', x: 143 + boxOffset, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
     {
-      l: 'S', x: 210, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'S', x: 190 + boxOffset, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
   ];
 
   const setDimensions = (p, canvasParent) => {
     dimensions = document.documentElement.getBoundingClientRect();
-    if (dimensions.width <= 768) {
+    if (dimensions.width <= 1028) {
       stopDrawing = true;
     }
-    if (stopDrawing && dimensions.width > 768) stopDrawing = false;
+    if (stopDrawing && dimensions.width > 1028) stopDrawing = false;
 
     canvas = p.createCanvas(
       dimensions.width, dimensions.height,
     ).parent(canvasParent);
-    outerHeight = window.outerHeight;
   };
 
   const preload = (p) => {
@@ -134,19 +132,28 @@ const Background = (props) => {
   const drawDashedBox = (p, rect, offset = { x: 0, y: 0 }) => {
     // blah
     // take a scale, multiply it with the box + rectangle grid to cover up and create dashes
-    const gutter = 30;
+    const xGutter = 31;
+    const yGutter = 32;
     p.push();
     p.noFill();
     p.translate(offset.x, offset.y);
-    p.stroke(300);
+    p.stroke(255, 138, 0);
     p.strokeWeight(2);
     p.rect(0, 0, rect.width, rect.height);
     p.fill(0, 71, 255);
     p.noStroke();
+    p.push();
     p.translate(0, -10);
-    for (let i = 5; i < rect.width; i += gutter) {
+    for (let i = 10; i < rect.width - 10; i += xGutter) {
       p.rect(i, 0, 10, rect.height + 20);
     }
+    p.pop();
+    p.push();
+    p.translate(-10, -0);
+    for (let i = 10; i < rect.height - 10; i += yGutter) {
+      p.rect(0, i, rect.width + 20, 10);
+    }
+    p.pop();
     p.pop();
   };
 
@@ -156,12 +163,11 @@ const Background = (props) => {
     // const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
     if (!stopDrawing) {
       p.background(0, 71, 255);
-      p.strokeWeight(2);
-      p.translate(dimensions.width / 2 - box.width - 20, window.outerHeight / 2 - box.height);
+      p.translate(dimensions.width / 2 - box.width - 50, window.innerHeight / 2 - 100);
       p.fill(300);
       p.stroke(300);
 
-      drawDashedBox(p, { width: box.width - 20, height: box.height - 30 }, { x: 20, y: 0 });
+      drawDashedBox(p, { width: box.width - 20, height: box.height - 20 }, { x: boxOffset, y: -5 });
       drawText(p);
       animateText(p);
 
@@ -176,6 +182,7 @@ const Background = (props) => {
 
   return (
     <Box display={['none', 'inherit', 'inherit']} className="hero__background" role="heading">
+      <ExploreStripe />
       <Sketch setup={setup} draw={draw} preload={preload} />
     </Box>
   );
