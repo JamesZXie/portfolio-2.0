@@ -1,16 +1,36 @@
 import React, { useEffect } from 'react';
 import Sketch from 'react-p5';
 import './background.scss';
-
 import {
-  Box,
+  Box, Circle,
 } from '@chakra-ui/react';
+import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf';
 
 const Background = (props) => {
   let canvas;
+  let font;
+  const speed = 10;
+  const textSize = 48;
   let dimensions;
   let stopDrawing = false;
   let outerHeight;
+  let text = [
+    {
+      l: 'J', x: 50, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+    },
+    // {
+    //   l: 'A', x: 40, y: 0, currDirection: 'right', newDirection: undefined,
+    // },
+    // {
+    //   l: 'M', x: 88, y: 0, currDirection: 'right', newDirection: undefined,
+    // },
+    // {
+    //   l: 'E', x: 143, y: 0, currDirection: 'right', newDirection: undefined,
+    // },
+    // {
+    //   l: 'S', x: 190, y: 0, currDirection: 'right', newDirection: undefined,
+    // },
+  ];
 
   const setDimensions = (p, canvasParent) => {
     dimensions = document.documentElement.getBoundingClientRect();
@@ -18,10 +38,15 @@ const Background = (props) => {
       stopDrawing = true;
     }
     if (stopDrawing && dimensions.width > 768) stopDrawing = false;
+
     canvas = p.createCanvas(
       dimensions.width, dimensions.height,
     ).parent(canvasParent);
     outerHeight = window.outerHeight;
+  };
+
+  const preload = (p) => {
+    font = p.loadFont(RobotoCondensed);
   };
 
   const setup = (p, canvasParentRef) => {
@@ -35,44 +60,59 @@ const Background = (props) => {
     window.addEventListener('resize', (e) => { // TODO: add a removeEventListener
       setDimensions(p, canvasParentRef);
     }, true);
+    p.textFont(font);
+    p.textSize(textSize);
   };
 
-  const noise = (p, i) => {
-    const scale = 3;
-    const speed = 10;
-    return 3 * p.map(p.noise(i + p.frameCount / 10), 0, 1, -1, 1);
-  };
-  const transformSpeed = 50;
-  const timejump = 0;
-
-  // x = cos(at) - cos(bt)^j;
-  // y = sin(ct) - sin(dt)^k;
-  const addVertexA = (p, i, scale) => {
-    const j = 3;
-    const k = 3;
-    const a = 1;
-    const b = (p.frameCount + timejump) / transformSpeed;
-    const c = 1;
-    const d = (p.frameCount + timejump) / transformSpeed / 2;
-
-    const x = p.cos(a * i) - p.pow(p.cos(b * i), j);
-    const y = p.sin(c * i) - p.pow(p.sin(d * i), k);
-    p.curveVertex(-1 * scale * x, scale * y);
+  const drawText = (p) => {
+    text.map((l) => {
+      p.text(l.l, l.x, l.y);
+    });
   };
 
-  // x = cos(at) - cos(bt)^j;
-  // y = sin(ct) - sin(dt)^k;
-  const addVertexB = (p, i, scale) => {
-    const j = 3;
-    const k = 3;
-    const a = 1;
-    const b = (p.frameCount + timejump) / transformSpeed;
-    const c = 1;
-    const d = (p.frameCount + timejump) / transformSpeed / 2;
+  const getCollision = (p, l, force = false) => {
+    let colliding = force;
+    const collisions = [];
 
-    const x = p.cos(a * i) - p.pow(p.cos(b * i), j);
-    const y = p.sin(c * i) - p.pow(p.sin(d * i), k);
-    p.curveVertex(scale * x, scale * y);
+    if (l.currDirection.d === 'left' && l.x - speed < textSize) colliding = true;
+    if (l.currDirection.d === 'right' && l.x + speed > dimensions.width - textSize) colliding = true;
+    if (l.currDirection.d === 'up' && l.y - speed < textSize) colliding = true;
+    if (l.currDirection.d === 'down' && l.y + speed > dimensions.height - textSize) colliding = true;
+
+    if (colliding) {
+      if (l.currDirection.d === 'right' || l.x - speed < textSize) collisions.push('left');
+      if (l.currDirection.d === 'left' || l.x + speed > dimensions.width - textSize) collisions.push('right');
+      if (l.currDirection.d === 'up' || l.y + speed > dimensions.height - textSize) collisions.push('down');
+      if (l.currDirection.d === 'down' || l.y - speed < textSize) collisions.push('up');
+
+      const directions = ['up', 'down', 'left', 'right'].filter((d) => !collisions.includes(d));
+      return directions[Math.floor(Math.random() * directions.length)];
+    }
+
+    return undefined;
+  };
+
+  const adjustDirection = (p, newDirection) => {
+    let direction;
+    if (newDirection === 'left') direction = { x: -speed, y: 0, d: 'left' };
+    if (newDirection === 'right') direction = { x: speed, y: 0, d: 'right' };
+    if (newDirection === 'down') direction = { x: 0, y: speed, d: 'down' };
+    if (newDirection === 'up') direction = { x: 0, y: -speed, d: 'up' };
+    return direction;
+  };
+
+  const animateText = (p) => {
+    text = text.map((l, i) => {
+      // check for collisions
+      let direction = l.currDirection;
+      let newDirection = getCollision(p, l);
+      if (newDirection === undefined && Math.floor(Math.random() * 10) === 9) newDirection = getCollision(p, l, true);
+      if (newDirection) direction = adjustDirection(p, newDirection);
+
+      return ({
+        ...l, x: l.x + direction.x, y: l.y + direction.y, currDirection: direction,
+      });
+    });
   };
 
   const draw = (p) => {
@@ -80,34 +120,25 @@ const Background = (props) => {
     // const sizeScaleA = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2), -1, 1, 50, 100);
     // const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
     if (!stopDrawing) {
-      p.background(29);
+      p.background(0, 71, 255);
+      p.fill(300);
       p.stroke(300);
-      p.noFill();
+      p.strokeWeight(2);
+      drawText(p);
+      animateText(p);
 
-      p.push();
-      p.beginShape();
-      p.translate(dimensions.width / 2 - dimensions.width / 3, outerHeight / 2 - 25);
-      p.strokeWeight(0.5);
-      for (let i = -5; i < 5; i += 0.01) {
-        addVertexA(p, i, 100);
-      }
-      p.endShape();
-      p.pop();
-      p.push();
-      p.beginShape();
-      p.translate(dimensions.width / 2 + dimensions.width / 3, outerHeight / 2 - 25);
-      p.strokeWeight(0.5);
-      for (let i = -4; i < 4; i += 0.01) {
-        addVertexB(p, i, 100);
-      }
-      p.endShape();
-      p.pop();
+      // J - 40 - A - 48 - M - 55 - E - 47 - S
+      // p.text('J', 0, 10);
+      // p.text('A', 40, 10);
+      // p.text('M', 88, 10);
+      // p.text('E', 143, 10);
+      // p.text('S', 190, 10);
     }
   };
 
   return (
     <Box display={['none', 'inherit', 'inherit']} className="hero__background" role="heading">
-      <Sketch setup={setup} draw={draw} />
+      <Sketch setup={setup} draw={draw} preload={preload} />
     </Box>
   );
 };

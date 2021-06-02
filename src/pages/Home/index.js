@@ -9,7 +9,7 @@ import './home.scss';
 
 const Home = (props) => (
   <Box>
-    <Hero />
+    {/* <Hero /> */}
     <Background />
     <Box className="home">
       <Projects />

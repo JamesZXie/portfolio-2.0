@@ -24,18 +24,6 @@ const Hero = (props) => {
           design ~ technology
         </Text>
       </Box>
-      <Button
-        className="hero__anim-tooltip"
-        colorScheme="gray"
-        border="2px dashed orange"
-        borderRadius="0"
-        backgroundColor="white"
-        onClick={() => setIsBlurbOpen(true)}
-      >
-        What am I looking at?
-        <InfoOutlineIcon marginLeft="1rem" />
-      </Button>
-      <BackgroundBlurb isOpen={isBlurbOpen} onClose={() => setIsBlurbOpen(false)} />
     </Box>
   );
 };
