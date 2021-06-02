@@ -19,19 +19,19 @@ const Background = (props) => {
   let outerHeight;
   let text = [
     {
-      l: 'J', x: 0, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'J', x: 20, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
     {
-      l: 'A', x: 40, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'A', x: 60, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
     {
-      l: 'M', x: 88, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'M', x: 108, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
     {
-      l: 'E', x: 143, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'E', x: 163, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
     {
-      l: 'S', x: 190, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'S', x: 210, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
   ];
 
@@ -131,8 +131,23 @@ const Background = (props) => {
     });
   };
 
-  const drawBox = (p) => {
+  const drawDashedBox = (p, rect, offset = { x: 0, y: 0 }) => {
     // blah
+    // take a scale, multiply it with the box + rectangle grid to cover up and create dashes
+    const gutter = 30;
+    p.push();
+    p.noFill();
+    p.translate(offset.x, offset.y);
+    p.stroke(300);
+    p.strokeWeight(2);
+    p.rect(0, 0, rect.width, rect.height);
+    p.fill(0, 71, 255);
+    p.noStroke();
+    p.translate(0, -10);
+    for (let i = 5; i < rect.width; i += gutter) {
+      p.rect(i, 0, 10, rect.height + 20);
+    }
+    p.pop();
   };
 
   const draw = (p) => {
@@ -142,13 +157,13 @@ const Background = (props) => {
     if (!stopDrawing) {
       p.background(0, 71, 255);
       p.strokeWeight(2);
+      p.translate(dimensions.width / 2 - box.width - 20, window.outerHeight / 2 - box.height);
       p.fill(300);
       p.stroke(300);
 
-      p.translate(dimensions.width / 2 - box.width, window.outerHeight / 2 - box.height);
+      drawDashedBox(p, { width: box.width - 20, height: box.height - 30 }, { x: 20, y: 0 });
       drawText(p);
       animateText(p);
-      drawBox(p);
 
       // J - 40 - A - 48 - M - 55 - E - 47 - S
       // p.text('J', 0, 10);
