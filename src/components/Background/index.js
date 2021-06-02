@@ -9,27 +9,30 @@ import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-
 const Background = (props) => {
   let canvas;
   let font;
-  const speed = 10;
+  const speed = 5;
   const textSize = 48;
+  const changeDelay = 0;
+  const box = { height: 200, width: 400 };
+  const currDelay = 0;
   let dimensions;
   let stopDrawing = false;
   let outerHeight;
   let text = [
     {
-      l: 'J', x: 50, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+      l: 'J', x: 0, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
     },
-    // {
-    //   l: 'A', x: 40, y: 0, currDirection: 'right', newDirection: undefined,
-    // },
-    // {
-    //   l: 'M', x: 88, y: 0, currDirection: 'right', newDirection: undefined,
-    // },
-    // {
-    //   l: 'E', x: 143, y: 0, currDirection: 'right', newDirection: undefined,
-    // },
-    // {
-    //   l: 'S', x: 190, y: 0, currDirection: 'right', newDirection: undefined,
-    // },
+    {
+      l: 'A', x: 40, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+    },
+    {
+      l: 'M', x: 88, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+    },
+    {
+      l: 'E', x: 143, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+    },
+    {
+      l: 'S', x: 190, y: 0, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,
+    },
   ];
 
   const setDimensions = (p, canvasParent) => {
@@ -73,17 +76,18 @@ const Background = (props) => {
   const getCollision = (p, l, force = false) => {
     let colliding = force;
     const collisions = [];
+    const padding = textSize;
 
-    if (l.currDirection.d === 'left' && l.x - speed < textSize) colliding = true;
-    if (l.currDirection.d === 'right' && l.x + speed > dimensions.width - textSize) colliding = true;
-    if (l.currDirection.d === 'up' && l.y - speed < textSize) colliding = true;
-    if (l.currDirection.d === 'down' && l.y + speed > dimensions.height - textSize) colliding = true;
+    if (l.currDirection.d === 'left' && l.x - speed < padding) colliding = true;
+    if (l.currDirection.d === 'right' && l.x + speed > box.width - padding) colliding = true;
+    if (l.currDirection.d === 'up' && l.y - speed < padding) colliding = true;
+    if (l.currDirection.d === 'down' && l.y + speed > box.height - padding) colliding = true;
 
     if (colliding) {
-      if (l.currDirection.d === 'right' || l.x - speed < textSize) collisions.push('left');
-      if (l.currDirection.d === 'left' || l.x + speed > dimensions.width - textSize) collisions.push('right');
-      if (l.currDirection.d === 'up' || l.y + speed > dimensions.height - textSize) collisions.push('down');
-      if (l.currDirection.d === 'down' || l.y - speed < textSize) collisions.push('up');
+      if (l.currDirection.d === 'right' || l.x - speed < padding) collisions.push('left');
+      if (l.currDirection.d === 'left' || l.x + speed > box.width - padding) collisions.push('right');
+      if (l.currDirection.d === 'up' || l.y + speed > box.height - padding) collisions.push('down');
+      if (l.currDirection.d === 'down' || l.y - speed < padding) collisions.push('up');
 
       const directions = ['up', 'down', 'left', 'right'].filter((d) => !collisions.includes(d));
       return directions[Math.floor(Math.random() * directions.length)];
@@ -92,12 +96,23 @@ const Background = (props) => {
     return undefined;
   };
 
-  const adjustDirection = (p, newDirection) => {
+  const adjustDirection = (p, l, newDirection) => {
     let direction;
-    if (newDirection === 'left') direction = { x: -speed, y: 0, d: 'left' };
-    if (newDirection === 'right') direction = { x: speed, y: 0, d: 'right' };
-    if (newDirection === 'down') direction = { x: 0, y: speed, d: 'down' };
-    if (newDirection === 'up') direction = { x: 0, y: -speed, d: 'up' };
+
+    // if it has a newDirection e.g. it's not the first letter.
+
+    if (newDirection === 'left') {
+      direction = { x: -speed, y: 0, d: 'left' };
+    }
+    if (newDirection === 'right') {
+      direction = { x: speed, y: 0, d: 'right' };
+    }
+    if (newDirection === 'down') {
+      direction = { x: 0, y: speed, d: 'down' };
+    }
+    if (newDirection === 'up') {
+      direction = { x: 0, y: -speed, d: 'up' };
+    }
     return direction;
   };
 
@@ -106,13 +121,18 @@ const Background = (props) => {
       // check for collisions
       let direction = l.currDirection;
       let newDirection = getCollision(p, l);
-      if (newDirection === undefined && Math.floor(Math.random() * 10) === 9) newDirection = getCollision(p, l, true);
-      if (newDirection) direction = adjustDirection(p, newDirection);
+      // Randomly adjustdirection for the lead letter (J)
+      if (newDirection === undefined && Math.floor(Math.random() * 50) === 0) newDirection = getCollision(p, l, true);
+      if (newDirection) direction = adjustDirection(p, l, newDirection);
 
       return ({
         ...l, x: l.x + direction.x, y: l.y + direction.y, currDirection: direction,
       });
     });
+  };
+
+  const drawBox = (p) => {
+    // blah
   };
 
   const draw = (p) => {
@@ -121,11 +141,14 @@ const Background = (props) => {
     // const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
     if (!stopDrawing) {
       p.background(0, 71, 255);
+      p.strokeWeight(2);
       p.fill(300);
       p.stroke(300);
-      p.strokeWeight(2);
+
+      p.translate(dimensions.width / 2 - box.width, window.outerHeight / 2 - box.height);
       drawText(p);
       animateText(p);
+      drawBox(p);
 
       // J - 40 - A - 48 - M - 55 - E - 47 - S
       // p.text('J', 0, 10);
