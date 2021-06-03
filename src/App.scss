@@ -57,13 +57,14 @@ ol {
 }
 
 button {
-    background-color: $ui-02 !important;
     font-size: 12px !important;
     border-radius: 0 !important;
     padding: .5rem !important;
-    height: 2rem !important;
+    height: 2.5rem !important;
+    border: 2px solid transparent !important;
 
-    &:hover {
-        background-color: $ui-02 !important;
+    &:focus {
+        border: 2px dashed $interactive-01 !important;
+        box-shadow: none !important;
     }
 }

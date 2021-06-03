@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import './nav.scss';
 import {
   Box, Button, Text, Flex, Image,
@@ -8,9 +9,16 @@ import logo from '../../assets/images/Logo.png';
 
 const Nav = (props) => {
   const [opacity, setOpacity] = useState(0);
+  const history = useHistory();
+  const location = useLocation();
 
   const handleScroll = () => {
     setOpacity(window.scrollY / window.innerHeight);
+  };
+
+  const handleLink = (link) => {
+    if (location.pathname === link) { return; }
+    history.push(link);
   };
 
   useEffect(() => {
@@ -27,9 +35,9 @@ const Nav = (props) => {
         justifyContent="space-between"
       >
         <Box>
-          <Button>
-            <Image src={logo} display="inline-block" height="30px" marginRight=".5rem" />
-            <Text>HOME</Text>
+          <Button onClick={() => handleLink('/')}>
+            <Image src={logo} display="inline-block" height="30px" marginRight="1rem" />
+            <Text>james xie</Text>
           </Button>
         </Box>
         <Box>

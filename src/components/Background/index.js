@@ -15,7 +15,7 @@ const Background = (props) => {
   const box = { height: 220, width: 420 };
   let dimensions;
   let stopDrawing = false;
-  const boxOffset = 25;
+  const boxOffset = 22;
   let text = [
     {
       l: 'J', x: 0 + boxOffset, y: 50, currDirection: { x: speed, y: 0, d: 'right' }, newDirection: undefined,

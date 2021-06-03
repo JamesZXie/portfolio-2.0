@@ -2,4 +2,10 @@
 
 .projects {
     background-color: $ui-02;
+
+    &__image {
+        box-shadow: .75rem .75rem 0px -1px $ui-01;
+        -webkit-box-shadow: .75rem .75rem 0px -1px $ui-01;
+        -moz-box-shadow: .75rem .75rem 0px -1px $ui-01;
+    }
 }

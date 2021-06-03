@@ -15,6 +15,7 @@ const Section = ({ children, className }) => (
       className={className}
       gap="1rem"
       textAlign={['center', 'left', 'left']}
+      paddingTop="2rem"
       paddingBottom="2rem"
       position="relative"
     >
