@@ -1,14 +1,19 @@
+@import '../../App.scss';
+
 .nav-container {
-    position: absolute;
-    width: 100%;
+    position: sticky;
+    left: 0;
     top: 0;
     z-index: 99;
 
     .nav {
-        padding: 1rem 4.5rem 1rem 4.5rem ;
-        background-color: white;
-        border: 2px dashed;
-        border-radius: 0 0 5px 5px;
-        border-top: 0;
+        padding: .5rem;
+
+        button {
+            margin-right: .5rem;
+            background-color: transparent !important;
+            color: $ui-02;
+            font-weight: 100;
+        }
     }
 }

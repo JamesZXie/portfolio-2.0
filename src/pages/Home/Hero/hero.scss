@@ -1,3 +1,5 @@
+@import '../../../App.scss';
+
 .hero {
     height: 100%;
     width: 100%;
@@ -5,10 +7,10 @@
     &__name-header {
         position: absolute;
         left: calc(50% + 200px);
-        top: calc(50vh - 60px);
+        top: calc(45vh - 40px);
         -webkit-transform: translate(-50%, -20%);
         transform: translate(-50%, -20%);
-        color: white;
+        color:$ui-02;
         width: 400px;
         z-index: 1;
     }
@@ -20,7 +22,7 @@
     }
 
     &__caption {
-        color: 'white';
+        color: $ui-02;
         font-size: 12px;
     }
     

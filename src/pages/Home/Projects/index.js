@@ -32,7 +32,7 @@ const Projects = (props) => {
 
   return (
     <Section
-      className="home__projects-container"
+      className="projects"
     >
       <>
         <GridItem colSpan={1} />

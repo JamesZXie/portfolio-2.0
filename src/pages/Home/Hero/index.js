@@ -5,7 +5,7 @@ import {
 import { InfoOutlineIcon } from '@chakra-ui/icons';
 import Header from '../../../components/Header/oldHeader';
 import './hero.scss';
-import logo from '../../../assets/images/Home/Hero/Logo.png';
+import logo from '../../../assets/images/Logo.png';
 
 const Hero = (props) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);

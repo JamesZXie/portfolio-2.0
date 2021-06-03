@@ -1,16 +1,11 @@
+@import '../../App.scss';
+
 .header {
-    h1 {
-        font-family: Knewave;
+    font-family: RobotoCondensed;
+    font-size: 36px;
+    color: $text-03;
+    &__letter {
+        padding-right: .5rem;
+        display: inline-block;
     }
-}
-
-.react-p5--center-true{
-    text-align: center;
-
-    canvas {
-        display: inline !important;
-    }
-}
-
-.react-p5--center-false{
 }

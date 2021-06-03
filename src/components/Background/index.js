@@ -162,8 +162,8 @@ const Background = (props) => {
     // const sizeScaleA = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2), -1, 1, 50, 100);
     // const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
     if (!stopDrawing) {
-      p.background(0, 71, 255);
-      p.translate(dimensions.width / 2 - box.width - 50, window.innerHeight / 2 - 100);
+      p.clear(); // no background needed, in scss.
+      p.translate(dimensions.width / 2 - box.width - 50, window.innerHeight * 0.45 - 100);
       p.fill(300);
       p.stroke(300);
 

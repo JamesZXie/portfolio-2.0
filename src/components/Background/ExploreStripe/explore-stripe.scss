@@ -1,3 +1,5 @@
+@import '../../../App.scss';
+
 .explore-stripe {
     background: rgb(0,71,255);
     background: linear-gradient(180deg, rgba(0,71,255,1) 0%, rgba(255,138,0,1) 40%);
@@ -12,7 +14,7 @@
         font-size: 16px;
         text-align: center;
         width: 100%;
-        color: white;
+        color: $ui-02;
         font-family: RobotoCondensed;
         margin-bottom: 1rem;
 

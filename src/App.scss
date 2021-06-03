@@ -1,3 +1,11 @@
+$ui-01: #0047FF;
+$ui-02: #FAFAFA;
+$ui-03: #1D1D1D;
+$text-01: #1D1D1D;
+$text-02: #F2F2F2;
+$text-03: #0047FF;
+$interactive-01: #FF8A00;
+
 @font-face {
     font-family: RobotoMono;
     src: url('./assets/fonts/RobotoMono/RobotoMono-VariableFont_wght.ttf');
@@ -49,10 +57,13 @@ ol {
 }
 
 button {
-    background-color: transparent;
+    background-color: $ui-02 !important;
+    font-size: 12px !important;
+    border-radius: 0 !important;
+    padding: .5rem !important;
+    height: 2rem !important;
 
     &:hover {
-        border: 2px solid blue;
-        background-color: transparent !important;
+        background-color: $ui-02 !important;
     }
 }
