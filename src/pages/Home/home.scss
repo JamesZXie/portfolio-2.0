@@ -1,30 +1,3 @@
 .home{
-    padding-top: 70vh;
-
-    &__projects-container {
-        .header {
-            margin-left: -12px;
-        }
-
-        &__projects-menu {
-            li {
-                cursor: pointer;
-                user-select: none;
-
-                h3 {
-                    font-weight: bold;
-                    color: blue;
-                    text-align: left;
-                }
-
-                p {
-                    text-align: left;
-                }
-
-                .chakra-icon {
-                    vertical-align: super;
-                }
-            }
-        }
-    }
+    padding-top: 100vh;
 }

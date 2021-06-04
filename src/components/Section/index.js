@@ -1,24 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './section.scss';
+
 import {
-  Grid,
+  Grid, Box,
 } from '@chakra-ui/react';
 
 const Section = ({ children, className }) => (
-  <Grid
-    templateColumns="repeat(12, 1fr)"
-    className={className}
-    gap="1rem"
-    textAlign={['center', 'left', 'left']}
-    margin="4rem"
-    paddingBottom="2rem"
-    border="2px dashed"
-    borderRadius="5px"
-    position="relative"
-  >
-    {children}
-  </Grid>
+  <>
+    <hr className="section__line__top" />
+    <Grid
+      templateColumns="repeat(12, 1fr)"
+      className={className}
+      gap="1rem"
+      textAlign={['center', 'left', 'left']}
+      paddingTop="2rem"
+      paddingBottom="2rem"
+      position="relative"
+    >
+      {children}
+    </Grid>
+    <hr className="section__line__bottom" />
+  </>
 );
 
 Section.propTypes = {

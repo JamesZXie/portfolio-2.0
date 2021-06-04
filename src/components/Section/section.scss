@@ -1,0 +1,20 @@
+@import '../../App.scss';
+
+.section {
+    &__line {
+        &__top {
+            color: $ui-02;
+            background-color: $ui-02;
+            height: 1px;
+            margin-bottom: 1rem;
+            border: none;
+        }
+        &__bottom {
+            color: $ui-02;
+            background-color: $ui-02;
+            height: 1px;
+            margin-top: 1rem;
+            border: none;
+        }
+    }
+}

@@ -16,181 +16,195 @@ import AustinSnow from '../../../assets/images/AustinCold/austin-snow-air.jpg';
 const imageBottomPadding = '1rem';
 
 const AustinCold = ({}) => (
-  <>
-    <Box paddingTop="6rem">
-      <Header title="Austin Cold" fontSize={100} center />
-    </Box>
-    <Section
-      className="austin-cold"
+  <Section
+    className="austin-cold"
+  >
+    <GridItem
+      colStart={3}
+      colSpan={8}
+      colEnd={11}
     >
+      <Center>
+        <Header title="AUSTIN COLD" center />
+      </Center>
+    </GridItem>
 
-      <GridItem colSpan={2} />
-      <GridItem colSpan={8} paddingTop="1rem">
-        <Text as="h2">THE PROBLEM</Text>
-        <Image src={AustinSnow} height="30rem" objectFit="cover" width="100%" />
-        <Center paddingBottom={imageBottomPadding}>
-          <Text as="h5">Satellite image of Austin frozen</Text>
-        </Center>
-        <Text>
-          In Febuary of 2021, Texas froze as three simultaneous winter storms
-          relentlessly battered the state for days on end, killing over 100 people and
-          causing food, water, and power shortages for millions.
-        </Text>
-      </GridItem>
-      <GridItem colSpan={2} />
-      <GridItem colSpan={2} />
-      <GridItem colSpan={8}>
-        <Text as="h2">WHAT WE DID</Text>
-        <Link href="https://www.austincold.com" target="blank">
-          <Image
-            src={LandingImage}
-            alt="landing page of austincold.com"
-            paddingBottom={imageBottomPadding}
-          />
+    <GridItem
+      colStart={3}
+      colSpan={6}
+      colEnd={11}
+    >
+      <Text as="h2">THE PROBLEM</Text>
+      <Image src={AustinSnow} height="30rem" objectFit="cover" width="100%" />
+      <Center paddingBottom={imageBottomPadding}>
+        <Text as="h5">Satellite image of Austin covered in snow</Text>
+      </Center>
+      <Text>
+        In Febuary of 2021, Texas froze as three simultaneous winter storms
+        relentlessly battered the state for days on end, killing over 100 people and
+        causing food, water, and power shortages for millions.
+      </Text>
+    </GridItem>
+    <GridItem
+      colStart={3}
+      colEnd={11}
+      colSpan={8}
+    >
+      <Text as="h2">WHAT WE DID</Text>
+      <Link href="https://www.austincold.com" target="blank">
+        <Image
+          src={LandingImage}
+          alt="landing page of austincold.com"
+          paddingBottom={imageBottomPadding}
+        />
+      </Link>
+      <Text>
+        Two of my best friends and I still had
+        power, so we teamed up with the nonprofit
+        {' '}
+        <Link href="https://communityresiliencetrust.org/" isExternal>Community Resilience Trust </Link>
+        {' '}
+        to rapidly deploy
+        {' '}
+        <Link href="https://austincold.com" isExternal>austincold.com</Link>
+        , a foundational piece of an emergency relief effort that
+        raised
+        {' '}
+        <strong>$1.5 million</strong>
+        {' '}
+        for aid and deployed community volunteers to
+        rescue over
+        {' '}
+        <strong>400 people and families</strong>
+        {' '}
+        in Austin who were left without shelter.
+      </Text>
+    </GridItem>
+
+    <GridItem
+      colStart={3}
+      colEnd={11}
+      colSpan={8}
+    >
+      <Text as="h2">OUR PROCESS</Text>
+      <Text paddingBottom="1rem">
+        Our main limitation was time; we knew people would soon begin
+        to freeze and starve by the time we began the project.
+        We started pushing the website the same night we started it, with traffic
+        spiking from thousands of views as
+        {' '}
+        <Link
+          isExternal
+          href="https://cbsaustin.com/news/local/austin-volunteers-create-online-crowdsourcing-hub-to-help-neighbors-in-need-of-storm-aid"
+        >
+          the site gained attention
         </Link>
-        <Text>
-          Two of my best friends and I still had
-          power, so we teamed up with the nonprofit
-          {' '}
-          <Link color="blue" href="https://communityresiliencetrust.org/" isExternal>Community Resilience Trust </Link>
-          {' '}
-          to rapidly deploy
-          {' '}
-          <Link color="blue" href="https://austincold.com" isExternal>austincold.com</Link>
-          , a foundational piece of an emergency relief effort that
-          raised
-          {' '}
-          <strong>$1.5 million</strong>
-          {' '}
-          for aid and deployed community volunteers to
-          rescue over
-          {' '}
-          <strong>400 people and families</strong>
-          {' '}
-          in Austin who were left without shelter.
-        </Text>
-      </GridItem>
-      <GridItem colSpan={2} />
-      <GridItem colSpan={2} />
-      <GridItem colSpan={8}>
-        <Text as="h2">OUR PROCESS</Text>
-        <Text paddingBottom="1rem">
-          Our main limitation was time; we knew people would soon begin
-          to freeze and starve by the time we began the project.
-          We started pushing the website the same night we started it, with traffic
-          spiking from thousands of views as
-          {' '}
-          <Link
-            color="blue"
-            isExternal
-            href="https://cbsaustin.com/news/local/austin-volunteers-create-online-crowdsourcing-hub-to-help-neighbors-in-need-of-storm-aid"
-          >
-            the site gained attention
-          </Link>
-          .
-        </Text>
-        <Center>
+        .
+      </Text>
+      <Center>
+        <Image
+          height="%"
+          objectFit="cover"
+          src={Flow}
+          padding="2rem"
+        />
+      </Center>
+      <Center paddingBottom={imageBottomPadding}>
+        <Text as="h5">How austincold.com helped CRT coordinate efforts</Text>
+      </Center>
+
+      <Text>
+        We had 3 main focuses:
+      </Text>
+      <OrderedList paddingBottom="1rem">
+        <ListItem>
+          Identify victims
+        </ListItem>
+        <ListItem>
+          Organize volunteers
+        </ListItem>
+        <ListItem>
+          Surface geographical information on resources
+        </ListItem>
+      </OrderedList>
+
+      <Text>
+        After that, we tried to include as much information as possible on
+        safety and resource management for the general public.
+      </Text>
+
+      <Flex wrap="wrap" paddingTop="1rem" paddingBottom={imageBottomPadding}>
+        <Center flex="1">
           <Image
-            height="%"
-            objectFit="cover"
-            src={Flow}
-            padding="2rem"
+            src={InfoArabicImage}
+            paddingRight=".5rem"
           />
         </Center>
-        <Center paddingBottom={imageBottomPadding}>
-          <Text as="h5">How austincold.com helped CRT coordinate efforts</Text>
+        <Center flex="1">
+          <Image
+            objectFit="cover"
+            paddingLeft=".5rem"
+            src={HelpFormSpanishImage}
+          />
         </Center>
+        <Center width="100%">
+          <Text as="h5">All information and site functions were translated into five different languages.</Text>
+        </Center>
+      </Flex>
+      <Text>
+        We also prioritized accessibility for communities who needed it most, knowing that
+        while Austin&apos;s downtown area was kept warm and lit, less fortunate
+        neighborhoods were left in the cold.
+      </Text>
+    </GridItem>
+    <GridItem
+      colStart={3}
+      colEnd={11}
+      colSpan={8}
+    >
+      <Text>
+        We maintained the website for about two weeks,
+        updating information about food and water after the storms subsided.
+      </Text>
+    </GridItem>
 
-        <Text>
-          We had 3 main focuses:
-        </Text>
-        <OrderedList paddingBottom="1rem">
-          <ListItem>
-            Identify victims
-          </ListItem>
-          <ListItem>
-            Organize volunteers
-          </ListItem>
-          <ListItem>
-            Surface geographical information on resources
-          </ListItem>
-        </OrderedList>
-
-        <Text>
-          After that, we tried to include as much information as possible on
-          safety and resource management for the general public.
-        </Text>
-
-        <Flex wrap="wrap" paddingTop="1rem" paddingBottom={imageBottomPadding}>
-          <Center flex="1">
-            <Image
-              src={InfoArabicImage}
-              paddingRight=".5rem"
-            />
-          </Center>
-          <Center flex="1">
-            <Image
-              objectFit="cover"
-              paddingLeft=".5rem"
-              src={HelpFormSpanishImage}
-            />
-          </Center>
-          <Center width="100%">
-            <Text as="h5">All information and site functions were translated into five different languages.</Text>
-          </Center>
-        </Flex>
-        <Text>
-          We also prioritized accessibility for communities who needed it most, knowing that
-          while Austin&apos;s downtown area was kept warm and lit, less fortunate
-          neighborhoods were left in the cold.
-        </Text>
-      </GridItem>
-      <GridItem colSpan={2} />
-      <GridItem colSpan={2} />
-      <GridItem colSpan={8}>
-        <Text>
-          We maintained the website for about two weeks,
-          updating information about food and water after the storms subsided.
-        </Text>
-      </GridItem>
-      <GridItem colSpan={2} />
-      <GridItem colSpan={2} />
-      <GridItem colSpan={8}>
-        <Text as="h2">THE TEAM</Text>
-        <UnorderedList>
-          <ListItem>
-            <Link
-              color="blue"
-              href="https://www.linkedin.com/in/alexandermelo1/"
-            >
-              Alexander Melo, a bodega enthusiast
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link
-              color="blue"
-              href="https://www.linkedin.com/in/alexandermelo1/"
-            >
-              Josefina Mancilla, a great climber of rocks
-            </Link>
-          </ListItem>
-          <ListItem>
-            Me
-          </ListItem>
-        </UnorderedList>
-        <Text paddingTop="1rem">
-          And of course, Angelica Orazo from
-          {' '}
-          <Link color="blue" href="https://communityresiliencetrust.org">
-            Community Resilience Trust
+    <GridItem
+      colStart={3}
+      colEnd={11}
+      colSpan={8}
+    >
+      <Text as="h2">THE TEAM</Text>
+      <UnorderedList>
+        <ListItem>
+          <Link
+            href="https://www.linkedin.com/in/alexandermelo1/"
+          >
+            Alexander Melo, a bodega enthusiast
           </Link>
-          {' '}
-          who led the charge, as well as the hundreds of volunteers
-          on the ground and thousands who donated.
-        </Text>
-      </GridItem>
-    </Section>
-  </>
+        </ListItem>
+        <ListItem>
+          <Link
+            href="https://www.linkedin.com/in/josefinamancilla/"
+          >
+            Josefina Mancilla, a great climber of rocks
+          </Link>
+        </ListItem>
+        <ListItem>
+          Me
+        </ListItem>
+      </UnorderedList>
+      <Text paddingTop="1rem">
+        And of course, Angelica Orazo from
+        {' '}
+        <Link href="https://communityresiliencetrust.org">
+          Community Resilience Trust
+        </Link>
+        {' '}
+        who led the charge, as well as the hundreds of volunteers
+        on the ground and thousands who donated.
+      </Text>
+    </GridItem>
+  </Section>
 );
 
 export default AustinCold;

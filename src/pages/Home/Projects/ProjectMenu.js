@@ -16,9 +16,9 @@ const ProjectMenu = (props) => {
     <List spacing={6}>
       {projects.map((project) => (
         <Link to={project.to}>
-          <ListItem>
-            <Flex direction="columns" align="center">
-              <ListIcon as={ChevronRightIcon} />
+          <ListItem marginBottom="1rem">
+            <Flex direction="columns">
+              <ListIcon as={ChevronRightIcon} marginTop=".25rem" />
               <Box display="inline-block">
                 <h3>{project.title}</h3>
                 <p>{project.caption}</p>

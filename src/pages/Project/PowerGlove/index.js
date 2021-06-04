@@ -64,7 +64,7 @@ const PowerGlove = ({}) => (
           application in real time. Check out the code, an example, and a pseudo-api
           {' '}
           {' '}
-          <Link isExternal color="blue" href="https://github.com/JamesZXie/power-glove">here</Link>
+          <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
           .
         </Text>
       </GridItem>
@@ -104,7 +104,7 @@ const PowerGlove = ({}) => (
           very, very short, as we only had one glove to work with, and as you can imagine
           passing it around was not an option. You can find a copy of that repo linked above or
           {' '}
-          <Link color="blue" isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
+          <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
           .
         </Text>
       </GridItem>

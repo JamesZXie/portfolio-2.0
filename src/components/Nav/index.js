@@ -1,17 +1,50 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import './nav.scss';
 import {
-  Box,
+  Box, Button, Text, Flex, Image,
 } from '@chakra-ui/react';
 
+import logo from '../../assets/images/Logo.png';
+
 const Nav = (props) => {
-  const [test, setTest] = useState('hello');
+  const [opacity, setOpacity] = useState(0);
+  const history = useHistory();
+  const location = useLocation();
+
+  const handleScroll = () => {
+    setOpacity(window.scrollY / window.innerHeight);
+  };
+
+  const handleLink = (link) => {
+    if (location.pathname === link) { return; }
+    history.push(link);
+  };
+
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll);
+    return () => { document.removeEventListener('scroll', handleScroll); };
+  });
 
   return (
-    <Box className="nav-container" paddingLeft="4rem" paddingRight="4rem">
-      <Box className="nav">
-        You&apos;re watching the cookie get made. Please excuse the mess...
-      </Box>
+    <Box className="nav-container">
+      <Flex
+        className="nav"
+        backgroundColor="rgba(0, 71, 255)"
+        boxShadow={`0px 4px 6px 0px rgba(20, 20, 20, ${opacity > 0.3 ? 0.3 : opacity})`}
+        justifyContent="space-between"
+      >
+        <Box>
+          <Button onClick={() => handleLink('/')}>
+            <Image src={logo} display="inline-block" height="30px" marginRight="1rem" />
+            <Text>james xie</Text>
+          </Button>
+        </Box>
+        <Box>
+          <Button onClick={() => handleLink('/about')}>about</Button>
+          <Button onClick={() => handleLink('/contact')}>contact</Button>
+        </Box>
+      </Flex>
     </Box>
   );
 };

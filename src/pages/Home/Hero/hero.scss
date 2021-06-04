@@ -1,15 +1,17 @@
+@import '../../../App.scss';
+
 .hero {
     height: 100%;
     width: 100%;
 
     &__name-header {
         position: absolute;
-        left: 50%;
-        top: 45vh;
+        left: calc(50% + 200px);
+        top: calc(45vh - 40px);
         -webkit-transform: translate(-50%, -20%);
         transform: translate(-50%, -20%);
-
-        text-align: center;
+        color:$ui-02;
+        width: 400px;
         z-index: 1;
     }
 
@@ -18,5 +20,9 @@
         margin-left: 4rem;
         margin-top: 5rem;
     }
-    
+
+    &__caption {
+        color: $ui-02;
+        font-size: 12px;
+    }
 }

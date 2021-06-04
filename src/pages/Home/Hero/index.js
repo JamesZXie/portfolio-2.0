@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import {
-  Box, Text, Button,
+  Box, Text, Button, Image,
 } from '@chakra-ui/react';
 import { InfoOutlineIcon } from '@chakra-ui/icons';
-import Header from '../../../components/Header';
-import BackgroundBlurb from '../BackgroundBlurb';
+import Header from '../../../components/Header/oldHeader';
 import './hero.scss';
+import logo from '../../../assets/images/Logo.png';
 
 const Hero = (props) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);
@@ -13,28 +13,12 @@ const Hero = (props) => {
   return (
     <Box className="hero">
       <Box className="hero__name-header">
-        <Header
-          title="JAMES XIE"
-          fontSize={100}
-          ariaLevel={1}
-          key={isBlurbOpen}
-        />
-        <Text>
-          design ~ technology
+        <Image src={logo} height="50px" marginBottom="1rem" />
+        <Text as="h2">I&apos;m James,</Text>
+        <Text className="hero__caption">
+          a product designer with a background in engineering. I bridge the gap between design and development, bringing out the full potential of my team by enabling their imaginations to push the boundaries of technical feasibility.
         </Text>
       </Box>
-      <Button
-        className="hero__anim-tooltip"
-        colorScheme="gray"
-        border="2px dashed orange"
-        borderRadius="0"
-        backgroundColor="white"
-        onClick={() => setIsBlurbOpen(true)}
-      >
-        What am I looking at?
-        <InfoOutlineIcon marginLeft="1rem" />
-      </Button>
-      <BackgroundBlurb isOpen={isBlurbOpen} onClose={() => setIsBlurbOpen(false)} />
     </Box>
   );
 };

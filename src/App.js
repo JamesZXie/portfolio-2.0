@@ -22,7 +22,6 @@ function App() {
     <ChakraProvider theme={theme}>
       <Router>
         <Nav />
-        <ScrollToTop />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/austin-cold" component={AustinCold} />
