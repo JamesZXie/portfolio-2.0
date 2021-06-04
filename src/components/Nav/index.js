@@ -41,9 +41,8 @@ const Nav = (props) => {
           </Button>
         </Box>
         <Box>
-          <Button>work</Button>
-          <Button>about</Button>
-          <Button>contact</Button>
+          <Button onClick={() => handleLink('/about')}>about</Button>
+          <Button onClick={() => handleLink('/contact')}>contact</Button>
         </Box>
       </Flex>
     </Box>

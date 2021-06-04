@@ -68,3 +68,15 @@ button {
         box-shadow: none !important;
     }
 }
+
+a {
+    color: $ui-01 !important;
+
+    &:hover {
+        color: $interactive-01 !important;
+    }
+
+    &:focus-visible {
+        outline: none !important;
+    }
+}

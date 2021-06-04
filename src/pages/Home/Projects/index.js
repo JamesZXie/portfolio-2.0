@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import {
-  Grid,
   GridItem,
   Box,
+  Flex,
   Image,
   Text,
+  Button,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
+import arrows from '../../../assets/images/Home/Hero/ExploreArrows.svg';
 
 import './projects.scss';
 
@@ -24,15 +27,33 @@ const Projects = (props) => {
         colStart={[2, 2, 2, 2, 2, 4]}
         colSpan={[5, 5, 5, 5, 5, 3]}
       >
-        <Header title="AUSTINCOLD" />
-        <Text>
-          Scrambling to save lives during the 2021 Texas winter storms.
-        </Text>
+        <Flex
+          height="100%"
+          justify="space-between"
+          direction="column"
+        >
+          <Box>
+            <Header title="AUSTINCOLD" />
+            <Text paddingRight="4rem">
+              Scrambling to save lives during the 2021 Texas winter storms.
+            </Text>
+          </Box>
+          <Link to="/austin-cold">
+            <Button className="projects__read-more-button">
+              READ MORE
+              <Image src={arrows} className="right-arrow" />
+            </Button>
+          </Link>
+        </Flex>
       </GridItem>
       <GridItem
         colSpan={[5, 5, 5, 5, 5, 3]}
+        position="relative"
+        marginBottom="1rem"
       >
-        <Image className="projects__image" src={austinCold} />
+        <Link to="/austin-cold" unselectable>
+          <Image className="projects__image" src={austinCold} />
+        </Link>
       </GridItem>
     </Section>
   );
