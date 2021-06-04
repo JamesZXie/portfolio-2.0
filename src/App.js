@@ -22,12 +22,14 @@ function App() {
     <ChakraProvider theme={theme}>
       <Router>
         <Nav />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/austin-cold" component={AustinCold} />
-          <Route exact path="/power-glove" component={PowerGlove} />
-          <Route exact path="/doodles" component={Doodles} />
-        </Switch>
+        <ScrollToTop>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/austin-cold" component={AustinCold} />
+            <Route exact path="/power-glove" component={PowerGlove} />
+            <Route exact path="/doodles" component={Doodles} />
+          </Switch>
+        </ScrollToTop>
       </Router>
     </ChakraProvider>
   );

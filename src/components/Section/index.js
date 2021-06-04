@@ -26,11 +26,12 @@ const Section = ({ children, className }) => (
 );
 
 Section.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node,
   className: PropTypes.string,
 };
 
 Section.defaultProps = {
   className: '',
+  children: '',
 };
 export default Section;

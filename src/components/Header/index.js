@@ -8,7 +8,7 @@ const Header = ({ id, title, ariaLevel }) => {
   const [test, setTest] = useState('hello');
 
   const renderLetters = () => title.split('').map((l, i) => (
-    <Box className="header__letter">{l}</Box>
+    <Box className="header__letter" key={i}>{l}</Box>
   ));
 
   return (
