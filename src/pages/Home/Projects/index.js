@@ -51,7 +51,7 @@ const Projects = (props) => {
         position="relative"
         marginBottom="1rem"
       >
-        <Link to="/austin-cold" unselectable>
+        <Link to="/austin-cold" tabIndex="-1">
           <Image className="projects__image" src={austinCold} />
         </Link>
       </GridItem>
