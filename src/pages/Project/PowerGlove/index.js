@@ -17,14 +17,24 @@ const imageBottomPadding = '1rem';
 
 const PowerGlove = ({}) => (
   <>
-    <Box paddingTop="6rem">
-      <Header title="Power Glove" fontSize={100} center />
-    </Box>
     <Section
       className="power-glove"
     >
-      <GridItem colSpan={2} />
-      <GridItem colSpan={8} paddingTop="1rem">
+      <GridItem
+        colStart={3}
+        colSpan={8}
+        colEnd={11}
+      >
+        <Center>
+          <Header title="AUSTIN COLD" center />
+        </Center>
+      </GridItem>
+      <GridItem
+        colStart={3}
+        colSpan={8}
+        colEnd={11}
+        paddingTop="1rem"
+      >
         <Text as="h2">NINTENDO&apos;S POWER GLOVE</Text>
         <Center>
           <Image src={NESPowerGlove} objectFit="cover" width="60%" />
@@ -38,9 +48,12 @@ const PowerGlove = ({}) => (
           you&apos;ve never heard of it - but I thought the concept was cool.
         </Text>
       </GridItem>
-      <GridItem colSpan={2} />
-      <GridItem colSpan={2} />
-      <GridItem colSpan={8} paddingTop="1rem">
+      <GridItem
+        colStart={3}
+        colSpan={8}
+        colEnd={11}
+        paddingTop="1rem"
+      >
         <Text as="h2">MY VERSION</Text>
         {/* <iframe
         width="560"
@@ -68,9 +81,12 @@ const PowerGlove = ({}) => (
           .
         </Text>
       </GridItem>
-      <GridItem colSpan={2} />
-      <GridItem colSpan={2} />
-      <GridItem colSpan={8} paddingTop="1rem">
+      <GridItem
+        colStart={3}
+        colSpan={8}
+        colEnd={11}
+        paddingTop="1rem"
+      >
         <Text as="h2">HOW IT WORKS</Text>
         <Center>
           <Image src={FlexSensorCircuit} objectFit="cover" width="60%" />
@@ -108,7 +124,6 @@ const PowerGlove = ({}) => (
           .
         </Text>
       </GridItem>
-      <GridItem colSpan={2} />
     </Section>
   </>
 );

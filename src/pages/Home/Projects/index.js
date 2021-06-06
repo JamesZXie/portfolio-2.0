@@ -1,12 +1,12 @@
 import React from 'react';
 import './projects.scss';
-import AustinCold from './Tiles/AustinCold';
-import PowerGlove from './Tiles/PowerGlove';
+import AustinColdTile from './Tiles/AustinColdTile';
+import PowerGloveTile from './Tiles/PowerGloveTile';
 
 const Projects = (props) => (
   <div className="projects">
-    <AustinCold />
-    <PowerGlove />
+    <AustinColdTile />
+    <PowerGloveTile />
   </div>
 );
 

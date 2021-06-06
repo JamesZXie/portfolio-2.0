@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Image,
 } from '@chakra-ui/react';
@@ -6,7 +6,7 @@ import {
 import austinCold from '../../../../../assets/images/Home/austincold.png';
 import Tile from '../../Tile';
 
-const PowerGlove = (props) => (
+const AustinColdTile = (props) => (
   <Tile
     className="projects__container"
     description="Scrambling to save lives during the 2021 Texas winter storms."
@@ -16,4 +16,4 @@ const PowerGlove = (props) => (
   />
 );
 
-export default PowerGlove;
+export default AustinColdTile;

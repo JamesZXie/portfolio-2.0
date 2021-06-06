@@ -31,7 +31,7 @@ const AustinCold = ({}) => (
 
     <GridItem
       colStart={3}
-      colSpan={6}
+      colSpan={8}
       colEnd={11}
     >
       <Text as="h2">THE PROBLEM</Text>
@@ -47,8 +47,8 @@ const AustinCold = ({}) => (
     </GridItem>
     <GridItem
       colStart={3}
-      colEnd={11}
       colSpan={8}
+      colEnd={11}
     >
       <Text as="h2">WHAT WE DID</Text>
       <Link href="https://www.austincold.com" target="blank">
@@ -83,8 +83,8 @@ const AustinCold = ({}) => (
 
     <GridItem
       colStart={3}
-      colEnd={11}
       colSpan={8}
+      colEnd={11}
     >
       <Text as="h2">OUR PROCESS</Text>
       <Text paddingBottom="1rem">
