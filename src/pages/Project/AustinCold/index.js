@@ -25,7 +25,7 @@ const AustinCold = ({}) => (
       colEnd={11}
     >
       <Center>
-        <Header title="AUSTIN COLD" center />
+        <Header title="AUSTIN COLD" />
       </Center>
     </GridItem>
 

@@ -26,7 +26,7 @@ const PowerGlove = ({}) => (
         colEnd={11}
       >
         <Center>
-          <Header title="AUSTIN COLD" center />
+          <Header title="POWERGLOVE" />
         </Center>
       </GridItem>
       <GridItem

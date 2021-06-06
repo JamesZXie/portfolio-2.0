@@ -14,9 +14,9 @@ const Tile = ({
   const history = useHistory();
   const location = useLocation();
 
-  const handleLink = (link) => {
-    if (location.pathname === link) { return; }
-    history.push(link);
+  const handleLink = () => {
+    if (location.pathname === to) { return; }
+    history.push(to);
   };
 
   return (
@@ -47,7 +47,7 @@ const Tile = ({
               </Text>
             </Box>
             <Box paddingTop="1rem">
-              <Button onClick={() => handleLink(to)} className="projects__read-more-button">
+              <Button onClick={handleLink} className="projects__read-more-button">
                 READ MORE
                 <Image src={arrows} className="right-arrow" />
               </Button>
@@ -59,9 +59,9 @@ const Tile = ({
           position="relative"
           marginBottom="1rem"
         >
-          <Link to={to} tabIndex="-1">
+          <Box onClick={handleLink}>
             {projectImage}
-          </Link>
+          </Box>
         </GridItem>
       </Grid>
       <Box className="section__line__bottom" />
