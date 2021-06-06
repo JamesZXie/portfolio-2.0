@@ -3,7 +3,7 @@ import {
   Image,
 } from '@chakra-ui/react';
 
-import austinCold from '../../../../../assets/images/Home/austincold.png';
+import powerGloveSkeleton from '../../../../../assets/images/PowerGlove/flex-sensor-circuit.png';
 import Tile from '../../Tile';
 
 const PowerGloveTile = (props) => (
@@ -12,7 +12,7 @@ const PowerGloveTile = (props) => (
     description="Experimenting with IoT and digital art"
     title="POWERGLOVE"
     to="/power-glove"
-    projectImage={<Image className="projects__image" src={austinCold} />}
+    projectImage={<Image className="projects__image" src={powerGloveSkeleton} />}
   />
 );
 
