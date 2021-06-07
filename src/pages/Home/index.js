@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import Hero from './Hero';
 import Projects from './Projects';
-import Background from '../../components/Background';
+import Background from '../../components/Background/oldBackground3';
 import './home.scss';
 
 const Home = (props) => (

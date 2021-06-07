@@ -13,6 +13,10 @@
         color:$ui-02;
         width: 400px;
         z-index: 1;
+        
+        h2 {
+            padding-top: 0px;
+        }
     }
 
     &__anim-tooltip {

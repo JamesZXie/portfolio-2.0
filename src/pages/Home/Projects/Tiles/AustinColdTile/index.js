@@ -3,7 +3,7 @@ import {
   Image,
 } from '@chakra-ui/react';
 
-import austinCold from '../../../../../assets/images/Home/austincold.png';
+import austinCold from '../../../../../assets/images/AustinCold/mobile.png';
 import Tile from '../../Tile';
 
 const AustinColdTile = (props) => (
@@ -12,7 +12,15 @@ const AustinColdTile = (props) => (
     description="Scrambling to save lives during the 2021 Texas winter storms."
     title="AUSTINCOLD"
     to="/austin-cold"
-    projectImage={<Image className="projects__image" src={austinCold} />}
+    projectImage={(
+      <Image
+        className="projects__image"
+        src={austinCold}
+        maxHeight="20rem"
+        top="-5rem"
+        left="50%"
+      />
+)}
   />
 );
 
