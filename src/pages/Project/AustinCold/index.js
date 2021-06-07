@@ -10,19 +10,24 @@ import './austin-cold.scss';
 import LandingImage from '../../../assets/images/AustinCold/landing.png';
 import HelpFormSpanishImage from '../../../assets/images/AustinCold/help-form--spanish.png';
 import InfoArabicImage from '../../../assets/images/AustinCold/info--arabic.png';
+import Mobile from '../../../assets/images/AustinCold/mobile.png';
+import Mobile2 from '../../../assets/images/AustinCold/mobile2.png';
 import Flow from '../../../assets/images/AustinCold/flow.png';
 import AustinSnow from '../../../assets/images/AustinCold/austin-snow-air.jpg';
 
-const imageBottomPadding = '1rem';
+const imageBottomPadding = '2rem';
+const colStart = 4;
+const colSpan = 6;
+const colEnd = 10;
 
 const AustinCold = ({}) => (
   <Section
     className="austin-cold"
   >
     <GridItem
-      colStart={3}
-      colSpan={8}
-      colEnd={11}
+      colStart={colStart}
+      colSpan={colSpan}
+      colEnd={colEnd}
     >
       <Center>
         <Header title="AUSTIN COLD" />
@@ -30,12 +35,19 @@ const AustinCold = ({}) => (
     </GridItem>
 
     <GridItem
-      colStart={3}
-      colSpan={8}
-      colEnd={11}
+      colStart={colStart}
+      colSpan={colSpan}
+      colEnd={colEnd}
     >
-      <Text as="h2">THE PROBLEM</Text>
-      <Image src={AustinSnow} height="30rem" objectFit="cover" width="100%" />
+      <Text as="h2">The Problem</Text>
+      <Text as="h4">ERCOT cut corners when building their isolated power grid... yikes</Text>
+      <Image
+        src={AustinSnow}
+        height="30rem"
+        objectFit="cover"
+        width="100%"
+        alt="Satellite image of Austin covered in snow"
+      />
       <Center paddingBottom={imageBottomPadding}>
         <Text as="h5">Satellite image of Austin covered in snow</Text>
       </Center>
@@ -46,16 +58,15 @@ const AustinCold = ({}) => (
       </Text>
     </GridItem>
     <GridItem
-      colStart={3}
-      colSpan={8}
-      colEnd={11}
+      colStart={colStart}
+      colSpan={colSpan}
+      colEnd={colEnd}
     >
-      <Text as="h2">WHAT WE DID</Text>
+      <Text as="h2">Our Solution</Text>
+      <Text as="h4">We built a base of operations for CRT&apos;s rescue operations in 5 hours</Text>
       <Link href="https://www.austincold.com" target="blank">
         <Image
-          src={LandingImage}
-          alt="landing page of austincold.com"
-          paddingBottom={imageBottomPadding}
+          src={Mobile2}
         />
       </Link>
       <Text>
@@ -82,22 +93,21 @@ const AustinCold = ({}) => (
     </GridItem>
 
     <GridItem
-      colStart={3}
-      colSpan={8}
-      colEnd={11}
+      colStart={colStart}
+      colSpan={colSpan}
+      colEnd={colEnd}
     >
-      <Text as="h2">OUR PROCESS</Text>
-      <Text paddingBottom="1rem">
-        Our main limitation was time; we knew people would soon begin
-        to freeze and starve by the time we began the project.
-        We started pushing the website the same night we started it, with traffic
-        spiking from thousands of views as
+      <Text as="h2">Our Process</Text>
+      <Text as="h4">Priorities and designing without time to test</Text>
+      <Text paddingBottom="2rem">
+        Our main limitation was time. We started pushing the website five hours
+        after we started it, with traffic spiking from thousands of views as
         {' '}
         <Link
           isExternal
           href="https://cbsaustin.com/news/local/austin-volunteers-create-online-crowdsourcing-hub-to-help-neighbors-in-need-of-storm-aid"
         >
-          the site gained attention
+          the site gained attention from local media
         </Link>
         .
       </Text>
@@ -114,26 +124,29 @@ const AustinCold = ({}) => (
       </Center>
 
       <Text>
-        We had 3 main focuses:
+        We had 4 tasks, by priority:
       </Text>
-      <OrderedList paddingBottom="1rem">
+      <OrderedList paddingBottom="2rem">
         <ListItem>
           Identify victims
         </ListItem>
         <ListItem>
-          Organize volunteers
+          Recruit volunteers
         </ListItem>
         <ListItem>
-          Surface geographical information on resources
+          Help inform rescue efforts
+        </ListItem>
+        <ListItem>
+          Gather information about safety and resources.
         </ListItem>
       </OrderedList>
 
-      <Text>
-        After that, we tried to include as much information as possible on
-        safety and resource management for the general public.
+      <Text paddingBottom="2rem">
+        We sketched initial wireframes in 5 minutes and started building immediately, adjusting designs when necessary
+        to preserve visual hierarchy and trying to leave as much space for site updates as we laid components down.
       </Text>
 
-      <Flex wrap="wrap" paddingTop="1rem" paddingBottom={imageBottomPadding}>
+      <Flex wrap="wrap" paddingTop="2rem" paddingBottom={imageBottomPadding}>
         <Center flex="1">
           <Image
             src={InfoArabicImage}
@@ -152,15 +165,15 @@ const AustinCold = ({}) => (
         </Center>
       </Flex>
       <Text>
-        We also prioritized accessibility for communities who needed it most, knowing that
+        We also prioritized language accessibility for communities who needed it most, knowing that
         while Austin&apos;s downtown area was kept warm and lit, less fortunate
         neighborhoods were left in the cold.
       </Text>
     </GridItem>
     <GridItem
-      colStart={3}
-      colEnd={11}
-      colSpan={8}
+      colStart={colStart}
+      colEnd={colEnd}
+      colSpan={colSpan}
     >
       <Text>
         We maintained the website for about two weeks,
@@ -169,11 +182,11 @@ const AustinCold = ({}) => (
     </GridItem>
 
     <GridItem
-      colStart={3}
-      colEnd={11}
-      colSpan={8}
+      colStart={colStart}
+      colEnd={colEnd}
+      colSpan={colSpan}
     >
-      <Text as="h2">THE TEAM</Text>
+      <Text as="h2">The Team</Text>
       <UnorderedList>
         <ListItem>
           <Link
@@ -193,7 +206,7 @@ const AustinCold = ({}) => (
           Me
         </ListItem>
       </UnorderedList>
-      <Text paddingTop="1rem">
+      <Text paddingTop="2rem">
         And of course, Angelica Orazo from
         {' '}
         <Link href="https://communityresiliencetrust.org">

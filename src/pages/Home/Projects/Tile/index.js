@@ -32,8 +32,8 @@ const Tile = ({
         position="relative"
       >
         <GridItem
-          colStart={[2, 2, 2, 2, 2, 4]}
-          colSpan={[5, 5, 5, 5, 5, 3]}
+          colStart={[2]}
+          colSpan={[5]}
         >
           <Flex
             height="100%"
@@ -55,7 +55,7 @@ const Tile = ({
           </Flex>
         </GridItem>
         <GridItem
-          colSpan={[5, 5, 5, 5, 5, 3]}
+          colSpan={[5]}
           position="relative"
           marginBottom="1rem"
         >

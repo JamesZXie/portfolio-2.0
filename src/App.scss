@@ -29,11 +29,21 @@ $interactive-01: #FF8A00;
 body {
     margin: 0px;
     font-family: RobotoMono;
+    font-size: 18px;
 
-    h1 {
-        font-family: Roboto;
-        font-size: 48px;
-    }
+}
+
+h1 {
+    font-family: RobotoCondensed;
+    font-size: 38px !important;
+    color: $ui-01 !important;
+}
+
+h4 {
+    font-family: Roboto;
+    font-weight: lighter;
+    font-style: italic;
+    padding-bottom: 2rem;
 }
 
 h5 {
@@ -46,8 +56,10 @@ h5 {
 }
 
 h2 {
+    font-family: Roboto !important;
     font-weight: bold !important;
-    font-size: 24px !important;
+    font-size: 28px !important;
+    padding-top: 2rem;
 }
 
 
@@ -78,5 +90,10 @@ a {
 
     &:focus-visible {
         outline: none !important;
+    }
+
+    &:focus {
+        box-shadow: none !important;
+        border: 1px dashed $interactive-01; 
     }
 }

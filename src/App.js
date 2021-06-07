@@ -8,6 +8,7 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import AustinCold from './pages/Project/AustinCold';
 import PowerGlove from './pages/Project/PowerGlove';
+import DwAnswers from './pages/Project/DwAnswers';
 import Doodles from './pages/Project/Doodles';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -27,6 +28,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/austin-cold" component={AustinCold} />
             <Route exact path="/power-glove" component={PowerGlove} />
+            <Route exact path="/dw-answers" component={DwAnswers} />
             <Route exact path="/doodles" component={Doodles} />
           </Switch>
         </ScrollToTop>
