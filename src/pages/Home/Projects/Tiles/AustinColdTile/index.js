@@ -18,6 +18,7 @@ const AustinColdTile = (props) => {
   return (
     <Tile
       className="projects__container"
+      id="tile--austin-cold"
       description={renderDescription()}
       title="AUSTINCOLD"
       to="/austin-cold"

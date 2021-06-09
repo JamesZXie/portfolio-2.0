@@ -9,7 +9,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons';
 import Header from '../../../../components/Header';
 
 const Tile = ({
-  title, description, to, projectImage, className,
+  title, description, to, projectImage, className, id,
 }) => {
   const history = useHistory();
   const location = useLocation();
@@ -28,6 +28,7 @@ const Tile = ({
       paddingTop="2rem"
       paddingBottom="2rem"
       position="relative"
+      id={id}
     >
       <GridItem
         colStart={[3]}
@@ -44,8 +45,11 @@ const Tile = ({
               {description}
             </Text>
           </Box>
-          <Box paddingTop="1rem">
-            <Button onClick={handleLink} className="projects__read-more-button">
+          <Box paddingTop="2rem">
+            <Button
+              onClick={handleLink}
+              className="projects__read-more-button"
+            >
               READ MORE
               <ArrowForwardIcon marginLeft=".5rem" />
             </Button>
@@ -72,10 +76,12 @@ Tile.propTypes = {
   to: PropTypes.string.isRequired,
   projectImage: PropTypes.node,
   className: PropTypes.string,
+  id: PropTypes.string,
 };
 
 Tile.defaultProps = {
   className: '',
   projectImage: '',
+  id: '',
 };
 export default Tile;

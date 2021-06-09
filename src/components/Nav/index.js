@@ -16,6 +16,10 @@ const Nav = (props) => {
     history.push(link);
   };
 
+  // const test = () => {
+  //   document.getElementById('tile--austin-cold').scrollIntoView({ behavior: 'smooth' });
+  // };
+
   return (
     <Box className="nav-container">
       <Flex
@@ -27,6 +31,11 @@ const Nav = (props) => {
             <Text>james xie</Text>
           </Button>
         </Box>
+        {/* <Box>
+          <Button onClick={test}>
+            <Text>test button</Text>
+          </Button>
+        </Box> */}
         <Box>
           <Button onClick={() => handleLink('/about')}>about</Button>
         </Box>

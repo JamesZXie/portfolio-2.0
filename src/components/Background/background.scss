@@ -7,6 +7,7 @@
         height: 100vh;
         z-index:-1;
         background-color: $ui-01;
+        scroll-snap-align: start;
 
         .react-p5 {
             height: 100%;
