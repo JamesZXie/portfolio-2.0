@@ -1,10 +1,14 @@
 $ui-01: #0047FF;
 $ui-02: #FAFAFA;
 $ui-03: #1D1D1D;
+
 $text-01: #1D1D1D;
 $text-02: #F2F2F2;
-$text-03: #0047FF;
+$text-03: #0047FF; 
+
 $interactive-01: #FF8A00;
+
+$highlight-01: #FF0000;
 
 @font-face {
     font-family: RobotoMono;
@@ -29,14 +33,25 @@ $interactive-01: #FF8A00;
 body {
     margin: 0px;
     font-family: RobotoMono;
-    font-size: 18px;
-    background-color: $ui-01;
+    font-size: 14px;
+    background-color: $ui-01 !important;
 }
 
 h1 {
     font-family: RobotoCondensed;
-    font-size: 38px !important;
-    color: $ui-01 !important;
+    font-size: 64px !important;
+}
+
+h2 {
+    font-family: Roboto !important;
+    font-weight: bold !important;
+    font-size: 28px !important;
+    padding-top: 2rem;
+}
+
+h3 {
+    font-family: RobotoMono !important;
+    font-weight: bold !important;
 }
 
 h4 {
@@ -55,12 +70,6 @@ h5 {
     padding-top: .5rem;
 }
 
-h2 {
-    font-family: Roboto !important;
-    font-weight: bold !important;
-    font-size: 28px !important;
-    padding-top: 2rem;
-}
 
 
 ol {

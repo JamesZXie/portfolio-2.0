@@ -2,45 +2,60 @@ import React, { useEffect } from 'react';
 import Sketch from 'react-p5';
 import './background.scss';
 import {
-  Box, Button,
+  Box, Circle,
 } from '@chakra-ui/react';
-import { ArrowDownIcon } from '@chakra-ui/icons';
 import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf';
 
 const Background = (props) => {
   let canvas;
   let font;
-  const speed = 8;
-  const textSize = 15;
-  const boxOffset = 22;
-  const numLetters = 60;
-  let stopDrawing = false;
-  let kaja = false;
+  const speed = 15;
+  const textSize = 300;
   let box = { height: window.innerHeight - 32, width: window.innerWidth - 32 };
+  let stopDrawing = false;
+  const boxOffset = 22;
 
   const findRandomX = () => 100;
   const findRandomY = () => window.innerHeight / 2 - textSize / 2;
   const findRandomDir = () => ['left', 'right', 'up', 'down'][Math.floor(Math.random() * 4)];
-  const findRandomLetter = () => ['J', 'X'][Math.floor(Math.random() * 2)];
 
   let text = [
+    {
+      l: 'J',
+      x: findRandomX(),
+      y: findRandomY(),
+      currDirection: { x: speed, y: 0, d: 'left' },
+      newDirection: undefined,
+    },
+    {
+      l: 'A',
+      x: findRandomX(),
+      y: findRandomY(),
+      currDirection: { x: speed, y: 0, d: 'left' },
+      newDirection: undefined,
+    },
+    {
+      l: 'M',
+      x: findRandomX(),
+      y: findRandomY(),
+      currDirection: { x: speed, y: 0, d: 'left' },
+      newDirection: undefined,
+    },
+    {
+      l: 'E',
+      x: findRandomX(),
+      y: findRandomY(),
+      currDirection: { x: speed, y: 0, d: 'left' },
+      newDirection: undefined,
+    },
+    {
+      l: 'S',
+      x: findRandomX(),
+      y: findRandomY(),
+      currDirection: { x: speed, y: 0, d: 'left' },
+      newDirection: undefined,
+    },
   ];
-
-  const createText = () => {
-    const newText = [];
-    for (let i = 0; i < numLetters; i += 1) {
-      newText.push(
-        {
-          l: findRandomLetter(),
-          x: findRandomX(),
-          y: findRandomY(),
-          currDirection: { x: speed, y: 0, d: findRandomDir() },
-          newDirection: undefined,
-        },
-      );
-    }
-    text = newText;
-  };
 
   const setDimensions = (p, canvasParent) => {
     if (window.innerWidth <= 1028) {
@@ -66,7 +81,6 @@ const Background = (props) => {
     ).parent(canvasParentRef);
 
     setDimensions(p, canvasParentRef);
-    createText();
 
     window.addEventListener('resize', (e) => { // TODO: add a removeEventListener
       setDimensions(p, canvasParentRef);
@@ -76,12 +90,7 @@ const Background = (props) => {
   };
 
   const drawText = (p) => {
-    const shadowOffset = 2;
-
     text.map((l) => {
-      p.fill(255, 0, 0);
-      p.text(l.l, l.x + shadowOffset, l.y + shadowOffset);
-      p.fill(300);
       p.text(l.l, l.x, l.y);
     });
   };
@@ -89,7 +98,7 @@ const Background = (props) => {
   const getCollision = (p, l, force = false) => {
     let colliding = force;
     const collisions = [];
-    const padding = 32;
+    const padding = 120;
 
     if (l.currDirection.d === 'left' && l.x - speed < padding) colliding = true;
     if (l.currDirection.d === 'right' && l.x + speed > box.width - padding) colliding = true;
@@ -130,45 +139,19 @@ const Background = (props) => {
   };
 
   const animateText = (p) => {
-    const collisionFrequency = 20;
     text = text.map((l, i) => {
       // check for collisions
       let direction = l.currDirection;
       let newDirection = getCollision(p, l);
       // Randomly adjustdirection for the lead letter (J)
-      if (!kaja) {
-        if (newDirection === undefined && Math.floor(Math.random() * collisionFrequency) === 0) newDirection = getCollision(p, l, true);
-        if (newDirection) direction = adjustDirection(p, l, newDirection);
-      }
+      if (newDirection === undefined && Math.floor(Math.random() * 40) === 0) newDirection = getCollision(p, l, true);
+      if (newDirection) direction = adjustDirection(p, l, newDirection);
 
       return ({
         ...l, x: l.x + direction.x, y: l.y + direction.y, currDirection: direction,
       });
     });
   };
-
-  const everybodyKaja = () => {
-    kaja = true;
-    text = text.map((l) => ({
-      ...l,
-      currDirection: { x: 0, y: -speed, d: 'up' },
-    }));
-  };
-
-  const handleScroll = (e) => {
-    if (window.scrollY === 0) {
-      createText();
-      kaja = false;
-    }
-    if (kaja === false && window.scrollY > 100) {
-      everybodyKaja();
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
-    return () => document.removeEventListener('scroll', handleScroll);
-  });
 
   const drawDashedBox = (p, rect, offset = { x: 0, y: 0 }) => {
     // blah
@@ -203,10 +186,11 @@ const Background = (props) => {
     // const sizeScaleA = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2), -1, 1, 50, 100);
     // const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
     if (!stopDrawing) {
-      p.clear(); // no background needed, in scss.
-      p.fill(300);
-      p.noStroke();
-      p.translate(8, 16);
+      // p.clear(); // no background needed, in scss.
+      p.fill(0, 71, 255);
+      p.stroke(255, 138, 0);
+      p.strokeWeight(3);
+      p.translate(-85, 120);
       drawText(p);
       animateText(p);
     }
@@ -219,12 +203,6 @@ const Background = (props) => {
       role="heading"
     >
       <Box className="dashed-background" />
-      <Button
-        onClick={everybodyKaja}
-        className="hero__scroll-button"
-      >
-        <ArrowDownIcon />
-      </Button>
       <Sketch setup={setup} draw={draw} preload={preload} />
     </Box>
   );

@@ -5,8 +5,8 @@
     width: 100%;
 
     &__name-header {
-        background-color: $ui-01;
-        border: 2px solid $interactive-01;
+        // background-color: $ui-01;
+        // border: 2px solid $interactive-01;
         padding: 1rem;
         padding-top: .5rem;
         position: absolute;
@@ -32,17 +32,5 @@
     &__caption {
         color: $ui-02;
         font-size: 12px;
-    }
-
-    button {
-        position: absolute !important;
-        top: calc(100vh - 4rem);
-        left: calc(50% - 1rem);
-        width: 2rem !important;
-        border-radius: 2rem !important;
-        background-color: $ui-01 !important;
-        border: 2px solid $interactive-01 !important;
-        z-index: 999;
-        color: $ui-02;
     }
 }

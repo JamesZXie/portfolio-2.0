@@ -7,8 +7,8 @@ import DwAnswersTile from './Tiles/DwAnswersTile';
 const Projects = (props) => (
   <div className="projects">
     <AustinColdTile />
-    <PowerGloveTile />
-    <DwAnswersTile />
+    {/* <PowerGloveTile />
+    <DwAnswersTile /> */}
   </div>
 );
 

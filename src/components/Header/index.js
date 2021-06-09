@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import {
-  Box,
+  Box, Text,
 } from '@chakra-ui/react';
+import './header.scss';
 
 const Header = ({ id, title, ariaLevel }) => {
   const [test, setTest] = useState('hello');
 
   const renderLetters = () => title.split('').map((l, i) => (
-    <Box className="header__letter" key={i}>{l}</Box>
+    <Text className="header__letter" key={i}>{l}</Text>
   ));
 
   return (

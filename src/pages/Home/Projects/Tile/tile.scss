@@ -1,17 +1,7 @@
 @import '../../../../App.scss';
 
-.section {
-    &__line {
-
-        &__top {
-            margin-bottom: 1rem;
-            border-top: 1px solid $ui-02;
-        }
-
-        &__bottom {
-            margin-top: 1rem;
-            margin-bottom: 4rem;
-            border-top: 1px solid $ui-02;
-        }
-    }
+.tile {
+    height: 100vh;
+    z-index: 9;
+    color: $text-02 ;
 }

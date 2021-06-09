@@ -2,13 +2,15 @@
 
 .projects {
     &__container {
-        background-color: $ui-02;
         min-height: 10rem;
     }
 
-    &__image {
+    &__austin-cold-image {
         transition: all 0.2s ease-in-out;
         position: absolute;
+        max-height: 90vh;
+        transform: rotate(5deg);
+        left: -1rem;
         
         &:hover {
             cursor: pointer;
@@ -17,16 +19,14 @@
 
     &__read-more-button {
         background-color: $ui-01 !important;
-        color: white;
+        color: $ui-02;
+        border-radius: 5px !important;
+        border: 2px solid $interactive-01 !important;
+        -webkit-box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.2); 
+        box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.2);
 
         &:hover {
             background-color: $interactive-01 !important;
         }
-    }
-
-    .right-arrow {
-        transform: rotate(-90deg);
-        height: 1rem;
-        margin-left: 1rem;
     }
 }

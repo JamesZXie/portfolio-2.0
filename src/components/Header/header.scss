@@ -2,10 +2,13 @@
 
 .header {
     font-family: RobotoCondensed;
-    font-size: 36px;
-    color: $text-03;
+    color: $text-02;
+    
     &__letter {
         padding-right: .35rem;
-        display: inline-block;
+        font-size: 64px;
+        padding-bottom: 2rem;
+        display: inline-block !important;
+        text-shadow: .25rem .25rem 0px $highlight-01;
     }
 }

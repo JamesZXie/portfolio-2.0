@@ -3,7 +3,6 @@ import {
   Box, Text, Button, Image,
 } from '@chakra-ui/react';
 import './hero.scss';
-import { ArrowDownIcon } from '@chakra-ui/icons';
 
 const Hero = (props) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);
@@ -16,7 +15,6 @@ const Hero = (props) => {
           a product designer with a background in engineering.
         </Text>
       </Box>
-      <Button className="hero__scroll-button"><ArrowDownIcon /></Button>
     </Box>
   );
 };
