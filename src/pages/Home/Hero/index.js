@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import {
   Box, Text, Button, Image,
 } from '@chakra-ui/react';
-import { InfoOutlineIcon } from '@chakra-ui/icons';
-import Header from '../../../components/Header/oldHeader';
 import './hero.scss';
-import logo from '../../../assets/images/Logo.png';
+import { ArrowDownIcon } from '@chakra-ui/icons';
 
 const Hero = (props) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);
@@ -13,12 +11,12 @@ const Hero = (props) => {
   return (
     <Box className="hero">
       <Box className="hero__name-header">
-        <Image src={logo} height="50px" marginBottom="1rem" />
         <Text as="h2">I&apos;m James,</Text>
         <Text className="hero__caption">
-          a product designer with a background in engineering. I bridge the gap between design and development, bringing out the full potential of my team by enabling their imaginations to push the boundaries of technical feasibility.
+          a product designer with a background in engineering.
         </Text>
       </Box>
+      <Button className="hero__scroll-button"><ArrowDownIcon /></Button>
     </Box>
   );
 };

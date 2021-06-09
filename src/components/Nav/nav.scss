@@ -1,10 +1,12 @@
 @import '../../App.scss';
 
 .nav-container {
-    position: sticky;
+    position: fixed;
     left: 0;
     top: 0;
     z-index: 99;
+    margin: .75rem;
+    width: calc(100% - 1rem);
 
     .nav {
         padding: .25rem;
