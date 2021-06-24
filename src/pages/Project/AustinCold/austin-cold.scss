@@ -1,5 +1,12 @@
+@import '../../../App.scss';
+
 .austin-cold {
     
+    .header__letter {
+        color: $interactive-01;
+        text-shadow: 0.25rem 0.25rem 0px $ui-01;
+    }
+
     li {
         padding-top: .5rem;
     }
