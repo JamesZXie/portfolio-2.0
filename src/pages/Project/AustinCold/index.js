@@ -40,7 +40,7 @@ const AustinCold = ({}) => (
       colEnd={colEnd}
     >
       <Text as="h2">The Problem</Text>
-      <Text as="h4">ERCOT cut corners when building their isolated power grid... yikes</Text>
+      <Text as="h4">ERCOT cut corners when building the isolated power grid</Text>
       <Image
         src={AustinSnow}
         height="30rem"

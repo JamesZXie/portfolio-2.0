@@ -55,7 +55,7 @@ const Nav = (props) => {
         >
           <Box>
             <Button onClick={() => handleLink('/')}>
-              <Text>james xie</Text>
+              <Text color={location.pathname === '/' ? 'white' : 'black'}>james xie</Text>
             </Button>
           </Box>
           {/* <Box>
@@ -63,9 +63,9 @@ const Nav = (props) => {
           <Text>test button</Text>
           </Button>
         </Box> */}
-          <Box>
+          {/* <Box>
             <Button onClick={() => handleLink('/about')}>about</Button>
-          </Box>
+          </Box> */}
         </Flex>
       </Box>
     </>
