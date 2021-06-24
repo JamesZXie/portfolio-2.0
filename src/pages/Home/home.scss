@@ -1,5 +1,10 @@
 @import '../../App.scss';
 
-.home{
+.home {
     background-color: $ui-01;
+    scroll-snap-type: mandatory;
+	scroll-snap-points-y: repeat(100vh);
+	scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
 }

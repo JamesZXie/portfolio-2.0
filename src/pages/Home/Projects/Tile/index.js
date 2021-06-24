@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './tile.scss';
 import {
@@ -18,6 +18,17 @@ const Tile = ({
     if (location.pathname === to) { return; }
     history.push(to);
   };
+
+  const [scrollY, setScrollY] = useState(0);
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  // useEffect(() => {
+  //   document.addEventListener('scroll', handleScroll);
+  //   return () => { document.removeEventListener('scroll', handleScroll); };
+  // }, []);
 
   return (
     <Grid
@@ -41,9 +52,9 @@ const Tile = ({
         >
           <Box>
             <Header title={title} />
-            <Text paddingRight="4rem">
+            <Box paddingRight="4rem">
               {description}
-            </Text>
+            </Box>
           </Box>
           <Box paddingTop="2rem">
             <Button
@@ -72,7 +83,7 @@ const Tile = ({
 
 Tile.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.node.isRequired,
   to: PropTypes.string.isRequired,
   projectImage: PropTypes.node,
   className: PropTypes.string,

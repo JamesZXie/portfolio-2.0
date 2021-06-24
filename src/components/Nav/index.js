@@ -11,6 +11,32 @@ const Nav = (props) => {
   const history = useHistory();
   const location = useLocation();
 
+  // let timer;
+
+  // const handleScroll = () => {
+  //   if (timer) {
+  //     clearTimeout(timer);
+  //   }
+  //   timer = setTimeout(() => {
+  //     const height = window.innerHeight;
+  //     const breakPoints = [-height / 2, height / 2, height + height / 2, height * 2 + height / 2];
+
+  //     for (let bp = 1; bp < breakPoints.length - 1; bp += 1) {
+  //       if (breakPoints[bp - 1] < window.scrollY && window.scrollY <= breakPoints[bp]) {
+  //         window.scroll({
+  //           behavior: 'smooth',
+  //           top: (breakPoints[bp] + breakPoints[bp - 1]) / 2,
+  //         });
+  //       }
+  //     }
+  //   }, 500);
+  // };
+
+  // useEffect(() => {
+  //   document.addEventListener('scroll', handleScroll);
+  //   return () => document.removeEventListener('scroll', handleScroll);
+  // }, []);
+
   const handleLink = (link) => {
     if (location.pathname === link) { return; }
     history.push(link);
@@ -21,26 +47,28 @@ const Nav = (props) => {
   // };
 
   return (
-    <Box className="nav-container">
-      <Flex
-        className="nav"
-        justifyContent="space-between"
-      >
-        <Box>
-          <Button onClick={() => handleLink('/')}>
-            <Text>james xie</Text>
-          </Button>
-        </Box>
-        {/* <Box>
+    <>
+      <Box className="nav-container">
+        <Flex
+          className="nav"
+          justifyContent="space-between"
+        >
+          <Box>
+            <Button onClick={() => handleLink('/')}>
+              <Text>james xie</Text>
+            </Button>
+          </Box>
+          {/* <Box>
           <Button onClick={test}>
-            <Text>test button</Text>
+          <Text>test button</Text>
           </Button>
         </Box> */}
-        <Box>
-          <Button onClick={() => handleLink('/about')}>about</Button>
-        </Box>
-      </Flex>
-    </Box>
+          <Box>
+            <Button onClick={() => handleLink('/about')}>about</Button>
+          </Box>
+        </Flex>
+      </Box>
+    </>
   );
 };
 

@@ -19,3 +19,15 @@
         }
     }
 }
+
+
+.dashed-background {
+    position: fixed;
+    border: 2px dashed $interactive-01;
+    width: calc(100% - 2rem);
+    height: calc(100vh - 2rem);
+    top: 0;
+    z-index: 9;
+    margin: 1rem;
+    transition: all 0.2s ease-in-out;
+}

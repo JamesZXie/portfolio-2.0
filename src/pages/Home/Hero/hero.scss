@@ -3,6 +3,9 @@
 .hero {
     height: 100%;
     width: 100%;
+    scroll-snap-align: start;
+    height: 100vh;
+    position: relative;
 
     &__name-header {
         // background-color: $ui-01;

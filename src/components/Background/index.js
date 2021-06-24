@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sketch from 'react-p5';
 import './background.scss';
 import {
@@ -8,6 +8,9 @@ import { ArrowDownIcon } from '@chakra-ui/icons';
 import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf';
 
 const Background = (props) => {
+  let kaja = false;
+
+  // p5 variables
   let canvas;
   let font;
   const speed = 8;
@@ -15,7 +18,6 @@ const Background = (props) => {
   const boxOffset = 22;
   const numLetters = 60;
   let stopDrawing = false;
-  let kaja = false;
   let box = { height: window.innerHeight - 32, width: window.innerWidth - 32 };
 
   const findRandomX = () => 100;
@@ -73,6 +75,7 @@ const Background = (props) => {
     }, true);
     p.textFont(font);
     p.textSize(textSize);
+    p.frameRate(60);
   };
 
   const drawText = (p) => {
@@ -155,7 +158,7 @@ const Background = (props) => {
     }));
   };
 
-  const handleScroll = (e) => {
+  const handleScroll = async (e) => {
     if (window.scrollY === 0) {
       createText();
       kaja = false;
@@ -165,10 +168,10 @@ const Background = (props) => {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener('scroll', handleScroll);
-    return () => document.removeEventListener('scroll', handleScroll);
-  });
+  // useEffect(() => {
+  //   document.addEventListener('scroll', handleScroll);
+  //   return () => document.removeEventListener('scroll', handleScroll);
+  // });
 
   const drawDashedBox = (p, rect, offset = { x: 0, y: 0 }) => {
     // blah
@@ -218,7 +221,6 @@ const Background = (props) => {
       className="hero__background"
       role="heading"
     >
-      <Box className="dashed-background" />
       <Button
         onClick={everybodyKaja}
         className="hero__scroll-button"

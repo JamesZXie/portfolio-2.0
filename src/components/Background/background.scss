@@ -4,7 +4,6 @@
     &__background {
         width: 100%;
         top: 0;
-        height: 100vh;
         z-index:-1;
         background-color: $ui-01;
         scroll-snap-align: start;
@@ -32,14 +31,4 @@
     }
 
     
-}
-
-.dashed-background {
-    position: fixed;
-    border: 2px dashed $interactive-01;
-    width: calc(100% - 2rem);
-    height: calc(100vh - 2rem);
-    top: 0;
-    z-index: 9;
-    margin: 1rem;
 }
