@@ -222,7 +222,6 @@ const Background = (props) => {
       role="heading"
     >
       <Button
-        onClick={everybodyKaja}
         className="hero__scroll-button"
       >
         <ArrowDownIcon />

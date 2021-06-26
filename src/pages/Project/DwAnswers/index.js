@@ -5,37 +5,64 @@ import {
 } from '@chakra-ui/react';
 import Header from '../../../components/Header';
 import Section from '../../../components/Section';
-import FlexSensorCircuit from '../../../assets/images/PowerGlove/flex-sensor-circuit.png';
-import GloveComplete from '../../../assets/images/PowerGlove/completed-glove.jpg';
-import GloveExample from '../../../assets/images/PowerGlove/glove-example.gif';
-import GloveSkeleton from '../../../assets/images/PowerGlove/glove-skeleton.jpg';
 import problemStatement from '../../../assets/images/DwAnswers/problem-statement.png';
+import keyFlow from '../../../assets/images/DwAnswers/key-flow.jpeg';
+import uxResearchStats from '../../../assets/images/DwAnswers/ux-research-stats.jpeg';
+import dwAnswers from '../../../assets/images/DwAnswers/dw-answers.png';
+import slack from '../../../assets/images/DwAnswers/slack.png';
+import lowFidelityMockups from '../../../assets/images/DwAnswers/low-fidelity-mockups.png';
 
 import './dw-answers.scss';
 
-const imageBottomPadding = '1rem';
+const sectionBreakPadding = '2rem';
+const lineBreakPadding = '1rem';
+const colStart = 4;
+const colSpan = 6;
+const colEnd = 10;
 
 const PowerGlove = ({}) => (
   <>
     <Section
-      className="power-glove"
+      className="dw-answers"
     >
       <GridItem
-        colStart={3}
-        colSpan={8}
-        colEnd={11}
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
       >
         <Center>
           <Header title="DW-ANSWERS" />
         </Center>
       </GridItem>
       <GridItem
-        colStart={3}
-        colSpan={8}
-        colEnd={11}
-        paddingTop="1rem"
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+        paddingTop={lineBreakPadding}
+        paddingBottom={sectionBreakPadding}
       >
-        <Text as="h2">THE PROBLEM</Text>
+        <Text as="h2">The Problem</Text>
+        <Text as="h4">IBM Support is slow for customers and costly for IBM.</Text>
+        <Text paddingBottom={lineBreakPadding}>
+          IBM product support receives a staggering 12,000 requests for help each month that they internally categorize into three priorities:
+        </Text>
+        <OrderedList>
+          <ListItem>
+            <strong>Low:</strong>
+            {' '}
+            Simple issues that should not require support help.
+          </ListItem>
+          <ListItem>
+            <strong>Medium:</strong>
+            {' '}
+            Issues requiring a code-based, technical solution.
+          </ListItem>
+          <ListItem>
+            <strong>High: </strong>
+            {' '}
+            Emergency, customer-losing issues or bug reports.
+          </ListItem>
+        </OrderedList>
       </GridItem>
       <GridItem
         colStart="3"
@@ -46,98 +73,256 @@ const PowerGlove = ({}) => (
           objectFit="cover"
           width="100%"
           alt="On average, IBM support will address over 8,000 tickets before getting to low priority requests"
+          paddingBottom={sectionBreakPadding}
         />
       </GridItem>
       <GridItem
-        colStart={3}
-        colSpan={8}
-        colEnd={11}
-        paddingTop="1rem"
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
       >
-        <Center paddingBottom={imageBottomPadding}>
-          <Text as="h5">The NES Power Glove</Text>
-        </Center>
+        <Text paddingBottom={lineBreakPadding}>
+          That means for 4,000 customers a month,
+          {' '}
+          <strong>their experience is waiting 23 days for a two-sentence answer.</strong>
+        </Text>
         <Text>
-          Nintendo tried to make a run at a game system controlled by a glove they dubbed the
-          &quot;Power Glove&quot;. Its sales flopped spectacularly, which is probably why
-          you&apos;ve never heard of it - but I thought the concept was cool.
+          For IBM,
+          {' '}
+          <strong>
+            simple issues that shouldn’t require support’s help cost a whooping $48 million a year.
+          </strong>
         </Text>
       </GridItem>
       <GridItem
-        colStart={3}
-        colSpan={8}
-        colEnd={11}
-        paddingTop="1rem"
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
       >
-        <Text as="h2">MY VERSION</Text>
-        {/* <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/XQOroTvtn90"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      /> */}
-        <Center>
-          <Image src={GloveExample} width="50%" />
-        </Center>
-        <Center paddingBottom={imageBottomPadding}>
-          <Text as="h5">The Power Glove hooked up to a WebGL sketch</Text>
-        </Center>
-        <Text marginTop="1rem">
-          The PowerGlove measures the voltage change that occurs when a finger bends, and
-          interprets it. Thanks to node, johnny-five.js and the power of
-          websockets we can take that information and run it through a javascript
-          application in real time. Check out the code, an example, and a pseudo-api
+        <Text as="h2">Our Solution</Text>
+        <Text as="h4">Redirecting low priority questions to a better platform</Text>
+        <Text>
+          We designed a mobile component of IBM’s “dW Answers” forum and optimized it for the low priority questions on
+          IBM support&apos;s backburner,
           {' '}
-          {' '}
-          <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
-          .
+          <strong>
+            bringing the TTR for low priority customer issues from 23 days to under 24 hours.
+          </strong>
         </Text>
       </GridItem>
       <GridItem
-        colStart={3}
-        colSpan={8}
-        colEnd={11}
-        paddingTop="1rem"
+        colStart={1}
+        colspan={12}
+        colEnd={13}
       >
-        <Text as="h2">HOW IT WORKS</Text>
-        <Center>
-          <Image src={FlexSensorCircuit} objectFit="cover" width="60%" />
-        </Center>
-        <Center paddingBottom={imageBottomPadding}>
-          <Text as="h5">Arduino circuit with flex sensor</Text>
-        </Center>
+        <Image
+          src={keyFlow}
+          objectFit="cover"
+          width="100%"
+          alt="Key flow of UX mockups"
+          paddingBottom={sectionBreakPadding}
+        />
+
+      </GridItem>
+      <GridItem
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      >
         <Text>
-          A Flex sensor is a special resistor that changes value when bent in a direction.
-          Arduinos can measure voltage at points in a circuit. Making a circuit with
-          two resistors in it, one static and one variable, will make the voltage
-          in between them variable. By measuring this voltage, you can interpret
-          how much the sensor has been bent.
-        </Text>
-        <Text marginTop="1rem">
-          Put five of these together, slap them on a glove, and voila! I used an
-          airsoft glove because they have padding you can easily cut up to create
-          a quick shell to protect the sensors, but you can use anything.
-        </Text>
-        <Center marginTop="2rem">
-          <Image src={GloveSkeleton} objectFit="cover" width="35%" />
-          <Image src={GloveComplete} objectFit="cover" width="35%" />
-        </Center>
-        <Center paddingBottom={imageBottomPadding}>
-          <Text as="h5">Completed glove</Text>
-        </Center>
-        <Text>
-          I meant to open up the power glove to the community after I created it, hosting a few
-          classes and creating a pseudo-api for it so that other developers at IBM could
-          make their own sketches for an upcoming event. Unfortuantely, Covid cut that project
-          very, very short, as we only had one glove to work with, and as you can imagine
-          passing it around was not an option. You can find a copy of that repo linked above or
+          Once dW answers is established, IBM support would be able to redirect all low priority
+          questions to dW Answers,
           {' '}
-          <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
-          .
+          <strong>saving them $48 million a year.</strong>
         </Text>
+      </GridItem>
+      <GridItem
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      >
+        <Text as="h2">Our Research</Text>
+        <Text as="h4">Why dW mobile?</Text>
+        <Text>
+          Our hypotheses and designs formed thanks to interviews with 25 people up and down
+          the product pipeline.
+        </Text>
+        <Image
+          src={uxResearchStats}
+          objectFit="cover"
+          width="100%"
+          alt="Visual breakdown of the roles of the 25 people interviewed: 8 developers, 7 offering managers, 3 devops, 3 support, 3 designers, and 1 analytics."
+          paddingTop={sectionBreakPadding}
+        />
+        <Text
+          paddingBottom={sectionBreakPadding}
+          as="h5"
+        >
+          We interviewed business customers, product users, IBM support, and more.
+
+        </Text>
+        <Text paddingBottom={lineBreakPadding}>
+          Learning about IBM support’s backlog situation pushed us to start looking for ways to
+          trim the fat, starting with other resources IBM customers could turn to. We found two:
+        </Text>
+        <OrderedList>
+          <ListItem>dW answers: an existing forum for IBM product specific questions</ListItem>
+          <ListItem>Slack workspaces: private messaging groups for a select few products.</ListItem>
+        </OrderedList>
+      </GridItem>
+      <GridItem
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      >
+        <Text
+          as="h3"
+          paddingTop={lineBreakPadding}
+          paddingBottom={sectionBreakPadding}
+        >
+          dW Answers
+        </Text>
+        <Image src={dwAnswers} alt="Screenshots of dW answers" />
+        <Text
+          paddingBottom={sectionBreakPadding}
+          as="h5"
+        >
+          dW Answers: good traffic from customers and organized experts, but low response rates.
+        </Text>
+        <Text paddingBottom={lineBreakPadding}>
+          dW answers had a large amount of traffic, a system to organize answers, and a point ranking system
+          that quantified an expert&apos;s reputation in the community.
+        </Text>
+        <Text paddingBottom={sectionBreakPadding}>
+          Unfortunately, the response time and response rate were almost as bad as support. When we
+          asked top ranked experts about when they were active, their response was:
+        </Text>
+        <Center>
+          <Text
+            fontSize="32px"
+            paddingLeft="2rem"
+            paddingRight="2rem"
+            fontStyle="italic"
+            paddingBottom={sectionBreakPadding}
+          >
+            “I’ll take a look when I need a break.”
+          </Text>
+        </Center>
+        <Text>
+          while almost never taking breaks at their work computer, where they had access to a web browser, resulting
+          in around 1 week gaps between activity.
+        </Text>
+      </GridItem>
+      <GridItem
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      >
+        <Text as="h3" paddingBottom={sectionBreakPadding}>Slack workspaces</Text>
+        <Image src={slack} alt="Screenshots of an expert helping another user in a Slack conversation" />
+        <Text
+          as="h5"
+          paddingBottom={sectionBreakPadding}
+        >
+          An 80 message conversation between two IBM customers on a Slack Channel for Watson.
+
+        </Text>
+
+        <Text paddingBottom={lineBreakPadding}>
+          Since users couldn&apos;t find these communities organically (think Google search for an error message),
+          Slack workspaces had significantly lower traffic. However, when the questions did come in, they were addressed
+          with a median initial response time of 5 minutes.
+        </Text>
+        <Text>
+          When we asked one of the most active users why he was so active, he said:
+        </Text>
+        <Center>
+          <Text
+            fontSize="32px"
+            paddingLeft="2rem"
+            paddingRight="2rem"
+            fontStyle="italic"
+            paddingTop={sectionBreakPadding}
+            paddingBottom={sectionBreakPadding}
+          >
+            “If I’m watching TV, at dinner, no matter what time it is — if I’m bored,
+            I’ll pull out my phone and if there’s a new question I’ll answer it”
+          </Text>
+        </Center>
+        <Text>
+          Or more simply, the Slack mobile app is
+          {' '}
+          <strong>easy to access</strong>
+          {' '}
+          and
+          {' '}
+          <strong>casual</strong>
+          ,
+          making the entertainment value of helping outweigh its cost to the expert.
+          <Text as="h2">Translating research</Text>
+          <Text as="h4" paddingBottom={sectionBreakPadding}>How we built a community that targets the easy isses</Text>
+        </Text>
+      </GridItem>
+      <GridItem
+        colStart="3"
+        colSpan={8}
+      >
+        <Image
+          objectFit="cover"
+          width="100%"
+          src={lowFidelityMockups}
+          alt="wireframes of a community tool we tested with InVision"
+        />
+        <Text as="h5">Development of an Invision prototype of the referral system, a community tool for experts.</Text>
+      </GridItem>
+      <GridItem
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      >
+        <Text paddingBottom={lineBreakPadding}>
+          Once we realized experts could address easier issues quickly and effectively, we had to figure
+          out how to connect the two. We gleaned these key insights that helped us form the foundations of dW mobile:
+        </Text>
+        <OrderedList>
+          <ListItem>
+            A casual setting dramatically increases the rates of both asking and answering questions in the
+            community.
+          </ListItem>
+          <ListItem>
+            Reputation is the biggest motivator for experts to help, and ease of access is the biggest blocker.
+          </ListItem>
+          <ListItem>
+            Experts are good at categorizing, organizing, and sifting through issues for the myriad of IBM
+            products. Average users are not.
+          </ListItem>
+        </OrderedList>
+      </GridItem>
+      <GridItem
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      >
+        <Text paddingBottom={lineBreakPadding}>
+          And translated them into the following aspects of the app:
+        </Text>
+        <OrderedList>
+          <ListItem>
+            <strong>Chat: </strong>
+            Like Slack, we took patterns from chat apps to create a casual, active
+            community where the simple questions are the most visible.
+          </ListItem>
+          <ListItem>
+            <strong>dW score: </strong>
+            We biased dW answers’s point system towards answers for easier questions and increased the visibility of a user’s
+            reputation.
+          </ListItem>
+          <ListItem>
+            <strong>Community tools: </strong>
+            We took dW Answers&apos;s expert categorization system, and added a set of community organizational tools for
+            experts that rewards cooperation.
+          </ListItem>
+        </OrderedList>
       </GridItem>
     </Section>
   </>
