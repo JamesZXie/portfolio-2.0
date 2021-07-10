@@ -21,7 +21,7 @@ const Tile = ({
   };
 
   return (
-    <Waypoint onEnter={() => console.log(order)}>
+    <Waypoint>
       <div>
         <Grid
           templateColumns="repeat(12, 1fr)"
