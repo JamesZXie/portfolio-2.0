@@ -42,6 +42,7 @@ const PowerGloveTile = (props) => {
       subtitle="How I grow"
       title="POWERGLOVE"
       to="/power-glove"
+      order={2}
       projectImage={<Image className="projects__image" src={powerGloveSkeleton} />}
     />
   );

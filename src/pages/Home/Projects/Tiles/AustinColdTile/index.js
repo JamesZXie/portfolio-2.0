@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import {
   Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
 
 import austinCold from '../../../../../assets/images/AustinCold/mobile.png';
 import Tile from '../../Tile';
 
-const AustinColdTile = (props) => {
+const AustinColdTile = ({ init }) => {
   const renderDescription = () => (
     <Box
       className="projects__description"
@@ -39,6 +40,7 @@ const AustinColdTile = (props) => {
       id="tile--austin-cold"
       description={renderDescription()}
       subtitle="How I give back"
+      order={3}
       title="AUSTINCOLD"
       to="/austin-cold"
       projectImage={(
@@ -49,6 +51,10 @@ const AustinColdTile = (props) => {
         )}
     />
   );
+};
+
+AustinColdTile.propTypes = {
+  init: PropTypes.bool.isRequired,
 };
 
 export default AustinColdTile;

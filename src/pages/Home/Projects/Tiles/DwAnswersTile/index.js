@@ -3,10 +3,11 @@ import {
   Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
 
+import PropTypes from 'prop-types';
 import powerGloveSkeleton from '../../../../../assets/images/PowerGlove/flex-sensor-circuit.png';
 import Tile from '../../Tile';
 
-const PowerGloveTile = (props) => {
+const PowerGloveTile = ({ init }) => {
   const renderDescription = () => (
     <Box
       className="projects__description"
@@ -40,10 +41,16 @@ const PowerGloveTile = (props) => {
       description={renderDescription()}
       title="DW ANSWERS"
       subtitle="How I work"
+      order={1}
+      init={init}
       to="/dw-answers"
       projectImage={<Image className="projects__image" src={powerGloveSkeleton} />}
     />
   );
+};
+
+PowerGloveTile.propTypes = {
+  init: PropTypes.bool.isRequired,
 };
 
 export default PowerGloveTile;

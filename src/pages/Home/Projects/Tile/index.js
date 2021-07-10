@@ -6,10 +6,11 @@ import {
 } from '@chakra-ui/react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+import { Waypoint } from 'react-waypoint';
 import Header from '../../../../components/Header';
 
 const Tile = ({
-  title, description, to, projectImage, className, id, subtitle,
+  title, description, to, projectImage, className, id, subtitle, order,
 }) => {
   const history = useHistory();
   const location = useLocation();
@@ -18,17 +19,6 @@ const Tile = ({
     if (location.pathname === to) { return; }
     history.push(to);
   };
-
-  const [scrollY, setScrollY] = useState(0);
-
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  // useEffect(() => {
-  //   document.addEventListener('scroll', handleScroll);
-  //   return () => { document.removeEventListener('scroll', handleScroll); };
-  // }, []);
 
   return (
     <Grid
@@ -50,7 +40,12 @@ const Tile = ({
           justify="center"
           direction="column"
         >
-          <Text as="h4" paddingBottom="1rem">{subtitle}</Text>
+          <Text
+            as="h4"
+            paddingBottom="1rem"
+          >
+            {subtitle}
+          </Text>
           <Box className="container__solid-rectangle">
             <Header title={title} />
             <Box marginTop="2rem">
@@ -104,6 +99,7 @@ Tile.propTypes = {
   className: PropTypes.string,
   id: PropTypes.string,
   subtitle: PropTypes.string.isRequired,
+  order: PropTypes.number.isRequired,
 };
 
 Tile.defaultProps = {
