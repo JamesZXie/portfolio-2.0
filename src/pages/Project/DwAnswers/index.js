@@ -31,7 +31,7 @@ const PowerGlove = ({}) => (
         colEnd={colEnd}
       >
         <Center>
-          <Header title="DW-ANSWERS" />
+          <Text title="DW-ANSWERS" />
         </Center>
       </GridItem>
       <GridItem
@@ -314,7 +314,7 @@ const PowerGlove = ({}) => (
           </ListItem>
           <ListItem>
             <strong>dW score: </strong>
-            We biased dW answers’s point system towards answers for easier questions and increased the visibility of a user’s
+            We tweaked the length vs quantity balance of dW answers’s point system and increased the visibility of a user’s
             reputation.
           </ListItem>
           <ListItem>

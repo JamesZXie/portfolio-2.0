@@ -16,6 +16,7 @@ const Home = (props) => (
     <Box className="home">
       <Hero />
       <DwAnswersTile />
+      <PowerGloveTile />
       <AustinColdTile />
     </Box>
   </Box>

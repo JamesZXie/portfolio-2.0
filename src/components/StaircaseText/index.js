@@ -8,9 +8,13 @@ import './header.scss';
 const Header = ({ id, title, ariaLevel }) => {
   const [test, setTest] = useState('hello');
 
+  const renderLetters = () => title.split('').map((l, i) => (
+    <Text className="header__letter" key={i}>{l}</Text>
+  ));
+
   return (
     <Box className="header">
-      <Text as="h1">{title}</Text>
+      {renderLetters()}
     </Box>
   );
 };

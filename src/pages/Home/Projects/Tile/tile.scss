@@ -5,4 +5,66 @@
     height: 100vh;
     z-index: 9;
     color: $text-02;
+
+    &__image {
+        &__frame {
+            width: 18rem;
+            height: 18rem;
+            overflow: hidden;
+            border: 1px solid $interactive-01;
+            transform: rotateY(0deg) rotate(45deg);
+            border-radius: 10px;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &__hover1 {
+                position: absolute;
+                z-index: 1;
+                height: 18rem;
+                width: 18rem;
+                border-top: 1px solid $interactive-01;
+                border-right: 1px solid $interactive-01;
+                border-left: none;
+                border-bottom: none;
+                border-radius: 10px;
+                transform: rotateY(0deg) rotate(45deg);
+                transition: all 0.1s ease-in-out;
+
+                &:hover {
+                    transform: rotateY(0deg) rotate(45deg) translate(1rem, -1rem);
+                    cursor: pointer;
+                    border-radius: 0px 10px 0px 0px;
+
+                }
+            }
+
+            &__hover2{
+                position: absolute;
+                z-index: 1;
+                height: 18rem;
+                width: 18rem;
+                border-top: 1px solid $interactive-01;
+                border-right: 1px solid $interactive-01;
+                border-left: none;
+                border-bottom: none;
+                border-radius: 10px;
+                transition: all 0.1s ease-in-out;
+
+                &:hover {
+                    transform: translate(1rem, -1rem);
+                    cursor: pointer;
+                    border-radius: 0px 10px 0px 0px;
+
+                }
+            }
+        }
+
+        &__container {
+            transform: rotateY(0deg) rotate(-45deg);
+
+        }
+    }
 }

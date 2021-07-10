@@ -33,7 +33,7 @@ const Background = (props) => {
     for (let i = 0; i < numLetters; i += 1) {
       newText.push(
         {
-          l: findRandomLetter(),
+          l: 'X',
           x: findRandomX(),
           y: findRandomY(),
           currDirection: { x: speed, y: 0, d: findRandomDir() },
@@ -82,9 +82,8 @@ const Background = (props) => {
     const shadowOffset = 2;
 
     text.map((l) => {
-      p.fill(255, 0, 0);
-      p.text(l.l, l.x + shadowOffset, l.y + shadowOffset);
-      p.fill(300);
+      // p.text(l.l, l.x + shadowOffset, l.y + shadowOffset);
+      // p.fill(300);
       p.text(l.l, l.x, l.y);
     });
   };
@@ -207,7 +206,7 @@ const Background = (props) => {
     // const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
     if (!stopDrawing) {
       p.clear(); // no background needed, in scss.
-      p.fill(300);
+      p.fill(255, 0, 0);
       p.noStroke();
       p.translate(8, 16);
       drawText(p);

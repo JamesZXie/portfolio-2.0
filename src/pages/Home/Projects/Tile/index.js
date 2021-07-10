@@ -9,7 +9,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons';
 import Header from '../../../../components/Header';
 
 const Tile = ({
-  title, description, to, projectImage, className, id,
+  title, description, to, projectImage, className, id, subtitle,
 }) => {
   const history = useHistory();
   const location = useLocation();
@@ -43,20 +43,21 @@ const Tile = ({
     >
       <GridItem
         colStart={[3]}
-        colSpan={[5]}
+        colSpan={[4]}
       >
         <Flex
           height="100%"
           justify="center"
           direction="column"
         >
-          <Box>
+          <Text as="h4" paddingBottom="1rem">{subtitle}</Text>
+          <Box className="container__solid-rectangle">
             <Header title={title} />
-            <Box paddingRight="4rem">
+            <Box marginTop="2rem">
               {description}
             </Box>
           </Box>
-          <Box paddingTop="2rem">
+          <Box paddingTop="1rem">
             <Button
               onClick={handleLink}
               className="projects__read-more-button"
@@ -68,13 +69,27 @@ const Tile = ({
         </Flex>
       </GridItem>
       <GridItem
-        colSpan={[5]}
+        colSpan={[4]}
         position="relative"
         marginBottom="1rem"
       >
-        <Box onClick={handleLink}>
-          {projectImage}
-        </Box>
+        <Flex
+          justify="center"
+          align="center"
+          height="100%"
+          piosi
+        >
+          <Box className="tile__image__frame__hover1" onClick={handleLink}>
+            <Box className="tile__image__frame__hover2" onClick={handleLink} />
+          </Box>
+          <Box
+            className="tile__image__frame"
+          >
+            <Box className="tile__image__container" onClick={handleLink}>
+              {projectImage}
+            </Box>
+          </Box>
+        </Flex>
       </GridItem>
     </Grid>
 
@@ -88,6 +103,7 @@ Tile.propTypes = {
   projectImage: PropTypes.node,
   className: PropTypes.string,
   id: PropTypes.string,
+  subtitle: PropTypes.string.isRequired,
 };
 
 Tile.defaultProps = {

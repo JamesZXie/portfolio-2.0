@@ -7,23 +7,30 @@
     height: 100vh;
     position: relative;
 
-    &__name-header {
-        // background-color: $ui-01;
-        // border: 2px solid $interactive-01;
+    &__container {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
         padding: 1rem;
         padding-top: .5rem;
-        position: absolute;
-        text-align:center;
-        left: calc(50%);
-        top: calc(50vh);
-        -webkit-transform: translate(-50%, -20%);
-        transform: translate(-50%, -20%);
         color:$ui-02;
         z-index: 99;
         
         h2 {
             padding-top: 0px;
         }
+    }
+
+    &__logo-container {
+        display: inline-block;
+        margin-right: 1rem;
+        height:100%;
+    }
+    
+    &__intro-container {
+        width: 30rem;
+        display: inline-block;
     }
 
     &__anim-tooltip {

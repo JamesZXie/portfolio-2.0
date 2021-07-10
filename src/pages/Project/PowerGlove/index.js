@@ -35,7 +35,8 @@ const PowerGlove = ({}) => (
         colEnd={11}
         paddingTop="1rem"
       >
-        <Text as="h2">NINTENDO&apos;S POWER GLOVE</Text>
+        <Text as="h2">Nintendo&apos;s Power Glove</Text>
+        <Text as="h5" />
         <Center>
           <Image src={NESPowerGlove} objectFit="cover" width="60%" />
         </Center>

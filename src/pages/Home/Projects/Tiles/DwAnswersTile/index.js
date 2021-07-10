@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Image, Box, Text,
+  Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
 
 import powerGloveSkeleton from '../../../../../assets/images/PowerGlove/flex-sensor-circuit.png';
@@ -11,14 +11,26 @@ const PowerGloveTile = (props) => {
     <Box
       className="projects__description"
     >
-      <Text
-        as="h3"
-      >
-        Project:
+      <Text fontWeight="bold">
+        ROLES:
       </Text>
-      <Text marginBottom="1rem">UX design</Text>
-      <Text as="h3">Impact:</Text>
-      <Text>Streamlined IBM product support saving $48 million annually.</Text>
+      <Text marginBottom="2rem">
+        <UnorderedList>
+          <ListItem>
+            Project Management
+          </ListItem>
+          <ListItem>
+            UX design
+          </ListItem>
+          <ListItem>
+            UX research
+          </ListItem>
+        </UnorderedList>
+      </Text>
+      <Text fontWeight="bold">
+        DESCRIPTION:
+      </Text>
+      <Text>Streamlining product support by crowdsourcing solutions for the easiest customer issues.</Text>
     </Box>
   );
 
@@ -26,7 +38,8 @@ const PowerGloveTile = (props) => {
     <Tile
       className="projects__container"
       description={renderDescription()}
-      title="DW - ANSWERS"
+      title="DW ANSWERS"
+      subtitle="How I work"
       to="/dw-answers"
       projectImage={<Image className="projects__image" src={powerGloveSkeleton} />}
     />
