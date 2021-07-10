@@ -21,73 +21,76 @@ const Tile = ({
   };
 
   return (
-    <Grid
-      templateColumns="repeat(12, 1fr)"
-      className={`tile ${className}`}
-      gap="1rem"
-      textAlign={['center', 'left', 'left']}
-      paddingTop="2rem"
-      paddingBottom="2rem"
-      position="relative"
-      id={id}
-    >
-      <GridItem
-        colStart={[3]}
-        colSpan={[4]}
-      >
-        <Flex
-          height="100%"
-          justify="center"
-          direction="column"
+    <Waypoint onEnter={() => console.log(order)}>
+      <div>
+        <Grid
+          templateColumns="repeat(12, 1fr)"
+          className={`tile ${className}`}
+          gap="1rem"
+          textAlign={['center', 'left', 'left']}
+          paddingTop="2rem"
+          paddingBottom="2rem"
+          position="relative"
+          id={id}
         >
-          <Text
-            as="h4"
-            paddingBottom="1rem"
+          <GridItem
+            colStart={[3]}
+            colSpan={[4]}
           >
-            {subtitle}
-          </Text>
-          <Box className="container__solid-rectangle">
-            <Header title={title} />
-            <Box marginTop="2rem">
-              {description}
-            </Box>
-          </Box>
-          <Box paddingTop="1rem">
-            <Button
-              onClick={handleLink}
-              className="projects__read-more-button"
+            <Flex
+              height="100%"
+              justify="center"
+              direction="column"
             >
-              READ MORE
-              <ArrowForwardIcon marginLeft=".5rem" />
-            </Button>
-          </Box>
-        </Flex>
-      </GridItem>
-      <GridItem
-        colSpan={[4]}
-        position="relative"
-        marginBottom="1rem"
-      >
-        <Flex
-          justify="center"
-          align="center"
-          height="100%"
-          piosi
-        >
-          <Box className="tile__image__frame__hover1" onClick={handleLink}>
-            <Box className="tile__image__frame__hover2" onClick={handleLink} />
-          </Box>
-          <Box
-            className="tile__image__frame"
+              <Text
+                as="h4"
+                paddingBottom="1rem"
+              >
+                {subtitle}
+              </Text>
+              <Box className="container__solid-rectangle">
+                <Header title={title} />
+                <Box marginTop="2rem">
+                  {description}
+                </Box>
+              </Box>
+              <Box paddingTop="1rem">
+                <Button
+                  onClick={handleLink}
+                  className="projects__read-more-button"
+                >
+                  READ MORE
+                  <ArrowForwardIcon marginLeft=".5rem" />
+                </Button>
+              </Box>
+            </Flex>
+          </GridItem>
+          <GridItem
+            colSpan={[4]}
+            position="relative"
+            marginBottom="1rem"
           >
-            <Box className="tile__image__container" onClick={handleLink}>
-              {projectImage}
-            </Box>
-          </Box>
-        </Flex>
-      </GridItem>
-    </Grid>
-
+            <Flex
+              justify="center"
+              align="center"
+              height="100%"
+              piosi
+            >
+              <Box className="tile__image__frame__hover1" onClick={handleLink}>
+                <Box className="tile__image__frame__hover2" onClick={handleLink} />
+              </Box>
+              <Box
+                className="tile__image__frame"
+              >
+                <Box className="tile__image__container" onClick={handleLink}>
+                  {projectImage}
+                </Box>
+              </Box>
+            </Flex>
+          </GridItem>
+        </Grid>
+      </div>
+    </Waypoint>
   );
 };
 
