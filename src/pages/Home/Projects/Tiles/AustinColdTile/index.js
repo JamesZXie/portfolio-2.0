@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  Image, Box, Text,
+  Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
 
 import austinCold from '../../../../../assets/images/AustinCold/mobile.png';
@@ -11,14 +11,26 @@ const AustinColdTile = (props) => {
     <Box
       className="projects__description"
     >
-      <Text
-        as="h3"
-      >
-        Project:
+      <Text fontWeight="bold">
+        ROLES:
       </Text>
-      <Text marginBottom="1rem"> Product design</Text>
-      <Text as="h3">Impact:</Text>
-      <Text> Helped a nonprofit save lives and raise $1.5 million during a natural disaster.</Text>
+      <Text marginBottom="2rem">
+        <UnorderedList>
+          <ListItem>
+            Project Management
+          </ListItem>
+          <ListItem>
+            UX Design
+          </ListItem>
+          <ListItem>
+            Frontend Development
+          </ListItem>
+        </UnorderedList>
+      </Text>
+      <Text fontWeight="bold">
+        DESCRIPTION:
+      </Text>
+      <Text>Working with a nonprofit to launch over 400 rescue operations and raise $1.5 million during a natural disaster.</Text>
     </Box>
   );
   return (
@@ -26,6 +38,7 @@ const AustinColdTile = (props) => {
       className="projects__container"
       id="tile--austin-cold"
       description={renderDescription()}
+      subtitle="How I give back"
       title="AUSTINCOLD"
       to="/austin-cold"
       projectImage={(
