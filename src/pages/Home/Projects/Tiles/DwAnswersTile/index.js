@@ -38,9 +38,10 @@ const PowerGloveTile = ({ init }) => {
   return (
     <Tile
       className="projects__container"
+      id="tile--dw-answers"
       description={renderDescription()}
       title="DW ANSWERS"
-      subtitle="How I work"
+      subtitle="1. How I work"
       order={1}
       init={init}
       to="/dw-answers"

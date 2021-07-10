@@ -1,33 +1,14 @@
 @import '../../App.scss';
 
-.nav-container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 99;
-    margin: .75rem;
-    width: calc(100% - 1rem);
-
-    .nav {
-        padding: .25rem;
-
-        button {
-            margin-right: .5rem;
-            background-color: transparent !important;
-            color: $ui-02;
-            font-weight: 100;
-        }
+.home-button-container {
+    background-color: transparent !important;
+    
+    .home-button {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: transparent !important;
+        font-weight: 100;
+        z-index: 99;
     }
-}
-
-
-.dashed-background {
-    position: fixed;
-    border: 2px dashed $interactive-01;
-    width: calc(100% - 2rem);
-    height: calc(100vh - 2rem);
-    top: 0;
-    z-index: 9;
-    margin: 1rem;
-    transition: all 0.2s ease-in-out;
 }

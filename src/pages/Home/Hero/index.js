@@ -15,7 +15,7 @@ const Hero = (props) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);
 
   return (
-    <Box className="hero">
+    <Box className="hero" id="hero">
       <Background />
       <Flex className="hero__container" justify="center" align="center">
         <Flex wrap="wrap">
