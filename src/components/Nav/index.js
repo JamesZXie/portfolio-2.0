@@ -5,7 +5,8 @@ import {
   Box, Button, Text, Flex, Image,
 } from '@chakra-ui/react';
 
-import logo from '../../assets/images/Logo.png';
+import logo from '../../assets/images/Home/logo.png';
+import logo2 from '../../assets/images/Home/logo2.png';
 
 const Nav = (props) => {
   const history = useHistory();
@@ -19,9 +20,39 @@ const Nav = (props) => {
   return (
     <>
       <Box className="home-button-container">
-        <Button className="home-button" onClick={() => handleLink('/')}>
-          <Text color={location.pathname === '/' ? 'white' : 'black'}>james xie</Text>
-        </Button>
+        <Box
+          cursor="pointer"
+          padding="1rem"
+          className="home-button"
+          onClick={() => handleLink('/')}
+        >
+          <Image
+            display={location.pathname === '/' ? 'none' : 'inline-block'}
+            verticalAlign="top"
+            src={logo}
+            alt="logo"
+            height="1.5rem"
+            marginRight=".5rem"
+          />
+          <Image
+            display={location.pathname === '/' ? 'inline-block' : 'none'}
+            verticalAlign="top"
+            src={logo2}
+            alt="logo"
+            height="1.5rem"
+            marginRight=".5rem"
+          />
+          <Box
+            display="inline-block"
+            paddingTop="1px"
+          >
+            <Text
+              color={location.pathname === '/' ? '#FAFAFA' : '#1A202C'}
+            >
+              XIE
+            </Text>
+          </Box>
+        </Box>
       </Box>
     </>
   );

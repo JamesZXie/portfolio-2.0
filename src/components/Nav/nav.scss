@@ -2,6 +2,7 @@
 
 .home-button-container {
     background-color: transparent !important;
+    font-family: RobotoCondensed;
     
     .home-button {
         position: fixed;
@@ -9,6 +10,6 @@
         left: 0;
         background-color: transparent !important;
         font-weight: 100;
-        z-index: 99;
+        z-index: 9999;
     }
 }
