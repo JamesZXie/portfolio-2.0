@@ -31,7 +31,7 @@ const PowerGloveTile = ({ init }) => {
       <Text fontWeight="bold">
         DESCRIPTION:
       </Text>
-      <Text>Streamlining product support by crowdsourcing solutions for the easiest customer issues.</Text>
+      <Text>Streamlining IBM product support by crowdsourcing solutions for a subset of customer issues.</Text>
     </Box>
   );
 

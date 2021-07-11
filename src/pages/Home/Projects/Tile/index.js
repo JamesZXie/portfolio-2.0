@@ -74,7 +74,7 @@ const Tile = ({
               justify="center"
               align="center"
               height="100%"
-              piosi
+
             >
               <Box className="tile__image__frame__hover1" onClick={handleLink}>
                 <Box className="tile__image__frame__hover2" onClick={handleLink} />

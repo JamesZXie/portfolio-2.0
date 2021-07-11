@@ -14,7 +14,7 @@ const Background = (props) => {
   let canvas;
   let font;
   const speed = 8;
-  const textSize = 15;
+  const textSize = 16;
   const boxOffset = 22;
   const numLetters = 60;
   let stopDrawing = false;
@@ -33,7 +33,7 @@ const Background = (props) => {
     for (let i = 0; i < numLetters; i += 1) {
       newText.push(
         {
-          l: 'X',
+          l: 'x',
           x: findRandomX(),
           y: findRandomY(),
           currDirection: { x: speed, y: 0, d: findRandomDir() },
@@ -99,10 +99,19 @@ const Background = (props) => {
     if (l.currDirection.d === 'down' && l.y + speed > box.height - padding) colliding = true;
 
     if (colliding) {
+      // Line below reads:
+      //   if the projectile is going in the direction "right",
+      //   or if it is hitting the left edge, don't let it go "left".
       if (l.currDirection.d === 'right' || l.x - speed < padding) collisions.push('left');
       if (l.currDirection.d === 'left' || l.x + speed > box.width - padding) collisions.push('right');
       if (l.currDirection.d === 'up' || l.y + speed > box.height - padding) collisions.push('down');
       if (l.currDirection.d === 'down' || l.y - speed < padding) collisions.push('up');
+
+      // if the mouse is to the right of projectile and 'right' is not excluded, toss a coin. If heads, go towards the mouse.
+      if (p.mouseX > l.x && !collisions.includes('right')) collisions.push('left');
+      if (p.mouseX < l.x && !collisions.includes('left')) collisions.push('right');
+      if (p.mouseY > l.y && !collisions.includes('down')) collisions.push('up');
+      if (p.mouseY < l.y && !collisions.includes('up')) collisions.push('down');
 
       const directions = ['up', 'down', 'left', 'right'].filter((d) => !collisions.includes(d));
       return directions[Math.floor(Math.random() * directions.length)];
@@ -206,6 +215,12 @@ const Background = (props) => {
     // const sizeScaleB = p.map(p.cos(p.frameCount / (2 * transformSpeed) / 2 + p.PI / 2), -1, 1, 50, 100);
     if (!stopDrawing) {
       p.clear(); // no background needed, in scss.
+      p.push();
+      p.stroke(255, 0, 0);
+      p.strokeWeight(2);
+      p.noFill();
+      p.ellipse(p.mouseX, p.mouseY, 15, 15);
+      p.pop();
       p.fill(255, 0, 0);
       p.noStroke();
       p.translate(8, 16);
