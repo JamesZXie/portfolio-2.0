@@ -13,7 +13,7 @@ const Background = (props) => {
   // p5 variables
   let canvas;
   let font;
-  const speed = 8;
+  const speed = 10;
   const textSize = 16;
   const boxOffset = 22;
   const numLetters = 60;
@@ -141,7 +141,7 @@ const Background = (props) => {
   };
 
   const animateText = (p) => {
-    const collisionFrequency = 20;
+    const collisionFrequency = 7;
     text = text.map((l, i) => {
       // check for collisions
       let direction = l.currDirection;

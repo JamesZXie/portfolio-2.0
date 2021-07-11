@@ -12,7 +12,6 @@ import FlexSensorCircuit from '../../../assets/images/PowerGlove/flex-sensor-cir
 import GloveComplete from '../../../assets/images/PowerGlove/completed-glove.jpg';
 import GloveExample from '../../../assets/images/PowerGlove/glove-example.gif';
 import GloveSkeleton from '../../../assets/images/PowerGlove/glove-skeleton.jpg';
-import NESPowerGlove from '../../../assets/images/PowerGlove/NES-power-glove.jpg';
 
 import './power-glove.scss';
 
