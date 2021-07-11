@@ -6,6 +6,7 @@ import {
 import Header from '../../../components/Header';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
+import SectionBreak from '../../../components/SectionBreak';
 
 // images
 import problemStatement from '../../../assets/images/DwAnswers/problem-statement.png';
@@ -42,7 +43,7 @@ const PowerGlove = ({}) => {
         loading={loading}
       />
       <Section
-        className="dw-answers"
+        className="project-page dw-answers"
       >
         <GridItem
           colStart={colStart}
@@ -50,20 +51,33 @@ const PowerGlove = ({}) => {
           colEnd={colEnd}
         >
           <Center>
-            <Text title="DW-ANSWERS" />
+            <Text
+              as="h1"
+              className="blurb"
+            >
+              DW ANSWERS
+            </Text>
           </Center>
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          paddingTop={lineBreakPadding}
           paddingBottom={sectionBreakPadding}
         >
+          <Text
+            paddingBottom={sectionBreakPadding}
+          >
+            I structure my thinking as much as possible, hold strong opinions loosely, back actions with evidence,
+            and tie every decision into the bigger picture.
+          </Text>
+          <SectionBreak />
+
           <Text as="h2">The Problem</Text>
           <Text as="h4">IBM Support is slow for customers and costly for IBM.</Text>
           <Text paddingBottom={lineBreakPadding}>
-            IBM product support receives a staggering 12,000 requests for help each month that they internally categorize into three priorities:
+            IBM product support receives a staggering 12,000 requests for help each month that they internally categorize into three
+            priorities:
           </Text>
           <OrderedList>
             <ListItem>

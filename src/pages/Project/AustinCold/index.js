@@ -3,22 +3,22 @@ import React, { useState } from 'react';
 import {
   Grid, GridItem, Box, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
-import Header from '../../../components/Header';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
+import SectionBreak from '../../../components/SectionBreak';
 
 // images
-import LandingImage from '../../../assets/images/AustinCold/landing.png';
 import HelpFormSpanishImage from '../../../assets/images/AustinCold/help-form--spanish.png';
 import InfoArabicImage from '../../../assets/images/AustinCold/info--arabic.png';
-import Mobile from '../../../assets/images/AustinCold/mobile.png';
 import Mobile2 from '../../../assets/images/AustinCold/mobile2.png';
 import Flow from '../../../assets/images/AustinCold/flow.png';
 import AustinSnow from '../../../assets/images/AustinCold/austin-snow-air.jpg';
 
 import './austin-cold.scss';
+import '../project.scss';
 
-const imageBottomPadding = '2rem';
+const lineBreakPadding = '1rem';
+const sectionBreakPadding = '2rem';
 const colStart = 4;
 const colSpan = 6;
 const colEnd = 10;
@@ -42,7 +42,7 @@ const AustinCold = ({}) => {
         loading={loading}
       />
       <Section
-        className="austin-cold"
+        className="project-page austin-cold"
       >
         <GridItem
           colStart={colStart}
@@ -50,7 +50,12 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
         >
           <Center>
-            <Header title="AUSTIN COLD" />
+            <Text
+              as="h1"
+              className="blurb"
+            >
+              AUSTIN COLD
+            </Text>
           </Center>
         </GridItem>
 
@@ -59,6 +64,12 @@ const AustinCold = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
+          <Text paddingBottom={sectionBreakPadding}>
+            When I first started reaching out to the community, I&apos;d have to look for work. Now, people reach out to me
+            directly when they need help!
+            {' '}
+          </Text>
+          <SectionBreak />
           <Text as="h2">The Problem</Text>
           <Text as="h4">ERCOT cut corners when building the isolated power grid</Text>
           <Image
@@ -69,7 +80,7 @@ const AustinCold = ({}) => {
             alt="Satellite image of Austin covered in snow"
             onLoad={handleLoad}
           />
-          <Center paddingBottom={imageBottomPadding}>
+          <Center paddingBottom={sectionBreakPadding}>
             <Text as="h5">Satellite image of Austin covered in snow</Text>
           </Center>
           <Text>
@@ -142,7 +153,7 @@ const AustinCold = ({}) => {
               onLoad={handleLoad}
             />
           </Center>
-          <Center paddingBottom={imageBottomPadding}>
+          <Center paddingBottom={sectionBreakPadding}>
             <Text as="h5">How austincold.com helped CRT coordinate efforts</Text>
           </Center>
 
@@ -169,7 +180,7 @@ const AustinCold = ({}) => {
             to preserve visual hierarchy and trying to leave as much space for site updates as we laid components down.
           </Text>
 
-          <Flex wrap="wrap" paddingTop="2rem" paddingBottom={imageBottomPadding}>
+          <Flex wrap="wrap" paddingTop="2rem" paddingBottom={sectionBreakPadding}>
             <Center flex="1">
               <Image
                 src={InfoArabicImage}

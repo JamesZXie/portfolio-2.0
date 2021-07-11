@@ -1,0 +1,10 @@
+@import '../../App.scss';
+
+.project-page {
+    .blurb {
+        color: $text-01;
+        border: 1px solid $text-01;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+}

@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import {
   Grid, GridItem, Box, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
-import Header from '../../../components/Header';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
+import SectionBreak from '../../../components/SectionBreak';
 
 // images
 import FlexSensorCircuit from '../../../assets/images/PowerGlove/flex-sensor-circuit.png';
@@ -15,7 +15,11 @@ import GloveSkeleton from '../../../assets/images/PowerGlove/glove-skeleton.jpg'
 
 import './power-glove.scss';
 
-const imageBottomPadding = '1rem';
+const sectionBreakPadding = '2rem';
+const lineBreakPadding = '1rem';
+const colStart = 4;
+const colSpan = 6;
+const colEnd = 10;
 
 const PowerGlove = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
@@ -36,24 +40,45 @@ const PowerGlove = ({}) => {
         loading={loading}
       />
       <Section
-        className="power-glove"
+        className="project-page power-glove"
       >
         <GridItem
-          colStart={3}
-          colSpan={8}
-          colEnd={11}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
         >
           <Center>
-            <Header title="POWERGLOVE" />
+            <Text
+              as="h1"
+              className="blurb"
+            >
+              POWERGLOVE
+            </Text>
           </Center>
         </GridItem>
         <GridItem
-          colStart={3}
-          colSpan={8}
-          colEnd={11}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
           paddingTop="1rem"
         >
-          <Text as="h2">MY VERSION</Text>
+          <Text paddingBottom={sectionBreakPadding}>
+            When not dancing, climbing, or gaming, I enjoy playing with bleeding edge tech and imagining how
+            it could affect the future of human-computer interaction.
+          </Text>
+          <SectionBreak />
+          <Text as="h2">The Project</Text>
+          <Text as="h4">IoT can be a lot of fun</Text>
+          <Text paddingBottom={lineBreakPadding}>The PowerGlove is a glove I scrapped together that can &quot;see&quot; what a user&apos;s hand looks like.</Text>
+          <Text paddingBottom={sectionBreakPadding}>
+            It senses voltage changes in a pretty simple circuit that runs through the glove.
+            Thanks to node, johnny-five.js and the power of websockets we can
+            take that information and run it through any javascript application in real time.
+            Check out the code, an example, and a pseudo-api
+            {' '}
+            <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
+            .
+          </Text>
           {/* <iframe
         width="560"
         height="315"
@@ -66,42 +91,35 @@ const PowerGlove = ({}) => {
           <Center>
             <Image
               src={GloveExample}
-              width="50%"
               onLoad={handleLoad}
             />
           </Center>
-          <Center paddingBottom={imageBottomPadding}>
+          <Center paddingBottom={lineBreakPadding}>
             <Text as="h5">The Power Glove hooked up to a WebGL sketch</Text>
           </Center>
-          <Text marginTop="1rem">
-            The PowerGlove measures the voltage change that occurs when a finger bends, and
-            interprets it. Thanks to node, johnny-five.js and the power of
-            websockets we can take that information and run it through a javascript
-            application in real time. Check out the code, an example, and a pseudo-api
-            {' '}
-            {' '}
-            <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
-            .
+
+          <Text paddingBottom={lineBreakPadding}>
+            From a user perspective, this is worse than using a camera. However image recognition is unreliable, and
+            for an experiment that attempts to envision the future, an accurate way to retrieve user input makes sense.
+          </Text>
+          <Text>
+            Plus, working with hardware while blasting rock music makes me feel like Tony Stark.
           </Text>
         </GridItem>
         <GridItem
-          colStart={3}
-          colSpan={8}
-          colEnd={11}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
           paddingTop="1rem"
         >
-          <Text as="h2">HOW IT WORKS</Text>
-          <Center>
-            <Image
-              src={FlexSensorCircuit}
-              objectFit="cover"
-              width="60%"
-              onLoad={handleLoad}
-            />
-          </Center>
-          <Center paddingBottom={imageBottomPadding}>
-            <Text as="h5">Arduino circuit with flex sensor</Text>
-          </Center>
+          <Text as="h2">Functionality</Text>
+          <Text as="h4">How does it work?</Text>
+          <Image
+            src={FlexSensorCircuit}
+            objectFit="cover"
+            onLoad={handleLoad}
+          />
+          <Text as="h5">Arduino circuit with flex sensor</Text>
           <Text>
             A Flex sensor is a special resistor that changes value when bent in a direction.
             Arduinos can measure voltage at points in a circuit. Making a circuit with
@@ -128,7 +146,7 @@ const PowerGlove = ({}) => {
               onLoad={handleLoad}
             />
           </Center>
-          <Center paddingBottom={imageBottomPadding}>
+          <Center paddingBottom={lineBreakPadding}>
             <Text as="h5">Completed glove</Text>
           </Center>
           <Text>
