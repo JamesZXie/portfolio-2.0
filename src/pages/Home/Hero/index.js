@@ -38,7 +38,7 @@ const Hero = (props) => {
                 how I work
               </ListItem>
               <ListItem>
-                how I grow
+                how I play
               </ListItem>
               <ListItem>
                 how I give back

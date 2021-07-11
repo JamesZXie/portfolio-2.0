@@ -36,7 +36,7 @@ const Home = (props) => {
             className="side-menu__item"
             onClick={() => handleClick('tile--power-glove')}
           >
-            grow
+            play
           </Button>
           <Button
             className="side-menu__item"
