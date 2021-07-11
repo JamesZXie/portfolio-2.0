@@ -40,7 +40,7 @@ const PowerGloveTile = (props) => {
       className="projects__container"
       id="tile--power-glove"
       description={renderDescription()}
-      subtitle="2. How I grow"
+      subtitle="2. How I play"
       title="POWERGLOVE"
       to="/power-glove"
       order={2}
