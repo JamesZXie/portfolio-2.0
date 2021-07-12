@@ -37,6 +37,22 @@ const Tile = ({
           id={id}
         >
           <ArrowUp />
+          <Box
+            position="absolute"
+            height="100%"
+            width="50%"
+            textAlign="left"
+            paddingLeft={[0, '4rem']}
+            zIndex="-1"
+            color="#2d1d1d"
+            fontFamily="RobotoCondensed"
+            fontSize="100vh"
+            lineHeight="100vh"
+            userSelect="none"
+            tabIndex="-1"
+          >
+            {order}
+          </Box>
           <GridItem
             colStart={[1, 3]}
             colSpan={[12, 4]}

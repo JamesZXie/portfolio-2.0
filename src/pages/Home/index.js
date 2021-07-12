@@ -39,19 +39,19 @@ const Home = (props) => {
             className="side-menu__item"
             onClick={() => handleClick('tile--dw-answers')}
           >
-            work
+            1. work
           </Button>
           <Button
             className="side-menu__item"
             onClick={() => handleClick('tile--power-glove')}
           >
-            play
+            2. play
           </Button>
           <Button
             className="side-menu__item"
             onClick={() => handleClick('tile--austin-cold')}
           >
-            give
+            3. give
           </Button>
         </Flex>
       </Flex>
