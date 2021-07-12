@@ -43,8 +43,13 @@ body {
 h1 {
     font-family: RobotoCondensed;
     font-size: 64px !important;
-    line-height: 3rem;
+    line-height: 4rem;
     padding-top: 1px;
+
+            
+    @media (max-width: 480px) {
+        font-size: 48px !important;
+    }
 }
 
 h2 {
@@ -65,6 +70,7 @@ h4 {
     font-weight: lighter;
     font-style: italic;
     padding-bottom: 2rem;
+    text-align: left !important;
 }
 
 h5 {
@@ -76,11 +82,18 @@ h5 {
     padding-top: .5rem;
 }
 
-
+p {
+    text-align: left !important;
+}
 
 ol {
     margin-left: 2rem !important;
     margin-right: 2rem !important;
+    text-align: left !important;
+}
+
+li {
+    text-align: left !important;
 }
 
 button {
@@ -120,5 +133,9 @@ a {
         padding: $spacing-01;
         border-radius: 10px;
         background-color: $ui-01;
+        
+        @media (max-width: 480px) {
+            width: 100%;
+        }
     }
 }

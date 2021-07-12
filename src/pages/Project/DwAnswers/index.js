@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {
   Grid, GridItem, Box, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
+import PropTypes from 'prop-types';
 import Header from '../../../components/Header';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
@@ -18,13 +19,13 @@ import lowFidelityMockups from '../../../assets/images/DwAnswers/low-fidelity-mo
 
 import './dw-answers.scss';
 
-const sectionBreakPadding = '2rem';
-const lineBreakPadding = '1rem';
-const colStart = 4;
-const colSpan = 6;
-const colEnd = 10;
-
-const PowerGlove = ({}) => {
+const DwAnswers = ({
+  sectionBreakPadding,
+  lineBreakPadding,
+  colStart,
+  colSpan,
+  colEnd,
+}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
   const total = 6;
@@ -374,4 +375,12 @@ const PowerGlove = ({}) => {
   );
 };
 
-export default PowerGlove;
+DwAnswers.propTypes = {
+  lineBreakPadding: PropTypes.string.isRequired,
+  sectionBreakPadding: PropTypes.string.isRequired,
+  colStart: PropTypes.number.isRequired,
+  colSpan: PropTypes.number.isRequired,
+  colEnd: PropTypes.number.isRequired,
+};
+
+export default DwAnswers;

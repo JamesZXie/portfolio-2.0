@@ -30,12 +30,14 @@ const Tile = ({
           textAlign={['center', 'left', 'left']}
           paddingTop="2rem"
           paddingBottom="2rem"
+          paddingLeft={['1rem', 0]}
+          paddingRight={['1rem', 0]}
           position="relative"
           id={id}
         >
           <GridItem
-            colStart={[3]}
-            colSpan={[4]}
+            colStart={[1, 3]}
+            colSpan={[12, 4]}
           >
             <Flex
               height="100%"
@@ -49,12 +51,12 @@ const Tile = ({
                 {subtitle}
               </Text>
               <Box className="container__solid-rectangle">
-                <Header title={title} />
-                <Box marginTop="2rem">
+                <Text as="h1">{title}</Text>
+                <Box marginTop="1rem" textAlign="left">
                   {description}
                 </Box>
               </Box>
-              <Box paddingTop="1rem">
+              <Box paddingTop="1rem" textAlign={['right', 'left']}>
                 <Button
                   onClick={handleLink}
                   className="projects__read-more-button"
@@ -66,7 +68,8 @@ const Tile = ({
             </Flex>
           </GridItem>
           <GridItem
-            colSpan={[4]}
+            display={['none', 'none', 'none', 'block', 'block']}
+            colSpan={[0, 0, 0, 3, 4]}
             position="relative"
             marginBottom="1rem"
           >
@@ -81,6 +84,7 @@ const Tile = ({
               </Box>
               <Box
                 className="tile__image__frame"
+                display={['none', 'none', 'none', 'block']}
               >
                 <Box className="tile__image__container" onClick={handleLink}>
                   {projectImage}

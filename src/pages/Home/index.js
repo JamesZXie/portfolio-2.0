@@ -14,7 +14,10 @@ const Home = (props) => {
     };
 
     return (
-      <Flex className="side-menu-container">
+      <Flex
+        className="side-menu-container"
+        display={['none', 'flex']}
+      >
         <Flex
           direction="column"
           className="side-menu"
@@ -49,13 +52,43 @@ const Home = (props) => {
     );
   };
 
+  const lineBreakPadding = '1rem';
+  const sectionBreakPadding = '2rem';
+  const colStart = 4;
+  const colSpan = 6;
+  const colEnd = 10;
+
   return (
     <Box className="home" id="home">
       {renderSideMenu()}
-      <Hero />
-      <DwAnswersTile />
-      <PowerGloveTile />
-      <AustinColdTile />
+      <Hero
+        lineBreakPadding={lineBreakPadding}
+        sectionBreakPadding={sectionBreakPadding}
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      />
+      <DwAnswersTile
+        lineBreakPadding={lineBreakPadding}
+        sectionBreakPadding={sectionBreakPadding}
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      />
+      <PowerGloveTile
+        lineBreakPadding={lineBreakPadding}
+        sectionBreakPadding={sectionBreakPadding}
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      />
+      <AustinColdTile
+        lineBreakPadding={lineBreakPadding}
+        sectionBreakPadding={sectionBreakPadding}
+        colStart={colStart}
+        colSpan={colSpan}
+        colEnd={colEnd}
+      />
     </Box>
   );
 };

@@ -25,7 +25,7 @@ const Hero = (props) => {
 
           <Box className="container__solid-rectangle hero__intro-container">
             <Text paddingBottom="1rem">
-              I’m James Xie, an experience designer at IBM with a background in engineering.
+              I’m James Xie, a user experience designer at IBM with a background in engineering.
             </Text>
             <Text paddingBottom="1rem">
               Below you’ll find three projects that show:
