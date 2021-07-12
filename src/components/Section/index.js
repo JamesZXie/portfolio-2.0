@@ -9,19 +9,19 @@ import {
 
 const Section = ({ children, className }) => (
   <>
-    <hr className="section__line__top" />
     <Grid
       templateColumns="repeat(12, 1fr)"
       className={className}
       gap="1rem"
       textAlign={['center', 'left', 'left']}
-      paddingTop="2rem"
-      paddingBottom="2rem"
+      paddingTop="3.5rem"
+      paddingBottom="4rem"
+      paddingLeft={['1rem', 0]}
+      paddingRight={['1rem', 0]}
       position="relative"
     >
       {children}
     </Grid>
-    <hr className="section__line__bottom" />
   </>
 );
 

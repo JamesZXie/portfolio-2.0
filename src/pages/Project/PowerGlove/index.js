@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import {
   Grid, GridItem, Box, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
-import PropTypes from 'prop-types';
-
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
@@ -17,13 +15,13 @@ import GloveSkeleton from '../../../assets/images/PowerGlove/glove-skeleton.jpg'
 
 import './power-glove.scss';
 
-const PowerGlove = ({
-  sectionBreakPadding,
-  lineBreakPadding,
-  colStart,
-  colSpan,
-  colEnd,
-}) => {
+const lineBreakPadding = '1rem';
+const sectionBreakPadding = '2rem';
+const colStart = [0, 4];
+const colSpan = [12, 6];
+const colEnd = [13, 10];
+
+const PowerGlove = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
   const total = 4;
@@ -138,13 +136,13 @@ const PowerGlove = ({
             <Image
               src={GloveSkeleton}
               objectFit="cover"
-              width="35%"
+              width="50%"
               onLoad={handleLoad}
             />
             <Image
               src={GloveComplete}
               objectFit="cover"
-              width="35%"
+              width="50%"
               onLoad={handleLoad}
             />
           </Center>
@@ -165,14 +163,6 @@ const PowerGlove = ({
       </Section>
     </>
   );
-};
-
-PowerGlove.propTypes = {
-  lineBreakPadding: PropTypes.string.isRequired,
-  sectionBreakPadding: PropTypes.string.isRequired,
-  colStart: PropTypes.number.isRequired,
-  colSpan: PropTypes.number.isRequired,
-  colEnd: PropTypes.number.isRequired,
 };
 
 export default PowerGlove;

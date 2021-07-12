@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import {
   Grid, GridItem, Box, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
-import PropTypes from 'prop-types';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
@@ -18,9 +17,13 @@ import AustinSnow from '../../../assets/images/AustinCold/austin-snow-air.jpg';
 import './austin-cold.scss';
 import '../project.scss';
 
-const AustinCold = ({
-  lineBreakPadding, sectionBreakPadding, colStart, colSpan, colEnd,
-}) => {
+const lineBreakPadding = '1rem';
+const sectionBreakPadding = '2rem';
+const colStart = [0, 4];
+const colSpan = [12, 6];
+const colEnd = [13, 10];
+
+const AustinCold = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
   const total = 5;
@@ -253,14 +256,6 @@ const AustinCold = ({
       </Section>
     </>
   );
-};
-
-AustinCold.propTypes = {
-  lineBreakPadding: PropTypes.string.isRequired,
-  sectionBreakPadding: PropTypes.string.isRequired,
-  colStart: PropTypes.number.isRequired,
-  colSpan: PropTypes.number.isRequired,
-  colEnd: PropTypes.number.isRequired,
 };
 
 export default AustinCold;

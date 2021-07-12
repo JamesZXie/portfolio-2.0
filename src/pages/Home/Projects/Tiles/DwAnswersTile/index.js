@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import powerGloveSkeleton from '../../../../../assets/images/PowerGlove/flex-sensor-circuit.png';
 import Tile from '../../Tile';
 
-const PowerGloveTile = ({ init }) => {
+const DwAnswersTile = ({ init }) => {
   const renderDescription = () => (
     <Box
       className="projects__description"
@@ -50,8 +50,8 @@ const PowerGloveTile = ({ init }) => {
   );
 };
 
-PowerGloveTile.propTypes = {
+DwAnswersTile.propTypes = {
   init: PropTypes.bool.isRequired,
 };
 
-export default PowerGloveTile;
+export default DwAnswersTile;

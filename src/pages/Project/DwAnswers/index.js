@@ -3,8 +3,6 @@ import React, { useState } from 'react';
 import {
   Grid, GridItem, Box, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
-import PropTypes from 'prop-types';
-import Header from '../../../components/Header';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
@@ -19,13 +17,13 @@ import lowFidelityMockups from '../../../assets/images/DwAnswers/low-fidelity-mo
 
 import './dw-answers.scss';
 
-const DwAnswers = ({
-  sectionBreakPadding,
-  lineBreakPadding,
-  colStart,
-  colSpan,
-  colEnd,
-}) => {
+const lineBreakPadding = '1rem';
+const sectionBreakPadding = '2rem';
+const colStart = [0, 4];
+const colSpan = [12, 6];
+const colEnd = [13, 10];
+
+const DwAnswers = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
   const total = 6;
@@ -240,13 +238,13 @@ const DwAnswers = ({
           </Text>
           <Center>
             <Text
-              fontSize="32px"
+              fontSize={['24px', '32px']}
               paddingLeft="2rem"
               paddingRight="2rem"
               fontStyle="italic"
               paddingBottom={sectionBreakPadding}
             >
-              “I’ll take a look when I need a break.”
+              “I&apos;ll take a look when I need a break.”
             </Text>
           </Center>
           <Text>
@@ -283,7 +281,7 @@ const DwAnswers = ({
           </Text>
           <Center>
             <Text
-              fontSize="32px"
+              fontSize={['24px', '32px']}
               paddingLeft="2rem"
               paddingRight="2rem"
               fontStyle="italic"
@@ -373,14 +371,6 @@ const DwAnswers = ({
       </Section>
     </>
   );
-};
-
-DwAnswers.propTypes = {
-  lineBreakPadding: PropTypes.string.isRequired,
-  sectionBreakPadding: PropTypes.string.isRequired,
-  colStart: PropTypes.number.isRequired,
-  colSpan: PropTypes.number.isRequired,
-  colEnd: PropTypes.number.isRequired,
 };
 
 export default DwAnswers;

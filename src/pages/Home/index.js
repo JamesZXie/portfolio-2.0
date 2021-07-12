@@ -7,6 +7,12 @@ import AustinColdTile from './Projects/Tiles/AustinColdTile';
 import PowerGloveTile from './Projects/Tiles/PowerGloveTile';
 import DwAnswersTile from './Projects/Tiles/DwAnswersTile';
 
+const lineBreakPadding = '1rem';
+const sectionBreakPadding = '2rem';
+const colStart = [0, 4];
+const colSpan = [12, 6];
+const colEnd = [13, 10];
+
 const Home = (props) => {
   const renderSideMenu = () => {
     const handleClick = (id) => {
@@ -51,12 +57,6 @@ const Home = (props) => {
       </Flex>
     );
   };
-
-  const lineBreakPadding = '1rem';
-  const sectionBreakPadding = '2rem';
-  const colStart = 4;
-  const colSpan = 6;
-  const colEnd = 10;
 
   return (
     <Box className="home" id="home">
