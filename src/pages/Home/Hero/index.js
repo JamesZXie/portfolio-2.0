@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import './hero.scss';
 import Background from '../../../components/Background';
-import logo from '../../../assets/images/Home/logo2.png';
+import ArrowDown from '../../../components/ArrowDown';
 
 const Hero = (props) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);
@@ -44,6 +44,7 @@ const Hero = (props) => {
           </Box>
         </Flex>
       </Flex>
+      <ArrowDown />
     </Box>
   );
 };

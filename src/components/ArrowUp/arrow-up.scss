@@ -1,0 +1,23 @@
+@import '../../App.scss';
+
+.arrow-up {
+    position: absolute !important;
+    top: 4rem;
+    left: calc(50% - 1rem);
+    z-index: 999;
+    color: $ui-02;
+    border-radius: 10px !important;
+    border: 1px solid $interactive-01 !important;
+    width: 2rem !important;
+    background-color: $ui-01 !important;
+    transform: rotate(45deg);
+    transition: all .2s ease-in-out;
+
+    &__icon {
+        transform: rotate(-45deg);
+    }
+
+    &:hover {
+        box-shadow: -.5rem -.5rem 0px 0px $interactive-01;
+    }
+}

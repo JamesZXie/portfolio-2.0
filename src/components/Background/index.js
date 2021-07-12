@@ -4,7 +4,6 @@ import './background.scss';
 import {
   Box, Button,
 } from '@chakra-ui/react';
-import { ArrowDownIcon } from '@chakra-ui/icons';
 import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf';
 
 const Background = (props) => {
@@ -235,11 +234,6 @@ const Background = (props) => {
       className="hero__background"
       role="heading"
     >
-      <Button
-        className="hero__scroll-button"
-      >
-        <ArrowDownIcon />
-      </Button>
       <Sketch setup={setup} draw={draw} preload={preload} />
     </Box>
   );

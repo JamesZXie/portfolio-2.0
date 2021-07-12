@@ -22,50 +22,7 @@
 
             &:hover {
                 cursor: pointer;
-            }
-
-            &__hover1 {
-                position: absolute;
-                z-index: 1;
-                height: 18rem;
-                width: 18rem;
-                border-left: none;
-                border-bottom: none;
-                border-radius: 10px;
-                transform: rotateY(0deg) rotate(45deg);
-                transition: all 0.1s ease-in-out;
-                 border-top: 0px solid $interactive-01;
-                border-right: 0px solid $interactive-01;
-                
-                &:hover {
-                    border-top: 1px solid $interactive-01;
-                    border-right: 1px solid $interactive-01;
-                    transform: rotateY(0deg) rotate(45deg) translate(1rem, -1rem);
-                    cursor: pointer;
-                    border-radius: 0px 10px 0px 0px;
-                    
-                }
-            }
-
-            &__hover2{
-                position: absolute;
-                z-index: 1;
-                height: 18rem;
-                width: 18rem;
-                border-left: none;
-                border-bottom: none;
-                border-radius: 10px;
-                transition: all 0.1s ease-in-out;
-                border-top: 0px solid $interactive-01;
-                border-right: 0px solid $interactive-01;
-                
-                &:hover {
-                    border-top: 1px solid $interactive-01;
-                    border-right: 1px solid $interactive-01;
-                    transform: translate(1rem, -1rem);
-                    cursor: pointer;
-                    border-radius: 0px 10px 0px 0px;
-                }
+                box-shadow: 1rem -1rem 0px 0px $interactive-01;
             }
         }
 

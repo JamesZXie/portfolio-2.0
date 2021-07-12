@@ -7,7 +7,8 @@ import {
 import { useHistory, useLocation } from 'react-router-dom';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { Waypoint } from 'react-waypoint';
-import Header from '../../../../components/Header';
+import ArrowUp from '../../../../components/ArrowUp';
+import ArrowDown from '../../../../components/ArrowDown';
 
 const Tile = ({
   title, description, to, projectImage, className, id, subtitle, order,
@@ -35,6 +36,7 @@ const Tile = ({
           position="relative"
           id={id}
         >
+          <ArrowUp />
           <GridItem
             colStart={[1, 3]}
             colSpan={[12, 4]}
@@ -56,7 +58,7 @@ const Tile = ({
                   {description}
                 </Box>
               </Box>
-              <Box paddingTop="1rem" textAlign={['right', 'left']}>
+              <Box paddingTop="1rem" textAlign={['right', 'right']}>
                 <Button
                   onClick={handleLink}
                   className="projects__read-more-button"
@@ -79,9 +81,6 @@ const Tile = ({
               height="100%"
 
             >
-              <Box className="tile__image__frame__hover1" onClick={handleLink}>
-                <Box className="tile__image__frame__hover2" onClick={handleLink} />
-              </Box>
               <Box
                 className="tile__image__frame"
                 display={['none', 'none', 'none', 'block']}
@@ -92,6 +91,7 @@ const Tile = ({
               </Box>
             </Flex>
           </GridItem>
+          <ArrowDown hidden={order === 3} />
         </Grid>
       </div>
     </Waypoint>

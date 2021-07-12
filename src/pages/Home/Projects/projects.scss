@@ -22,11 +22,9 @@
         color: $ui-02;
         border-radius: 5px !important;
         border: 1px solid $interactive-01 !important;
-        -webkit-box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.2); 
-        box-shadow: 4px 4px 6px 0px rgba(0,0,0,0.2);
 
         &:hover {
-            background-color: $interactive-01 !important;
+            box-shadow: 1rem 0rem 0px 0px $interactive-01;
         }
     }
 }
