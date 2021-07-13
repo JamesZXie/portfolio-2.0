@@ -36,6 +36,10 @@
         &:hover {
             box-shadow: 1rem 0rem 0px 0px $interactive-01;
         }
+        &:focus {
+            box-shadow: 1rem 0rem 0px 0px $ui-02 !important;
+        }
+    
     }
 
     &__fun-box{

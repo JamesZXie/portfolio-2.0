@@ -20,4 +20,8 @@
     &:hover {
         box-shadow: -.5rem -.5rem 0px 0px $interactive-01;
     }
+    &:focus {
+        box-shadow: -.5rem -.5rem 0px 0px $ui-02 !important;
+    }
+
 }

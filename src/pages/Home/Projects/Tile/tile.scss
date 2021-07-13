@@ -39,6 +39,10 @@
                 cursor: pointer;
                 box-shadow: 0rem 0rem 0px 1rem $interactive-01;
             }
+            &:focus {
+                cursor: pointer;
+                box-shadow: 0rem 0rem 0px 1rem $ui-01 !important;
+            }
         }
 
         &__container {
