@@ -92,6 +92,8 @@ const PowerGlove = ({}) => {
             <Image
               src={GloveExample}
               onLoad={handleLoad}
+              height="100%"
+              objectFit="contain !important"
             />
           </Center>
           <Center paddingBottom={lineBreakPadding}>
@@ -132,17 +134,18 @@ const PowerGlove = ({}) => {
             airsoft glove because they have padding you can easily cut up to create
             a quick shell to protect the sensors, but you can use anything.
           </Text>
-          <Center marginTop="2rem">
+          <Center width="100%" marginTop="2rem">
             <Image
               src={GloveSkeleton}
-              objectFit="cover"
+              flex=".5"
               width="50%"
+              height="100%"
               onLoad={handleLoad}
             />
             <Image
               src={GloveComplete}
-              objectFit="cover"
               width="50%"
+              height="100%"
               onLoad={handleLoad}
             />
           </Center>
