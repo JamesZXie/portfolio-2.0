@@ -3,7 +3,7 @@ import {
   Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
 
-import powerGloveSkeleton from '../../../../../assets/images/PowerGlove/flex-sensor-circuit.png';
+import PowerGloveImage from '../../../../../assets/images/Home/glove.png';
 import Tile from '../../Tile';
 
 const PowerGloveTile = (props) => {
@@ -44,7 +44,13 @@ const PowerGloveTile = (props) => {
       title="POWERGLOVE"
       to="/power-glove"
       order={2}
-      projectImage={<Image className="projects__image" src={powerGloveSkeleton} />}
+      projectImage={(
+        <Image
+          className="projects__power-glove-image"
+          src={PowerGloveImage}
+          alt="image of a glove"
+        />
+)}
     />
   );
 };

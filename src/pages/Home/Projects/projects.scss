@@ -26,6 +26,19 @@
             cursor: pointer;
         }
     }
+    
+    &__power-glove-image {
+        position: absolute;
+        height: 25rem;
+        top: -6rem;
+        left: -5rem;
+        max-width: 50rem;
+        
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
 
     &__read-more-button {
         background-color: $ui-01 !important;
