@@ -38,18 +38,9 @@ const Tile = ({
         >
           <ArrowUp />
           <Box
-            position="absolute"
-            height="100%"
-            width="50%"
-            textAlign="left"
-            paddingLeft={[0, '4rem']}
-            zIndex="-1"
-            color="#2d1d1d"
-            fontFamily="RobotoCondensed"
-            fontSize="100vh"
-            lineHeight="100vh"
-            userSelect="none"
+            className="tile__order-imprint"
             tabIndex="-1"
+            paddingLeft={[0, '4rem']}
           >
             {order}
           </Box>
@@ -87,6 +78,9 @@ const Tile = ({
                   <ArrowForwardIcon marginLeft=".5rem" />
                 </Button>
               </Box>
+              <Box
+                className="projects__fun-box"
+              />
             </Flex>
           </GridItem>
           <GridItem

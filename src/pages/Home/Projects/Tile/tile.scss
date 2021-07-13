@@ -6,6 +6,20 @@
     z-index: 9;
     color: $text-02;
 
+    &__order-imprint {
+        position: absolute;
+        height: 100%;
+        width: 50%;
+        text-align: left;
+        z-index: -1;
+        color: $interactive-01;
+        opacity: .05;
+        font-family: RobotoCondensed;
+        font-size: 100vh;
+        line-height: 100vh;
+        user-select: none;
+    }
+
     &__transition {
         transition: all .2s ease-in-out;
     }

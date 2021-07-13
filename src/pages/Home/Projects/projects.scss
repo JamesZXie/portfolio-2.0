@@ -9,7 +9,7 @@
         transition: all 0.2s ease-in-out;
         position: absolute;
         max-height: 90vh;
-        top: -122px;
+        top: -124px;
         
         &:hover {
             cursor: pointer;
@@ -20,7 +20,7 @@
         transition: all 0.2s ease-in-out;
         position: absolute;
         max-height: 90vh;
-        top: -122px;
+        top: -124px;
         
         &:hover {
             cursor: pointer;
@@ -36,5 +36,14 @@
         &:hover {
             box-shadow: 1rem 0rem 0px 0px $interactive-01;
         }
+    }
+
+    &__fun-box{
+        margin-top: 1rem; 
+        margin-left: auto; 
+        width: 1rem;
+        height: 1rem; 
+        border: 1px solid $interactive-01; 
+        border-radius: 5px; 
     }
 }
