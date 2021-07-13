@@ -16,6 +16,17 @@
         }
     }
 
+    &__dw-answers-image {
+        transition: all 0.2s ease-in-out;
+        position: absolute;
+        max-height: 90vh;
+        top: -122px;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     &__read-more-button {
         background-color: $ui-01 !important;
         color: $ui-02;

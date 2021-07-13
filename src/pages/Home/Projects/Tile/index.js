@@ -91,7 +91,8 @@ const Tile = ({
           </GridItem>
           <GridItem
             display={['none', 'none', 'none', 'block', 'block']}
-            colSpan={[0, 0, 0, 3, 4]}
+            colStart={[0, 0, 0, 7, 7]}
+            colSpan={[0, 0, 0, 5, 5]}
             position="relative"
             marginBottom="1rem"
           >
@@ -99,7 +100,6 @@ const Tile = ({
               justify="center"
               align="center"
               height="100%"
-
             >
               <Box
                 className="tile__image__frame"

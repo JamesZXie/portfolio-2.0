@@ -4,8 +4,9 @@ import {
 } from '@chakra-ui/react';
 
 import PropTypes from 'prop-types';
-import powerGloveSkeleton from '../../../../../assets/images/PowerGlove/flex-sensor-circuit.png';
+import DwAnswersPreview from '../../../../../assets/images/Home/dw-answers-preview.png';
 import Tile from '../../Tile';
+import '../../projects.scss';
 
 const DwAnswersTile = ({ init }) => {
   const renderDescription = () => (
@@ -45,7 +46,7 @@ const DwAnswersTile = ({ init }) => {
       order={1}
       init={init}
       to="/dw-answers"
-      projectImage={<Image className="projects__image" src={powerGloveSkeleton} />}
+      projectImage={<Image className="projects__dw-answers-image" src={DwAnswersPreview} />}
     />
   );
 };
