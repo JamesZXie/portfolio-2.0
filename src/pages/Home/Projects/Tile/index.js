@@ -74,9 +74,13 @@ const Tile = ({
                   {description}
                 </Box>
               </Box>
-              <Box paddingTop="1rem" textAlign={['right', 'right']}>
+              <Box
+                paddingTop="1rem"
+                textAlign={['right']}
+              >
                 <Button
                   onClick={handleLink}
+                  width={['100%', 'auto']}
                   className="projects__read-more-button"
                 >
                   READ MORE

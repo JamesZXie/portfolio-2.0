@@ -12,23 +12,27 @@
 
     &__image {
         &__frame {
+            position: relative;
             width: 18rem;
             height: 18rem;
-            overflow: hidden;
             border: 1px solid $interactive-01;
+            transform-origin: center;
             transform: rotateY(0deg) rotate(45deg);
             border-radius: 10px;
             transition: all 0.2s ease-in-out;
 
             &:hover {
                 cursor: pointer;
-                box-shadow: 1rem -1rem 0px 0px $interactive-01;
+                box-shadow: 0rem 0rem 0px 1rem $interactive-01;
             }
         }
 
         &__container {
-            transform: rotateY(0deg) rotate(-45deg);
-
+            
+            img {
+                transform-origin: center;
+                transform: rotateY(0deg) rotate(-30deg);
+            }
         }
     }
 }
