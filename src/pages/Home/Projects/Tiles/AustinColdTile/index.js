@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import {
   Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
-import PropTypes from 'prop-types';
 
 import austinCold from '../../../../../assets/images/Home/mobile.png';
 import Tile from '../../Tile';
 
-const AustinColdTile = ({ init }) => {
+const AustinColdTile = ({ onLoad }) => {
   const renderDescription = () => (
     <Box
       className="projects__description"
@@ -47,6 +47,7 @@ const AustinColdTile = ({ init }) => {
         <Image
           className="projects__austin-cold-image"
           src={austinCold}
+          onLoad={onLoad}
         />
         )}
     />
@@ -54,7 +55,7 @@ const AustinColdTile = ({ init }) => {
 };
 
 AustinColdTile.propTypes = {
-  init: PropTypes.bool.isRequired,
+  onLoad: PropTypes.func.isRequired,
 };
 
 export default AustinColdTile;

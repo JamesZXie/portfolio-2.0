@@ -8,7 +8,7 @@ import DwAnswersPreview from '../../../../../assets/images/Home/dw-answers-previ
 import Tile from '../../Tile';
 import '../../projects.scss';
 
-const DwAnswersTile = ({ init }) => {
+const DwAnswersTile = ({ onLoad }) => {
   const renderDescription = () => (
     <Box
       className="projects__description"
@@ -44,15 +44,20 @@ const DwAnswersTile = ({ init }) => {
       title="DW ANSWERS"
       subtitle="1. How I work"
       order={1}
-      init={init}
       to="/dw-answers"
-      projectImage={<Image className="projects__dw-answers-image" src={DwAnswersPreview} />}
+      projectImage={(
+        <Image
+          className="projects__dw-answers-image"
+          src={DwAnswersPreview}
+          onLoad={onLoad}
+        />
+)}
     />
   );
 };
 
 DwAnswersTile.propTypes = {
-  init: PropTypes.bool.isRequired,
+  onLoad: PropTypes.func.isRequired,
 };
 
 export default DwAnswersTile;

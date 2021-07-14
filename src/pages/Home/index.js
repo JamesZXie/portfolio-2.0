@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Flex, Box, Button } from '@chakra-ui/react';
 import Hero from './Hero';
 import './home.scss';
@@ -7,13 +7,22 @@ import AustinColdTile from './Projects/Tiles/AustinColdTile';
 import PowerGloveTile from './Projects/Tiles/PowerGloveTile';
 import DwAnswersTile from './Projects/Tiles/DwAnswersTile';
 
-const lineBreakPadding = '1rem';
-const sectionBreakPadding = '2rem';
-const colStart = [0, 4];
-const colSpan = [12, 6];
-const colEnd = [13, 10];
-
 const Home = (props) => {
+  const total = 4;
+  const [numLoaded, setNumLoaded] = useState(0);
+  const [loading, setLoading] = useState(true);
+
+  const onLoad = () => {
+    if (numLoaded + 1 === total) {
+      setLoading(false);
+    }
+    setNumLoaded(numLoaded + 1);
+  };
+
+  useEffect(() => {
+    document.fonts.onloadingdone = onLoad;
+  }, [loading, numLoaded]);
+
   const renderSideMenu = () => {
     const handleClick = (id) => {
       document.getElementById(id).scrollIntoView();
@@ -63,32 +72,18 @@ const Home = (props) => {
       <Box className="home__fix">
         {renderSideMenu()}
         <Hero
-          lineBreakPadding={lineBreakPadding}
-          sectionBreakPadding={sectionBreakPadding}
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
+          total={total}
+          numLoaded={numLoaded}
+          loading={loading}
         />
         <DwAnswersTile
-          lineBreakPadding={lineBreakPadding}
-          sectionBreakPadding={sectionBreakPadding}
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
+          onLoad={onLoad}
         />
         <PowerGloveTile
-          lineBreakPadding={lineBreakPadding}
-          sectionBreakPadding={sectionBreakPadding}
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
+          onLoad={onLoad}
         />
         <AustinColdTile
-          lineBreakPadding={lineBreakPadding}
-          sectionBreakPadding={sectionBreakPadding}
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
+          onLoad={onLoad}
         />
       </Box>
 

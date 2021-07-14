@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   Box,
   Text,
@@ -10,20 +11,28 @@ import {
 import './hero.scss';
 import Background from '../../../components/Background';
 import ArrowDown from '../../../components/ArrowDown';
+import PageLoader from '../../../components/PageLoader';
 
-const Hero = (props) => {
+const Hero = ({ total, numLoaded, loading }) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);
 
   return (
     <Box className="hero" id="hero">
+      <PageLoader
+        total={total}
+        numLoaded={numLoaded}
+        loading={loading}
+        backgroundColor="#1d1d1d"
+      />
       <Background display={['none', 'block']} />
       <Flex className="hero__container" justify="center" align="center">
         <Flex wrap="wrap">
           <Box width="100%">
             <Text as="h4" paddingBottom="1rem">Hello</Text>
           </Box>
-
-          <Box className="container__solid-rectangle hero__intro-container">
+          <Box
+            className="container__solid-rectangle hero__intro-container"
+          >
             <Text paddingBottom="1rem">
               I’m James Xie, a user experience designer at IBM with a background in engineering.
             </Text>
@@ -49,6 +58,10 @@ const Hero = (props) => {
   );
 };
 
-Hero.propTypes = {};
+Hero.propTypes = {
+  total: PropTypes.number.isRequired,
+  numLoaded: PropTypes.number.isRequired,
+  loading: PropTypes.bool.isRequired,
+};
 
 export default Hero;

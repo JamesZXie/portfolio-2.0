@@ -72,7 +72,7 @@ const Background = (props) => {
     window.addEventListener('resize', (e) => { // TODO: add a removeEventListener
       setDimensions(p, canvasParentRef);
     }, true);
-    p.textFont(font);
+    // p.textFont(font);
     p.textSize(textSize);
     p.frameRate(60);
   };

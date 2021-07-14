@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
@@ -6,7 +7,7 @@ import {
 import PowerGloveImage from '../../../../../assets/images/Home/glove.png';
 import Tile from '../../Tile';
 
-const PowerGloveTile = (props) => {
+const PowerGloveTile = ({ onLoad }) => {
   const renderDescription = () => (
     <Box
       className="projects__description"
@@ -47,12 +48,17 @@ const PowerGloveTile = (props) => {
       projectImage={(
         <Image
           className="projects__power-glove-image"
+          onLoad={onLoad}
           src={PowerGloveImage}
           alt="image of a glove"
         />
 )}
     />
   );
+};
+
+PowerGloveTile.propTypes = {
+  onLoad: PropTypes.func.isRequired,
 };
 
 export default PowerGloveTile;

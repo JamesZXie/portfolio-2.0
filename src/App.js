@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import '@fontsource/roboto-mono'; // Defaults to weight 400.
+import '@fontsource/roboto-mono';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Nav from './components/Nav';
