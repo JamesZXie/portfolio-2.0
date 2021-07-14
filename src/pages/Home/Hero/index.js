@@ -24,7 +24,7 @@ const Hero = ({ total, numLoaded, loading }) => {
         loading={loading}
         backgroundColor="#1d1d1d"
       />
-      <Background display={['none', 'block']} />
+      {loading ? '' : <Background display={['none', 'block']} />}
       <Flex className="hero__container" justify="center" align="center">
         <Flex wrap="wrap">
           <Box width="100%">

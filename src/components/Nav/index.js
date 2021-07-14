@@ -18,43 +18,41 @@ const Nav = (props) => {
   };
 
   return (
-    <>
-      <Box className="home-button-container">
+    <Box className="home-button-container">
+      <Box
+        cursor="pointer"
+        padding="1rem"
+        className="home-button"
+        onClick={() => handleLink('/')}
+      >
+        <Image
+          display={location.pathname === '/' ? 'none' : 'inline-block'}
+          verticalAlign="top"
+          src={logo}
+          alt="logo"
+          height="1.5rem"
+          marginRight=".5rem"
+        />
+        <Image
+          display={location.pathname === '/' ? 'inline-block' : 'none'}
+          verticalAlign="top"
+          src={logo2}
+          alt="logo"
+          height="1.5rem"
+          marginRight=".5rem"
+        />
         <Box
-          cursor="pointer"
-          padding="1rem"
-          className="home-button"
-          onClick={() => handleLink('/')}
+          display="inline-block"
+          paddingTop="1px"
         >
-          <Image
-            display={location.pathname === '/' ? 'none' : 'inline-block'}
-            verticalAlign="top"
-            src={logo}
-            alt="logo"
-            height="1.5rem"
-            marginRight=".5rem"
-          />
-          <Image
-            display={location.pathname === '/' ? 'inline-block' : 'none'}
-            verticalAlign="top"
-            src={logo2}
-            alt="logo"
-            height="1.5rem"
-            marginRight=".5rem"
-          />
-          <Box
-            display="inline-block"
-            paddingTop="1px"
+          <Text
+            color={location.pathname === '/' ? '#FAFAFA' : '#1A202C'}
           >
-            <Text
-              color={location.pathname === '/' ? '#FAFAFA' : '#1A202C'}
-            >
-              XIE
-            </Text>
-          </Box>
+            XIE
+          </Text>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 };
 

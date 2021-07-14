@@ -3,6 +3,7 @@
 .home-button-container {
     background-color: transparent !important;
     font-family: RobotoCondensed;
+    user-select: none;
     
     .home-button {
         position: fixed;
