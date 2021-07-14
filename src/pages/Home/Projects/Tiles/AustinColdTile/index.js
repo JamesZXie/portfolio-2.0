@@ -4,7 +4,7 @@ import {
 } from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
-import austinCold from '../../../../../assets/images/AustinCold/mobile.png';
+import austinCold from '../../../../../assets/images/Home/mobile.png';
 import Tile from '../../Tile';
 
 const AustinColdTile = ({ init }) => {
