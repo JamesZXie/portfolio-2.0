@@ -8,20 +8,21 @@ import PowerGloveTile from './Projects/Tiles/PowerGloveTile';
 import DwAnswersTile from './Projects/Tiles/DwAnswersTile';
 
 const Home = (props) => {
-  const total = 4;
+  const total = 3;
+  const [loadedFont, setLoadedFont] = useState(false);
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
 
   const onLoad = () => {
-    if (numLoaded + 1 === total) {
+    if (numLoaded + 1 === total && loadedFont) {
       setLoading(false);
     }
     setNumLoaded(numLoaded + 1);
   };
 
   useEffect(() => {
-    document.fonts.onloadingdone = onLoad;
-  }, [loading, numLoaded]);
+    document.fonts.onloadingdone = setLoadedFont(true);
+  }, [loadedFont, loading, numLoaded]);
 
   const renderSideMenu = () => {
     const handleClick = (id) => {
