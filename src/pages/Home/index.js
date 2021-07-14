@@ -60,35 +60,38 @@ const Home = (props) => {
 
   return (
     <Box className="home" id="home">
-      {renderSideMenu()}
-      <Hero
-        lineBreakPadding={lineBreakPadding}
-        sectionBreakPadding={sectionBreakPadding}
-        colStart={colStart}
-        colSpan={colSpan}
-        colEnd={colEnd}
-      />
-      <DwAnswersTile
-        lineBreakPadding={lineBreakPadding}
-        sectionBreakPadding={sectionBreakPadding}
-        colStart={colStart}
-        colSpan={colSpan}
-        colEnd={colEnd}
-      />
-      <PowerGloveTile
-        lineBreakPadding={lineBreakPadding}
-        sectionBreakPadding={sectionBreakPadding}
-        colStart={colStart}
-        colSpan={colSpan}
-        colEnd={colEnd}
-      />
-      <AustinColdTile
-        lineBreakPadding={lineBreakPadding}
-        sectionBreakPadding={sectionBreakPadding}
-        colStart={colStart}
-        colSpan={colSpan}
-        colEnd={colEnd}
-      />
+      <Box className="home__fix">
+        {renderSideMenu()}
+        <Hero
+          lineBreakPadding={lineBreakPadding}
+          sectionBreakPadding={sectionBreakPadding}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        />
+        <DwAnswersTile
+          lineBreakPadding={lineBreakPadding}
+          sectionBreakPadding={sectionBreakPadding}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        />
+        <PowerGloveTile
+          lineBreakPadding={lineBreakPadding}
+          sectionBreakPadding={sectionBreakPadding}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        />
+        <AustinColdTile
+          lineBreakPadding={lineBreakPadding}
+          sectionBreakPadding={sectionBreakPadding}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        />
+      </Box>
+
     </Box>
   );
 };
