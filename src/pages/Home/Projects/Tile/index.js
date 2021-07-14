@@ -100,7 +100,7 @@ const Tile = ({
                 display={['none', 'none', 'none', 'block']}
               >
                 <Box className="tile__image__container" onClick={handleLink}>
-                  {projectImage}
+                  {window.innerWidth > 666 ? projectImage : ''}
                 </Box>
               </Box>
             </Flex>
