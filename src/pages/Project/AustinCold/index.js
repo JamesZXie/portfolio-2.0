@@ -65,8 +65,8 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
         >
           <Text paddingBottom={sectionBreakPadding}>
-            When I first started reaching out to the community, I&apos;d have to look for work. Now, people reach out to me
-            directly when they need help!
+            I&apos;m always looking for ways to lend a helping hand, whether its internal community projects,
+            event management, or external pro bono projects like the one below.
             {' '}
           </Text>
           <SectionBreak />
