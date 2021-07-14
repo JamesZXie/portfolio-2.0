@@ -16,7 +16,7 @@ const Hero = (props) => {
 
   return (
     <Box className="hero" id="hero">
-      <Background />
+      <Background display={['none', 'block']} />
       <Flex className="hero__container" justify="center" align="center">
         <Flex wrap="wrap">
           <Box width="100%">
