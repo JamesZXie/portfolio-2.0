@@ -32,6 +32,7 @@ const Home = (props) => {
   const handleScroll = () => {
     const home = document.getElementById('home');
     setCurrSection(Math.round(home.scrollTop / window.innerHeight));
+    document.activeElement.blur();
   };
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const Home = (props) => {
 
   useEffect(() => {
     const home = document.getElementById('home');
-    home.addEventListener('scroll', debounce(handleScroll, 200));
+    home.addEventListener('scroll', debounce(handleScroll, 100));
   }, [currSection]);
 
   const renderSideMenu = () => {
@@ -60,24 +61,28 @@ const Home = (props) => {
         >
           <Button
             className="side-menu__item"
+            boxShadow={currSection === 0 ? '-.5rem 0px 0px 0px #FF8A00' : 'none'}
             onClick={() => handleClick('hero')}
           >
             intro
           </Button>
           <Button
             className="side-menu__item"
+            boxShadow={currSection === 1 ? '-.5rem 0px 0px 0px #FF8A00' : 'none'}
             onClick={() => handleClick('tile--dw-answers')}
           >
             1. work
           </Button>
           <Button
             className="side-menu__item"
+            boxShadow={currSection === 2 ? '-.5rem 0px 0px 0px #FF8A00' : 'none'}
             onClick={() => handleClick('tile--power-glove')}
           >
             2. play
           </Button>
           <Button
             className="side-menu__item"
+            boxShadow={currSection === 3 ? '-.5rem 0px 0px 0px #FF8A00' : 'none'}
             onClick={() => handleClick('tile--austin-cold')}
           >
             3. give
