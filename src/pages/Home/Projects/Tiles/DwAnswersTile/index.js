@@ -51,6 +51,7 @@ const DwAnswersTile = ({ onLoad }) => {
           src={DwAnswersPreview}
           onLoad={onLoad}
         />
+
 )}
     />
   );

@@ -8,10 +8,10 @@ import PowerGloveTile from './Projects/Tiles/PowerGloveTile';
 import DwAnswersTile from './Projects/Tiles/DwAnswersTile';
 
 const Home = (props) => {
-  const total = 3;
+  const total = window.innerWidth > 666 ? 3 : 0;
   const [loadedFont, setLoadedFont] = useState(false);
   const [numLoaded, setNumLoaded] = useState(0);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(window.innerWidth > 666);
 
   const onLoad = () => {
     if (numLoaded + 1 === total && loadedFont) {
