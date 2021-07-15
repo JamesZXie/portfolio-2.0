@@ -32,7 +32,9 @@ const Home = (props) => {
   const handleScroll = () => {
     const home = document.getElementById('home');
     setCurrSection(Math.round(home.scrollTop / window.innerHeight));
-    document.activeElement.blur();
+    if (document.activeElement?.parentElement?.id === 'side-menu') {
+      document.activeElement.blur();
+    }
   };
 
   useEffect(() => {
@@ -57,6 +59,7 @@ const Home = (props) => {
         <Flex
           direction="column"
           className="side-menu"
+          id="side-menu"
           color="white"
         >
           <Button
