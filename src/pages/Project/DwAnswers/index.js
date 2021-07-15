@@ -14,6 +14,7 @@ import uxResearchStats from '../../../assets/images/DwAnswers/ux-research-stats.
 import dwAnswers from '../../../assets/images/DwAnswers/dw-answers.png';
 import slack from '../../../assets/images/DwAnswers/slack.png';
 import lowFidelityMockups from '../../../assets/images/DwAnswers/low-fidelity-mockups.png';
+import patternsInterns from '../../../assets/images/DwAnswers/patterns-interns.jpeg';
 
 import './dw-answers.scss';
 
@@ -97,8 +98,8 @@ const DwAnswers = ({}) => {
           </OrderedList>
         </GridItem>
         <GridItem
-          colStart="3"
-          colSpan={8}
+          colStart={[1, 3]}
+          colSpan={[12, 8]}
         >
           <Image
             src={problemStatement}
@@ -307,8 +308,8 @@ const DwAnswers = ({}) => {
           </Text>
         </GridItem>
         <GridItem
-          colStart="3"
-          colSpan={8}
+          colStart={[1, 3]}
+          colSpan={[12, 8]}
         >
           <Image
             objectFit="cover"
@@ -367,6 +368,42 @@ const DwAnswers = ({}) => {
               experts that rewards cooperation.
             </ListItem>
           </OrderedList>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colEnd={colEnd}
+          colSpan={colSpan}
+        >
+          <Text as="h2" paddingBottom={sectionBreakPadding}>The Team</Text>
+          <Text paddingBottom={sectionBreakPadding}>They were like a family, I&apos;d work again with them in a heartbeat.</Text>
+          <Image src={patternsInterns} alt="photo of the team" />
+          <Text paddingTop={sectionBreakPadding}>From left to right:</Text>
+          <UnorderedList marginBottom={sectionBreakPadding}>
+            <ListItem>
+              <Link
+                href="https://www.linkedin.com/in/helenwho/"
+              >
+                Helen Hu
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://www.linkedin.com/in/vzjwang/"
+              >
+                Vivian Wang
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link
+                href="https://www.linkedin.com/in/daxit/"
+              >
+                Daxit Aragawal
+              </Link>
+            </ListItem>
+            <ListItem>
+              Me
+            </ListItem>
+          </UnorderedList>
         </GridItem>
       </Section>
     </>

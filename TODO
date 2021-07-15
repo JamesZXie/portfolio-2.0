@@ -4,7 +4,7 @@
 
 -- Add preview images to homepage for
 [X] work
-[] play
+[X] play
 [X] give
 
 --Mobile friendly version for:
@@ -19,10 +19,10 @@
 
 -- ETC
 [] Add team to work
-[] Add loading screen for homepage
-[] Adjust give description / intro
+[X] Add loading screen for homepage
+[X] Adjust give description / intro
 [X] Make up/down navigation buttons on homescreen.
-[] Add loading disclaimer for long loadtimes.
+[O -- reduced loadtimes.] Add loading disclaimer for long loadtimes.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ~~~~~~ IF YOU'VE GOT TIME: ~~~~~~
@@ -31,7 +31,7 @@
 [] Page transitions (greyscale fade)
 [] Crop gif in play
 [] Add more sketches / examples to play (maybe make load optional)
-[] loadtime optimization
+[X] loadtime optimization
 
 -- Doodles???
 [] ADD P5 SKETCHES WOOHOOO
@@ -41,3 +41,10 @@
 [] ADD P5 SKETCHES WOOHOOO
 [] ADD P5 SKETCHES WOOHOOO
 [] ADD P5 SKETCHES WOOHOOO
+
+
+Does your portfolio show:
+1. Experience launching consumer products and services while iterating based on customer feedback
+2. Multiple case studies of released products and your influence upon them
+3. Strategic product and forward thinking that informs your intentional, meaningful decisions
+4. A customer-centered approach, with a confidence in making users happy despite (or even thanks to) constraints
