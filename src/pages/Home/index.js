@@ -51,6 +51,9 @@ const Home = (props) => {
       document.getElementById(id).scrollIntoView();
     };
 
+    const right = '6rem';
+    const background = '#FF8A00';
+
     return (
       <Flex
         className="side-menu-container"
@@ -64,29 +67,29 @@ const Home = (props) => {
         >
           <Button
             className="side-menu__item"
-            boxShadow={currSection === 0 ? '-.5rem 0px 0px 0px #FF8A00' : 'none'}
             onClick={() => handleClick('hero')}
+            id={currSection === 0 ? 'current-section' : ''}
           >
             intro
           </Button>
           <Button
             className="side-menu__item"
-            boxShadow={currSection === 1 ? '-.5rem 0px 0px 0px #FF8A00' : 'none'}
             onClick={() => handleClick('tile--dw-answers')}
+            id={currSection === 1 ? 'current-section' : ''}
           >
             1. work
           </Button>
           <Button
             className="side-menu__item"
-            boxShadow={currSection === 2 ? '-.5rem 0px 0px 0px #FF8A00' : 'none'}
             onClick={() => handleClick('tile--power-glove')}
+            id={currSection === 2 ? 'current-section' : ''}
           >
             2. play
           </Button>
           <Button
             className="side-menu__item"
-            boxShadow={currSection === 3 ? '-.5rem 0px 0px 0px #FF8A00' : 'none'}
             onClick={() => handleClick('tile--austin-cold')}
+            id={currSection === 3 ? 'current-section' : ''}
           >
             3. give
           </Button>

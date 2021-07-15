@@ -12,7 +12,7 @@ const PageLoader = ({
 
   useEffect(() => {
     const home = document.getElementById('home');
-    if (loading) {
+    if (loading && window.innerWidth > 666) {
       document.body.style.position = 'fixed';
       if (home) home.style.overflowY = 'hidden';
     } else {
