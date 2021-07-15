@@ -24,8 +24,7 @@ const Background = (props) => {
   const findRandomDir = () => ['left', 'right', 'up', 'down'][Math.floor(Math.random() * 4)];
   const findRandomLetter = () => ['J', 'X'][Math.floor(Math.random() * 2)];
 
-  let text = [
-  ];
+  const [text, setText] = useState([]);
 
   const createText = () => {
     const newText = [];
@@ -40,7 +39,7 @@ const Background = (props) => {
         },
       );
     }
-    text = newText;
+    setText(newText);
   };
 
   const setDimensions = (p, canvasParent) => {
@@ -141,7 +140,7 @@ const Background = (props) => {
 
   const animateText = (p) => {
     const collisionFrequency = 7;
-    text = text.map((l, i) => {
+    const newText = text.map((l, i) => {
       // check for collisions
       let direction = l.currDirection;
       let newDirection = getCollision(p, l);
@@ -155,14 +154,16 @@ const Background = (props) => {
         ...l, x: l.x + direction.x, y: l.y + direction.y, currDirection: direction,
       });
     });
+    setText(newText);
   };
 
   const everybodyKaja = () => {
     kaja = true;
-    text = text.map((l) => ({
+    const newText = text.map((l) => ({
       ...l,
       currDirection: { x: 0, y: -speed, d: 'up' },
     }));
+    setText(newText);
   };
 
   const handleScroll = async (e) => {

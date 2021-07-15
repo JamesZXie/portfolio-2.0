@@ -12,6 +12,7 @@ const Home = (props) => {
   const [loadedFont, setLoadedFont] = useState(false);
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
+  const [currSection, setCurrSection] = useState(0);
 
   const onLoad = () => {
     if (numLoaded + 1 === total && loadedFont) {
@@ -20,9 +21,27 @@ const Home = (props) => {
     setNumLoaded(numLoaded + 1);
   };
 
+  const debounce = (func, timeout = 300) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+  };
+
+  const handleScroll = () => {
+    const home = document.getElementById('home');
+    setCurrSection(Math.round(home.scrollTop / window.innerHeight));
+  };
+
   useEffect(() => {
     document.fonts.onloadingdone = setLoadedFont(true);
   }, [loadedFont, loading, numLoaded]);
+
+  useEffect(() => {
+    const home = document.getElementById('home');
+    home.addEventListener('scroll', debounce(handleScroll, 200));
+  }, [currSection]);
 
   const renderSideMenu = () => {
     const handleClick = (id) => {
