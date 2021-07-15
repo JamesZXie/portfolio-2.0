@@ -24,7 +24,7 @@ const PageLoader = ({
   return (
     <Box
       className="page-loader__container"
-      display={loading ? 'block' : 'none'}
+      display={loading && window.innerWidth > 666 ? 'block' : 'none'}
       backgroundColor={backgroundColor}
     >
       <Progress colorScheme="orange" value={increment * numLoaded} />
