@@ -44,6 +44,7 @@ const Home = (props) => {
   useEffect(() => {
     const home = document.getElementById('home');
     home.addEventListener('scroll', debounce(handleScroll, 100));
+    return home.removeEventListener('scroll', debounce(handleScroll, 100));
   }, [currSection]);
 
   const renderSideMenu = () => {
