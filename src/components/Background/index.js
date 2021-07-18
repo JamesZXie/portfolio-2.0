@@ -4,7 +4,6 @@ import './background.scss';
 import {
   Box, Button,
 } from '@chakra-ui/react';
-import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf';
 
 const Background = (props) => {
   let kaja = false;
@@ -53,10 +52,6 @@ const Background = (props) => {
     ).parent(canvasParent);
 
     box = { height: window.innerHeight - 32, width: window.innerWidth - 32 };
-  };
-
-  const preload = (p) => {
-    font = p.loadFont(RobotoCondensed);
   };
 
   const setup = (p, canvasParentRef) => {
@@ -235,7 +230,7 @@ const Background = (props) => {
       className="hero__background"
       role="heading"
     >
-      <Sketch setup={setup} draw={draw} preload={preload} />
+      <Sketch setup={setup} draw={draw} />
     </Box>
   );
 };

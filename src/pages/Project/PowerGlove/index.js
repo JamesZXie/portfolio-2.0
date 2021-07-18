@@ -6,6 +6,7 @@ import {
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
+import Sketches from './sketches';
 
 // images
 import FlexSensorCircuit from '../../../assets/images/PowerGlove/flex-sensor-circuit.png';
@@ -152,17 +153,63 @@ const PowerGlove = ({}) => {
           <Center paddingBottom={lineBreakPadding}>
             <Text as="h5">Completed glove</Text>
           </Center>
-          <Text>
+          <Text paddingBottom={lineBreakPadding}>
             I meant to open up the power glove to the community after I created it, hosting a few
             classes and creating a pseudo-api for it so that other developers at IBM could
-            make their own sketches for an upcoming event. Unfortuantely, Covid cut that project
-            very, very short, as we only had one glove to work with, and as you can imagine
-            passing it around was not an option. You can find a copy of that repo linked above or
+            make their own sketches for an upcoming event.
+
+          </Text>
+          <Text>
+            Unfortuantely, I was only able to host one class before Covid cut the project short,
+            as not only did it kick us out of the office, but we only had one glove to work with, and as you can imagine
+            passing it around was not an option. The glove itself was lost in the 2021 Texas Freeze
+            when a ceiling pipe burst and water flooded the entire design building, including
+            the lab where it was held. You can find a copy of the repo linked at the top of the page or
             {' '}
             <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
             .
           </Text>
         </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          paddingTop="1rem"
+          display={['none', 'block']}
+        >
+          <SectionBreak />
+          <Text as="h2">More fun</Text>
+          <Text as="h4">A little museum of work I&apos;ve done</Text>
+          <Text
+            paddingBottom={sectionBreakPadding}
+          >
+            Luckily, the cloud exists to preserve the digital art I&apos;ve created.
+            If you&apos;re interested in playing around with some of it, give these a whirl.
+            I try to make all my art interactive, similar to the piece on the homepage of this
+            website.
+            <br />
+            <br />
+            Click the button to start loading them. Remember these are not videos, they are
+            being rendered in the browser to show that they can be integrated into actual
+            websites like this one.
+            <br />
+            <br />
+            Controls:
+            <br />
+            Keyboard and Mouse to interact
+            <br />
+            Click to cycle through installations
+
+          </Text>
+        </GridItem>
+        <GridItem
+          colSpan={12}
+          marginBottom="-3.75rem"
+          overflow="hidden"
+        >
+          <Sketches />
+        </GridItem>
+
       </Section>
     </>
   );
