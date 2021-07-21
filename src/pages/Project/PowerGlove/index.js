@@ -206,6 +206,7 @@ const PowerGlove = ({}) => {
           colSpan={12}
           marginBottom="-3.75rem"
           overflow="hidden"
+          display={['none', 'block']}
         >
           <Sketches />
         </GridItem>
