@@ -6,6 +6,16 @@ import {
 
 const Oysters = ({}) => {
   const [stopDrawing, setStopDrawing] = useState(false);
+  const [circles, setCircles] = useState(false);
+
+  const onResize = () => {
+    setCircles(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', onResize);
+    return () => window.removeEventListener('resize', onResize);
+  }, [circles]);
 
   const setDimensions = (p, canvasParent) => {
     if (window.innerWidth <= 1028) {
@@ -14,7 +24,7 @@ const Oysters = ({}) => {
     if (stopDrawing && window.innerWidth > 1028) setStopDrawing(false);
 
     p.createCanvas(
-      window.innerWidth, window.innerHeight, p.WEBGL,
+      window.innerWidth, window.innerHeight,
     ).parent(canvasParent);
   };
 
@@ -34,7 +44,7 @@ const Oysters = ({}) => {
 
   const setup = (p, canvasParentRef) => {
     p.createCanvas(
-      window.innerWidth, window.innerHeight, p.WEBGL,
+      window.innerWidth, window.innerHeight,
     ).parent(canvasParentRef);
 
     setDimensions(p, canvasParentRef);
@@ -43,10 +53,23 @@ const Oysters = ({}) => {
       setDimensions(p, canvasParentRef);
     }, true);
 
+    p.translate(window.innerWidth / 2, window.innerHeight / 2);
     p.background(0);
     p.noFill();
     p.stroke(300);
     createCircle(p, 0, 0, 200);
+    setCircles(true);
+  };
+
+  const draw = (p) => {
+    if (!circles) {
+      p.translate(window.innerWidth / 2, window.innerHeight / 2);
+      p.background(0);
+      p.noFill();
+      p.stroke(300);
+      createCircle(p, 0, 0, 200);
+      setCircles(true);
+    }
   };
 
   return (
@@ -57,7 +80,7 @@ const Oysters = ({}) => {
       role="heading"
     >
 
-      <Sketch setup={setup} />
+      <Sketch draw={draw} setup={setup} />
     </Box>
   );
 };

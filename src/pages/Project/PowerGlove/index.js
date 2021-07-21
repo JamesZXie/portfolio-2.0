@@ -185,8 +185,8 @@ const PowerGlove = ({}) => {
           >
             I also love creating generative art using web technologies that can
             be integrated into real websites and web apps. Here&apos;s some
-            &quot;web-feasible&quot; art that I&apos;m periodically transferring here / adding
-            to.
+            &quot;web-feasible&quot; art that I&apos;m periodically translating
+            from python / adding to.
             <br />
             <br />
             A lot of these are taken from a book that challenges artists to draw random things.
@@ -196,7 +196,7 @@ const PowerGlove = ({}) => {
             <br />
             Controls:
             <br />
-            Keyboard and Mouse to interact, if possible.
+            Keyboard and Mouse to interact, if indicated.
             <br />
             Click arrows to cycle through installations
 
