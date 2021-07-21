@@ -46,7 +46,7 @@ const Nav = (props) => {
           paddingTop="1px"
         >
           <Text
-            color={location.pathname === '/' ? '#FAFAFA' : '#1A202C'}
+            color={location.pathname === '/' ? '#FFFFFF' : '#1D1D1D'}
           >
             XIE
           </Text>

@@ -6,7 +6,7 @@ import {
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
-import Sketches from './sketches';
+import Sketches from './Sketches';
 
 // images
 import FlexSensorCircuit from '../../../assets/images/PowerGlove/flex-sensor-circuit.png';
@@ -179,26 +179,26 @@ const PowerGlove = ({}) => {
         >
           <SectionBreak />
           <Text as="h2">More fun</Text>
-          <Text as="h4">A little museum of work I&apos;ve done</Text>
+          <Text as="h4">A little museum of web-feasible work I&apos;ve done</Text>
           <Text
             paddingBottom={sectionBreakPadding}
           >
-            Luckily, the cloud exists to preserve the digital art I&apos;ve created.
-            If you&apos;re interested in playing around with some of it, give these a whirl.
-            I try to make all my art interactive, similar to the piece on the homepage of this
-            website.
+            I also love creating generative art using web technologies that can
+            be integrated into real websites and web apps. Here&apos;s some
+            &quot;web-feasible&quot; art that I&apos;m periodically transferring here / adding
+            to.
             <br />
             <br />
-            Click the button to start loading them. Remember these are not videos, they are
-            being rendered in the browser to show that they can be integrated into actual
-            websites like this one.
+            A lot of these are taken from a book that challenges artists to draw random things.
+            I decided to try and interpret the challenges through the lens of generative art. You can
+            find the subject / challenge in the top left.
             <br />
             <br />
             Controls:
             <br />
-            Keyboard and Mouse to interact
+            Keyboard and Mouse to interact, if possible.
             <br />
-            Click to cycle through installations
+            Click arrows to cycle through installations
 
           </Text>
         </GridItem>

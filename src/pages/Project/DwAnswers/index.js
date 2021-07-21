@@ -14,7 +14,7 @@ import uxResearchStats from '../../../assets/images/DwAnswers/ux-research-stats.
 import dwAnswers from '../../../assets/images/DwAnswers/dw-answers.png';
 import slack from '../../../assets/images/DwAnswers/slack.png';
 import lowFidelityMockups from '../../../assets/images/DwAnswers/low-fidelity-mockups.png';
-import patternsInterns from '../../../assets/images/DwAnswers/patterns-interns.jpeg';
+// import patternsInterns from '../../../assets/images/DwAnswers/patterns-interns.jpeg';
 
 import './dw-answers.scss';
 
@@ -375,9 +375,9 @@ const DwAnswers = ({}) => {
           colSpan={colSpan}
         >
           <Text as="h2" paddingBottom={sectionBreakPadding}>The Team</Text>
-          <Text paddingBottom={sectionBreakPadding}>They were like a family, I&apos;d work again with them in a heartbeat.</Text>
-          <Image src={patternsInterns} alt="photo of the team" />
-          <Text paddingTop={sectionBreakPadding}>From left to right:</Text>
+          <Text paddingBottom={0}>They were like a family, I&apos;d work again with them in a heartbeat.</Text>
+          {/* <Image src={patternsInterns} alt="photo of the team" />
+          <Text paddingTop={sectionBreakPadding}>From left to right:</Text> */}
           <UnorderedList marginBottom={sectionBreakPadding}>
             <ListItem>
               <Link

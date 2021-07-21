@@ -31,7 +31,7 @@ const Home = (props) => {
 
   const handleScroll = () => {
     const home = document.getElementById('home');
-    setCurrSection(Math.round(home.scrollTop / window.innerHeight));
+    if (home) setCurrSection(Math.round(home.scrollTop / window.innerHeight));
     if (document.activeElement?.parentElement?.id === 'side-menu') {
       document.activeElement.blur();
     }

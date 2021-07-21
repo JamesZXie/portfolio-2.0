@@ -1,0 +1,48 @@
+@import '../../../../App.scss';
+
+.sketches {
+    &__label {
+        color: white;
+        mix-blend-mode: difference;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+    }
+
+    &__arrow {
+        position: absolute !important;
+        top: 50%;
+        z-index: 999;
+        color: white;
+        mix-blend-mode: difference;
+        border-radius: 10px !important;
+        border: 1px solid $interactive-01 !important;
+        width: 2rem !important;
+        background-color: transparent !important;
+        transform: rotate(45deg);
+        transition: all .2s ease-in-out;
+
+        &__forward {
+            right: 2rem;
+            transform: rotate(45deg);
+
+            svg {
+                transform: rotate((-45deg))
+            }
+        }
+        
+        &__back {
+            left: 2rem;
+
+            svg {
+                transform: rotate((-45deg))
+            }
+        }
+    }
+}
+
+.sketch {
+    &__dew {
+        background-color: $ui-01;
+    }
+}

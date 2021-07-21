@@ -3,9 +3,8 @@ import Sketch from 'react-p5';
 import {
   Box, Button,
 } from '@chakra-ui/react';
-import './power-glove.scss';
 
-const Sketches = ({}) => {
+const Oysters = ({}) => {
   const [stopDrawing, setStopDrawing] = useState(false);
   const [faces, setFaces] = useState([]);
 
@@ -21,20 +20,39 @@ const Sketches = ({}) => {
   };
 
   const createFaces = () => {
-    const rows = 5;
-    const cols = 8;
+    const rows = 4;
+    const cols = 5;
     const tempFaces = [];
 
     const xInc = window.innerWidth / cols;
     const yInc = window.innerHeight / rows;
 
+    const randomColor = () => `rgb(${Math.floor(Math.random() * 300)},${Math.floor(Math.random() * 300)},${Math.floor(Math.random() * 300)})`;
+
     for (let i = 0; i < rows; i += 1) {
       for (let j = 0; j < cols; j += 1) {
+        const width = 100 + 50 * Math.random();
+        const height = 50 + 50 * Math.random();
         tempFaces.push({
-          width: 100 + 50 * Math.random(),
-          height: 50 + 50 * Math.random(),
+          width,
+          height,
           x: j * xInc + xInc / 2,
           y: i * yInc + yInc / 2,
+          color: randomColor(),
+        });
+        tempFaces.push({
+          width: width - 25,
+          height: height - 30,
+          x: j * xInc + xInc / 2,
+          y: i * yInc + yInc / 2,
+          color: randomColor(),
+        });
+        tempFaces.push({
+          width: width - 50,
+          height: height - 40,
+          x: j * xInc + xInc / 2,
+          y: i * yInc + yInc / 2,
+          color: randomColor(),
         });
       }
     }
@@ -53,32 +71,32 @@ const Sketches = ({}) => {
     }, true);
 
     p.frameRate(60);
-    createFaces();
+    createFaces(p);
   };
 
-  const drawEyes = (p) => {
-    const rotation = 45;
-    const x = 10;
-    const y = 10;
-    const width = 12;
-    const height = 10;
+  //   const drawEyes = (p) => {
+  //     const rotation = 45;
+  //     const x = 10;
+  //     const y = 10;
+  //     const width = 12;
+  //     const height = 10;
 
-    p.push();
-    p.translate(-x, x);
-    p.rotate(-rotation);
-    p.ellipse(0, 0, width, height);
-    p.pop();
-    p.push();
-    p.translate(x, y);
-    p.rotate(rotation);
-    p.ellipse(0, 0, width, height);
-    p.pop();
-  };
+  //     p.push();
+  //     p.translate(-x, x);
+  //     p.rotate(-rotation);
+  //     p.ellipse(0, 0, width, height);
+  //     p.pop();
+  //     p.push();
+  //     p.translate(x, y);
+  //     p.rotate(rotation);
+  //     p.ellipse(0, 0, width, height);
+  //     p.pop();
+  //   };
 
   const drawFace = (p, {
-    x, y, width, height,
+    x, y, width, height, color,
   }) => {
-    const increment = 8;
+    const increment = 3;
     const a = width / 2;
     const b = height / 2;
 
@@ -86,6 +104,7 @@ const Sketches = ({}) => {
     p.translate(x, y);
     // y = b/a sqrt(a^2 - x^2)
     p.beginShape();
+    p.fill(color);
 
     for (let i = -a; i < a; i += increment) {
       const j = b / a * Math.sqrt(a * a - i * i);
@@ -101,17 +120,16 @@ const Sketches = ({}) => {
       const noise = 0.5 + p.noise(x * 0.02 + i * 0.02 + p.frameCount * 0.01, y * 0.02 + j * 0.02 + p.frameCount * 0.01);
       p.curveVertex(i * noise, j * noise);
     }
-
     p.endShape(p.CLOSE);
-    drawEyes(p);
+    // drawEyes(p);
     p.pop();
   };
 
   const draw = (p) => {
     if (!stopDrawing) {
       p.clear(); // no background needed, in scss.
-      p.stroke(300, 200, 100);
-      p.strokeWeight(1);
+      p.noStroke();
+
       p.noFill();
 
       faces.map((face) => {
@@ -132,4 +150,4 @@ const Sketches = ({}) => {
   );
 };
 
-export default Sketches;
+export default Oysters;
