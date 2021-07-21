@@ -2,7 +2,7 @@
 
 .arrow-down {
     position: absolute !important;
-    top: calc(100vh - 4rem);
+    bottom: 4rem;
     left: calc(50% - 1rem);
     z-index: 999;
     color: $ui-02;
