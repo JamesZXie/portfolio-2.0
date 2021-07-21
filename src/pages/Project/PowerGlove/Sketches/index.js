@@ -53,9 +53,9 @@ const Sketches = ({}) => {
       </Button>
       <Box className="sketches__label">
         <Text>
-          "
+          &quot;
           {allSketches[currSketch]}
-          "
+          &quot;
         </Text>
       </Box>
       { allSketches[currSketch] === 'Oysters' ? <Oysters /> : ''}
