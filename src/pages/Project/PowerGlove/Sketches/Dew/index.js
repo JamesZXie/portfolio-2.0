@@ -58,6 +58,8 @@ const Oysters = ({}) => {
     p.noFill();
     p.stroke(300);
     createCircle(p, 0, 0, 200);
+    createCircle(p, 300, 0, 200);
+    createCircle(p, -300, 0, 200);
     setCircles(true);
   };
 
@@ -68,6 +70,8 @@ const Oysters = ({}) => {
       p.noFill();
       p.stroke(300);
       createCircle(p, 0, 0, 200);
+      createCircle(p, 300, 0, 200);
+      createCircle(p, -300, 0, 200);
       setCircles(true);
     }
   };
