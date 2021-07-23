@@ -9,6 +9,7 @@ import './sketches.scss';
 
 import Oysters from './Oysters';
 import Dew from './Dew';
+import Hello from './Hello';
 
 const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
@@ -18,6 +19,7 @@ const colEnd = [13, 10];
 
 const Sketches = ({}) => {
   const allSketches = [
+    'Hello',
     'Oysters',
     'Dew',
   ];
@@ -60,6 +62,7 @@ const Sketches = ({}) => {
       </Box>
       { allSketches[currSketch] === 'Oysters' ? <Oysters /> : ''}
       { allSketches[currSketch] === 'Dew' ? <Dew /> : ''}
+      { allSketches[currSketch] === 'Hello' ? <Hello /> : ''}
     </Box>
   );
 };
