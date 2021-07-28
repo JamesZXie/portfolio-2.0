@@ -14,6 +14,7 @@ import uxResearchStats from '../../../assets/images/DwAnswers/ux-research-stats.
 import dwAnswers from '../../../assets/images/DwAnswers/dw-answers.png';
 import slack from '../../../assets/images/DwAnswers/slack.png';
 import lowFidelityMockups from '../../../assets/images/DwAnswers/low-fidelity-mockups.png';
+import showcase from '../../../assets/images/DwAnswers/dw-showcase.png';
 // import patternsInterns from '../../../assets/images/DwAnswers/patterns-interns.jpeg';
 
 import './dw-answers.scss';
@@ -27,7 +28,7 @@ const colEnd = [13, 10];
 const DwAnswers = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 6;
+  const total = 7;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -369,6 +370,52 @@ const DwAnswers = ({}) => {
             </ListItem>
           </OrderedList>
         </GridItem>
+        <GridItem
+          colStart={1}
+          colSpan={12}
+          colEnd={13}
+          paddingTop={sectionBreakPadding}
+        >
+          <Image
+            src={showcase}
+            objectFit="cover"
+            width="100%"
+            alt="Screen showcase, mostly eye candy."
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+          />
+        </GridItem>
+        {/* <GridItem
+          colStart={colStart}
+          colEnd={colEnd}
+          colSpan={colSpan}
+        >
+          <Text as="h2">Takeaways</Text>
+          <Text as="h4" paddingBottom={sectionBreakPadding}>What I learned  </Text>
+
+          <Text>
+            1. Hold diverse opinions, but loosely.
+            {' '}
+            <br />
+            We explored so many avenues and hit so many dead ends - but landed on an effective solution because each
+            individual in our team was bullheaded. We insisted on taking different sides, and thanks
+            to the diversity in the team, and the respect we had for one another, each idea was flushed out. Pivoting
+            from load management for support to redirecting the load entirely was a great move, and one that came
+            directly as a result of this practice.
+            2. Use the Pareto principal
+            IBM never adopted our mobile solution, but they did revamp dW Answers, following our
+            two biggest recommendations. IBM is now redirecting all low-priority questions to dW answers, as well
+            as increasing the focus of the platform on users&apos; reputations by overhauling the system to give
+            much more tangible rewards as well as increasing visibility. This is because we overemphasized the
+            importance of these two things in our presentation, noting that they contributed the most to
+            IBM savings and customer satisfaction.
+            3. Like your team
+            The fact that we all liked each other was the biggest factor boosting our productivity
+            and ability to both clash and synergise effectively. Being open and genuine, especially outside of a professional
+            context, and just in general being a good friend will make working together a delight. We keep in touch to this day.
+
+          </Text>
+        </GridItem> */}
         <GridItem
           colStart={colStart}
           colEnd={colEnd}
