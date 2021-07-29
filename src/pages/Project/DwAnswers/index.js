@@ -369,7 +369,7 @@ const DwAnswers = ({}) => {
             alt="Screen of the messaging section of dW Answers"
             paddingBottom={sectionBreakPadding}
             onLoad={handleLoad}
-            boxShadow="0rem 0rem 1rem 0px whitesmoke;"
+            boxShadow="0rem 0rem 2rem 0px #D4D4D4;"
           />
         </GridItem>
         <GridItem
@@ -378,6 +378,7 @@ const DwAnswers = ({}) => {
           <Flex height="100%" justify="center" align="center">
             <Text>
               <strong>Chat: </strong>
+              <br />
               We integrated patterns from chat apps into dW functions to create a casual, active
               community where simple questions easily reach experts who can help.
             </Text>
@@ -389,8 +390,9 @@ const DwAnswers = ({}) => {
         >
           <Flex align="center" height="100%" justify="center">
             <Text>
-              <strong>dW score: </strong>
-              We tweaked the quality-vs-quantity balance of dW answers’s point system and increased the visibility of a user’s
+              <strong>Reputation: </strong>
+              <br />
+              We tweaked the balance of dW answers’s point system and increased the visibility of a user’s
               reputation.
             </Text>
           </Flex>
@@ -406,7 +408,7 @@ const DwAnswers = ({}) => {
             alt="Screen of how reputation is shown in questions"
             paddingBottom={sectionBreakPadding}
             onLoad={handleLoad}
-            boxShadow="0rem 0rem 1rem 0px whitesmoke;"
+            boxShadow="0rem 0rem 2rem 0px #D4D4D4;"
           />
         </GridItem>
         <GridItem
@@ -421,7 +423,7 @@ const DwAnswers = ({}) => {
             alt="Screen of the referral section of dW Answers"
             paddingBottom={sectionBreakPadding}
             onLoad={handleLoad}
-            boxShadow="0rem 0rem 1rem 0px whitesmoke;"
+            boxShadow="0rem 0rem 2rem 0px #D4D4D4;"
           />
         </GridItem>
         <GridItem
@@ -430,8 +432,9 @@ const DwAnswers = ({}) => {
           <Flex align="center" height="100%" justify="center">
             <Text>
               <strong>Community tools: </strong>
-              We took dW Answers&apos;s expert categorization system, and added a set of community organizational tools for
-              experts that rewards cooperation.
+              <br />
+              We added a set of community organizational tools that
+              reward experts for tapping into their own networks.
             </Text>
           </Flex>
         </GridItem>
