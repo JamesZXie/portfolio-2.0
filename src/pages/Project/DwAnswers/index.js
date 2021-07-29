@@ -14,6 +14,9 @@ import uxResearchStats from '../../../assets/images/DwAnswers/ux-research-stats.
 import dwAnswers from '../../../assets/images/DwAnswers/dw-answers.png';
 import slack from '../../../assets/images/DwAnswers/slack.png';
 import lowFidelityMockups from '../../../assets/images/DwAnswers/low-fidelity-mockups.png';
+import messaging from '../../../assets/images/DwAnswers/messaging.png';
+import rep from '../../../assets/images/DwAnswers/rep.png';
+import referral from '../../../assets/images/DwAnswers/referral.png';
 import showcase from '../../../assets/images/DwAnswers/dw-showcase.png';
 // import patternsInterns from '../../../assets/images/DwAnswers/patterns-interns.jpeg';
 
@@ -23,6 +26,7 @@ const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
 const colStart = [0, 4];
 const colSpan = [12, 6];
+const colSpanHalf = [6, 3];
 const colEnd = [13, 10];
 
 const DwAnswers = ({}) => {
@@ -352,23 +356,84 @@ const DwAnswers = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             And translated them into the following aspects of the app:
           </Text>
-          <OrderedList>
-            <ListItem>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpanHalf}
+          paddingRight={['0px', '2rem']}
+        >
+          <Image
+            src={messaging}
+            objectFit="cover"
+            width="100%"
+            alt="Screen of the messaging section of dW Answers"
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+            boxShadow="0rem 0rem 1rem 0px whitesmoke;"
+          />
+        </GridItem>
+        <GridItem
+          colSpan={colSpanHalf}
+        >
+          <Flex height="100%" justify="center" align="center">
+            <Text>
               <strong>Chat: </strong>
-              Like Slack, we took patterns from chat apps to create a casual, active
-              community where the simple questions are the most visible.
-            </ListItem>
-            <ListItem>
+              We integrated patterns from chat apps into dW functions to create a casual, active
+              community where simple questions easily reach experts who can help.
+            </Text>
+          </Flex>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpanHalf}
+        >
+          <Flex align="center" height="100%" justify="center">
+            <Text>
               <strong>dW score: </strong>
-              We tweaked the length vs quantity balance of dW answers’s point system and increased the visibility of a user’s
+              We tweaked the quality-vs-quantity balance of dW answers’s point system and increased the visibility of a user’s
               reputation.
-            </ListItem>
-            <ListItem>
+            </Text>
+          </Flex>
+        </GridItem>
+        <GridItem
+          colSpan={colSpanHalf}
+          paddingLeft={['0px', '2rem']}
+        >
+          <Image
+            src={rep}
+            objectFit="cover"
+            width="100%"
+            alt="Screen of how reputation is shown in questions"
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+            boxShadow="0rem 0rem 1rem 0px whitesmoke;"
+          />
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpanHalf}
+          paddingRight={['0px', '2rem']}
+        >
+          <Image
+            src={referral}
+            objectFit="cover"
+            width="100%"
+            alt="Screen of the referral section of dW Answers"
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+            boxShadow="0rem 0rem 1rem 0px whitesmoke;"
+          />
+        </GridItem>
+        <GridItem
+          colSpan={colSpanHalf}
+        >
+          <Flex align="center" height="100%" justify="center">
+            <Text>
               <strong>Community tools: </strong>
               We took dW Answers&apos;s expert categorization system, and added a set of community organizational tools for
               experts that rewards cooperation.
-            </ListItem>
-          </OrderedList>
+            </Text>
+          </Flex>
         </GridItem>
         <GridItem
           colStart={1}
@@ -416,6 +481,35 @@ const DwAnswers = ({}) => {
 
           </Text>
         </GridItem> */}
+        <GridItem
+          colStart={colStart}
+          colEnd={colEnd}
+          colSpan={colSpan}
+        >
+          <Text as="h2">Impact</Text>
+          <Text as="h4" paddingBottom={sectionBreakPadding}>What did IBM do with our work?</Text>
+          <Text paddingBottom={lineBreakPadding}>IBM scrapped the idea of mobile, but made two BIG changes that are in effect today:</Text>
+          <OrderedList>
+            <ListItem>
+              A team revamped dW Answers, putting a big emphasis on the visibility of a user&apos;s reputation and are handing out
+              tangible rewards for prestige. Find the new site
+              {' '}
+              <Link href="https://www.ibm.com/mysupport/s/forumshome?language=en_US" isExternal>
+                here
+              </Link>
+              !
+            </ListItem>
+            <ListItem>
+              Support no longer receives any low-priority issues - they&apos;re completely rerouted to the new dW Answers, saving IBM the
+              projected $48 million a year!
+            </ListItem>
+          </OrderedList>
+          <Text paddingTop={lineBreakPadding}>
+            Ultimately, I agree with scrapping the idea of mobile. We didn&apos;t consider IBM&apos;s experience in the mobile space
+            - or rather, their lack thereof. If we had taken the Pareto principal and identified our most impactful 20%, we may
+            have explored more incentives after realizing that the need for mobile was not fully there.
+          </Text>
+        </GridItem>
         <GridItem
           colStart={colStart}
           colEnd={colEnd}
