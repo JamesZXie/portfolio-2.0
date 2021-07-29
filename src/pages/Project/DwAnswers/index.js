@@ -32,7 +32,7 @@ const colEnd = [13, 10];
 const DwAnswers = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 7;
+  const total = 10;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
