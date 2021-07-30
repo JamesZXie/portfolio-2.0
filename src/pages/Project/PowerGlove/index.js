@@ -179,7 +179,7 @@ const PowerGlove = ({}) => {
         >
           <SectionBreak />
           <Text as="h2">More fun</Text>
-          <Text as="h4">A little museum of web-feasible work I&apos;ve done</Text>
+          <Text as="h4">A growing museum of web-feasible work I&apos;ve done</Text>
           <Text
             paddingBottom={sectionBreakPadding}
           >

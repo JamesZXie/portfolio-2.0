@@ -13,6 +13,10 @@ import InfoArabicImage from '../../../assets/images/AustinCold/info--arabic.png'
 import Mobile2 from '../../../assets/images/AustinCold/mobile2.png';
 import Flow from '../../../assets/images/AustinCold/flow.png';
 import AustinSnow from '../../../assets/images/AustinCold/austin-snow-air.jpg';
+import showcase from '../../../assets/images/AustinCold/showcase.png';
+import mike from '../../../assets/images/AustinCold/mike.png';
+import coldMike from '../../../assets/images/AustinCold/cold-mike.png';
+import needHelpFlow from '../../../assets/images/AustinCold/need-help-flow.png';
 
 import './austin-cold.scss';
 import '../project.scss';
@@ -21,12 +25,13 @@ const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
 const colStart = [0, 4];
 const colSpan = [12, 6];
+const colSpanHalf = [6, 3];
 const colEnd = [13, 10];
 
 const AustinCold = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 5;
+  const total = 6;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -156,7 +161,6 @@ const AustinCold = ({}) => {
           <Center paddingBottom={sectionBreakPadding}>
             <Text as="h5">How austincold.com helped CRT coordinate efforts</Text>
           </Center>
-
           <Text>
             We had 4 tasks, by priority:
           </Text>
@@ -211,12 +215,216 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           colSpan={colSpan}
         >
-          <Text>
+          <Text paddingBottom={sectionBreakPadding}>
             We maintained the website for about two weeks,
             updating information about food and water after the storms subsided.
           </Text>
+          <SectionBreak />
         </GridItem>
-
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        >
+          <Text as="h2">What if?</Text>
+          <Text as="h4">We hit a lot of roadbumps. Here&apos;s how we should have avoided them.</Text>
+          <Text paddingBottom={sectionBreakPadding}>
+            A lot of fires broke out over the 72-hour ordeal, such as returning users struggling to find information as updates changed the website,
+            or trying to stuff in language accessibility after our initial launch. I wouldn&apos;t have spent more time on the design,
+            as (not to be dramatic) lives were on the line, but if I could have frozen time and really thought about the design,
+            this is what I would have proposed.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={0}
+          colSpan={12}
+        >
+          <Image
+            src={showcase}
+            objectFit="cover"
+            width="100%"
+            alt="Screen showcase, mostly eye candy."
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+          />
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        >
+          <Text as="h2">The User</Text>
+          <Text as="h4">Who are we building for?</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Although we never had a user research session, we did have discussions with Community Relief Trust&apos;s about the
+            target demographics for this project - in short, we&apos;re looking to help &quot;everyone else&quot;.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Let&apos;s take a look at one of the
+            {' '}
+            <strong>toughest</strong>
+            {' '}
+            users we&apos;re designing for.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpanHalf}
+        >
+          <Image
+            src={mike}
+            objectFit="cover"
+            width="100%"
+            alt="Doodle of mike"
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+            padding={['1rem', '4rem']}
+          />
+        </GridItem>
+        <GridItem
+          colSpan={colSpanHalf}
+        >
+          <Flex
+            height="100%"
+            justify="center"
+            direction="column"
+          >
+            <Box>
+              Mike is a nice dude living in a small homeless camp in East Austin.
+              <UnorderedList>
+                <ListItem>
+                  He&apos;s not too tech saavy, but he does have an iPhone 8 and service -
+                  courtesy of Front Steps, a popular nonprofit.
+                </ListItem>
+                <ListItem>
+                  He has no access to food, water, or power.
+                </ListItem>
+                <ListItem>
+                  He only understands vietnamese.
+                </ListItem>
+                <ListItem>
+                  If he doesn&apos;t get to warm shelter before sundown,
+                  his life may be in danger.
+                </ListItem>
+              </UnorderedList>
+            </Box>
+          </Flex>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        >
+          <Text paddingBottom={lineBreakPadding}>
+            So what makes Mike hard to design for? Well for starters, Mike is cold.
+            Have you tried using your phone when your hands are frozen?
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Not only is Mike cold, but he also has no access to internet, shelter, and
+            - worst of all - he can&apos;t charge his phone. He&apos;s checking his battery life
+            every other second, because if it hits 0%,
+            {' '}
+            <strong>he can&apos;t call 911.</strong>
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpanHalf}
+        >
+          <Flex align="center" height="100%">
+            <Box>
+              <Text>
+                This means we are designing for someone who:
+              </Text>
+              <OrderedList>
+                <ListItem>
+                  Is pressed for
+                  {' '}
+                  <strong>time and battery life</strong>
+                  .
+                </ListItem>
+                <ListItem>
+                  Has an
+                  {' '}
+                  <strong>old</strong>
+                  ,
+                  {' '}
+                  <strong>slow</strong>
+                  {' '}
+                  phone with
+                  {' '}
+                  <strong>slow</strong>
+                  {' '}
+                  service.
+                </ListItem>
+                <ListItem>
+                  <strong>
+                    Struggles to operate his device
+                  </strong>
+                  {' '}
+                  due to the cold.
+                </ListItem>
+              </OrderedList>
+            </Box>
+          </Flex>
+        </GridItem>
+        <GridItem
+          colSpan={colSpanHalf}
+        >
+          <Image
+            src={coldMike}
+            objectFit="cover"
+            width="100%"
+            alt="Doodle of mike, freezing."
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+            paddingLeft={['1rem', '4rem']}
+          />
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        >
+          <Text as="h2">Insights from Mike</Text>
+          <Text as="h4">What AustinCold looks like built for Mike</Text>
+          <Text>
+            Here&apos;s what this means for our design:
+          </Text>
+          <UnorderedList>
+            <ListItem>
+              <strong>Lightweight:</strong>
+              {' '}
+              Minimal assets with a dev focus on loadtimes and performance.
+            </ListItem>
+            <ListItem>
+              <strong>Big stuff, small screen: </strong>
+              {' '}
+              Design around stiff users and older devices.
+            </ListItem>
+            <ListItem>
+              <strong>Clear steps: </strong>
+              {' '}
+              Getting help has to be clean, simple, and easy to follow.
+            </ListItem>
+            <ListItem>
+              <strong>Drive confidence: </strong>
+              {' '}
+              Mike needs to know that the time and battery life he&apos;s spending to get help will pay off. We can&apos;t let him give up!
+            </ListItem>
+          </UnorderedList>
+          <Text />
+          <Text paddingTop={sectionBreakPadding} as="h2">Resulting Mike Flow</Text>
+          <Text as="h4">Simple 3 steps he can follow</Text>
+          <Image
+            src={needHelpFlow}
+            objectFit="cover"
+            width="100%"
+            alt="Two panel flow to get help"
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+          />
+        </GridItem>
         <GridItem
           colStart={colStart}
           colEnd={colEnd}

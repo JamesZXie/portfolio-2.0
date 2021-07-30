@@ -150,9 +150,8 @@ const DwAnswers = ({}) => {
           </Text>
         </GridItem>
         <GridItem
-          colStart={1}
+          colStart={0}
           colSpan={12}
-          colEnd={13}
         >
           <Image
             src={keyFlow}
@@ -439,9 +438,8 @@ const DwAnswers = ({}) => {
           </Flex>
         </GridItem>
         <GridItem
-          colStart={1}
+          colStart={0}
           colSpan={12}
-          colEnd={13}
           paddingTop={sectionBreakPadding}
         >
           <Image
