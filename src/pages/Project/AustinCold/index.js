@@ -379,7 +379,7 @@ const AustinCold = ({}) => {
             alt="Doodle of mike, freezing."
             paddingBottom={sectionBreakPadding}
             onLoad={handleLoad}
-            paddingLeft={['1rem', '4rem']}
+            padding={['.5rem', '2rem']}
           />
         </GridItem>
         <GridItem
