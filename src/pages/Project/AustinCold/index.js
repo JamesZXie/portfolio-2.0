@@ -431,7 +431,7 @@ const AustinCold = ({}) => {
             site increase.
           </Text>
           <Text paddingTop={lineBreakPadding}>
-            We had a lot more volunteers than work and way more donations than we needed, so decided further exploration
+            We had a lot more volunteers than work and way more donations than we needed, so further exploration
             would not produce much of a potential impact. If I had to pick another user to look at, I would actually look
             at boosting donations - we surprisingly had more volunteers than available work, but donations are always useful.
           </Text>
