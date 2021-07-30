@@ -300,7 +300,8 @@ const AustinCold = ({}) => {
                   He has no access to food, water, or power.
                 </ListItem>
                 <ListItem>
-                  He only understands vietnamese.
+                  911 isn&apos;t interested in helping him yet because his situation
+                  isn&apos;t considered life-threatening.
                 </ListItem>
                 <ListItem>
                   If he doesn&apos;t get to warm shelter before sundown,
@@ -424,6 +425,16 @@ const AustinCold = ({}) => {
             paddingBottom={sectionBreakPadding}
             onLoad={handleLoad}
           />
+          <Text>
+            Assuming we&apos;re also now lazy-loading the resource maps, our new site would, according to the Lighthouse assesment,
+            even cut the loadtime in half! If this redesign was implemented, I&apos;d hope to see the conversion rate on our
+            site increase.
+          </Text>
+          <Text paddingTop={lineBreakPadding}>
+            We had a lot more volunteers than work and way more donations than we needed, so decided further exploration
+            would not produce much of a potential impact. If I had to pick another user to look at, I would actually look
+            at boosting donations - we surprisingly had more volunteers than available work, but donations are always useful.
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
