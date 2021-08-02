@@ -26,7 +26,7 @@ const PageLoader = ({
 
   useEffect(() => {
     handleLoaded(loading && window.innerWidth > 666);
-    const timeout = setTimeout(() => { handleLoaded(false); }, 3000);
+    const timeout = setTimeout(() => { handleLoaded(false); }, 5000);
     return () => (clearTimeout(timeout));
   }, [loading]);
 
