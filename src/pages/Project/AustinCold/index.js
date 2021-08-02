@@ -25,7 +25,7 @@ const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
 const colStart = [0, 4];
 const colSpan = [12, 6];
-const colSpanHalf = [6, 3];
+const colSpanHalf = [12, 3];
 const colEnd = [13, 10];
 
 const AustinCold = ({}) => {
@@ -332,6 +332,19 @@ const AustinCold = ({}) => {
           colStart={colStart}
           colSpan={colSpanHalf}
         >
+          <Image
+            src={coldMike}
+            objectFit="cover"
+            width="100%"
+            alt="Doodle of mike, freezing."
+            paddingBottom={sectionBreakPadding}
+            onLoad={handleLoad}
+            padding={['.5rem', '2rem']}
+          />
+        </GridItem>
+        <GridItem
+          colSpan={colSpanHalf}
+        >
           <Flex align="center" height="100%">
             <Box>
               <Text>
@@ -369,19 +382,7 @@ const AustinCold = ({}) => {
             </Box>
           </Flex>
         </GridItem>
-        <GridItem
-          colSpan={colSpanHalf}
-        >
-          <Image
-            src={coldMike}
-            objectFit="cover"
-            width="100%"
-            alt="Doodle of mike, freezing."
-            paddingBottom={sectionBreakPadding}
-            onLoad={handleLoad}
-            padding={['.5rem', '2rem']}
-          />
-        </GridItem>
+
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -426,14 +427,13 @@ const AustinCold = ({}) => {
             onLoad={handleLoad}
           />
           <Text>
-            Assuming we&apos;re also now lazy-loading the resource maps, our new site would, according to the Lighthouse assesment,
-            even cut the loadtime in half! If this redesign was implemented, I&apos;d hope to see the conversion rate on our
-            site increase.
+            After a one-time selection of language, Mike needs to click 2 very large buttons, and then input his phone number in the resulting form.
+            The current site loads in under 4 seconds on 2G internet speeds according to a Lighthouse assessment, but if we lazy-loaded
+            our maps, we could cut that time in half.
           </Text>
           <Text paddingTop={lineBreakPadding}>
-            We had a lot more volunteers than work and way more donations than we needed, so further exploration
-            would not produce much of a potential impact. If I had to pick another user to look at, I would actually look
-            at boosting donations - we surprisingly had more volunteers than available work, but donations are always useful.
+            What I would hope to see from using this flow is a higher conversion rate due to faster loading times,
+            increased confidence in our ability to help everyone who asks, and much clearer steps.
           </Text>
         </GridItem>
         <GridItem
