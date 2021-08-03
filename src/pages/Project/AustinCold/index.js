@@ -256,7 +256,7 @@ const AustinCold = ({}) => {
           <Text as="h2">The User</Text>
           <Text as="h4">Who are we building for?</Text>
           <Text paddingBottom={lineBreakPadding}>
-            Although we never had a user research session, we did have discussions with Community Relief Trust&apos;s about the
+            Although we never had a user research session, we did have discussions with Community Resilience Trust&apos;s about the
             target demographics for this project - in short, we&apos;re looking to help &quot;everyone else&quot;.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
