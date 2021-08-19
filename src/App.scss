@@ -113,10 +113,10 @@ button {
 }
 
 a {
-    color: $interactive-01 !important;
+    color: $text-03 !important;
 
     &:hover {
-        color: $interactive-01 !important;
+        color: $text-03 !important;
     }
 
     &:focus-visible {
@@ -125,7 +125,7 @@ a {
 
     &:focus {
         box-shadow: none !important;
-        border: 1px dashed $interactive-01; 
+        border: 1px dashed $text-03; 
     }
 }
 
