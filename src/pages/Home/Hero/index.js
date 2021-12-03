@@ -33,23 +33,12 @@ const Hero = ({ total, numLoaded, loading }) => {
           <Box
             className="container__solid-rectangle hero__intro-container"
           >
-            <Text paddingBottom="1rem">
-              I’m James Xie, a user experience designer at IBM with a background in engineering.
+            <Text>
+              I&apos;m a mission-driven product designer who runs research sessions, build wireframes, and codes on a weekly basis.
+              <br />
+              <br />
+              I&apos;m currently working at IBM.
             </Text>
-            <Text paddingBottom="1rem">
-              Below you’ll find three projects that show:
-            </Text>
-            <OrderedList>
-              <ListItem>
-                how I work
-              </ListItem>
-              <ListItem>
-                how I play
-              </ListItem>
-              <ListItem>
-                how I give back
-              </ListItem>
-            </OrderedList>
           </Box>
         </Flex>
       </Flex>

@@ -78,21 +78,21 @@ const Home = (props) => {
             onClick={() => handleClick('tile--dw-answers')}
             id={currSection === 1 ? 'current-section' : ''}
           >
-            1. work
+            DW Answers
           </Button>
           <Button
             className="side-menu__item"
             onClick={() => handleClick('tile--power-glove')}
             id={currSection === 2 ? 'current-section' : ''}
           >
-            2. play
+            Power glove
           </Button>
           <Button
             className="side-menu__item"
             onClick={() => handleClick('tile--austin-cold')}
             id={currSection === 3 ? 'current-section' : ''}
           >
-            3. give
+            Austincold
           </Button>
         </Flex>
       </Flex>
