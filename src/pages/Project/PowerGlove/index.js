@@ -114,6 +114,7 @@ const PowerGlove = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
           paddingTop="1rem"
+          paddingBottom="4rem"
         >
           <Text as="h2">Functionality</Text>
           <Text as="h4">How does it work?</Text>
@@ -170,7 +171,7 @@ const PowerGlove = ({}) => {
             .
           </Text>
         </GridItem>
-        <GridItem
+        {/* <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
@@ -209,7 +210,7 @@ const PowerGlove = ({}) => {
           display={['none', 'block']}
         >
           <Sketches />
-        </GridItem>
+        </GridItem> */}
 
       </Section>
     </>
