@@ -41,7 +41,6 @@ const PowerGloveTile = ({ onLoad }) => {
       className="projects__container"
       id="tile--power-glove"
       description={renderDescription()}
-      subtitle="2. How I play"
       title="POWERGLOVE"
       to="/power-glove"
       order={2}

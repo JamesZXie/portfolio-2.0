@@ -42,7 +42,6 @@ const DwAnswersTile = ({ onLoad }) => {
       id="tile--dw-answers"
       description={renderDescription()}
       title="DW ANSWERS"
-      subtitle="1. How I work"
       order={1}
       to="/dw-answers"
       projectImage={(

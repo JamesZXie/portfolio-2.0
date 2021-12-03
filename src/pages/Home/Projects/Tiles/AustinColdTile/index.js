@@ -39,7 +39,6 @@ const AustinColdTile = ({ onLoad }) => {
       className="projects__container"
       id="tile--austin-cold"
       description={renderDescription()}
-      subtitle="3. How I give back"
       order={3}
       title="AUSTINCOLD"
       to="/austin-cold"

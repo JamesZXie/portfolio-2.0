@@ -34,7 +34,7 @@ const Hero = ({ total, numLoaded, loading }) => {
             className="container__solid-rectangle hero__intro-container"
           >
             <Text>
-              I&apos;m a mission-driven product designer who runs research sessions, build wireframes, and codes on a weekly basis.
+              I&apos;m James, a mission-driven product design generalist who runs research sessions, designs, and codes on a weekly basis.
               <br />
               <br />
               I&apos;m currently working at IBM.
