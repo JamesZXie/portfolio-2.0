@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
 
-import PropTypes from 'prop-types';
-import DwAnswersPreview from '../../../../../assets/images/Home/dw-answers-preview.png';
+import SupercomputerImage from '../../../../../assets/images/Home/supercomputer.png';
 import Tile from '../../Tile';
-import '../../projects.scss';
 
-const DwAnswersTile = ({ onLoad }) => {
+const RendezvousTile = ({ onLoad }) => {
   const renderDescription = () => (
     <Box
       className="projects__description"
@@ -19,45 +18,46 @@ const DwAnswersTile = ({ onLoad }) => {
       <Text marginBottom="2rem">
         <UnorderedList>
           <ListItem>
-            Project Management
+            Product design
           </ListItem>
           <ListItem>
-            UX design
+            Design Research
           </ListItem>
           <ListItem>
-            UX research
+            Fullstack development
           </ListItem>
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
         DESCRIPTION:
       </Text>
-      <Text>Streamlining IBM product support by crowdsourcing solutions for a subset of customer issues.</Text>
+      <Text>Helping IBM&apos;s supercomputer test teams scale their resource allocation process.</Text>
     </Box>
   );
 
   return (
+
     <Tile
       className="projects__container"
-      id="tile--dw-answers"
+      id="tile--rendezvous"
       description={renderDescription()}
-      title="DW ANSWERS"
-      order={2}
-      to="/dw-answers"
+      title="RENDEZVOUS"
+      to="/rendezvous"
+      order={1}
       projectImage={(
         <Image
-          className="projects__dw-answers-image"
-          src={DwAnswersPreview}
+          className="projects__rendezvous-image"
           onLoad={onLoad}
+          src={SupercomputerImage}
+          alt="image of a glove"
         />
-
 )}
     />
   );
 };
 
-DwAnswersTile.propTypes = {
+RendezvousTile.propTypes = {
   onLoad: PropTypes.func.isRequired,
 };
 
-export default DwAnswersTile;
+export default RendezvousTile;

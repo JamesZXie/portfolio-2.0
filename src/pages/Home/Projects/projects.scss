@@ -3,6 +3,7 @@
 .projects {
     &__container {
         min-height: 10rem;
+        background-color: $ui-01;
     }
 
     &__austin-cold-image {
@@ -32,6 +33,18 @@
         height: 25rem;
         top: -3.5rem;
         left: -2.5rem;
+        max-width: 50rem;
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__rendezvous-image {
+        position: absolute;
+        height: 25rem;
+        top: -4rem;
+        left: -1rem;
         max-width: 50rem;
         
         &:hover {

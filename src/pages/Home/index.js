@@ -3,6 +3,7 @@ import { Flex, Box, Button } from '@chakra-ui/react';
 import Hero from './Hero';
 import './home.scss';
 import './Projects/projects.scss';
+import RendezvousTile from './Projects/Tiles/RendezvousTile';
 import AustinColdTile from './Projects/Tiles/AustinColdTile';
 import PowerGloveTile from './Projects/Tiles/PowerGloveTile';
 import DwAnswersTile from './Projects/Tiles/DwAnswersTile';
@@ -71,26 +72,33 @@ const Home = (props) => {
             onClick={() => handleClick('hero')}
             id={currSection === 0 ? 'current-section' : ''}
           >
-            intro
+            About
+          </Button>
+          <Button
+            className="side-menu__item"
+            onClick={() => handleClick('tile--rendezvous')}
+            id={currSection === 1 ? 'current-section' : ''}
+          >
+            Rendezvous
           </Button>
           <Button
             className="side-menu__item"
             onClick={() => handleClick('tile--dw-answers')}
-            id={currSection === 1 ? 'current-section' : ''}
+            id={currSection === 2 ? 'current-section' : ''}
           >
             DW Answers
           </Button>
           <Button
             className="side-menu__item"
             onClick={() => handleClick('tile--power-glove')}
-            id={currSection === 2 ? 'current-section' : ''}
+            id={currSection === 3 ? 'current-section' : ''}
           >
-            Power glove
+            Powerglove
           </Button>
           <Button
             className="side-menu__item"
             onClick={() => handleClick('tile--austin-cold')}
-            id={currSection === 3 ? 'current-section' : ''}
+            id={currSection === 4 ? 'current-section' : ''}
           >
             Austincold
           </Button>
@@ -107,6 +115,9 @@ const Home = (props) => {
           total={total}
           numLoaded={numLoaded}
           loading={loading}
+        />
+        <RendezvousTile
+          onLoad={onLoad}
         />
         <DwAnswersTile
           onLoad={onLoad}
