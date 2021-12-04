@@ -63,11 +63,6 @@ const PowerGlove = ({}) => {
           colEnd={colEnd}
           paddingTop="1rem"
         >
-          <Text paddingBottom={sectionBreakPadding}>
-            When not dancing, climbing, or gaming, I enjoy playing with bleeding edge tech and imagining how
-            it could affect the future of human-computer interaction.
-          </Text>
-          <SectionBreak />
           <Text as="h2">The Project</Text>
           <Text as="h4">IoT can be a lot of fun</Text>
           <Text paddingBottom={lineBreakPadding}>The PowerGlove is a glove I scrapped together that can &quot;see&quot; what a user&apos;s hand looks like.</Text>

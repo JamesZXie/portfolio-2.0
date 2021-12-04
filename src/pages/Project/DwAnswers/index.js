@@ -70,14 +70,6 @@ const DwAnswers = ({}) => {
           colEnd={colEnd}
           paddingBottom={sectionBreakPadding}
         >
-          <Text
-            paddingBottom={sectionBreakPadding}
-          >
-            I structure my thinking as much as possible, hold strong opinions loosely, back actions with evidence,
-            and tie every decision into the bigger picture.
-          </Text>
-          <SectionBreak />
-
           <Text as="h2">The Problem</Text>
           <Text as="h4">IBM Support is slow for customers and costly for IBM.</Text>
           <Text paddingBottom={lineBreakPadding}>

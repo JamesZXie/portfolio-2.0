@@ -69,12 +69,6 @@ const AustinCold = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Text paddingBottom={sectionBreakPadding}>
-            I&apos;m always looking for ways to lend a helping hand, whether its internal community projects,
-            event management, or external pro bono projects like the one below.
-            {' '}
-          </Text>
-          <SectionBreak />
           <Text as="h2">The Problem</Text>
           <Text as="h4">ERCOT cut corners when building the isolated power grid</Text>
           <Image
