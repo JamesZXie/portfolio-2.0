@@ -56,7 +56,7 @@ const Rendezvous = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          paddingTop="1rem"
+          paddingTop={lineBreakPadding}
         >
           <Text paddingBottom={sectionBreakPadding}>
             I&apos;m still learning how to navigate NDAs, so what I display
@@ -75,32 +75,51 @@ const Rendezvous = ({}) => {
           </Text>
           <SectionBreak />
           <Text as="h2">The Problem</Text>
-          <Text as="h4">IBM built their supercomputer house on sand</Text>
+          <Text as="h4">IBM supercomputer test team costs were at an all time high</Text>
           <Text paddingBottom={lineBreakPadding}>
-            The most expensive requirement to run tests on supercomputers is the supercomputer itself, which can go up to
+            The most expensive requirement to run tests on supercomputers is the hardware, which can go up to
             {' '}
-            <b>$1,000,000 per machine</b>
-            , with each
-            IBM developer using their own machine to run tests.
-          </Text>
-          <Text>
-            With the IBM Power 10 supercomputers coming out, IBM wanted to see if there was a way to
-            {' '}
-            <b>cut costs across their current resource economy</b>
+            <b>$1,000,000 per setup</b>
             .
           </Text>
-          <Text as="h2">The Solution</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Each test has very specific environment requirements, which makes finding and assembling environments extremely hard.
+            While sharing was theoretically possible,
+            {' '}
+            <b>barriers to sharing</b>
+            {' '}
+            meant most teams needed to order and build custom
+            environments each year. Not only was this
+            {' '}
+            <b>extremely cost inefficient</b>
+            , but it was also
+            {' '}
+            <b>too rigid </b>
+            - any mid-year
+            environment adjustments would force developers to spend weeks hunting for another team
+            with the parts they needed.
+            {' '}
+          </Text>
+          <Text>
+            In short,
+            {' '}
+            <b>the resource economy surrounding supercomputer test teams didn&apos;t scale.</b>
+          </Text>
+          <Text
+            marginTop={sectionBreakPadding}
+            as="h2"
+          >
+            The Solution
+          </Text>
           <Text as="h4">Breaking down test compatibility.</Text>
           <Text paddingBottom={lineBreakPadding}>
-            Sharing machines is possible. However, the biggest barrier to sharing machines is understanding
-            whether or not the tests can be run on the same machine without interfering with each other, which
-            usually takes weeks to coordinate. For example, some tests require the machine to be powered on
-            and off, which means that obviously no other tests can be run on the same machine for the
-            duration of said tests.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            Rendezvous is an analytics tool that helps developer leads understand machine usage and test compatibility to
-            an extent where they can move resources around efficiently, allowing the IBM supercomputer resource economy to scale.
+            Rendezvous is an analytics tool that
+            {' '}
+            <b>breaks down barriers to resource sharing</b>
+            {' '}
+            by helping developer leads
+            understand machine usage and test compatibility to an extent where they can move resources around efficiently,
+            allowing the resource economy to scale.
           </Text>
         </GridItem>
         <GridItem
