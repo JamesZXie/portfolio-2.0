@@ -77,11 +77,17 @@ const Rendezvous = ({}) => {
           <Text as="h2">The Problem</Text>
           <Text as="h4">IBM built their supercomputer house on sand</Text>
           <Text paddingBottom={lineBreakPadding}>
-            The most expensive requirement to run tests on supercomputers is the supercomputer itself, which can go up to $1,000,000 per machine, with each
+            The most expensive requirement to run tests on supercomputers is the supercomputer itself, which can go up to
+            {' '}
+            <b>$1,000,000 per machine</b>
+            , with each
             IBM developer using their own machine to run tests.
           </Text>
           <Text>
-            With the IBM Power 10 supercomputers coming out, IBM wanted to see if there was a way to cut costs across their current resource economy.
+            With the IBM Power 10 supercomputers coming out, IBM wanted to see if there was a way to
+            {' '}
+            <b>cut costs across their current resource economy</b>
+            .
           </Text>
           <Text as="h2">The Solution</Text>
           <Text as="h4">Breaking down test compatibility.</Text>
@@ -110,6 +116,7 @@ const Rendezvous = ({}) => {
             onLoad={handleLoad}
           />
           <Button
+            className="link-button__secondary"
             float="right"
             onClick={() => window.open('https://ibm.invisionapp.com/share/7PO1QA1AVGE#/320071208_Homepage')}
           >
