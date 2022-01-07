@@ -105,7 +105,7 @@ const Tile = ({
               </Box>
             </Flex>
           </GridItem>
-          <ArrowDown hidden={order === 3} />
+          <ArrowDown hidden={order === 4} />
         </Grid>
       </div>
     </Waypoint>
