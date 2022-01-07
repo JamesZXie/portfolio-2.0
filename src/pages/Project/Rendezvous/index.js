@@ -66,7 +66,7 @@ const Rendezvous = ({}) => {
               InVision prototype.
               {' '}
             </Link>
-
+            Rendezvous is an internal tool, so access to the actual app is restricted.
             <br />
             <br />
             Depending on potential conflicts of interest, I can go into more depth with a
