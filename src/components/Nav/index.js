@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 import './nav.scss';
 import {
-  Box, Button, Text, Flex, Image,
+  Box, Button, Text, Flex, Image, IconButton,
 } from '@chakra-ui/react';
 
 import logo from '../../assets/images/Home/logo.png';
 import logo2 from '../../assets/images/Home/logo2.png';
+import InstaWhite from '../../assets/images/Home/navIcons/instagram_white.svg';
+import LinkedWhite from '../../assets/images/Home/navIcons/linkedin_white.svg';
 
 const Nav = (props) => {
   const history = useHistory();
@@ -20,36 +22,64 @@ const Nav = (props) => {
   return (
     <Box className="home-button-container">
       <Box
-        cursor="pointer"
         padding="1rem"
         className="home-button"
-        onClick={() => handleLink('/')}
+        width="100%"
       >
-        <Image
-          display={location.pathname === '/' ? 'none' : 'inline-block'}
-          verticalAlign="top"
-          src={logo}
-          alt="logo"
-          height="1.5rem"
-          marginRight=".5rem"
-        />
-        <Image
-          display={location.pathname === '/' ? 'inline-block' : 'none'}
-          verticalAlign="top"
-          src={logo2}
-          alt="logo"
-          height="1.5rem"
-          marginRight=".5rem"
-        />
         <Box
-          display="inline-block"
-          paddingTop="1px"
+          cursor="pointer"
+          onClick={() => handleLink('/')}
         >
-          <Text
-            color={location.pathname === '/' ? '#FFFFFF' : '#1D1D1D'}
+          <Image
+            display={location.pathname === '/' ? 'none' : 'inline-block'}
+            verticalAlign="top"
+            src={logo}
+            alt="logo"
+            height="1.5rem"
+            marginRight=".5rem"
+          />
+          <Image
+            display={location.pathname === '/' ? 'inline-block' : 'none'}
+            verticalAlign="top"
+            src={logo2}
+            alt="logo"
+            height="1.5rem"
+            marginRight=".5rem"
+          />
+          <Box
+            display="inline-block"
+            paddingTop="1px"
           >
-            XIE
-          </Text>
+            <Text
+              color={location.pathname === '/' ? '#FFFFFF' : '#1D1D1D'}
+            >
+              XIE
+            </Text>
+          </Box>
+        </Box>
+        <Box paddingRight="1rem">
+          <Box
+            display={location.pathname === '/' ? 'inline-block' : 'none'}
+            className="nav__social-icon"
+          >
+            <IconButton
+              className="nav__social-icon__button"
+              aria-label="Go to instagram"
+              icon={<Image src={LinkedWhite} />}
+              onClick={() => window.open('https://www.linkedin.com/in/jameszexie/', '_blank')}
+            />
+          </Box>
+          <Box
+            display={location.pathname === '/' ? 'inline-block' : 'none'}
+            className="nav__social-icon"
+          >
+            <IconButton
+              className="nav__social-icon__button"
+              aria-label="Go to instagram"
+              icon={<Image src={InstaWhite} />}
+              onClick={() => window.open('https://www.instagram.com/kalbi.dsgn/', '_blank')}
+            />
+          </Box>
         </Box>
       </Box>
     </Box>

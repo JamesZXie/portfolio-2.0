@@ -3,13 +3,31 @@
 .home-button-container {
     background-color: transparent !important;
     font-family: RobotoCondensed;
+    z-index: 999;
+    position: relative;
+    padding-left: 1rem;
     
     .home-button {
         position: fixed;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
         top: 0;
         left: 0;
-        background-color: transparent !important;
         font-weight: 100;
         z-index: 9;
+        padding-left: 1rem;
+    }
+}
+
+.nav {
+    &__social-icon{
+        cursor: pointer;
+
+        &__button {
+            background-color: transparent !important;
+            padding: 0 !important;
+            margin-top: -.5rem;
+        }
     }
 }
