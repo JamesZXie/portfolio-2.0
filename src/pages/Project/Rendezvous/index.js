@@ -59,81 +59,56 @@ const Rendezvous = ({}) => {
           paddingTop={lineBreakPadding}
         >
           <Text paddingBottom={sectionBreakPadding}>
-            I&apos;m still learning how to navigate NDAs, so what I display
-            here will just be a very quick summary, and some screenshots / an
+            I&apos;m still learning how to navigate NDAs, so what I display here will just be a very quick summary, and some screenshots / an
             {' '}
             <Link href="https://ibm.invisionapp.com/share/7PO1QA1AVGE#/320071208_Homepage" isExternal>
               InVision prototype.
               {' '}
             </Link>
-            Rendezvous is an internal tool, so access to the actual app is restricted.
-            <br />
-            <br />
-            Depending on potential conflicts of interest, I can go into more depth with a
-            presentation. Let me know if that&apos;s something you want!
-            {' '}
+            Please let me know if you want a more in depth exploration.
           </Text>
           <SectionBreak />
           <Text as="h2">The Problem</Text>
-          <Text as="h4">IBM supercomputer test team costs were at an all time high</Text>
+          <Text as="h4">IBM&apos;s hardware costs are too high</Text>
           <Text paddingBottom={lineBreakPadding}>
-            The most expensive requirement to run tests on supercomputers is the hardware, which can go up to
+            IBM&apos;s supercomputer developer teams need their own hardware to run tests on.
+            <br />
+            <br />
+            Each system can go up to
             {' '}
-            <b>$1,000,000 per setup</b>
-            .
+            <b>$5,000,000</b>
+            , and typically each tester has around 3 of their own systems.
+            This results in an incredibly high hardware cost that doesn&apos;t scale.
+
           </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            Each test has very specific environment requirements, which makes finding and assembling environments extremely hard.
-            While sharing was theoretically possible,
-            {' '}
-            <b>barriers to sharing</b>
-            {' '}
-            meant most teams needed to order and build custom
-            environments each year. Not only was this
-            {' '}
-            <b>extremely cost inefficient</b>
-            , but it was also
-            {' '}
-            <b>too rigid </b>
-            - any mid-year
-            environment adjustments would force developers to spend weeks hunting for another team
-            with the parts they needed.
-            {' '}
-          </Text>
-          <Text>
-            In short,
-            {' '}
-            <b>the resource economy surrounding supercomputer test teams didn&apos;t scale.</b>
-          </Text>
+
           <Text
             marginTop={sectionBreakPadding}
             as="h2"
           >
             The Solution
           </Text>
-          <Text as="h4">Breaking down test compatibility.</Text>
+          <Text as="h4">Connecting complex teams with diverse requirements.</Text>
+          <GridItem
+            colStart={[2, 4]}
+            colSpan={[10, 6]}
+          >
+            <Image
+              src={AnalyticsImage}
+              objectFit="cover"
+              width="100%"
+              alt="On average, IBM support will address over 8,000 tickets before getting to low priority requests"
+              paddingBottom={sectionBreakPadding}
+              onLoad={handleLoad}
+            />
+
+          </GridItem>
           <Text paddingBottom={lineBreakPadding}>
-            Rendezvous is an analytics tool that
+            Rendezvous is a platform that
             {' '}
-            <b>breaks down barriers to resource sharing</b>
-            {' '}
-            by helping developer leads
-            understand machine usage and test compatibility to an extent where they can move resources around efficiently,
-            allowing the resource economy to scale.
+            <b>helps developer leads coordinate hardware sharing</b>
+            , which reduces hardware bloat and lets IBM&apos;s hardware costs scale.
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={[2, 4]}
-          colSpan={[10, 6]}
-        >
-          <Image
-            src={AnalyticsImage}
-            objectFit="cover"
-            width="100%"
-            alt="On average, IBM support will address over 8,000 tickets before getting to low priority requests"
-            paddingBottom={sectionBreakPadding}
-            onLoad={handleLoad}
-          />
           <Button
             className="link-button__secondary"
             float="right"
