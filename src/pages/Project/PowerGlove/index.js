@@ -156,7 +156,7 @@ const PowerGlove = ({}) => {
 
           </Text>
           <Text>
-            Unfortuantely, I was only able to host one class before Covid cut the project short,
+            Unfortunately, I was only able to host one class before Covid cut the project short,
             as not only did it kick us out of the office, but we only had one glove to work with, and as you can imagine
             passing it around was not an option. The glove itself was lost in the 2021 Texas Freeze
             when a ceiling pipe burst and water flooded the entire design building, including
