@@ -6,7 +6,6 @@ import {
 } from '@chakra-ui/react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import { Waypoint } from 'react-waypoint';
 import ArrowUp from '../../../../components/ArrowUp';
 import ArrowDown from '../../../../components/ArrowDown';
 
@@ -22,93 +21,89 @@ const Tile = ({
   };
 
   return (
-    <Waypoint>
-      <div>
-        <Grid
-          templateColumns="repeat(12, 1fr)"
-          className={`tile ${className}`}
-          gap="1rem"
-          textAlign={['center', 'left', 'left']}
-          paddingTop="2rem"
-          paddingBottom="2rem"
-          paddingLeft={['1rem', 0]}
-          paddingRight={['1rem', 0]}
-          position="relative"
-          id={id}
+    <Grid
+      templateColumns="repeat(12, 1fr)"
+      className={`tile ${className}`}
+      gap="1rem"
+      textAlign={['center', 'left', 'left']}
+      paddingTop="2rem"
+      paddingBottom="2rem"
+      paddingLeft={['1rem', 0]}
+      paddingRight={['1rem', 0]}
+      position="relative"
+      id={id}
+    >
+      <ArrowUp />
+      <Box
+        className="tile__order-imprint"
+        tabIndex="-1"
+        paddingLeft={[0, '4rem']}
+      >
+        {order}
+      </Box>
+      <GridItem
+        colStart={[1, 3]}
+        colSpan={[12, 4]}
+      >
+        <Flex
+          height="100%"
+          justify="center"
+          direction="column"
         >
-          <ArrowUp />
-          <Box
-            className="tile__order-imprint"
-            tabIndex="-1"
-            paddingLeft={[0, '4rem']}
+          <Text
+            as="h4"
+            paddingBottom="1rem"
           >
-            {order}
+            {subtitle}
+          </Text>
+          <Box className="container__solid-rectangle">
+            <Text as="h1">{title}</Text>
+            <Box marginTop="1rem" textAlign="left">
+              {description}
+            </Box>
           </Box>
-          <GridItem
-            colStart={[1, 3]}
-            colSpan={[12, 4]}
+          <Box
+            paddingTop="1rem"
+            textAlign={['right']}
           >
-            <Flex
-              height="100%"
-              justify="center"
-              direction="column"
+            <Button
+              onClick={handleLink}
+              width={['100%', 'auto']}
+              className="projects__read-more-button"
             >
-              <Text
-                as="h4"
-                paddingBottom="1rem"
-              >
-                {subtitle}
-              </Text>
-              <Box className="container__solid-rectangle">
-                <Text as="h1">{title}</Text>
-                <Box marginTop="1rem" textAlign="left">
-                  {description}
-                </Box>
-              </Box>
-              <Box
-                paddingTop="1rem"
-                textAlign={['right']}
-              >
-                <Button
-                  onClick={handleLink}
-                  width={['100%', 'auto']}
-                  className="projects__read-more-button"
-                >
-                  READ MORE
-                  <ArrowForwardIcon marginLeft=".5rem" />
-                </Button>
-              </Box>
-              <Box
-                className="projects__fun-box"
-              />
-            </Flex>
-          </GridItem>
-          <GridItem
-            display={['none', 'none', 'none', 'block', 'block']}
-            colStart={[0, 0, 0, 7, 7]}
-            colSpan={[0, 0, 0, 5, 5]}
-            position="relative"
-            marginBottom="1rem"
+              READ MORE
+              <ArrowForwardIcon marginLeft=".5rem" />
+            </Button>
+          </Box>
+          <Box
+            className="projects__fun-box"
+          />
+        </Flex>
+      </GridItem>
+      <GridItem
+        display={['none', 'none', 'none', 'block', 'block']}
+        colStart={[0, 0, 0, 7, 7]}
+        colSpan={[0, 0, 0, 5, 5]}
+        position="relative"
+        marginBottom="1rem"
+      >
+        <Flex
+          justify="center"
+          align="center"
+          height="100%"
+        >
+          <Box
+            className="tile__image__frame"
+            display={['none', 'none', 'none', 'block']}
           >
-            <Flex
-              justify="center"
-              align="center"
-              height="100%"
-            >
-              <Box
-                className="tile__image__frame"
-                display={['none', 'none', 'none', 'block']}
-              >
-                <Box className="tile__image__container" onClick={handleLink}>
-                  {window.innerWidth > 666 ? projectImage : ''}
-                </Box>
-              </Box>
-            </Flex>
-          </GridItem>
-          <ArrowDown hidden={order === 4} />
-        </Grid>
-      </div>
-    </Waypoint>
+            <Box className="tile__image__container" onClick={handleLink}>
+              {window.innerWidth > 666 ? projectImage : ''}
+            </Box>
+          </Box>
+        </Flex>
+      </GridItem>
+      <ArrowDown hidden={order === 4} />
+    </Grid>
   );
 };
 
