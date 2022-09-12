@@ -136,7 +136,7 @@ const Pools = ({}) => {
         >
           <YTVideo>
             <iframe
-              src="https://www.youtube.com/embed/z019WTPDBrc"
+              src="https://www.youtube.com/embed/qeW0qXJCIJc"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -147,7 +147,7 @@ const Pools = ({}) => {
             as="h5"
             paddingBottom=".5rem"
           >
-            An prototype walkthrough of SPP, as it&apos;s not implemented on the test server just yet. This will be replaced with an actual demo once it is.
+            &#40;No sound&#41; Walkthrough of SPP on our test server showcasing group creation, spp creation, and VM deployment into an SPP.
           </Text>
         </GridItem>
         <GridItem
@@ -157,37 +157,37 @@ const Pools = ({}) => {
         >
           <Text paddingBottom={lineBreakPadding}>
             In an effort to make deploying resources using SPPs as intuitive as possible, we tested a few options. The flow we decided on mimicked
-            the flow of creating VM placement groups, and so we drew parallels to the existing VM placement group and usage flow. Note the following:
+            the flow of creating VM placement groups, and so we drew parallels to the existing VM placement group and usage flow.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            In order to create a VM, a user must
+            In order to create a VM, a user must:
             <OrderedList>
               <ListItem>
-                Create a placement group or a VM.
+                Create a placement group or required VMs.
               </ListItem>
               <ListItem>
                 Create the other.
               </ListItem>
               <ListItem>
-                Add the VM to the placement group.
+                Add the VMs to the placement group.
               </ListItem>
             </OrderedList>
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            In order to create an SPP, a user must
+            In order to create an SPP, a user must:
             <OrderedList>
               <ListItem>
-                Create a placement group or an SPP
+                Create a placement group or required SPPs
               </ListItem>
               <ListItem>
                 Create the other.
               </ListItem>
               <ListItem>
-                Add the SPP to the placement group.
+                Add the SPPs to the placement group.
               </ListItem>
               <ListItem>
                 Create and add a VM to the SPP.
