@@ -89,7 +89,7 @@ const Provisioning = ({}) => {
             paddingBottom={lineBreakPadding}
             as="h5"
           >
-            (No audio) An example of how a user might provision a virtual machine using the pre-redesign interface
+            (No audio) An example of how a user might provision a virtual machine using the pre-redesign interface, including recovering from a mistake.
           </Text>
         </GridItem>
         <GridItem
@@ -171,7 +171,7 @@ const Provisioning = ({}) => {
             paddingBottom={lineBreakPadding}
             as="h5"
           >
-            (No audio) An example of how a user might provision a virtual machine using the redesigned interface
+            (No audio) An example of how a user might provision a virtual machine using the redesigned interface, including recovering from a mistake.
           </Text>
         </GridItem>
         <GridItem

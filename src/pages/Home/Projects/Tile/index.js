@@ -102,7 +102,7 @@ const Tile = ({
           </Box>
         </Flex>
       </GridItem>
-      <ArrowDown hidden={order === 4} />
+      <ArrowDown hidden={order === 5} />
     </Grid>
   );
 };

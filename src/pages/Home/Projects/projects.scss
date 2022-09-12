@@ -17,6 +17,18 @@
         }
     }
 
+    &__pools-image {
+        position: absolute;
+        top: -1rem;
+        left: -3.4rem;
+        max-width: 25rem;
+        border-radius:5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
     &__dw-answers-image {
         transition: all 0.2s ease-in-out;
         position: absolute;
@@ -27,6 +39,19 @@
             cursor: pointer;
         }
     }
+    
+    &__provisioning-image {
+        position: absolute;
+        top: -1rem;
+        left: -3.4rem;
+        max-width: 25rem;
+        border-radius:5px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
     
     &__power-glove-image {
         position: absolute;

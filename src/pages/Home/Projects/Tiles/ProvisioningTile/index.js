@@ -4,7 +4,7 @@ import {
 } from '@chakra-ui/react';
 
 import PropTypes from 'prop-types';
-import DwAnswersPreview from '../../../../../assets/images/Home/dw-answers-preview.png';
+import ProvisioningPreview from '../../../../../assets/images/Home/provisioning-preview.png';
 import Tile from '../../Tile';
 import '../../projects.scss';
 
@@ -43,8 +43,8 @@ const DwAnswersTile = ({ onLoad }) => {
       to="/psvsredesign"
       projectImage={(
         <Image
-          className="projects__dw-answers-image"
-          src={DwAnswersPreview}
+          className="projects__provisioning-image"
+          src={ProvisioningPreview}
           onLoad={onLoad}
         />
 
