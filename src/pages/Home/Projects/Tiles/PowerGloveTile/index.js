@@ -18,14 +18,20 @@ const PowerGloveTile = ({ onLoad }) => {
       <Text marginBottom="2rem">
         <UnorderedList>
           <ListItem>
-            Fun solo side project!
+            Designer
+          </ListItem>
+          <ListItem>
+            Developer
+          </ListItem>
+          <ListItem>
+            Hardware... person
           </ListItem>
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
         DESCRIPTION:
       </Text>
-      <Text>Exploring alternate ways of interacting with digital art.</Text>
+      <Text>A fun solo project turned community project turned covid failure: interacting with digital art without a mouse and keyboard.</Text>
     </Box>
   );
 
@@ -37,7 +43,7 @@ const PowerGloveTile = ({ onLoad }) => {
       description={renderDescription()}
       title="POWERGLOVE"
       to="/power-glove"
-      order={3}
+      order={4}
       projectImage={(
         <Image
           className="projects__power-glove-image"
