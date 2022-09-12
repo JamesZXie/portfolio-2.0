@@ -56,18 +56,6 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          paddingTop={lineBreakPadding}
-        >
-          <Text paddingBottom={sectionBreakPadding}>
-            Redesigning the way users create virtual machines (VMs) on PowerVS. Not live - what you see is on our test server.
-          </Text>
-          <SectionBreak />
-
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
         >
           <Text as="h2">The Problem</Text>
           <Text as="h4">PowerVS outgrows its initial, simple provisioning flow</Text>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {
   Grid, GridItem, Button, Text, Link, Image, OrderedList, ListItem, Center, Flex, UnorderedList,
 } from '@chakra-ui/react';
+import { useHistory, useLocation } from 'react-router-dom';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
@@ -21,6 +22,9 @@ const Rendezvous = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
   const total = 1;
+
+  const history = useHistory();
+  const location = useLocation();
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -58,6 +62,27 @@ const Rendezvous = ({}) => {
           colEnd={colEnd}
           paddingTop={lineBreakPadding}
         >
+          <Text paddingBottom={sectionBreakPadding}>
+            Unfortunately, as this was an internal product that is currently being evaluated for external sale, I can&apos;t go too deep into this project.
+            If you would like to read a deep dive case study, check out my case study on
+            {' '}
+            <Link onClick={() => {
+              history.push('/pools');
+            }}
+            >
+              PowerVS shared processor pools.
+
+            </Link>
+          </Text>
+          <SectionBreak />
+
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          paddingTop={lineBreakPadding}
+        >
           <Text as="h2">The Problem</Text>
           <Text as="h4">IBM&apos;s hardware costs are too high</Text>
           <Text paddingBottom={lineBreakPadding}>
@@ -74,8 +99,12 @@ const Rendezvous = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             Occasionally, leads will try to coordinate sharing systems instead of buying new machines. However, due to the
             destructive nature of testing, without knowing the type of work a team does, it&apos;s typically very hard to
-            justify lending your machine out. The team you lend it out to could perform tests with consequences they don&apos;t catch,
-            that end up interfering with your tests in the future.
+            justify lending your machine out. The team you lend it out to could perform tests
+            {' '}
+            {' '}
+            <strong>with consequences they don&apos;t catch</strong>
+            ,
+            that end up interfering with your tests once the machine is returned..
 
           </Text>
           <Text
