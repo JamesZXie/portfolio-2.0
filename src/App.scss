@@ -14,10 +14,6 @@ $spacing-02: 2rem;
 
 $highlight-01: #FF0000;
 
-@font-face {
-    font-family: RobotoMono;
-    src: url('./assets/fonts/RobotoMono/RobotoMono-VariableFont_wght.ttf');
-}
 
 @font-face {
     font-family: RobotoCondensed;
@@ -36,7 +32,7 @@ $highlight-01: #FF0000;
 
 body {
     margin: 0px;
-    font-family: RobotoMono;
+    font-family: Roboto;
     font-size: 16px;
 }
 
@@ -78,10 +74,15 @@ h4 {
 h5 {
     font-size: 12px !important;
     font-weight: 100;
-    max-width: 90%;
     text-align: center;
     color: #525252;
     padding-top: .5rem;
+}
+
+h6::before {
+    width:2px;
+    height:100%;
+    background-color:#0047FF;
 }
 
 p {

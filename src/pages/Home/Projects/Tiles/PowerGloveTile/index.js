@@ -18,20 +18,14 @@ const PowerGloveTile = ({ onLoad }) => {
       <Text marginBottom="2rem">
         <UnorderedList>
           <ListItem>
-            Interaction design
-          </ListItem>
-          <ListItem>
-            Software Engineering
-          </ListItem>
-          <ListItem>
-            Computer Engineering
+            Fun solo side project!
           </ListItem>
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
         DESCRIPTION:
       </Text>
-      <Text>Exploring alternate ways of interacting with the digital world.</Text>
+      <Text>Exploring alternate ways of interacting with digital art.</Text>
     </Box>
   );
 

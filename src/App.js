@@ -8,13 +8,13 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import AustinCold from './pages/Project/AustinCold';
 import PowerGlove from './pages/Project/PowerGlove';
-import DwAnswers from './pages/Project/DwAnswers';
+import Pools from './pages/Project/Pools';
 import Rendezvous from './pages/Project/Rendezvous';
-import Doodles from './pages/Project/Doodles';
+import Provisioning from './pages/Project/Provisioning';
 import ScrollToTop from './components/ScrollToTop';
 
 const fonts = {
-  body: 'Roboto Mono',
+  body: 'Roboto',
 };
 
 const theme = extendTheme({ fonts });
@@ -29,9 +29,9 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/austin-cold" component={AustinCold} />
             <Route exact path="/power-glove" component={PowerGlove} />
-            <Route exact path="/dw-answers" component={DwAnswers} />
+            <Route exact path="/pools" component={Pools} />
             <Route exact path="/rendezvous" component={Rendezvous} />
-            <Route exact path="/doodles" component={Doodles} />
+            <Route exact path="/psvsredesign" component={Provisioning} />
           </Switch>
         </ScrollToTop>
       </Router>

@@ -18,20 +18,17 @@ const AustinColdTile = ({ onLoad }) => {
       <Text marginBottom="2rem">
         <UnorderedList>
           <ListItem>
-            Project Management
+            Primary &quot;designer&quot; &#40;maybe five minutes of design work&#41;
           </ListItem>
           <ListItem>
-            UX Design
-          </ListItem>
-          <ListItem>
-            Frontend Development
+            Primary developer
           </ListItem>
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
         DESCRIPTION:
       </Text>
-      <Text>Working with a nonprofit to launch over 400 rescue operations and raise $1.5 million during a natural disaster.</Text>
+      <Text>Working with a nonprofit to quickly launch over 400 rescue operations and raise $1.5 million during a natural disaster.</Text>
     </Box>
   );
   return (

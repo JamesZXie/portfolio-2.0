@@ -37,7 +37,7 @@ const Hero = ({ total, numLoaded, loading }) => {
               I&apos;m James, a mission-driven product design generalist who runs research sessions, designs, and codes on a weekly basis.
               <br />
               <br />
-              I&apos;m currently working at IBM.
+              I&apos;m currently working at IBM&apos;s design studio.
             </Text>
           </Box>
         </Flex>

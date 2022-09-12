@@ -1,0 +1,9 @@
+@import '../../../../App.scss';
+
+.project-dump-container {
+    scroll-snap-align: start;
+    height: 100vh;
+    z-index: 998;
+    color: $text-02;
+    background-color: $ui-03;
+}

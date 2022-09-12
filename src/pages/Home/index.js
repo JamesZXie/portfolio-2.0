@@ -7,9 +7,11 @@ import RendezvousTile from './Projects/Tiles/RendezvousTile';
 import AustinColdTile from './Projects/Tiles/AustinColdTile';
 import PowerGloveTile from './Projects/Tiles/PowerGloveTile';
 import DwAnswersTile from './Projects/Tiles/DwAnswersTile';
+import ProvisioningTile from './Projects/Tiles/ProvisioningTile';
+import PoolsTile from './Projects/Tiles/PoolsTile';
 
 const Home = (props) => {
-  const total = 3;
+  const total = 4;
   const [loadedFont, setLoadedFont] = useState(false);
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -76,29 +78,36 @@ const Home = (props) => {
           </Button>
           <Button
             className="side-menu__item"
-            onClick={() => handleClick('tile--rendezvous')}
+            onClick={() => handleClick('tile--pools')}
             id={currSection === 1 ? 'current-section' : ''}
+          >
+            PSVS Pools
+          </Button>
+          <Button
+            className="side-menu__item"
+            onClick={() => handleClick('tile--provisioning')}
+            id={currSection === 2 ? 'current-section' : ''}
+          >
+            Provisioning
+          </Button>
+          <Button
+            className="side-menu__item"
+            onClick={() => handleClick('tile--rendezvous')}
+            id={currSection === 3 ? 'current-section' : ''}
           >
             Rendezvous
           </Button>
           <Button
             className="side-menu__item"
-            onClick={() => handleClick('tile--dw-answers')}
-            id={currSection === 2 ? 'current-section' : ''}
-          >
-            DW Answers
-          </Button>
-          <Button
-            className="side-menu__item"
             onClick={() => handleClick('tile--power-glove')}
-            id={currSection === 3 ? 'current-section' : ''}
+            id={currSection === 4 ? 'current-section' : ''}
           >
             Powerglove
           </Button>
           <Button
             className="side-menu__item"
             onClick={() => handleClick('tile--austin-cold')}
-            id={currSection === 4 ? 'current-section' : ''}
+            id={currSection === 5 ? 'current-section' : ''}
           >
             Austincold
           </Button>
@@ -116,10 +125,13 @@ const Home = (props) => {
           numLoaded={numLoaded}
           loading={loading}
         />
-        <RendezvousTile
+        <PoolsTile
           onLoad={onLoad}
         />
-        <DwAnswersTile
+        <ProvisioningTile
+          onLoad={onLoad}
+        />
+        <RendezvousTile
           onLoad={onLoad}
         />
         <PowerGloveTile

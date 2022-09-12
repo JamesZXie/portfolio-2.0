@@ -18,13 +18,11 @@ const RendezvousTile = ({ onLoad }) => {
       <Text marginBottom="2rem">
         <UnorderedList>
           <ListItem>
-            Product design
+            Secondary UX designer
           </ListItem>
           <ListItem>
-            Design Research
-          </ListItem>
-          <ListItem>
-            Fullstack development
+            Solo developer
+            &#40;the rest of the dev team quit before starting&#41;
           </ListItem>
         </UnorderedList>
       </Text>

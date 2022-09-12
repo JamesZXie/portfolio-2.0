@@ -58,16 +58,6 @@ const Rendezvous = ({}) => {
           colEnd={colEnd}
           paddingTop={lineBreakPadding}
         >
-          <Text paddingBottom={sectionBreakPadding}>
-            I&apos;m still learning how to navigate NDAs, so what I display here will just be a very quick summary, and some screenshots / an
-            {' '}
-            <Link href="https://ibm.invisionapp.com/share/7PO1QA1AVGE#/320071208_Homepage" isExternal>
-              InVision prototype.
-              {' '}
-            </Link>
-            Please let me know if you want a more in depth exploration.
-          </Text>
-          <SectionBreak />
           <Text as="h2">The Problem</Text>
           <Text as="h4">IBM&apos;s hardware costs are too high</Text>
           <Text paddingBottom={lineBreakPadding}>
