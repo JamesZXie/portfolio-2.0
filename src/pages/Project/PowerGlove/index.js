@@ -188,13 +188,18 @@ const PowerGlove = ({}) => {
           <Text as="h5" paddingBottom={lineBreakPadding}>Cheap prototype before I spent like $300 on the actual glove. </Text>
           <Text paddingBottom={lineBreakPadding}>
             The makelab wasn&apos;t too well equipped at the time, so I had to grab stuff from the IBM kitchen, hence the gloves and coffee stirrers.
-            I just wanted to see if people would find it fun to use. If you have one short stick and one longer stick, and make the ends touch, you make an arch.
-            If you bend the bottom stick enough, you can make the middle touch.
+            I just wanted to see if people would find it fun to use.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            <strong>It works by completing a circuit</strong>
+            {' '}
+            which an arduinos read as on/off. If you have one short stick and one longer stick, and make the ends touch, you make an arch.
+            If you bend the bottom stick enough, you can make the middle touch, completing the circuit.
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            I literally plugged this into an arduino and then took a p5 sketch I already had coded up, and then changed a variable to
-            be on/off based off of whether the two conductive areas were touching. Loaded the sketch, and told friends to put their hand in and try to squeeze their finger.
-            They weren&apos;t like super impressed but I got a few laughs so I figured it was worth investing into.
+            I literally plugged this into a p5 sketch I had from a youtube tutorial, and then changed the variable dictating speed to
+            create speed depending on on/off. Loaded the sketch, and told friends to put their hand in and try to squeeze their finger.
+            They weren&apos;t like super impressed but I got a few surprised laughs so I figured it was worth investing into.
           </Text>
           <YTVideo>
             <iframe
@@ -206,9 +211,13 @@ const PowerGlove = ({}) => {
             />
           </YTVideo>
           <Text as="h5" paddingBottom={lineBreakPadding}>Flex sensor circuit proof-of-concept test</Text>
-          <Text paddingBottom={lineBreakPadding}>
+          <Text paddingBottom={subSectionBreakPadding}>
             This is the sketch I used with the plastic glove, with a similar circuit, but I have an actual flex sensor plugged into the actual planned circuit.
-            The speed was supposed to depend on how hard you press, but as you can see I had it poorly calibrated at this time.
+            The speed was
+            {' '}
+            <strong>supposed</strong>
+            {' '}
+            to depend on how hard you press, but as you can see, its poorly calibrated.
           </Text>
           <YTVideo>
             <iframe
