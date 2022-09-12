@@ -43,7 +43,7 @@ const PowerGloveTile = ({ onLoad }) => {
       description={renderDescription()}
       title="POWERGLOVE"
       to="/power-glove"
-      order={4}
+      order={3}
       projectImage={(
         <Image
           className="projects__power-glove-image"

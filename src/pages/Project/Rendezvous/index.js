@@ -62,18 +62,23 @@ const Rendezvous = ({}) => {
           <Text as="h4">IBM&apos;s hardware costs are too high</Text>
           <Text paddingBottom={lineBreakPadding}>
             IBM&apos;s supercomputer developer teams need their own hardware to run tests on.
-            <br />
-            <br />
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
             Each system can go up to
             {' '}
             <b>$5,000,000</b>
             , and typically each tester has around 3 of their own systems.
-            This results in an incredibly high hardware cost that doesn&apos;t scale.
+            This results in an incredibly high hardware cost that doesn&apos;t scale, as teams can be as large as
+            10 to 12 test developers.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Occasionally, leads will try to coordinate sharing systems instead of buying new machines. However, due to the
+            destructive nature of testing, without knowing the type of work a team does, it&apos;s typically very hard to
+            justify lending your machine out. The team you lend it out to could perform tests with consequences they don&apos;t catch,
+            that end up interfering with your tests in the future.
 
           </Text>
-
           <Text
-            marginTop={sectionBreakPadding}
             as="h2"
           >
             The Solution
@@ -96,7 +101,13 @@ const Rendezvous = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             Rendezvous is a platform that
             {' '}
-            <b>helps developer leads coordinate hardware sharing</b>
+            <b>helps developer leads understand the work other teams do</b>
+            {' '}
+            by exposing
+            the impact of a team's tests on a system.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            This helps developer leads borrow and lend systems with confidence
             , which reduces hardware bloat and lets IBM&apos;s hardware costs scale.
           </Text>
           <Button

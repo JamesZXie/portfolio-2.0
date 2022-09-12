@@ -41,7 +41,7 @@ const RendezvousTile = ({ onLoad }) => {
       description={renderDescription()}
       title="RENDEZVOUS"
       to="/rendezvous"
-      order={3}
+      order={4}
       projectImage={(
         <Image
           className="projects__rendezvous-image"

@@ -92,17 +92,17 @@ const Home = (props) => {
           </Button>
           <Button
             className="side-menu__item"
-            onClick={() => handleClick('tile--rendezvous')}
+            onClick={() => handleClick('tile--power-glove')}
             id={currSection === 3 ? 'current-section' : ''}
           >
-            Rendezvous
+            Powerglove
           </Button>
           <Button
             className="side-menu__item"
-            onClick={() => handleClick('tile--power-glove')}
+            onClick={() => handleClick('tile--rendezvous')}
             id={currSection === 4 ? 'current-section' : ''}
           >
-            Powerglove
+            Rendezvous
           </Button>
           <Button
             className="side-menu__item"
@@ -131,10 +131,10 @@ const Home = (props) => {
         <ProvisioningTile
           onLoad={onLoad}
         />
-        <RendezvousTile
+        <PowerGloveTile
           onLoad={onLoad}
         />
-        <PowerGloveTile
+        <RendezvousTile
           onLoad={onLoad}
         />
         <AustinColdTile
