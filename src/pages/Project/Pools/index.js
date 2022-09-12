@@ -6,12 +6,12 @@ import {
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
+import YTVideo from '../../../components/YTVideo';
 
 import './pools.scss';
 import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
 import ServerPlacementGroups from '../../../assets/images/Pools/server-placement-groups.png';
 import PlacementGroupsExample from '../../../assets/images/Pools/placement-groups-example.png';
-import SPPWalkthrough from '../../../assets/images/Pools/spp-walkthrough.mov';
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
 
 const lineBreakPadding = '.5rem';
@@ -134,13 +134,19 @@ const Pools = ({}) => {
           colStart={[1, 3]}
           colSpan={[12, 8]}
         >
-          <video
-            src={SPPWalkthrough}
-            controls
-            autoPlay
-            loop
-          />
-          <Text as="h5">
+          <YTVideo>
+            <iframe
+              src="https://www.youtube.com/embed/z019WTPDBrc"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </YTVideo>
+          <Text
+            as="h5"
+            paddingBottom=".5rem"
+          >
             An prototype walkthrough of SPP, as it&apos;s not implemented on the test server just yet. This will be replaced with an actual demo once it is.
           </Text>
         </GridItem>

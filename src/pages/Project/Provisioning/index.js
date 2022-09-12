@@ -7,10 +7,8 @@ import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
 
-import NewExperience from '../../../assets/images/Provisioning/new-provisioning-experience.mov';
-import OldExperience from '../../../assets/images/Provisioning/old-provisioning-experience.mov';
-
 import './provisioning.scss';
+import YTVideo from '../../../components/YTVideo';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -78,12 +76,15 @@ const Provisioning = ({}) => {
           colStart={[1, 3]}
           colSpan={[12, 8]}
         >
-          <video
-            src={OldExperience}
-            controls
-            autoPlay
-            loop
-          />
+          <YTVideo>
+            <iframe
+              src="https://www.youtube.com/embed/iOHY29x0d18"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </YTVideo>
           <Text
             paddingBottom={lineBreakPadding}
             as="h5"
@@ -157,12 +158,15 @@ const Provisioning = ({}) => {
           colStart={[1, 3]}
           colSpan={[12, 8]}
         >
-          <video
-            src={NewExperience}
-            controls
-            autoPlay
-            loop
-          />
+          <YTVideo>
+            <iframe
+              src="https://www.youtube.com/embed/hN3EjaBQsAI"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </YTVideo>
           <Text
             paddingBottom={lineBreakPadding}
             as="h5"

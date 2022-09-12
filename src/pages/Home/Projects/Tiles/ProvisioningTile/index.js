@@ -40,7 +40,7 @@ const DwAnswersTile = ({ onLoad }) => {
       description={renderDescription()}
       title="PROVISIONING"
       order={2}
-      to="/dw-answers"
+      to="/psvsredesign"
       projectImage={(
         <Image
           className="projects__dw-answers-image"
