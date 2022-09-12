@@ -13,11 +13,15 @@ import FlexSensorCircuit from '../../../assets/images/PowerGlove/flex-sensor-cir
 import GloveComplete from '../../../assets/images/PowerGlove/completed-glove.jpg';
 import GloveExample from '../../../assets/images/PowerGlove/glove-example.gif';
 import GloveSkeleton from '../../../assets/images/PowerGlove/glove-skeleton.jpg';
+import MK01 from '../../../assets/images/PowerGlove/mk-01.png';
+
+import YTVideo from '../../../components/YTVideo';
 
 import './power-glove.scss';
 
 const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
+const subSectionBreakPadding = '1.5rem';
 const colStart = [0, 4];
 const colSpan = [12, 6];
 const colEnd = [13, 10];
@@ -25,7 +29,7 @@ const colEnd = [13, 10];
 const PowerGlove = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 4;
+  const total = 5;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -109,7 +113,6 @@ const PowerGlove = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
           paddingTop="1rem"
-          paddingBottom="4rem"
         >
           <Text as="h2">Functionality</Text>
           <Text as="h4">How does it work?</Text>
@@ -153,7 +156,6 @@ const PowerGlove = ({}) => {
             I meant to open up the power glove to the community after I created it, hosting a few
             classes and creating a pseudo-api for it so that other developers at IBM could
             make their own sketches for an upcoming event.
-
           </Text>
           <Text>
             Unfortunately, I was only able to host one class before Covid cut the project short,
@@ -165,6 +167,59 @@ const PowerGlove = ({}) => {
             <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
             .
           </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          paddingBottom="4rem"
+        >
+          <Text as="h2">Process</Text>
+          <Text as="h4">Really just a photo / video dump</Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            I did not take nearly enough photos or videos. I was kind of counting on documenting this during the CraftCon event
+            that never happened, but here&apos;s what I do have...
+          </Text>
+          <Image
+            src={MK01}
+            width="100%"
+            onLoad={handleLoad}
+          />
+          <Text as="h5" paddingBottom={lineBreakPadding}>Cheap prototype before I spent like $300 on the actual glove. </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            The makelab wasn&apos;t too well equipped at the time, so I had to grab stuff from the IBM kitchen, hence the gloves and coffee stirrers.
+            I just wanted to see if people would find it fun to use. If you have one short stick and one longer stick, and make the ends touch, you make an arch.
+            If you bend the bottom stick enough, you can make the middle touch.
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            I literally plugged this into an arduino and then took a p5 sketch I already had coded up, and then changed a variable to
+            be on/off based off of whether the two conductive areas were touching. Loaded the sketch, and told friends to put their hand in and try to squeeze their finger.
+            They weren&apos;t like super impressed but I got a few laughs so I figured it was worth investing into.
+          </Text>
+          <YTVideo>
+            <iframe
+              src="https://www.youtube.com/embed/FuFNcOKOYR8"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </YTVideo>
+          <Text as="h5" paddingBottom={lineBreakPadding}>Flex sensor circuit proof-of-concept test</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            This is the sketch I used with the plastic glove, with a similar circuit, but I have an actual flex sensor plugged into the actual planned circuit.
+            The speed was supposed to depend on how hard you press, but as you can see I had it poorly calibrated at this time.
+          </Text>
+          <YTVideo>
+            <iframe
+              src="https://www.youtube.com/embed/MI5E1K1rgJM"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </YTVideo>
+          <Text as="h5" paddingBottom={lineBreakPadding}>Getting the shortest finger, the thumb, to finally work</Text>
         </GridItem>
         {/* <GridItem
           colStart={colStart}
