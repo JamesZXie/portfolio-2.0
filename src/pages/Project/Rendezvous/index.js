@@ -66,10 +66,7 @@ const Rendezvous = ({}) => {
             Unfortunately, as this was an internal product that is currently being evaluated for external sale, I can&apos;t go too deep into this project.
             If you would like to read a deep dive case study, check out my case study on
             {' '}
-            <Link onClick={() => {
-              history.push('/pools');
-            }}
-            >
+            <Link href="https://jamesxie.dev/pools">
               PowerVS shared processor pools.
 
             </Link>
