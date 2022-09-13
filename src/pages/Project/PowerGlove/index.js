@@ -228,7 +228,7 @@ const PowerGlove = ({}) => {
               allowFullScreen
             />
           </YTVideo>
-          <Text as="h5" paddingBottom={lineBreakPadding}>Getting the shortest finger, the thumb, to finally work</Text>
+          <Text as="h5" paddingBottom={lineBreakPadding}>Getting the shortest finger, the thumb, to finally work. The other interaction near the end did not.. you were supposed to see pulses.</Text>
         </GridItem>
         {/* <GridItem
           colStart={colStart}
