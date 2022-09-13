@@ -193,7 +193,7 @@ const PowerGlove = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             <strong>It works by completing a circuit</strong>
             {' '}
-            which an arduinos read as on/off. If you have one short stick and one longer stick, and bind the ends together with duct tape, the longer stick will create an arch..
+            which an arduinos read as on/off. If you have one short stick and one longer stick, and bind the ends together with duct tape, the longer stick will create an arch.
             If you push the bottom up from the middle with a knuckle, the top arch doesn&apos;t bend, and so the middles touch - which can make a complete circuit.
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
