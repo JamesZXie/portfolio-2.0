@@ -133,7 +133,7 @@ const Rendezvous = ({}) => {
             <b>helps developer leads understand the work other teams do</b>
             {' '}
             by exposing
-            the impact of a team's tests on a system.
+            the impact of a team&apos;s tests on a system.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
             This helps developer leads borrow and lend systems with confidence
