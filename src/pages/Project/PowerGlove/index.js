@@ -229,6 +229,13 @@ const PowerGlove = ({}) => {
             />
           </YTVideo>
           <Text as="h5" paddingBottom={lineBreakPadding}>Getting the shortest finger, the thumb, to finally work. The other interaction near the end did not.. you were supposed to see pulses.</Text>
+          <Text
+            paddingBottom={sectionBreakPadding}
+          >
+            I also attached and attempted to use an accelerometer as you can see near the end of the clip above. It didn&apos;t really go that well, although I did include info it collected
+            in the API which you can see in the repo above. I attempted to try to calculate position from the acceleration in the accelerometer using kalman filters, but I wasn&apos;t smart
+            enough to figure it out in time for CraftCon.
+          </Text>
         </GridItem>
         {/* <GridItem
           colStart={colStart}
