@@ -9,6 +9,10 @@ import SectionBreak from '../../../components/SectionBreak';
 
 import './provisioning.scss';
 import YTVideo from '../../../components/YTVideo';
+import Outline from '../../../components/Outline';
+
+import UserMSP from '../../../assets/images/Pools/user-msp.png';
+import UserISV from '../../../assets/images/Pools/user-isv.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -16,6 +20,16 @@ const sectionBreakPadding = '2rem';
 const colStart = [0, 4];
 const colSpan = [12, 6];
 const colEnd = [13, 10];
+const titles = [
+  'The Problem',
+  'The Solution',
+  'Product Context',
+];
+const ids = [
+  'provisioning-the-problem',
+  'provisioning-the-solution',
+  'provisioning-product-context',
+];
 
 const Provisioning = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
@@ -38,6 +52,10 @@ const Provisioning = ({}) => {
       <Section
         className="project-page provisioning"
       >
+        <Outline
+          titles={titles}
+          ids={ids}
+        />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -56,6 +74,7 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
+          id="provisioning-the-problem"
         >
           <Text as="h2">The Problem</Text>
           <Text as="h4">PowerVS outgrows its initial, simple provisioning flow</Text>
@@ -131,13 +150,14 @@ const Provisioning = ({}) => {
               frustrating and repetitive steps
             </strong>
             {' '}
-            in the provisioning flow.
+            in the provisioning flow. Its not uncommon to see users provisioning dozens of VMs at once, and many accounts have thousands of VMs to manage.
           </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
+          id="provisioning-the-solution"
         >
           <Text as="h2">The Solution</Text>
           <Text as="h4">Breaking the form into digestible chunks, and preparing to optimize for bulk</Text>
@@ -217,6 +237,87 @@ const Provisioning = ({}) => {
           >
             Unfortunately at this very moment I can&apos;t share too much about this enhancement. I will be
             able to soon though! Stay tuned.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-product-context"
+        >
+          <Text as="h2">Product context</Text>
+          <Text as="h4">Some context on what PowerVS is, and who its users are</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            PowerVS is, simply put,
+            {' '}
+            <strong>cloud infrastructure for IBM Power hardware users</strong>
+            .
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            IBM Power has better computing power than competitor hardware, but is much more expensive. Most end users have
+            extreme performance-based use cases, such as needing to crunch large amounts of data in milliseconds.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            There are really just two types of users:
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={1}
+        >
+          <Image src={UserMSP} />
+        </GridItem>
+        <GridItem
+          colStart={colStart + 1}
+          colSpan={5}
+          colEnd={colEnd}
+          paddingLeft=".5rem"
+          id="provisioning-product-context"
+        >
+          <Text as="h6">
+            1. Managed cloud service providers &#40;MSPs&#41;
+          </Text>
+          <Text>
+            MSPs account for
+            {' '}
+            <strong>80%</strong>
+            {' '}
+            of our userbase. They are Power experts who manage
+            Power resources for companies who want to build on power, but only understand software. MSPs may have to manage thousands of VMs,
+            due to their large clientele.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={1}
+        >
+          <Image src={UserISV} />
+        </GridItem>
+        <GridItem
+          colStart={colStart + 1}
+          colSpan={5}
+          colEnd={colEnd}
+          paddingLeft=".5rem"
+        >
+          <Text as="h6">
+            2. OS users with hybrid workloads
+          </Text>
+          <Text>
+            Power expertise is extremely hard to find, so only 20% of our userbase have enough expertise to
+            work directly with Power hardware. Still, they tend to have less expertise than MSPs, and work with
+            much smaller workloads.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-process-challenges"
+        >
+          <Text>
+            Both types of users have expertise in Power, and acquired this expertise by working with Power on-premise. New users
+            who want to use IBM Power will go through MSPs the vast majority of the time, rather than hire employees with Power
+            expertise.
           </Text>
         </GridItem>
       </Section>
