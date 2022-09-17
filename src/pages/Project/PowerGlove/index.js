@@ -101,11 +101,8 @@ const PowerGlove = ({}) => {
           </Center>
 
           <Text paddingBottom={lineBreakPadding}>
-            From a user perspective, this is worse than using a camera. However image recognition is unreliable, and
-            for an experiment that attempts to envision the future, an accurate way to retrieve user input makes sense.
-          </Text>
-          <Text>
-            Plus, working with hardware while blasting rock music makes me feel like Tony Stark.
+            Putting on a glove to track hand movements is probably more cumbersome or annoying than using a camera.
+            BUT, this project was more about fun and exploration than practicality.
           </Text>
         </GridItem>
         <GridItem
