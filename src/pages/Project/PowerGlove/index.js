@@ -7,6 +7,7 @@ import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
 import Sketches from './Sketches';
+import Outline from '../../../components/Outline';
 
 // images
 import FlexSensorCircuit from '../../../assets/images/PowerGlove/flex-sensor-circuit.png';
@@ -37,6 +38,17 @@ const PowerGlove = ({}) => {
     } setNumLoaded(numLoaded + 1);
   };
 
+  const titles = [
+    'Project Origin',
+    'How It Works',
+    'Process',
+  ];
+  const ids = [
+    'powerglove-project-origin',
+    'powerglove-how-it-works',
+    'powerglove-process',
+  ];
+
   return (
     <>
       <PageLoader
@@ -47,6 +59,10 @@ const PowerGlove = ({}) => {
       <Section
         className="project-page power-glove"
       >
+        <Outline
+          titles={titles}
+          ids={ids}
+        />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -66,8 +82,9 @@ const PowerGlove = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
           paddingTop="1rem"
+          id="powerglove-project-origin"
         >
-          <Text as="h2">The Project</Text>
+          <Text as="h2">Project Origin</Text>
           <Text as="h4">IoT can be a lot of fun</Text>
           <Text paddingBottom={lineBreakPadding}>The PowerGlove is a glove I scrapped together that can &quot;see&quot; what a user&apos;s hand looks like.</Text>
           <Text paddingBottom={sectionBreakPadding}>
@@ -110,9 +127,10 @@ const PowerGlove = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
           paddingTop="1rem"
+          id="powerglove-how-it-works"
         >
-          <Text as="h2">Functionality</Text>
-          <Text as="h4">How does it work?</Text>
+          <Text as="h2">How It Works</Text>
+          <Text as="h4">A quick, high-level tutorial</Text>
           <Text paddingBottom={sectionBreakPadding}>
             A Flex sensor is a special resistor that changes value when bent in a direction.
             Arduinos can measure voltage at points in a circuit. Making a circuit with
@@ -154,7 +172,7 @@ const PowerGlove = ({}) => {
             classes and creating a pseudo-api for it so that other developers at IBM could
             make their own sketches for an upcoming event.
           </Text>
-          <Text>
+          <Text paddingBottom={sectionBreakPadding}>
             Unfortunately, I was only able to host one class before Covid cut the project short,
             as not only did it kick us out of the office, but we only had one glove to work with, and as you can imagine
             passing it around was not an option. The glove itself was lost in the 2021 Texas Freeze
@@ -164,12 +182,14 @@ const PowerGlove = ({}) => {
             <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
             .
           </Text>
+          <SectionBreak />
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
           paddingBottom="4rem"
+          id="powerglove-process"
         >
           <Text as="h2">Process</Text>
           <Text as="h4">Really just a photo / video dump</Text>
