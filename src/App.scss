@@ -79,10 +79,8 @@ h5 {
     padding-top: .5rem;
 }
 
-h6::before {
-    width:2px;
-    height:100%;
-    background-color:#0047FF;
+h6 {
+    font-weight: bold !important;
 }
 
 p {

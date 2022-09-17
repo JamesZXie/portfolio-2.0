@@ -14,6 +14,8 @@ import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
 import ServerPlacementGroups from '../../../assets/images/Pools/server-placement-groups.png';
 import PlacementGroupsExample from '../../../assets/images/Pools/placement-groups-example.png';
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
+import UserMSP from '../../../assets/images/Pools/user-msp.png';
+import UserISV from '../../../assets/images/Pools/user-isv.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -226,7 +228,78 @@ const Pools = ({}) => {
           id="pools-product-context"
         >
           <Text as="h2">Product context</Text>
-          <Text as="h4">What PSVS is, and who its users are</Text>
+          <Text as="h4">Some context on what PowerVS is, and who its users are</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            PowerVS is, simply put,
+            {' '}
+            <strong>cloud infrastructure for IBM Power hardware users</strong>
+            .
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            IBM Power has better computing power than competitor hardware, but is much more expensive. Most end users have
+            extreme performance-based use cases, such as needing to crunch large amounts of data in milliseconds.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            There are really just two types of users:
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={1}
+        >
+          <Image src={UserMSP} />
+        </GridItem>
+        <GridItem
+          colStart={colStart + 1}
+          colSpan={5}
+          colEnd={colEnd}
+          paddingLeft=".5rem"
+        >
+          <Text as="h6">
+            1. Managed cloud service providers &#40;MSPs&#41;
+          </Text>
+          <Text>
+            MSPs account for
+            {' '}
+            <strong>80%</strong>
+            {' '}
+            of our userbase. They are Power experts who manage
+            Power resources for companies who want to build on power, but only understand software. MSPs may have to manage thousands of VMs,
+            due to their large clientele.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={1}
+        >
+          <Image src={UserISV} />
+        </GridItem>
+        <GridItem
+          colStart={colStart + 1}
+          colSpan={5}
+          colEnd={colEnd}
+          paddingLeft=".5rem"
+        >
+          <Text as="h6">
+            2. OS users with hybrid workloads
+          </Text>
+          <Text>
+            Power expertise is extremely hard to find, so only 20% of our userbase have enough expertise to
+            work directly with Power hardware. Still, they tend to have less expertise than MSPs, and work with
+            much smaller workloads.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-process-challenges"
+        >
+          <Text>
+            Both types of users have expertise in Power, and acquired this expertise by working with Power on-premise. New users
+            who want to use IBM Power will go through MSPs the vast majority of the time, rather than hire employees with Power
+            expertise.
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
