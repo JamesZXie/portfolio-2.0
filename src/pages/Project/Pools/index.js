@@ -7,6 +7,7 @@ import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
 import YTVideo from '../../../components/YTVideo';
+import Outline from '../../../components/Outline';
 
 import './pools.scss';
 import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
@@ -20,6 +21,20 @@ const sectionBreakPadding = '2rem';
 const colStart = [0, 4];
 const colSpan = [12, 6];
 const colEnd = [13, 10];
+const titles = [
+  'Feature Origin',
+  'Feature Implementation',
+  'Product Context',
+  'Process Challenges',
+  'Process',
+];
+const ids = [
+  'pools-feature-origin',
+  'pools-feature-implementation',
+  'pools-product-context',
+  'pools-process-challenges',
+  'pools-process',
+];
 
 const Pools = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
@@ -42,6 +57,10 @@ const Pools = ({}) => {
       <Section
         className="project-page pools"
       >
+        <Outline
+          titles={titles}
+          ids={ids}
+        />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -64,9 +83,7 @@ const Pools = ({}) => {
         >
           <Text paddingBottom={sectionBreakPadding}>
             Over my year as the primary designer for PSVS, I implemented features of all sizes.
-            Shared processor pools &#40;SPP&#41; is one of the larger features I implemented. This feature especially
-            got quite technical, and unfortunately I&apos;m not confident I communicated everything well. Please let me know
-            if you have any questions.
+            Shared processor pools &#40;SPP&#41; is one of the larger features I implemented.
           </Text>
           <SectionBreak />
         </GridItem>
@@ -74,6 +91,7 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
+          id="pools-feature-origin"
         >
           <Text as="h2">Feature Origin</Text>
           <Text as="h4">Emulating an on-premise feature in the cloud</Text>
@@ -126,6 +144,7 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
+          id="pools-feature-implementation"
         >
           <Text as="h2">Feature Implementation</Text>
           <Text as="h4">Using existing patterns to make SPP setup intuitive for new and old users alike.</Text>
@@ -200,11 +219,20 @@ const Pools = ({}) => {
           </Text>
           <SectionBreak />
         </GridItem>
-
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
+          id="pools-product-context"
+        >
+          <Text as="h2">Product context</Text>
+          <Text as="h4">What PSVS is, and who its users are</Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-process-challenges"
         >
           <Text
             as="h2"
@@ -278,9 +306,10 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
+          id="pools-process"
         >
-          <Text as="h2">Research and solving process challenges</Text>
-          <Text as="h4">SPP flow abstraction and initial interface testing</Text>
+          <Text as="h2">Process</Text>
+          <Text as="h4">Initial interface testing and addressing challenges</Text>
         </GridItem>
         <GridItem
           colStart={colStart}
