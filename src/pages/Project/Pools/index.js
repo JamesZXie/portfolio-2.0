@@ -216,8 +216,9 @@ const Pools = ({}) => {
             </OrderedList>
           </Text>
           <Text paddingBottom={sectionBreakPadding}>
-            As you can see, the two flows are very similar, with similar rules applying each step of the way. For example, while you can create either a group or a resource
-            as the first step in both flows, it is more time-efficient to create the group first.
+            As you can see,
+            {' '}
+            <strong>SPP creation and usage functions the same way as VM creation, a flow users are accustomed to.</strong>
           </Text>
           <SectionBreak />
         </GridItem>
