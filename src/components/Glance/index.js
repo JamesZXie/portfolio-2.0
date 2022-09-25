@@ -44,7 +44,7 @@ const Glance = ({ problem, solution }) => (
             className="icon-32"
             marginBottom="1rem"
           />
-          <Text><strong>Problem</strong></Text>
+          <Text paddingBottom="4px"><strong>Problem</strong></Text>
           {problem}
         </Flex>
         <Flex className="glance__solution">
@@ -53,7 +53,7 @@ const Glance = ({ problem, solution }) => (
             className="icon-32"
             marginBottom="1rem"
           />
-          <Text><strong>Solution</strong></Text>
+          <Text paddingBottom="4px"><strong>Solution</strong></Text>
           {solution}
         </Flex>
       </Flex>
