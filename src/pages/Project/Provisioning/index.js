@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import {
-  Grid, GridItem, Button, Text, Link, Image, OrderedList, ListItem, Center, Box, UnorderedList,
+  Grid, GridItem, Button, Text, Link, Image, OrderedList, ListItem, Box, UnorderedList,
 } from '@chakra-ui/react';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
@@ -61,14 +61,12 @@ const Provisioning = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Center>
-            <Text
-              as="h1"
-              className="blurb"
-            >
-              PSVS REDESIGN
-            </Text>
-          </Center>
+          <Text
+            as="h1"
+            className="blurb"
+          >
+            PSVS REDESIGN
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}

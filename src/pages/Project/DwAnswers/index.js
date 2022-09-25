@@ -55,14 +55,12 @@ const DwAnswers = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Center>
-            <Text
-              as="h1"
-              className="blurb"
-            >
-              DW ANSWERS
-            </Text>
-          </Center>
+          <Text
+            as="h1"
+            className="blurb"
+          >
+            DW ANSWERS
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}

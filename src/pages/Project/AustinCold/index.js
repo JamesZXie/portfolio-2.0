@@ -77,14 +77,12 @@ const AustinCold = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Center>
-            <Text
-              as="h1"
-              className="blurb"
-            >
-              AUSTIN COLD
-            </Text>
-          </Center>
+          <Text
+            as="h1"
+            className="blurb"
+          >
+            AUSTIN COLD
+          </Text>
         </GridItem>
 
         <GridItem

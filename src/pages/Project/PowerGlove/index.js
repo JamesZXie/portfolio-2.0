@@ -68,14 +68,12 @@ const PowerGlove = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Center>
-            <Text
-              as="h1"
-              className="blurb"
-            >
-              POWERGLOVE
-            </Text>
-          </Center>
+          <Text
+            as="h1"
+            className="blurb"
+          >
+            POWERGLOVE
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -192,7 +190,7 @@ const PowerGlove = ({}) => {
           id="powerglove-process"
         >
           <Text as="h2">Process</Text>
-          <Text as="h4">Really just a photo / video dump</Text>
+          <Text as="h4">Discovery and testing</Text>
           <Text paddingBottom={subSectionBreakPadding}>
             I did not take nearly enough photos or videos. I was kind of counting on documenting this during the CraftCon event
             that never happened, but here&apos;s what I do have...

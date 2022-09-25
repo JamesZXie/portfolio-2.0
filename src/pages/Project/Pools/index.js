@@ -16,6 +16,7 @@ import PlacementGroupsExample from '../../../assets/images/Pools/placement-group
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
 import UserMSP from '../../../assets/images/Pools/user-msp.png';
 import UserISV from '../../../assets/images/Pools/user-isv.png';
+import Glance from '../../../components/Glance';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -49,6 +50,30 @@ const Pools = ({}) => {
     } setNumLoaded(numLoaded + 1);
   };
 
+  const renderProblem = () => (
+    <>
+      <Text paddingBottom={lineBreakPadding}>
+        A high-value IBM Power feature was designed for use on Power hardware that users owned.
+        It needed to be reimagined for our cloud, where users share the hardware used.
+      </Text>
+      <Text>
+        The feature saves some advanced Power users millions each year on licensing costs.
+      </Text>
+    </>
+  );
+
+  const renderSolution = () => (
+    <>
+      <Text paddingBottom={lineBreakPadding}>
+        We implemented the feature so that its usage feels familiar to any users who are comfortable
+        with the process for deploying a virtual machine on our cloud platform.
+      </Text>
+      <Text>
+        Since it is an advanced feature, the vast majority of its users will fall under this category.
+      </Text>
+    </>
+  );
+
   return (
     <>
       <PageLoader
@@ -68,27 +93,17 @@ const Pools = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Center>
-            <Text
-              as="h1"
-              className="blurb"
-            >
-              PSVS POOLS
-            </Text>
-          </Center>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          paddingTop={lineBreakPadding}
-        >
-          <Text paddingBottom={sectionBreakPadding}>
-            Over my year as the primary designer for PSVS, I implemented features of all sizes.
-            Shared processor pools &#40;SPP&#41; is one of the larger features I implemented.
+          <Text
+            as="h1"
+            className="blurb"
+          >
+            PSVS POOLS
           </Text>
-          <SectionBreak />
         </GridItem>
+        <Glance
+          problem={renderProblem()}
+          solution={renderSolution()}
+        />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}

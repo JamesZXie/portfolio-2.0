@@ -47,14 +47,12 @@ const Rendezvous = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Center>
-            <Text
-              as="h1"
-              className="blurb"
-            >
-              RENDEZVOUS
-            </Text>
-          </Center>
+          <Text
+            as="h1"
+            className="blurb"
+          >
+            RENDEZVOUS
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}

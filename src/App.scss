@@ -41,6 +41,7 @@ h1 {
     font-size: 64px !important;
     line-height: 4rem;
     padding-top: 1px;
+    margin-top: 4rem;
 
             
     @media (max-width: 480px) {
@@ -51,7 +52,7 @@ h1 {
 h2 {
     font-family: Roboto !important;
     font-weight: bold !important;
-    font-size: 30px !important;
+    font-size: 24px !important;
     padding-top: 2rem;
     text-align: left !important;
 }
@@ -139,6 +140,11 @@ a {
             width: 100%;
         }
     }
+}
+
+img.icon-32 {
+    width: 32px;
+    height: 32px;
 }
 
 .link-button {
