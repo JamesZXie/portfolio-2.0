@@ -42,7 +42,7 @@ const ids = [
 const Pools = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 4;
+  const total = 6;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -95,7 +95,6 @@ const Pools = ({}) => {
         >
           <Text
             as="h1"
-            className="blurb"
           >
             PSVS POOLS
           </Text>
@@ -103,6 +102,7 @@ const Pools = ({}) => {
         <Glance
           problem={renderProblem()}
           solution={renderSolution()}
+          onLoad={handleLoad}
         />
         <GridItem
           colStart={colStart}

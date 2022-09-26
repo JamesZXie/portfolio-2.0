@@ -10,6 +10,7 @@ import SectionBreak from '../../../components/SectionBreak';
 import './provisioning.scss';
 import YTVideo from '../../../components/YTVideo';
 import Outline from '../../../components/Outline';
+import Glance from '../../../components/Glance';
 
 import UserMSP from '../../../assets/images/Pools/user-msp.png';
 import UserISV from '../../../assets/images/Pools/user-isv.png';
@@ -34,7 +35,7 @@ const ids = [
 const Provisioning = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 1;
+  const total = 2;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -42,13 +43,30 @@ const Provisioning = ({}) => {
     } setNumLoaded(numLoaded + 1);
   };
 
+  const renderProblem = () => (
+    <Text>
+      Using our platform to create cloud resources was slow and frustrating.
+      It was easy to make errors during the process, and very hard to diagnose and recover from the errors.
+    </Text>
+  );
+
+  const renderSolution = () => (
+    <>
+      <Text paddingBottom={lineBreakPadding}>
+        We broke the process up into easily understandable chunks, increased guidance, made enhancements to
+        error diagnosis and recovery, and are introducing a system that creates templates for
+        users to reduce repetition.
+      </Text>
+    </>
+  );
+
   return (
     <>
-      {/* <PageLoader
+      <PageLoader
         total={total}
         numLoaded={numLoaded}
         loading={loading}
-      /> */}
+      />
       <Section
         className="project-page provisioning"
       >
@@ -68,6 +86,11 @@ const Provisioning = ({}) => {
             PSVS REDESIGN
           </Text>
         </GridItem>
+        <Glance
+          problem={renderProblem()}
+          solution={renderSolution()}
+          onLoad={handleLoad}
+        />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}

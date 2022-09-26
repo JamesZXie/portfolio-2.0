@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import './glance.scss';
@@ -18,7 +18,7 @@ const colStart = [0, 4];
 const colSpan = [12, 6];
 const colEnd = [13, 10];
 
-const Glance = ({ problem, solution }) => (
+const Glance = ({ problem, solution, onLoad }) => (
   <>
     <GridItem
       colStart={colStart}
@@ -43,6 +43,7 @@ const Glance = ({ problem, solution }) => (
             src={problemIcon}
             className="icon-32"
             marginBottom="1rem"
+            onLoad={onLoad}
           />
           <Text paddingBottom="4px"><strong>Problem</strong></Text>
           {problem}
@@ -52,6 +53,7 @@ const Glance = ({ problem, solution }) => (
             src={solutionIcon}
             className="icon-32"
             marginBottom="1rem"
+            onLoad={onLoad}
           />
           <Text paddingBottom="4px"><strong>Solution</strong></Text>
           {solution}
@@ -64,6 +66,7 @@ const Glance = ({ problem, solution }) => (
 Glance.propTypes = {
   problem: PropTypes.node.isRequired,
   solution: PropTypes.node.isRequired,
+  onLoad: PropTypes.node.isRequired,
 };
 
 export default Glance;
