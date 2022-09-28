@@ -53,11 +53,10 @@ const Pools = ({}) => {
   const renderProblem = () => (
     <>
       <Text paddingBottom={lineBreakPadding}>
-        A high-value IBM Power feature was designed for use on Power hardware that users owned.
-        It needed to be reimagined for our cloud, where users share the hardware used.
+        Before the cloud existed, IBM customers used a certain feature to save millions each year on software licenses.
       </Text>
       <Text>
-        The feature saves some advanced Power users millions each year on licensing costs.
+        Technical impossibilities in bringing it to the cloud required it to be reimagined for our platform.
       </Text>
     </>
   );
@@ -65,8 +64,8 @@ const Pools = ({}) => {
   const renderSolution = () => (
     <>
       <Text paddingBottom={lineBreakPadding}>
-        We implemented the feature so that its usage feels familiar to any users who are comfortable
-        with the process for deploying a virtual machine on our cloud platform.
+        We implemented the feature so that it feels familiar to any users who are comfortable
+        with the rest of our platform.
       </Text>
       <Text>
         Since it is an advanced feature, the vast majority of its users will fall under this category.
