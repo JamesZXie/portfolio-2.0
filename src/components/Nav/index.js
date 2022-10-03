@@ -64,12 +64,12 @@ const Nav = (props) => {
           >
             <IconButton
               className="nav__social-icon__button"
-              aria-label="Go to instagram"
+              aria-label="Go to linkedin"
               icon={<Image src={LinkedWhite} />}
               onClick={() => window.open('https://www.linkedin.com/in/jameszexie/', '_blank')}
             />
           </Box>
-          <Box
+          {/* <Box
             display={location.pathname === '/' ? 'inline-block' : 'none'}
             className="nav__social-icon"
           >
@@ -79,7 +79,7 @@ const Nav = (props) => {
               icon={<Image src={InstaWhite} />}
               onClick={() => window.open('https://www.instagram.com/kalbi.dsgn/', '_blank')}
             />
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </Box>
