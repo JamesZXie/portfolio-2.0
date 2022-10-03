@@ -64,11 +64,12 @@ const Pools = ({}) => {
   const renderSolution = () => (
     <>
       <Text paddingBottom={lineBreakPadding}>
-        We implemented the feature so that it feels familiar to any users who are comfortable
+        We implemented the feature so that its flow feels familiar to any users who are comfortable
         with the rest of our platform.
       </Text>
       <Text>
-        Since it is an advanced feature, the vast majority of its users will fall under this category.
+        Since it is an advanced feature, the vast majority of its users will fall under this category. We
+        have guidance in place for those who are not advanced.
       </Text>
     </>
   );
@@ -135,25 +136,20 @@ const Pools = ({}) => {
             to competitors. As part of a larger attempt to offset the cost difference,
             shared processor pools were created:
             {' '}
-            <strong>technical workarounds</strong>
+            <strong>&quot;hacky&quot;, technical workarounds</strong>
             {' '}
             that make using third-party software licenses on Power
             {' '}
-            <strong>10x cheaper</strong>
+            <strong>up to 10x cheaper</strong>
             .
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            SPP was implemented for IBM on-premise servers about ten years ago, but are created and managed through direct
-            management of the host server. In the cloud, users don&apos;t own servers, IBM does - users are just tenants in the space.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            As a result,
+            SPP was originally implemented for user-owned servers, but in the cloud, users don&apos;t
+            own servers. As a result,
             {' '}
-            <strong>SPP had to be re-imagined in cloud.</strong>
+            <strong>SPP had to be re-imagined for the cloud.</strong>
           </Text>
         </GridItem>
         <GridItem
@@ -252,7 +248,7 @@ const Pools = ({}) => {
           </Text>
           <Text paddingBottom={lineBreakPadding}>
             IBM Power has better computing power than competitor hardware, but is much more expensive. Most end users have
-            extreme performance-based use cases, such as needing to crunch large amounts of data in milliseconds.
+            extreme performance-based needs.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
             There are really just two types of users:
@@ -351,10 +347,12 @@ const Pools = ({}) => {
           <Text
             paddingBottom={subSectionBreakPadding}
           >
-            Being able to add a single VM to multiple placement groups
+            Wires could get crossed very easily, and as a result, being able to add a single VM to multiple placement groups
             {' '}
-            <strong>could create catastrophic failures from random operations</strong>
-            .
+            <strong>could create failures from operations unrelated to SPP</strong>
+            {' '}
+            that we wouldn&apos;t be able to explain to the user. In the worst case, this could require a customer to rebuild
+            their entire workload.
           </Text>
           <Image
             src={PlacementGroupsExample}
@@ -364,30 +362,23 @@ const Pools = ({}) => {
             Visual representation of how untracked requirements can form
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            For example - imagine that
-            A is in a placement group with B that dictates they be on the
+            For example - imagine that virtual machine A is in a placement group with virtual machine B that requires
             {' '}
-            <strong>same host server</strong>
-            . A is also in a group with C that dictates them be on
+            <strong>A and B be on the same host server</strong>
+            . A is also in a group with another machine, virtual machine C that dictates
             {' '}
-            <strong>different servers</strong>
-            . Now, B and C
-            {' '}
-            <strong>cannot ever</strong>
-            {' '}
-            be on the same host server -
-            {' '}
-            <strong>even though the user has never specified this</strong>
-            {' '}
-            - and an untracked requirement
-            has been created.
+            <strong>A and C be on different servers</strong>
+            . Now, B and C cannot ever be on the same host server - even though the user has never specified this -
+            <strong>
+              and an untracked requirement has been created.
+            </strong>
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            Tracking these unintentional relationships automatically, or even finding them after creation, was technically infeasible given
-            our ancient codebase. &#40;Although this should have been a dev problem to solve, the short timeline for this feature meant
-            recreating the APIs were impossible, and the requirement for the solution fell on design.&#41;
+            This sounds like an easy relationship to automatically track, and it should be - except the codebase PowerVS is
+            built on is relatively shoddy, and for a variety of reasons this was not feasible without introducing
+            exceptionally long load times to a number of operations across other user flows.
           </Text>
         </GridItem>
         <GridItem

@@ -18,7 +18,7 @@ const AustinColdTile = ({ onLoad }) => {
       <Text marginBottom="2rem">
         <UnorderedList>
           <ListItem>
-            Primary &quot;designer&quot; &#40;maybe five minutes of design work&#41;
+            Primary designer
           </ListItem>
           <ListItem>
             Primary developer

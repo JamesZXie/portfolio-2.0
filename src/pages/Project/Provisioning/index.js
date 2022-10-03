@@ -276,7 +276,7 @@ const Provisioning = ({}) => {
           </Text>
           <Text paddingBottom={lineBreakPadding}>
             IBM Power has better computing power than competitor hardware, but is much more expensive. Most end users have
-            extreme performance-based use cases, such as needing to crunch large amounts of data in milliseconds.
+            extreme performance-based needs.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
             There are really just two types of users:
