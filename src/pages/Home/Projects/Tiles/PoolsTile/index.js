@@ -30,7 +30,7 @@ const DwAnswersTile = ({ onLoad }) => {
         DESCRIPTION:
       </Text>
       <Text>
-        Implementing a challenging, technical-constraint-burdened feature on IBM&apos;s
+        Implementing a technical feature on IBM&apos;s
         {' '}
         <Link
           target="_blank"
@@ -40,7 +40,8 @@ const DwAnswersTile = ({ onLoad }) => {
           Power Virtual Server
 
         </Link>
-        .
+        {' '}
+        to save customers millions each year.
       </Text>
     </Box>
   );

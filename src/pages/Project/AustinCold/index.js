@@ -24,18 +24,19 @@ import '../project.scss';
 
 const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
-const colStart = [0, 4];
+
+const colStart = [1, 7];
 const colSpan = [12, 6];
-const colSpanHalf = [12, 3];
-const colEnd = [13, 10];
+const colSpanHalf = [12, 2];
+const colEnd = [13, 12];
 const titles = [
-  'The Problem',
-  'The Solution',
-  'Process',
-  'What If?',
-  'The User',
-  'Insights',
-  'Result',
+  'PROBLEM',
+  'SOLUTION',
+  'PROCESS',
+  'WHAT IF?',
+  'USER PROFILE',
+  'INSIGHTS',
+  'RESULT',
 ];
 const ids = [
   'austincold-the-problem',
@@ -73,13 +74,15 @@ const AustinCold = ({}) => {
           ids={ids}
         />
         <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
+          colStart={2}
+          colSpan={4}
         >
+          <Box
+            className="project-title__fun-box"
+          />
           <Text
             as="h1"
-            className="blurb"
+            className="project-title"
           >
             AUSTIN COLD
           </Text>
@@ -91,7 +94,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-the-problem"
         >
-          <Text as="h2">The Problem</Text>
+          <Text as="h2">PROBLEM</Text>
           <Text as="h4">ERCOT cut corners when building the isolated power grid</Text>
           <Image
             src={AustinSnow}
@@ -116,7 +119,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-the-solution"
         >
-          <Text as="h2">The Solution</Text>
+          <Text as="h2">SOLUTION</Text>
           <Text as="h4">We built a base of operations for CRT&apos;s rescue operations in 5 hours</Text>
           <Link href="https://www.austincold.com" target="blank">
             <Image
@@ -153,7 +156,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-process"
         >
-          <Text as="h2">Process</Text>
+          <Text as="h2">PROCESS</Text>
           <Text as="h4">Priorities and designing without time to test</Text>
           <Text paddingBottom="2rem">
             Our main limitation was time. We started pushing the website five hours
@@ -245,7 +248,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-what-if"
         >
-          <Text as="h2">What If?</Text>
+          <Text as="h2">WHAT IF?</Text>
           <Text as="h4">We hit a lot of roadbumps... how might we have avoided them?</Text>
           <Text paddingBottom={sectionBreakPadding}>
             A lot of fires broke out over the 72-hour ordeal, such as returning users struggling to find information as updates changed the website,
@@ -261,6 +264,8 @@ const AustinCold = ({}) => {
             src={showcase}
             objectFit="cover"
             width="100%"
+            position="relative"
+            zIndex="99"
             alt="Screen showcase, mostly eye candy."
             paddingBottom={sectionBreakPadding}
             onLoad={handleLoad}
@@ -272,7 +277,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-the-user"
         >
-          <Text as="h2">The User</Text>
+          <Text as="h2">USER PROFILE</Text>
           <Text as="h4">Who are we building for?</Text>
           <Text paddingBottom={lineBreakPadding}>
             Although we never had a user research session, we did have discussions with Community Resilience Trust&apos;s about the
@@ -408,7 +413,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-insights"
         >
-          <Text as="h2">Insights</Text>
+          <Text as="h2">INSIGHTS</Text>
           <Text as="h4">What AustinCold looks like built for Mike</Text>
           <Text>
             Here&apos;s what this means for our design:
@@ -442,7 +447,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-result"
         >
-          <Text paddingTop={sectionBreakPadding} as="h2">Result</Text>
+          <Text paddingTop={sectionBreakPadding} as="h2">RESULT</Text>
           <Text as="h4">Simple 3 steps he can follow</Text>
           <Image
             src={needHelpFlow}
@@ -467,7 +472,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           colSpan={colSpan}
         >
-          <Text as="h2">The Team</Text>
+          <Text as="h2">THE TEAM</Text>
           <UnorderedList>
             <ListItem>
               <Link

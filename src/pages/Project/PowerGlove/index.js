@@ -23,9 +23,9 @@ import './power-glove.scss';
 const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
 const subSectionBreakPadding = '1.5rem';
-const colStart = [0, 4];
+const colStart = [1, 7];
 const colSpan = [12, 6];
-const colEnd = [13, 10];
+const colEnd = [13, 12];
 
 const PowerGlove = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
@@ -39,9 +39,9 @@ const PowerGlove = ({}) => {
   };
 
   const titles = [
-    'Project Origin',
-    'How It Works',
-    'Process',
+    'ORIGIN',
+    'MECHANISMS',
+    'PROCESS',
   ];
   const ids = [
     'powerglove-project-origin',
@@ -64,26 +64,27 @@ const PowerGlove = ({}) => {
           ids={ids}
         />
         <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
+          colStart={2}
+          colSpan={4}
         >
+          <Box
+            className="project-title__fun-box"
+          />
           <Text
             as="h1"
-            className="blurb"
+            className="project-title"
           >
-            POWERGLOVE
+            PROVISIONING
           </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          paddingTop="1rem"
           id="powerglove-project-origin"
         >
-          <Text as="h2">Project Origin</Text>
-          <Text as="h4">IoT can be a lot of fun</Text>
+          <Text as="h2">ORIGIN</Text>
+          <Text as="h4">Messing around with IoT devices is a lot of fun</Text>
           <Text paddingBottom={lineBreakPadding}>The PowerGlove is a glove I scrapped together that can &quot;see&quot; what a user&apos;s hand looks like.</Text>
           <Text paddingBottom={sectionBreakPadding}>
             It senses voltage changes in a pretty simple circuit that runs through the glove.
@@ -127,7 +128,7 @@ const PowerGlove = ({}) => {
           paddingTop="1rem"
           id="powerglove-how-it-works"
         >
-          <Text as="h2">How It Works</Text>
+          <Text as="h2">MECHANISMS</Text>
           <Text as="h4">A quick, high-level tutorial</Text>
           <Text paddingBottom={sectionBreakPadding}>
             A Flex sensor is a special resistor that changes value when bent in a direction.
@@ -189,7 +190,7 @@ const PowerGlove = ({}) => {
           paddingBottom="4rem"
           id="powerglove-process"
         >
-          <Text as="h2">Process</Text>
+          <Text as="h2">PROCESS</Text>
           <Text as="h4">Discovery and testing</Text>
           <Text paddingBottom={subSectionBreakPadding}>
             I did not take nearly enough photos or videos. I was kind of counting on documenting this during the CraftCon event

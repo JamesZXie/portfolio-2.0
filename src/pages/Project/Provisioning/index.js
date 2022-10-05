@@ -85,7 +85,7 @@ const Provisioning = ({}) => {
             as="h1"
             className="project-title"
           >
-            PSVS REDESIGN
+            PROVISIONING
           </Text>
         </GridItem>
         {/* <Glance
@@ -270,7 +270,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-product-context"
         >
-          <Text as="h2">CONTEXT</Text>
+          <Text as="h2">PRODUCT CONTEXT</Text>
           <Text as="h4">Some context on what PowerVS is, and who its users are</Text>
           <Text paddingBottom={lineBreakPadding}>
             PowerVS is, simply put,
@@ -285,8 +285,19 @@ const Provisioning = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             There are really just two types of users:
           </Text>
-
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={1}
+        >
           <Image src={UserMSP} />
+        </GridItem>
+        <GridItem
+          colStart={colStart + 1}
+          colSpan={5}
+          colEnd={colEnd}
+          paddingLeft=".5rem"
+        >
           <Text as="h6">
             1. Managed cloud service providers &#40;MSPs&#41;
           </Text>
@@ -299,21 +310,34 @@ const Provisioning = ({}) => {
             Power resources for companies who want to build on power, but only understand software. MSPs may have to manage thousands of VMs,
             due to their large clientele.
           </Text>
-          <Flex>
-            <Flex>
-              <Image src={UserISV} />
-            </Flex>
-            <Flex>
-              <Text as="h6">
-                2. OS users with hybrid workloads
-              </Text>
-              <Text>
-                Power expertise is extremely hard to find, so only 20% of our userbase have enough expertise to
-                work directly with Power hardware. Still, they tend to have less expertise than MSPs, and work with
-                much smaller workloads.
-              </Text>
-            </Flex>
-          </Flex>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={1}
+        >
+          <Image src={UserISV} />
+        </GridItem>
+        <GridItem
+          colStart={colStart + 1}
+          colSpan={5}
+          colEnd={colEnd}
+          paddingLeft=".5rem"
+        >
+          <Text as="h6">
+            2. OS users with hybrid workloads
+          </Text>
+          <Text>
+            Power expertise is extremely hard to find, so only 20% of our userbase have enough expertise to
+            work directly with Power hardware. Still, they tend to have less expertise than MSPs, and work with
+            much smaller workloads.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-process-challenges"
+        >
           <Text>
             Both types of users have expertise in Power, and acquired this expertise by working with Power on-premise. New users
             who want to use IBM Power will go through MSPs the vast majority of the time, rather than hire employees with Power

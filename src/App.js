@@ -30,7 +30,7 @@ function App() {
             <Route exact path="/austin-cold" component={AustinCold} />
             <Route exact path="/power-glove" component={PowerGlove} />
             <Route exact path="/pools" component={Pools} />
-            <Route exact path="/rendezvous" component={Rendezvous} />
+            {/* <Route exact path="/rendezvous" component={Rendezvous} /> */}
             <Route exact path="/psvsredesign" component={Provisioning} />
           </Switch>
         </ScrollToTop>
