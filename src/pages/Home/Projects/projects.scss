@@ -5,78 +5,7 @@
         min-height: 10rem;
         background-color: $ui-01;
     }
-
-    &__austin-cold-image {
-        transition: all 0.2s ease-in-out;
-        position: absolute;
-        max-height: 90vh;
-        top: -124px;
-        
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-    &__pools-image {
-        position: absolute;
-        top: -1rem;
-        left: -3.4rem;
-        max-width: 25rem;
-        border-radius:5px;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-    &__dw-answers-image {
-        transition: all 0.2s ease-in-out;
-        position: absolute;
-        max-height: 90vh;
-        top: -124px;
-        
-        &:hover {
-            cursor: pointer;
-        }
-    }
     
-    &__provisioning-image {
-        position: absolute;
-        top: -1rem;
-        left: -3.4rem;
-        max-width: 25rem;
-        border-radius:5px;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
-    
-    
-    &__power-glove-image {
-        position: absolute;
-        height: 25rem;
-        top: -3.5rem;
-        left: -2.5rem;
-        max-width: 50rem;
-        
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
-    &__rendezvous-image {
-        position: absolute;
-        height: 25rem;
-        top: -4rem;
-        left: -1rem;
-        max-width: 50rem;
-        
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
     &__read-more-button {
         background-color: $ui-01 !important;
         color: $ui-02;

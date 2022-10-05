@@ -24,34 +24,12 @@
         transition: all .2s ease-in-out;
     }
 
-    &__image {
-        &__frame {
-            position: relative;
-            width: 18rem;
-            height: 18rem;
-            border: 1px solid $interactive-01;
-            transform-origin: center;
-            transform: rotateY(0deg) rotate(45deg);
-            border-radius: 10px;
-            transition: all 0.2s ease-in-out;
+    &__image-container {
+        align-items: center;
+        justify-content: center;
 
-            &:hover {
-                cursor: pointer;
-                box-shadow: 0rem 0rem 0px 1rem $interactive-01;
-            }
-            &:active {
-                cursor: pointer;
-                box-shadow: 0rem 0rem 0px 1rem $ui-02 !important;
-                border: 1px solid $ui-02;
-            }
-        }
-
-        &__container {
-            
-            img {
-                transform-origin: center;
-                transform: rotateY(0deg) rotate(-45deg);
-            }
+        &__click-area {
+            cursor: pointer;
         }
     }
 }

@@ -119,7 +119,7 @@ const Home = (props) => {
   return (
     <Box className="home" id="home">
       <Box className="home__fix">
-        {renderSideMenu()}
+        {/* {renderSideMenu()} */}
         <Hero
           total={total}
           numLoaded={numLoaded}

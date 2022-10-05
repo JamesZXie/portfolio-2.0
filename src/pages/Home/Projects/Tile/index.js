@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import './tile.scss';
 import {
   Grid, Box, GridItem, Flex, Text, Link, Button, Image,
 } from '@chakra-ui/react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
+
+import './tile.scss';
 import ArrowUp from '../../../../components/ArrowUp';
 import ArrowDown from '../../../../components/ArrowDown';
 
@@ -42,7 +43,7 @@ const Tile = ({
         {order}
       </Box>
       <GridItem
-        colStart={[1, 3]}
+        colStart={[1, 2]}
         colSpan={[12, 4]}
       >
         <Flex
@@ -81,26 +82,16 @@ const Tile = ({
         </Flex>
       </GridItem>
       <GridItem
-        display={['none', 'none', 'none', 'block', 'block']}
+        display={['none', 'none', 'none', 'flex', 'flex']}
         colStart={[0, 0, 0, 7, 7]}
         colSpan={[0, 0, 0, 5, 5]}
         position="relative"
         marginBottom="1rem"
+        className="tile__image-container"
       >
-        <Flex
-          justify="center"
-          align="center"
-          height="100%"
-        >
-          <Box
-            className="tile__image__frame"
-            display={['none', 'none', 'none', 'block']}
-          >
-            <Box className="tile__image__container" onClick={handleLink}>
-              {window.innerWidth > 666 ? projectImage : ''}
-            </Box>
-          </Box>
-        </Flex>
+        <Box onClick={handleLink} className="tile__image-container__click-area">
+          {window.innerWidth > 666 ? projectImage : ''}
+        </Box>
       </GridItem>
       <ArrowDown hidden={order === 5} />
     </Grid>
