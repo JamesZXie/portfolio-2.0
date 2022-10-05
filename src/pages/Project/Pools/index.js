@@ -158,15 +158,45 @@ const Pools = ({}) => {
           <Text
             paddingBottom={lineBreakPadding}
           >
-            Understanding how the shared processor pools worked is relatively straightforward for users. However, setting up real-life applications requiring multiple virtual machines can be very complex, and baking their requirements into shared processor pools could make things confusing.
-
-            Computing power and storage associated with “the cloud” has to actually exist somewhere, even if you can access them from anywhere. When you store a file on Google Drive, although you can’t actually control exactly where in the world that file ends up, it does exist somewhere as a string of binary numbers, on an actual hard drive.
-
-            Virtual machines (VMs) and shared processor pools (SPPs) have two big constraints that make their creation and usage unintuitive:
-            VMs created in SPPs must all be on the same Power server for them to use the same “fenced off” portion of a server.
-            Placement requirements unrelated to SPP exist. Sometimes, VMs must be on the same server. Sometimes, VMs must be on different servers.
-
-            As you can imagine, when these requirements intertwine things get complicated. For example, if the user wants to make a backup VM in case the host server of the main VM dies, the backup can’t be on the same host - or that would defeat the point. However, it needs to run the same software, and thus needs the same license...
+            Understanding how the shared processor pools worked is relatively straightforward for users. However,
+            setting up real-life applications requiring multiple virtual machines can be very complex, and baking
+            their requirements into shared processor pools could make things confusing.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            Cloud resources have to actually exist somewhere, even if you can access them from anywhere. When
+            you store a file on Google Drive, although you don&apos;t define a server for it to reside on, the file
+            does exist somewhere as a string of binary numbers, on an actual hard drive.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            Virtual machines (VMs) and shared processor pools (SPPs) must also exist somewhere, and as a result
+            have two big placement-related constraints that make their creation and usage unintuitive:
+          </Text>
+          <OrderedList paddingBottom={lineBreakPadding}>
+            <ListItem>
+              VMs created in SPPs
+              {' '}
+              <strong>must</strong>
+              {' '}
+              all be on the same Power server for them to use the same “fenced off” portion of a server.
+            </ListItem>
+            <ListItem>
+              Placement requirements unrelated to SPP exist. Sometimes, VMs
+              {' '}
+              <strong>must</strong>
+              {' '}
+              be on the same server. Sometimes, VMs must be on different servers.
+            </ListItem>
+          </OrderedList>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            As you can imagine, when these requirements intertwine things get complicated. For example, if the user wants
+            to make a backup VM in case the host server of the main VM dies, the backup can’t be on the same host - or that
+            would defeat the point. However, it needs to run the same software, and thus needs the same license...
           </Text>
         </GridItem>
         <GridItem
