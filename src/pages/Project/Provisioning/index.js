@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import {
-  Grid, GridItem, Button, Text, Link, Image, OrderedList, ListItem, Box, UnorderedList,
+  Grid, GridItem, Button, Text, Link, Image, OrderedList, ListItem, Box, UnorderedList, Flex,
 } from '@chakra-ui/react';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
@@ -18,13 +18,13 @@ import UserISV from '../../../assets/images/Pools/user-isv.png';
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
 const sectionBreakPadding = '2rem';
-const colStart = [0, 4];
+const colStart = [1, 7];
 const colSpan = [12, 6];
-const colEnd = [13, 10];
+const colEnd = [13, 12];
 const titles = [
-  'The Problem',
-  'The Solution',
-  'Product Context',
+  'PROBLEM',
+  'SOLUTION',
+  'CONTEXT',
 ];
 const ids = [
   'provisioning-the-problem',
@@ -35,7 +35,7 @@ const ids = [
 const Provisioning = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 2;
+  const total = 0;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -62,11 +62,11 @@ const Provisioning = ({}) => {
 
   return (
     <>
-      <PageLoader
+      {/* <PageLoader
         total={total}
         numLoaded={numLoaded}
         loading={loading}
-      />
+      /> */}
       <Section
         className="project-page provisioning"
       >
@@ -75,34 +75,37 @@ const Provisioning = ({}) => {
           ids={ids}
         />
         <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
+          colStart={2}
+          colSpan={4}
         >
+          <Box
+            className="project-title__fun-box"
+          />
           <Text
             as="h1"
-            className="blurb"
+            className="project-title"
           >
             PSVS REDESIGN
           </Text>
         </GridItem>
-        <Glance
+        {/* <Glance
           problem={renderProblem()}
           solution={renderSolution()}
           onLoad={handleLoad}
-        />
+        /> */}
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
           id="provisioning-the-problem"
         >
-          <Text as="h2">The Problem</Text>
+          <Text as="h2">PROBLEM</Text>
           <Text as="h4">PowerVS outgrows its initial, simple provisioning flow</Text>
         </GridItem>
         <GridItem
-          colStart={[1, 3]}
-          colSpan={[12, 8]}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
         >
           <YTVideo>
             <iframe
@@ -180,12 +183,13 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-the-solution"
         >
-          <Text as="h2">The Solution</Text>
+          <Text as="h2">SOLUTION</Text>
           <Text as="h4">Breaking the form into digestible chunks, and preparing to optimize for bulk</Text>
         </GridItem>
         <GridItem
-          colStart={[1, 3]}
-          colSpan={[12, 8]}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
         >
           <YTVideo>
             <iframe
@@ -264,9 +268,9 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-product-context"
+          id="provisioning-product-context"
         >
-          <Text as="h2">Product context</Text>
+          <Text as="h2">CONTEXT</Text>
           <Text as="h4">Some context on what PowerVS is, and who its users are</Text>
           <Text paddingBottom={lineBreakPadding}>
             PowerVS is, simply put,
@@ -281,20 +285,8 @@ const Provisioning = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             There are really just two types of users:
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={1}
-        >
+
           <Image src={UserMSP} />
-        </GridItem>
-        <GridItem
-          colStart={colStart + 1}
-          colSpan={5}
-          colEnd={colEnd}
-          paddingLeft=".5rem"
-          id="provisioning-product-context"
-        >
           <Text as="h6">
             1. Managed cloud service providers &#40;MSPs&#41;
           </Text>
@@ -307,34 +299,21 @@ const Provisioning = ({}) => {
             Power resources for companies who want to build on power, but only understand software. MSPs may have to manage thousands of VMs,
             due to their large clientele.
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={1}
-        >
-          <Image src={UserISV} />
-        </GridItem>
-        <GridItem
-          colStart={colStart + 1}
-          colSpan={5}
-          colEnd={colEnd}
-          paddingLeft=".5rem"
-        >
-          <Text as="h6">
-            2. OS users with hybrid workloads
-          </Text>
-          <Text>
-            Power expertise is extremely hard to find, so only 20% of our userbase have enough expertise to
-            work directly with Power hardware. Still, they tend to have less expertise than MSPs, and work with
-            much smaller workloads.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-process-challenges"
-        >
+          <Flex>
+            <Flex>
+              <Image src={UserISV} />
+            </Flex>
+            <Flex>
+              <Text as="h6">
+                2. OS users with hybrid workloads
+              </Text>
+              <Text>
+                Power expertise is extremely hard to find, so only 20% of our userbase have enough expertise to
+                work directly with Power hardware. Still, they tend to have less expertise than MSPs, and work with
+                much smaller workloads.
+              </Text>
+            </Flex>
+          </Flex>
           <Text>
             Both types of users have expertise in Power, and acquired this expertise by working with Power on-premise. New users
             who want to use IBM Power will go through MSPs the vast majority of the time, rather than hire employees with Power

@@ -52,6 +52,7 @@ const Nav = (props) => {
           >
             <Text
               color={location.pathname === '/' ? '#FFFFFF' : '#1D1D1D'}
+              fontWeight="bold"
             >
               XIE
             </Text>

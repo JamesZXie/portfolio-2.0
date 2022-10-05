@@ -21,15 +21,15 @@ import Glance from '../../../components/Glance';
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
 const sectionBreakPadding = '2rem';
-const colStart = [0, 4];
+const colStart = [1, 7];
 const colSpan = [12, 6];
-const colEnd = [13, 10];
+const colEnd = [12, 12];
 const titles = [
-  'Feature Origin',
-  'Feature Implementation',
-  'Product Context',
-  'Process Challenges',
-  'Process',
+  'PROBLEM',
+  'SOLUTION',
+  'CONTEXT',
+  'CHALLENGES',
+  'PROCESS',
 ];
 const ids = [
   'pools-feature-origin',
@@ -42,7 +42,7 @@ const ids = [
 const Pools = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 6;
+  const total = 4;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -89,28 +89,31 @@ const Pools = ({}) => {
           ids={ids}
         />
         <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
+          colStart={2}
+          colSpan={4}
         >
+          <Box
+            className="project-title__fun-box"
+          />
           <Text
             as="h1"
+            className="project-title"
           >
             PSVS POOLS
           </Text>
         </GridItem>
-        <Glance
+        {/* <Glance
           problem={renderProblem()}
           solution={renderSolution()}
           onLoad={handleLoad}
-        />
+        /> */}
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
           id="pools-feature-origin"
         >
-          <Text as="h2">Feature Origin</Text>
+          <Text as="h2">PROBLEM</Text>
           <Text as="h4">Emulating an on-premise feature in the cloud</Text>
           <Image
             src={SPPOnPrem}
@@ -158,12 +161,13 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-feature-implementation"
         >
-          <Text as="h2">Feature Implementation</Text>
+          <Text as="h2">SOLUTION</Text>
           <Text as="h4">Using existing patterns to make SPP setup intuitive for new and old users alike.</Text>
         </GridItem>
         <GridItem
-          colStart={[1, 3]}
-          colSpan={[12, 8]}
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
         >
           <YTVideo>
             <iframe
@@ -238,7 +242,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-product-context"
         >
-          <Text as="h2">Product context</Text>
+          <Text as="h2">PRODUCT CONTEXT</Text>
           <Text as="h4">Some context on what PowerVS is, and who its users are</Text>
           <Text paddingBottom={lineBreakPadding}>
             PowerVS is, simply put,
@@ -321,7 +325,7 @@ const Pools = ({}) => {
           <Text
             as="h2"
           >
-            Process challenges
+            CHALLENGES
           </Text>
           <Text
             as="h4"
@@ -387,7 +391,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-process"
         >
-          <Text as="h2">Process</Text>
+          <Text as="h2">PROCESS</Text>
           <Text as="h4">Initial interface testing and addressing challenges</Text>
         </GridItem>
         <GridItem

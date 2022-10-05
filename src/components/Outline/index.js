@@ -1,28 +1,63 @@
 import React, { useEffect, useState } from 'react';
-import { Flex, Box, Button } from '@chakra-ui/react';
+import {
+  Flex,
+  Box,
+  Button,
+} from '@chakra-ui/react';
 import PropTypes from 'prop-types';
 
 import './outline.scss';
 
 const Outline = ({ titles, ids }) => {
-  const total = 4;
-  const [loadedFont, setLoadedFont] = useState(false);
-  const [numLoaded, setNumLoaded] = useState(0);
-  const [loading, setLoading] = useState(true);
   const [currSection, setCurrSection] = useState(0);
 
-  const handleScroll = (id) => {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' }, true);
+  const handleScroll = () => {
+    const buffer = 200;
+    if (document.getElementById(ids[0])) {
+      ids.map((id, i) => {
+        const currScroll = window.pageYOffset;
+        let sectionStart;
+        if (i === 0) {
+          sectionStart = 0;
+        } else {
+          sectionStart = document.getElementById(id).offsetTop - buffer;
+        }
+
+        let sectionEnd;
+        if (i === ids.length - 1) {
+          sectionEnd = document.body.scrollHeight;
+        } else {
+          sectionEnd = document.getElementById(ids[i + 1]).offsetTop - buffer;
+        }
+
+        if (sectionStart <= currScroll && currScroll <= sectionEnd) {
+          setCurrSection(i);
+        }
+      });
+    }
+  };
+
+  const debounce = (func, timeout = 300) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
   };
 
   useEffect(() => {
-    document.fonts.onloadingdone = setLoadedFont(true);
-  }, [loadedFont, loading, numLoaded]);
+    window.addEventListener('scroll', debounce(handleScroll, 10));
+    return window.removeEventListener('scroll', debounce(handleScroll, 10));
+  }, [currSection]);
+
+  const handleClick = (id) => {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' }, true);
+  };
 
   return (
     <Flex
       className="outline-container"
-      display={['none', 'flex']}
+      top={-40 * currSection + window.innerHeight / 2 - 20}
     >
       <Flex
         direction="column"
@@ -32,7 +67,8 @@ const Outline = ({ titles, ids }) => {
         {titles.map((title, i) => (
           <Button
             className="outline__item"
-            onClick={() => handleScroll(ids[i])}
+            onClick={() => handleClick(ids[i])}
+            id={currSection === i ? 'outline__curr-section' : ''}
           >
             {title}
           </Button>
