@@ -18,13 +18,7 @@ const PowerGloveTile = ({ onLoad }) => {
       <Text marginBottom="2rem">
         <UnorderedList>
           <ListItem>
-            Solo designer
-          </ListItem>
-          <ListItem>
-            Solo developer
-          </ListItem>
-          <ListItem>
-            Solo hardware... person
+            Solo project
           </ListItem>
         </UnorderedList>
       </Text>
