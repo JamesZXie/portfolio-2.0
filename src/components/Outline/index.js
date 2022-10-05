@@ -46,8 +46,8 @@ const Outline = ({ titles, ids }) => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', debounce(handleScroll, 20));
-    return window.removeEventListener('scroll', debounce(handleScroll, 20));
+    window.addEventListener('scroll', handleScroll);
+    return window.removeEventListener('scroll', handleScroll);
   }, [currSection]);
 
   const handleClick = (id) => {

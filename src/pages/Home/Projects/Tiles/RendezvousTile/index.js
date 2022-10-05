@@ -4,7 +4,7 @@ import {
   Image, Box, Text, UnorderedList, ListItem,
 } from '@chakra-ui/react';
 
-import SupercomputerImage from '../../../../../assets/images/Home/supercomputer.png';
+import SupercomputerImage from '../../../../../assets/images/Pools/supercomputer.png';
 import Tile from '../../Tile';
 
 const RendezvousTile = ({ onLoad }) => {

@@ -14,6 +14,7 @@ import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
 import ServerPlacementGroups from '../../../assets/images/Pools/server-placement-groups.png';
 import PlacementGroupsExample from '../../../assets/images/Pools/placement-groups-example.png';
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
+import Supercomputer from '../../../assets/images/Pools/supercomputer.png';
 import UserMSP from '../../../assets/images/Pools/user-msp.png';
 import UserISV from '../../../assets/images/Pools/user-isv.png';
 import Glance from '../../../components/Glance';
@@ -25,16 +26,16 @@ const colStart = [1, 7];
 const colSpan = [12, 6];
 const colEnd = [12, 12];
 const titles = [
+  'CONTEXT',
   'PROBLEM',
   'SOLUTION',
-  'CONTEXT',
   'CHALLENGES',
   'PROCESS',
 ];
 const ids = [
+  'pools-product-context',
   'pools-feature-origin',
   'pools-feature-implementation',
-  'pools-product-context',
   'pools-process-challenges',
   'pools-process',
 ];
@@ -111,10 +112,38 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
+          id="pools-product-context"
+        >
+          <Text as="h2">CONTEXT</Text>
+          <Text as="h4">What shared processor pools is, and why it was created</Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            “IBM Power” is a family of server computers that IBM has traditionally sold
+            directly to consumers.
+            The overarching goal of our cloud platform, Power Virtual Server,
+            is to help IBM Power users switch to the cloud, which is better for the IBM Power
+            organization&apos;s user retention and profit long term.
+          </Text>
+          <Text>
+            The dev team created a feature that reduces licensing costs by allowed users to
+            “fence off” a section of a larger computer and pay for licensing on just this portion,
+            instead of the entire computer.
+            {' '}
+            <strong>
+              The section is what we call a “shared processor pool”
+              and comes with a ton of constraints for its usage and creation.
+            </strong>
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
           id="pools-feature-origin"
         >
           <Text as="h2">PROBLEM</Text>
-          <Text as="h4">Emulating an on-premise feature in the cloud</Text>
+          <Text as="h4">Challenges associated with shared processor pool implementation.</Text>
           <Image
             src={SPPOnPrem}
             onLoad={handleLoad}
@@ -129,30 +158,15 @@ const Pools = ({}) => {
           <Text
             paddingBottom={lineBreakPadding}
           >
-            The ultimate objective of shared processor pools &#40;SPP&#41; is to
-            <strong> save customers money on licensing costs.</strong>
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            Power Systems Virtual Server is a premium cloud platform with more computing power, but also more cost, compared
-            to competitors. As part of a larger attempt to offset the cost difference,
-            shared processor pools were created:
-            {' '}
-            <strong>&quot;hacky&quot;, technical workarounds</strong>
-            {' '}
-            that make using third-party software licenses on Power
-            {' '}
-            <strong>up to 10x cheaper</strong>
-            .
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            SPP was originally implemented for user-owned servers, but in the cloud, users don&apos;t
-            own servers. As a result,
-            {' '}
-            <strong>SPP had to be re-imagined for the cloud.</strong>
+            Understanding how the shared processor pools worked is relatively straightforward for users. However, setting up real-life applications requiring multiple virtual machines can be very complex, and baking their requirements into shared processor pools could make things confusing.
+
+            Computing power and storage associated with “the cloud” has to actually exist somewhere, even if you can access them from anywhere. When you store a file on Google Drive, although you can’t actually control exactly where in the world that file ends up, it does exist somewhere as a string of binary numbers, on an actual hard drive.
+
+            Virtual machines (VMs) and shared processor pools (SPPs) have two big constraints that make their creation and usage unintuitive:
+            VMs created in SPPs must all be on the same Power server for them to use the same “fenced off” portion of a server.
+            Placement requirements unrelated to SPP exist. Sometimes, VMs must be on the same server. Sometimes, VMs must be on different servers.
+
+            As you can imagine, when these requirements intertwine things get complicated. For example, if the user wants to make a backup VM in case the host server of the main VM dies, the backup can’t be on the same host - or that would defeat the point. However, it needs to run the same software, and thus needs the same license...
           </Text>
         </GridItem>
         <GridItem
@@ -236,86 +250,7 @@ const Pools = ({}) => {
           </Text>
           <SectionBreak />
         </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-product-context"
-        >
-          <Text as="h2">PRODUCT CONTEXT</Text>
-          <Text as="h4">Some context on what PowerVS is, and who its users are</Text>
-          <Text paddingBottom={lineBreakPadding}>
-            PowerVS is, simply put,
-            {' '}
-            <strong>cloud infrastructure for IBM Power hardware users</strong>
-            .
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            IBM Power has better computing power than competitor hardware, but is much more expensive. Most end users have
-            extreme performance-based needs.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            There are really just two types of users:
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={1}
-        >
-          <Image src={UserMSP} />
-        </GridItem>
-        <GridItem
-          colStart={colStart + 1}
-          colSpan={5}
-          colEnd={colEnd}
-          paddingLeft=".5rem"
-        >
-          <Text as="h6">
-            1. Managed cloud service providers &#40;MSPs&#41;
-          </Text>
-          <Text>
-            MSPs account for
-            {' '}
-            <strong>80%</strong>
-            {' '}
-            of our userbase. They are Power experts who manage
-            Power resources for companies who want to build on power, but only understand software. MSPs may have to manage thousands of VMs,
-            due to their large clientele.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={1}
-        >
-          <Image src={UserISV} />
-        </GridItem>
-        <GridItem
-          colStart={colStart + 1}
-          colSpan={5}
-          colEnd={colEnd}
-          paddingLeft=".5rem"
-        >
-          <Text as="h6">
-            2. OS users with hybrid workloads
-          </Text>
-          <Text>
-            Power expertise is extremely hard to find, so only 20% of our userbase have enough expertise to
-            work directly with Power hardware. Still, they tend to have less expertise than MSPs, and work with
-            much smaller workloads.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-process-challenges"
-        >
-          <Text>
-            Both types of users have expertise in Power, and acquired this expertise by working with Power on-premise. New users
-            who want to use IBM Power will go through MSPs the vast majority of the time, rather than hire employees with Power
-            expertise.
-          </Text>
-        </GridItem>
+
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
