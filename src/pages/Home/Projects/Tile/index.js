@@ -57,7 +57,7 @@ const Tile = ({
             {subtitle}
           </Text>
           <Box className="container__solid-rectangle">
-            <Text as="h1">{title}</Text>
+            <Text as="h1" fontWeight="bold !important">{title}</Text>
             <Box marginTop="1rem" textAlign="left">
               {description}
             </Box>
