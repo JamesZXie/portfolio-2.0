@@ -93,7 +93,7 @@ const Tile = ({
           {window.innerWidth > 666 ? projectImage : ''}
         </Box>
       </GridItem>
-      <ArrowDown hidden={order === 5} />
+      <ArrowDown hidden={order === 4} />
     </Grid>
   );
 };
