@@ -26,10 +26,8 @@ const Hero = ({ total, numLoaded, loading }) => {
       />
       {loading ? '' : <Background display={['none', 'block']} />}
       <Flex className="hero__container" justify="center" align="center">
-        <Flex wrap="wrap">
-          <Box width="100%">
-            <Text as="h4" paddingBottom="1rem">Hello</Text>
-          </Box>
+        <Flex justifyContent="center" flexDirection="column">
+          <Text as="h4" paddingBottom="1rem">Hello</Text>
           <Box
             className="container__solid-rectangle hero__intro-container"
           >
