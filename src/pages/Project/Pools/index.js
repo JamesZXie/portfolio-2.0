@@ -121,7 +121,6 @@ const Pools = ({}) => {
             as="h2"
           >
             SUMMARY
-
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -130,7 +129,7 @@ const Pools = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            In order to save money, users need to define a very complex “folder” to house some of their stuff.
+            Users spend a ton of money on licensing fees in the cloud due to the licensing pricing model.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -139,9 +138,7 @@ const Pools = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            {' '}
-            We sacrificed a few edge cases to make the “folder” creation and usage experience
-            intuitive for users, and easier for dev to implement.
+            We worked with dev to implement a magic “folder” that when wrapped around expensive assets, reduces the cost of licenses by up to 90%.
           </Text>
         </GridItem>
         <SectionBreak />
@@ -152,7 +149,7 @@ const Pools = ({}) => {
           id="pools-product-context"
         >
           <Text as="h2">CONTEXT</Text>
-          <Text as="h4">What shared processor pools is, and why it was created</Text>
+          <Text as="h4">What shared processor pools (the magic folder) is, and why it was created</Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
