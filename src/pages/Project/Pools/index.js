@@ -116,7 +116,13 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-summary"
         >
-          <Text as="h2">SUMMARY</Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+            as="h2"
+          >
+            SUMMARY
+
+          </Text>
           <Text
             paddingBottom={lineBreakPadding}
             as="h3"
@@ -138,6 +144,7 @@ const Pools = ({}) => {
             intuitive for users, and easier for dev to implement.
           </Text>
         </GridItem>
+        <SectionBreak />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
