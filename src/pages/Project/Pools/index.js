@@ -15,6 +15,7 @@ import ServerPlacementGroups from '../../../assets/images/Pools/server-placement
 import PlacementGroupsExample from '../../../assets/images/Pools/placement-groups-example.png';
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
 import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
+import SPPDisasterStrikes from '../../../assets/images/Pools/spp-disaster-strikes.png';
 
 import UserMSP from '../../../assets/images/Pools/user-msp.png';
 import UserISV from '../../../assets/images/Pools/user-isv.png';
@@ -205,24 +206,24 @@ const Pools = ({}) => {
           <Text
             paddingBottom={lineBreakPadding}
           >
-            Understanding how shared processor pools worked was relatively straightforward for users. However,
+            The crux of the challenge in bringing SPP to the cloud is that
             {' '}
-            <strong>setting up applications when on the cloud is very different from when off of the cloud.</strong>
+            <strong>building things when on the cloud is very different from when off of the cloud</strong>
+            , where SPP started.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            Cloud resources have to actually exist somewhere, even if you can access them from anywhere. When
+            Cloud resources you create have to actually exist somewhere, even if you can access them from anywhere. When
             you store a file on Google Drive, although you don&apos;t define a server for it to reside on, the file
             does exist somewhere as a string of binary numbers, on an actual hard drive.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            Virtual machines (VMs) and shared processor pools (SPPs) must also exist somewhere, and as a result
-            have
+            Virtual machines (VMs) and shared processor pools (SPPs) must also exist somewhere, and have
             {' '}
-            <strong>two big location-related constraints that make their creation and usage unintuitive:</strong>
+            <strong>two location-related rules that make their creation and usage unintuitive:</strong>
           </Text>
           <OrderedList
             paddingBottom={lineBreakPadding}
@@ -246,6 +247,16 @@ const Pools = ({}) => {
               be on different servers.
             </ListItem>
           </OrderedList>
+          <Image
+            src={SPPDisasterStrikes}
+            paddingTop={subSectionBreakPadding}
+          />
+          <Text
+            as="h5"
+            paddingBottom={subSectionBreakPadding}
+          >
+            Example of location requirements: a backup can&apos;t be on the same host, or it fails with the main VM.
+          </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
