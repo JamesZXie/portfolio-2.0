@@ -129,7 +129,7 @@ const Pools = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            Users spend a ton of money on licensing fees in the cloud due to the licensing pricing model.
+            Users spend a ton of money on licensing fees in the cloud due to licensing pricing models.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
