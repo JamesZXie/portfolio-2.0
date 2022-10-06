@@ -140,7 +140,7 @@ const Pools = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            We worked with dev to implement a magic “folder” that when wrapped around expensive assets, reduces the cost of licenses by up to 90%.
+            We worked with dev to bring a &quot;magic folder&quot; to the cloud, that when wrapped around licensed assets, reduces the cost of licenses by up to 90%.
           </Text>
         </GridItem>
         <SectionBreak />
@@ -156,9 +156,7 @@ const Pools = ({}) => {
             src={SPPExplanationDiagram}
             paddingBottom={subSectionBreakPadding}
           />
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
+          <Text paddingBottom={lineBreakPadding}>
             “IBM Power” is a family of server computers that IBM has traditionally sold
             directly to consumers.
             The overarching goal of our cloud platform, Power Virtual Server,
@@ -166,8 +164,12 @@ const Pools = ({}) => {
             organization&apos;s user retention and profit long term.
           </Text>
 
-          <Text>
-            The dev team created a feature that reduces licensing costs by allowed users to
+          <Text paddingBottom={lineBreakPadding}>
+            Licenses typically charge based off of the size of the server they&apos;re applied to. This is especially
+            unfortunate in the cloud, where users rent very small portions of very large servers.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            In response, IBM created a feature that reduces licensing costs by allowed users to
             create a &quot;folder&quot; from a section of a larger computer and pay for licensing on
             just this portion, instead of the entire computer.
             {' '}
@@ -175,6 +177,10 @@ const Pools = ({}) => {
               The folder is what we call a “shared processor pool”
               and comes with a ton of constraints for its usage and creation.
             </strong>
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            However, even though it makes the most sense for cloud usage, it was only available
+            for Power servers off of the cloud.
           </Text>
         </GridItem>
         <GridItem
@@ -194,14 +200,14 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            Main screens users who own on-premise Power systems use to configure shared processor pools.
+            What SPP looks like off of the cloud: the main screens users use to configure shared processor pools.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            Understanding how the shared processor pools worked is relatively straightforward for users. However,
-            setting up real-life applications requiring multiple virtual machines can be very complex, and baking
-            their requirements into shared processor pools could make things confusing.
+            Understanding how shared processor pools worked was relatively straightforward for users. However,
+            {' '}
+            <strong>setting up applications when on the cloud is very different from when off of the cloud.</strong>
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -214,7 +220,9 @@ const Pools = ({}) => {
             paddingBottom={lineBreakPadding}
           >
             Virtual machines (VMs) and shared processor pools (SPPs) must also exist somewhere, and as a result
-            have two big placement-related constraints that make their creation and usage unintuitive:
+            have
+            {' '}
+            <strong>two big location-related constraints that make their creation and usage unintuitive:</strong>
           </Text>
           <OrderedList
             paddingBottom={lineBreakPadding}
@@ -224,22 +232,26 @@ const Pools = ({}) => {
               {' '}
               <strong>must</strong>
               {' '}
-              all be on the same Power server for them to use the same “fenced off” portion of a server.
+              all be placed on the same physical server for them to use the same portion of the server.
             </ListItem>
             <ListItem>
-              Placement requirements unrelated to SPP exist. Sometimes, VMs
+              Placement location requirements unrelated to SPP also exist. Sometimes, VMs
               {' '}
               <strong>must</strong>
               {' '}
-              be on the same server. Sometimes, VMs must be on different servers.
+              be on the same server. Sometimes, VMs
+              {' '}
+              <strong>must</strong>
+              {' '}
+              be on different servers.
             </ListItem>
           </OrderedList>
           <Text
             paddingBottom={lineBreakPadding}
           >
             As you can imagine, when these requirements intertwine things get complicated. For example, if the user wants
-            to make a backup VM in case the host server of the main VM dies, the backup can’t be on the same host - or that
-            would defeat the point. However, it needs to run the same software, and thus needs the same license...
+            to make a backup VM in case the host server of the main VM dies, the backup can&apos;t be on the same host - or that
+            would defeat the point. However, it needs to run the same software, and thus needs the same license.
           </Text>
         </GridItem>
         <GridItem
