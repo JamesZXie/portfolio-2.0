@@ -255,14 +255,14 @@ const Pools = ({}) => {
             as="h5"
             paddingBottom={subSectionBreakPadding}
           >
-            Example of location requirements: a backup can&apos;t be on the same host, or it fails with the main VM.
+            Example of location requirements: a backup can&apos;t be on the same host, or it fails alongside the main VM.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
             As you can imagine, when these requirements intertwine things get complicated. For example, if the user wants
-            to make a backup VM in case the host server of the main VM dies, the backup can&apos;t be on the same host - or that
-            would defeat the point. However, it needs to run the same software, and thus needs the same license.
+            to make a backup VM in case the host server of the main VM dies, the backup can&apos;t be on the same host - or it would fail at the same time if the host had issues.
+            However, it needs to run the same software, and thus needs the same license.
           </Text>
         </GridItem>
         <GridItem
