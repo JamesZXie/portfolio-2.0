@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import {
-  Grid, GridItem, Button, Text, Link, Image, OrderedList, ListItem, Center, Box, UnorderedList,
+  Grid, GridItem, Flex, Text, Link, Image, OrderedList, ListItem, Center, Box, UnorderedList,
 } from '@chakra-ui/react';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
@@ -26,6 +26,7 @@ const colStart = [1, 7];
 const colSpan = [12, 6];
 const colEnd = [12, 12];
 const titles = [
+  'SUMMARY',
   'CONTEXT',
   'PROBLEM',
   'SOLUTION',
@@ -33,6 +34,7 @@ const titles = [
   'PROCESS',
 ];
 const ids = [
+  'pools-summary',
   'pools-product-context',
   'pools-feature-origin',
   'pools-feature-implementation',
@@ -112,6 +114,34 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
+          id="pools-summary"
+        >
+          <Text as="h2">SUMMARY</Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Problem:
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            In order to save money, users need to define a very complex “folder” to house some of their stuff.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Solution:
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            {' '}
+            We sacrificed a few edge cases to make the “folder” creation and usage experience
+            intuitive for users, and easier for dev to implement.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
           id="pools-product-context"
         >
           <Text as="h2">CONTEXT</Text>
@@ -175,7 +205,9 @@ const Pools = ({}) => {
             Virtual machines (VMs) and shared processor pools (SPPs) must also exist somewhere, and as a result
             have two big placement-related constraints that make their creation and usage unintuitive:
           </Text>
-          <OrderedList paddingBottom={lineBreakPadding}>
+          <OrderedList
+            paddingBottom={lineBreakPadding}
+          >
             <ListItem>
               VMs created in SPPs
               {' '}
