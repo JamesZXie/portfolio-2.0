@@ -14,7 +14,8 @@ import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
 import ServerPlacementGroups from '../../../assets/images/Pools/server-placement-groups.png';
 import PlacementGroupsExample from '../../../assets/images/Pools/placement-groups-example.png';
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
-import Supercomputer from '../../../assets/images/Pools/supercomputer.png';
+import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
+
 import UserMSP from '../../../assets/images/Pools/user-msp.png';
 import UserISV from '../../../assets/images/Pools/user-isv.png';
 import Glance from '../../../components/Glance';
@@ -129,7 +130,8 @@ const Pools = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            Users spend a ton of money on licensing fees in the cloud due to licensing pricing models.
+            Licensing fees in the cloud don&apos;t adhere to a pay-as-you-use model, which makes
+            using licenses on PowerVS too expensive for many users.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -150,6 +152,10 @@ const Pools = ({}) => {
         >
           <Text as="h2">CONTEXT</Text>
           <Text as="h4">What shared processor pools (the magic folder) is, and why it was created</Text>
+          <Image
+            src={SPPExplanationDiagram}
+            paddingBottom={subSectionBreakPadding}
+          />
           <Text
             paddingBottom={lineBreakPadding}
           >
@@ -159,6 +165,7 @@ const Pools = ({}) => {
             is to help IBM Power users switch to the cloud, which is better for the IBM Power
             organization&apos;s user retention and profit long term.
           </Text>
+
           <Text>
             The dev team created a feature that reduces licensing costs by allowed users to
             create a &quot;folder&quot; from a section of a larger computer and pay for licensing on
