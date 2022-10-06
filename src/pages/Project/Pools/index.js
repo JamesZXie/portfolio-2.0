@@ -161,11 +161,11 @@ const Pools = ({}) => {
           </Text>
           <Text>
             The dev team created a feature that reduces licensing costs by allowed users to
-            “fence off” a section of a larger computer and pay for licensing on just this portion,
-            instead of the entire computer.
+            create a &quot;folder&quot; from a section of a larger computer and pay for licensing on
+            just this portion, instead of the entire computer.
             {' '}
             <strong>
-              The section is what we call a “shared processor pool”
+              The folder is what we call a “shared processor pool”
               and comes with a ton of constraints for its usage and creation.
             </strong>
           </Text>
