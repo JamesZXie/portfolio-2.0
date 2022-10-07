@@ -225,7 +225,7 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            There are different restrictions on user actions in the cloud, and SPP&apos;s restrictions just make the ecosystem more complex.
+            Sometimes users need VMs on the same server, other times they need them on different servers.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -297,7 +297,7 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            There are different restrictions on user actions in the cloud, and SPP&apos;s restrictions just make the ecosystem more complex.
+            Sometimes users need VMs on the same server, other times they need them on different servers.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
             In an effort to make deploying resources using SPPs as intuitive as possible, we tested a few options. The flow we decided on mimicked

@@ -22,6 +22,10 @@
             background-color: transparent;
             justify-content: flex-start; 
             border: 1px solid transparent !important;
+
+            &:hover {
+                color: $text-hover;
+            }
         }
 
         button#current-section {
