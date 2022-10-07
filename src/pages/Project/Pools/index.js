@@ -131,8 +131,7 @@ const Pools = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            Licensing fees in the cloud don&apos;t adhere to a pay-as-you-use model, which makes
-            using licenses on PowerVS too expensive for many users.
+            Certain software licenses &#40;think stuff like Sketch&#41; for IBM&apos;s cloud overcharge customers.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -141,7 +140,7 @@ const Pools = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            We worked with dev to bring a &quot;magic folder&quot; to the cloud, that when wrapped around licensed assets, reduces the cost of licenses by up to 90%.
+            We took an old solution and applied it to the cloud in a way that changes the way licenses charge our customers, reducing the cost of licenses by up to 90%.
           </Text>
         </GridItem>
         <SectionBreak />
@@ -152,37 +151,42 @@ const Pools = ({}) => {
           id="pools-product-context"
         >
           <Text as="h2">CONTEXT</Text>
-          <Text as="h4">What shared processor pools (the magic folder) is, and why it was created</Text>
-          <Image
+          <Text as="h4">Info on PowerVS, the cloud, and overcharging for licenses.</Text>
+          {/* <Image
             src={SPPExplanationDiagram}
             paddingBottom={subSectionBreakPadding}
-          />
+          /> */}
           <Text paddingBottom={lineBreakPadding}>
-            “IBM Power” is a family of server computers that IBM has traditionally sold
-            directly to consumers.
-            The overarching goal of our cloud platform, Power Virtual Server,
-            is to help IBM Power users switch to the cloud, which is better for the IBM Power
-            organization&apos;s user retention and profit long term.
+            The cloud is very similar to real estate. Using the cloud is like renting an apartment, and PowerVS, our cloud platform,
+            is like a website that
+            {' '}
+            <strong>automatically assigns apartments</strong>
+            {' '}
+            to users based on their specified needs.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Following this analogy, then, you can think of a license like a kind of utility. Say you&apos;re a tenant in one
+            of our apartments and you want to switch providers for the electricity service in your apartment. You can&apos;t
+            apply the change to
+            {' '}
+            <strong>only</strong>
+            {' '}
+            your apartment, you have to pay to swap out electricity for the entire building,
+            because all the apartments are connected.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            This is how licenses charge, except licenses are a lot more important to customers.
+            Many users have no choice but to pay for a license on the entire server, instead of just license
+            usage in the portion they&apos;re renting out.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Shared processor pools existed as a pre-cloud feature that allowed users to apply
+            licenses to just a portion of any server
+            {' '}
+            <strong>that they owned.</strong>
+
           </Text>
 
-          <Text paddingBottom={lineBreakPadding}>
-            Licenses typically charge based off of the size of the server they&apos;re applied to. This is especially
-            unfortunate in the cloud, where users rent very small portions of very large servers.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            In response, IBM created a feature that reduces licensing costs by allowed users to
-            create a &quot;folder&quot; from a section of a larger computer and pay for licensing on
-            just this portion, instead of the entire computer.
-            {' '}
-            <strong>
-              The folder is what we call a “shared processor pool”
-              and comes with a ton of constraints for its usage and creation.
-            </strong>
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            However, even though it makes the most sense for cloud usage, it was only available
-            for Power servers off of the cloud.
-          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -191,7 +195,7 @@ const Pools = ({}) => {
           id="pools-feature-origin"
         >
           <Text as="h2">PROBLEM</Text>
-          <Text as="h4">Challenges associated with shared processor pool implementation.</Text>
+          <Text as="h4">Challenges associated with shared processor pool replication.</Text>
           <Image
             src={SPPOnPrem}
             onLoad={handleLoad}
@@ -206,64 +210,35 @@ const Pools = ({}) => {
           <Text
             paddingBottom={lineBreakPadding}
           >
-            The crux of the challenge in bringing SPP to the cloud is that
-            {' '}
-            <strong>building things when on the cloud is very different from when off of the cloud</strong>
-            , where SPP started.
+            The issue in bringing SPP to the cloud is that selling homes and managing tenants are fundamentally
+            different, with the latter requiring many more restrictions and rules. There is a delicate balance, and SPP
+            introduced a new restriction that threw the balance off.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            Cloud resources you create have to actually exist somewhere, even if you can access them from anywhere. When
-            you store a file on Google Drive, although you don&apos;t define a server for it to reside on, the file
-            does exist somewhere as a string of binary numbers, on an actual hard drive.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            Virtual machines (VMs) and shared processor pools (SPPs) must also exist somewhere, and have
-            {' '}
-            <strong>two location-related rules that make their creation and usage unintuitive:</strong>
+            <strong>
+              Our challenge was to help users create and
+              use SPPs with all of the following restrictions on user actions in mind:
+            </strong>
           </Text>
           <OrderedList
             paddingBottom={lineBreakPadding}
           >
             <ListItem>
-              VMs created in SPPs
-              {' '}
-              <strong>must</strong>
-              {' '}
-              all be placed on the same physical server for them to use the same portion of the server.
+              Users can&apos;t choose the exact server they want to place a VM in.
             </ListItem>
             <ListItem>
-              Placement location requirements unrelated to SPP also exist. Sometimes, VMs
-              {' '}
-              <strong>must</strong>
-              {' '}
-              be on the same server. Sometimes, VMs
-              {' '}
-              <strong>must</strong>
-              {' '}
-              be on different servers.
+              Resources sharing the same license in a SPP must be on the same server.
+            </ListItem>
+            <ListItem>
+              Users sometimes require VMs located on the same server.
+            </ListItem>
+            <ListItem>
+              Users sometimes require VMs located on different servers.
             </ListItem>
           </OrderedList>
-          <Image
-            src={SPPDisasterStrikes}
-            paddingTop={subSectionBreakPadding}
-          />
-          <Text
-            as="h5"
-            paddingBottom={subSectionBreakPadding}
-          >
-            Example of location requirements: a backup can&apos;t be on the same host, or it fails alongside the main VM.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            As you can imagine, when these requirements intertwine things get complicated. For example, if the user wants
-            to make a backup VM in case the host server of the main VM dies, the backup can&apos;t be on the same host - or it would fail at the same time if the host had issues.
-            However, it needs to run the same software, and thus needs the same license.
-          </Text>
+
         </GridItem>
         <GridItem
           colStart={colStart}
