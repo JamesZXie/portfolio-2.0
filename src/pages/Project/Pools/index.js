@@ -289,7 +289,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
         > */}
           <Image
-            src={SPPSetupRequirements}
+            src={SPPSolutionConcept}
             onLoad={handleLoad}
           />
           <Text
@@ -297,7 +297,7 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            Sometimes users need VMs on the same server, other times they need them on different servers.
+            We introduced SPP conceptually as a &quot;folder&quot; to put VMs in. Managing placement restrictions for the folders is exactly the same as it is for VMs.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
             In an effort to make deploying resources using SPPs as intuitive as possible, we tested a few options. The flow we decided on mimicked
