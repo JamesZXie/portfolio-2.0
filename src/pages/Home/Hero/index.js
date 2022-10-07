@@ -18,12 +18,15 @@ import James from '../../../assets/images/Home/james-headshot.png';
 
 const Hero = ({ total, numLoaded, loading }) => {
   const [isBlurbOpen, setIsBlurbOpen] = useState(false);
+  const [isHeadshotLoaded, setIsHeadshotLoaded] = useState(false);
+
+  const onLoad = () => { setIsHeadshotLoaded(true); };
 
   return (
     <Box className="hero" id="hero">
       <PageLoader
         total={total}
-        numLoaded={numLoaded}
+        numLoaded={isHeadshotLoaded ? numLoaded : numLoaded - 1}
         loading={loading}
         backgroundColor="#1d1d1d"
       />
@@ -44,7 +47,7 @@ const Hero = ({ total, numLoaded, loading }) => {
             </Text>
           </Box>
         </Flex>
-        <Image className="hero__headshot" src={James} />
+        <Image onLoad={onLoad} className="hero__headshot" src={James} />
       </Box>
       <ArrowDown />
     </Box>
