@@ -14,6 +14,8 @@ import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
 import ServerPlacementGroups from '../../../assets/images/Pools/server-placement-groups.png';
 import PlacementGroupsExample from '../../../assets/images/Pools/placement-groups-example.png';
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
+import SPPSetupRequirements from '../../../assets/images/Pools/spp-setup-requirements.png';
+import SPPSolutionConcept from '../../../assets/images/Pools/spp-solution-concept.png';
 import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
 import SPPDisasterStrikes from '../../../assets/images/Pools/spp-disaster-strikes.png';
 
@@ -156,6 +158,17 @@ const Pools = ({}) => {
             src={SPPExplanationDiagram}
             paddingBottom={subSectionBreakPadding}
           /> */}
+          <Image
+            src={SPPOnPrem}
+            onLoad={handleLoad}
+          />
+          <Text
+            as="h5"
+            id="licensing-costs-caption"
+            paddingBottom={subSectionBreakPadding}
+          >
+            Shared processor pools, before the cloud.
+          </Text>
           <Text paddingBottom={lineBreakPadding}>
             The cloud is very similar to real estate. Using the cloud is like renting an apartment, and PowerVS, our cloud platform,
             is like a website that
@@ -196,8 +209,15 @@ const Pools = ({}) => {
         >
           <Text as="h2">PROBLEM</Text>
           <Text as="h4">Challenges associated with shared processor pool replication.</Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            The issue in bringing SPP to the cloud is that selling homes and managing tenants are fundamentally
+            different, with the latter requiring many more restrictions and rules. There is a delicate balance, and SPP
+            introduced a new restriction that threw the balance off.
+          </Text>
           <Image
-            src={SPPOnPrem}
+            src={SPPSetupRequirements}
             onLoad={handleLoad}
           />
           <Text
@@ -205,14 +225,7 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            What SPP looks like off of the cloud: the main screens users use to configure shared processor pools.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            The issue in bringing SPP to the cloud is that selling homes and managing tenants are fundamentally
-            different, with the latter requiring many more restrictions and rules. There is a delicate balance, and SPP
-            introduced a new restriction that threw the balance off.
+            There are different restrictions on user actions in the cloud, and SPP&apos;s restrictions just make the ecosystem more complex.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -248,7 +261,7 @@ const Pools = ({}) => {
         >
           <Text as="h2">SOLUTION</Text>
           <Text as="h4">Using existing patterns to make SPP setup intuitive for new and old users alike.</Text>
-        </GridItem>
+          {/* </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -274,7 +287,18 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-        >
+        > */}
+          <Image
+            src={SPPSetupRequirements}
+            onLoad={handleLoad}
+          />
+          <Text
+            as="h5"
+            id="licensing-costs-caption"
+            paddingBottom={subSectionBreakPadding}
+          >
+            There are different restrictions on user actions in the cloud, and SPP&apos;s restrictions just make the ecosystem more complex.
+          </Text>
           <Text paddingBottom={lineBreakPadding}>
             In an effort to make deploying resources using SPPs as intuitive as possible, we tested a few options. The flow we decided on mimicked
             the flow of creating VM placement groups, and so we drew parallels to the existing VM placement group and usage flow.
