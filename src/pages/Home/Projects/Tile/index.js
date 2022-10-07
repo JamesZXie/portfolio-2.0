@@ -35,13 +35,13 @@ const Tile = ({
       id={id}
     >
       <ArrowUp />
-      <Box
+      {/* <Box
         className="tile__order-imprint"
         tabIndex="-1"
         paddingLeft={[0, '4rem']}
       >
         {order}
-      </Box>
+      </Box> */}
       <GridItem
         colStart={[1, 2]}
         colSpan={[12, 4]}
