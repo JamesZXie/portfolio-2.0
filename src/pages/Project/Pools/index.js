@@ -229,13 +229,13 @@ const Pools = ({}) => {
               Users can&apos;t choose the exact server they want to place a VM in.
             </ListItem>
             <ListItem>
-              Resources sharing the same license in a SPP must be on the same server.
-            </ListItem>
-            <ListItem>
               Users sometimes require VMs located on the same server.
             </ListItem>
             <ListItem>
               Users sometimes require VMs located on different servers.
+            </ListItem>
+            <ListItem>
+              &#40;New&#41; Resources sharing the same license in a SPP must be on the same server.
             </ListItem>
           </OrderedList>
 
