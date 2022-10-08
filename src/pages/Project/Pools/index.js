@@ -1,7 +1,22 @@
 import React, { useState } from 'react';
 
 import {
-  Grid, GridItem, Flex, Text, Link, Image, OrderedList, ListItem, Center, Box, UnorderedList,
+  Grid,
+  GridItem,
+  Flex,
+  Text,
+  Link,
+  Image,
+  OrderedList,
+  ListItem,
+  Center,
+  Box,
+  UnorderedList,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
 } from '@chakra-ui/react';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
@@ -244,11 +259,13 @@ const Pools = ({}) => {
             paddingBottom={lineBreakPadding}
           >
             <ListItem>
-              Server location assignments are by default automatic in the cloud.
-            </ListItem>
-            <ListItem>
-              Users can somewhat override the automatic assignment by grouping servers and applying
-              a single location rule to their deployment. For example, &quot;these three need to be together&quot;
+              Server location assignments are automatic in the cloud, but users can influence the automatic
+              assignment by telling us &quot;I want these servers together/separate&quot;. They can only
+              express
+              {' '}
+              <strong>one</strong>
+              {' '}
+              preference, or optimization goes to sh*t.
             </ListItem>
             <ListItem>
               Certain user workloads require VMs located on the same server.
@@ -358,44 +375,85 @@ const Pools = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Text paddingBottom={lineBreakPadding}>
-            We solved the logic puzzle above by:
-            <OrderedList>
-              <ListItem>
-                Introducing SPP conceptually as a &apos;folder&apos;, setting expectations about its role, and how it interacts with VMs.
-              </ListItem>
-              <ListItem>
-                Create the other.
-              </ListItem>
-              <ListItem>
-                Add the VMs to the placement group.
-              </ListItem>
-            </OrderedList>
+          <Text paddingBottom={subSectionBreakPadding}>
+            <strong>
+              We introduced SPPs conceptually as &quot;folders&quot; that when wrapped around VMs, would make any external licenses
+              automatically charge based on the size of the folder.
+            </strong>
+            {' '}
+            Once created, SPPs were treated as individual entities,
+            and location requirements were handled in the exact same way location requirements are currently handled with VMs -
+            through placement groups. A pure UI video walkthrough is available
+            {' '}
+            <a href="https://youtu.be/qeW0qXJCIJc">here</a>
+            {' '}
+            for those who want to see more of the UI.
           </Text>
           <Text
+            as="h3"
             paddingBottom={lineBreakPadding}
           >
-            In order to create an SPP, a user must:
-            <OrderedList>
-              <ListItem>
-                Create a placement group or required SPPs
-              </ListItem>
-              <ListItem>
-                Create the other.
-              </ListItem>
-              <ListItem>
-                Add the SPPs to the placement group.
-              </ListItem>
-              <ListItem>
-                Create and add a VM to the SPP.
-              </ListItem>
-            </OrderedList>
+            Tradeoffs:
           </Text>
-          <Text paddingBottom={sectionBreakPadding}>
-            As you can see,
-            {' '}
-            <strong>SPP creation and usage functions the same way as VM creation, a flow users are accustomed to.</strong>
-          </Text>
+          <Accordion
+            paddingBottom={sectionBreakPadding}
+            allowMultiple
+          >
+            <AccordionItem>
+              <h3>
+                <AccordionButton>
+                  <Box flex="1" textAlign="left">
+                    Pros
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h3>
+              <AccordionPanel pb={4}>
+                <OrderedList>
+                  <ListItem>
+                    Introducing SPP as a separate entity from VMs and VM placement groups helped us keep it out of
+                    mind for users who don&apos;t need the feature.
+                  </ListItem>
+                  <ListItem>
+                    Using the same method for handling VM location requirements as SPP location requirements made
+                    using SPP extremely intuitive for advanced users.
+                  </ListItem>
+                  <ListItem>
+                    Implementing SPP as a folder was relatively easy from a development perspective,
+                    and allowed for
+                    {' '}
+                    <strong>much</strong>
+                    {' '}
+                    quicker loadtimes than other options.
+                  </ListItem>
+                </OrderedList>
+              </AccordionPanel>
+            </AccordionItem>
+
+            <AccordionItem>
+              <h3>
+                <AccordionButton>
+                  <Box flex="1" textAlign="left">
+                    Cons
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h3>
+              <AccordionPanel pb={4}>
+                <OrderedList>
+                  <ListItem>
+                    With more complex setups, things can still get confusing, and some more extreme edge cases are completely infeasible.
+                  </ListItem>
+                  <ListItem>
+                    The flow is really only easy to pick up for experts, because the base flow for handling location requirements
+                    between VMs that we based it off of isn&apos;t super intuitive. New
+                    developers will have to read documentation.
+                  </ListItem>
+                </OrderedList>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+
           <SectionBreak />
         </GridItem>
         <GridItem
