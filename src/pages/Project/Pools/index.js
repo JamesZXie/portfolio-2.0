@@ -39,7 +39,6 @@ const titles = [
   'CONTEXT',
   'PROBLEM',
   'SOLUTION',
-  'CHALLENGES',
   'PROCESS',
 ];
 const ids = [
@@ -47,16 +46,15 @@ const ids = [
   'pools-product-context',
   'pools-feature-origin',
   'pools-feature-implementation',
-  'pools-process-challenges',
   'pools-process',
 ];
 
 const Pools = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 4;
+  const total = 8;
 
-  const handleLoad = () => {
+  const onLoad = () => {
     if (numLoaded + 1 === total) {
       setLoading(false);
     } setNumLoaded(numLoaded + 1);
@@ -117,7 +115,7 @@ const Pools = ({}) => {
         {/* <Glance
           problem={renderProblem()}
           solution={renderSolution()}
-          onLoad={handleLoad}
+          onLoad={onLoad}
         /> */}
         <GridItem
           colStart={colStart}
@@ -165,7 +163,7 @@ const Pools = ({}) => {
           /> */}
           <Image
             src={SPPOnPrem}
-            onLoad={handleLoad}
+            onLoad={onLoad}
           />
           <Text
             as="h5"
@@ -223,7 +221,7 @@ const Pools = ({}) => {
           </Text>
           <Image
             src={SPPSetupRequirements}
-            onLoad={handleLoad}
+            onLoad={onLoad}
           />
           <Text
             as="h5"
@@ -253,7 +251,7 @@ const Pools = ({}) => {
               Users sometimes require VMs located on different servers.
             </ListItem>
             <ListItem>
-              &#40;New&#41; Resources sharing the same license in a SPP must be on the same server.
+              &#40;New&#41; Resources sharing a license in a SPP must be on the same server.
             </ListItem>
           </OrderedList>
 
@@ -295,7 +293,7 @@ const Pools = ({}) => {
         > */}
           {/* <Image
           src={SPPSolutionConcept}
-          onLoad={handleLoad}
+          onLoad={onLoad}
         />
           <Text
             as="h5"
@@ -313,19 +311,34 @@ const Pools = ({}) => {
         >
           <Carousel>
             <CarouselItem>
-              <Image src={SPPMainFilled} />
+              <Image
+                onLoad={onLoad}
+                src={SPPMainFilled}
+              />
             </CarouselItem>
             <CarouselItem>
-              <Image src={SPPMainCreate} />
+              <Image
+                onLoad={onLoad}
+                src={SPPMainCreate}
+              />
             </CarouselItem>
             <CarouselItem>
-              <Image src={SPPDetailsFilled} />
+              <Image
+                onLoad={onLoad}
+                src={SPPDetailsFilled}
+              />
             </CarouselItem>
             <CarouselItem>
-              <Image src={SPPGroupsMain} />
+              <Image
+                onLoad={onLoad}
+                src={SPPGroupsMain}
+              />
             </CarouselItem>
             <CarouselItem>
-              <Image src={SPPVSIProvisioning} />
+              <Image
+                onLoad={onLoad}
+                src={SPPVSIProvisioning}
+              />
             </CarouselItem>
           </Carousel>
         </GridItem>
@@ -380,76 +393,6 @@ const Pools = ({}) => {
           </Text>
           <SectionBreak />
         </GridItem>
-
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-process-challenges"
-        >
-          <Text
-            as="h2"
-          >
-            CHALLENGES
-          </Text>
-          <Text
-            as="h4"
-          >
-            Navigating and addressing consequences of a technical workaround
-          </Text>
-          <Image
-            src={ServerPlacementGroups}
-            onLoad={handleLoad}
-          />
-          <Text
-            as="h5"
-            paddingBottom={subSectionBreakPadding}
-          >
-            Placement groups let users define placement rules that would apply to groups of VMs.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            As a somewhat sketchy technical workaround, SPP introduced one large exception to a previously ironclad rule - some VMs in a SPP would need to be
-            added to multiple placement groups, groups that essentially let users set the physical locations of their VMs.
-          </Text>
-          <Text
-            paddingBottom={subSectionBreakPadding}
-          >
-            Wires could get crossed very easily, and as a result, being able to add a single VM to multiple placement groups
-            {' '}
-            <strong>could create failures from operations unrelated to SPP</strong>
-            {' '}
-            that we wouldn&apos;t be able to explain to the user. In the worst case, this could require a customer to rebuild
-            their entire workload.
-          </Text>
-          <Image
-            src={PlacementGroupsExample}
-            onLoad={handleLoad}
-          />
-          <Text as="h5" paddingBottom={subSectionBreakPadding}>
-            Visual representation of how untracked requirements can form
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            For example - imagine that virtual machine A is in a placement group with virtual machine B that requires
-            {' '}
-            <strong>A and B be on the same host server</strong>
-            . A is also in a group with another machine, virtual machine C that dictates
-            {' '}
-            <strong>A and C be on different servers</strong>
-            . Now, B and C cannot ever be on the same host server - even though the user has never specified this -
-            <strong>
-              and an untracked requirement has been created.
-            </strong>
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            This sounds like an easy relationship to automatically track, and it should be - except the codebase PowerVS is
-            built on is relatively shoddy, and for a variety of reasons this was not feasible without introducing
-            exceptionally long load times to a number of operations across other user flows.
-          </Text>
-        </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -466,7 +409,7 @@ const Pools = ({}) => {
         >
           <Image
             src={SPPResearch}
-            onLoad={handleLoad}
+            onLoad={onLoad}
           />
           <Text as="h5" paddingBottom={subSectionBreakPadding}>Asking sponsor users to assemble simple setups, both with and without an interface</Text>
           <Text
