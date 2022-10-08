@@ -57,7 +57,6 @@ const Outline = ({ titles, ids }) => {
   return (
     <Flex
       className="outline-container"
-      top={-40 * currSection + window.innerHeight / 2 - 20}
     >
       <Flex
         direction="column"

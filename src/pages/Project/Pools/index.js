@@ -6,8 +6,8 @@ import {
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
-import YTVideo from '../../../components/YTVideo';
 import Outline from '../../../components/Outline';
+import Carousel, { CarouselItem } from '../../../components/Carousel';
 
 import './pools.scss';
 import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
@@ -15,6 +15,11 @@ import ServerPlacementGroups from '../../../assets/images/Pools/server-placement
 import PlacementGroupsExample from '../../../assets/images/Pools/placement-groups-example.png';
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
 import SPPSetupRequirements from '../../../assets/images/Pools/spp-setup-requirements.png';
+import SPPMainFilled from '../../../assets/images/Pools/spp-main-filled.png';
+import SPPMainCreate from '../../../assets/images/Pools/spp-main-create.png';
+import SPPDetailsFilled from '../../../assets/images/Pools/spp-details-filled.png';
+import SPPGroupsMain from '../../../assets/images/Pools/spp-groups-main.png';
+import SPPVSIProvisioning from '../../../assets/images/Pools/spp-vsi-provisioning.png';
 import SPPSolutionConcept from '../../../assets/images/Pools/spp-solution-concept.png';
 import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
 import SPPDisasterStrikes from '../../../assets/images/Pools/spp-disaster-strikes.png';
@@ -288,17 +293,47 @@ const Pools = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         > */}
-          <Image
-            src={SPPSolutionConcept}
-            onLoad={handleLoad}
-          />
+          {/* <Image
+          src={SPPSolutionConcept}
+          onLoad={handleLoad}
+        />
           <Text
             as="h5"
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
             We introduced SPP conceptually as a &quot;folder&quot; to put VMs in. Managing placement restrictions for the folders is exactly the same as it is for VMs.
-          </Text>
+          </Text> */}
+        </GridItem>
+        <GridItem
+          colStart={1}
+          colSpan={12}
+          colEnd={13}
+          marginBottom={subSectionBreakPadding}
+        >
+          <Carousel>
+            <CarouselItem>
+              <Image src={SPPMainFilled} />
+            </CarouselItem>
+            <CarouselItem>
+              <Image src={SPPMainCreate} />
+            </CarouselItem>
+            <CarouselItem>
+              <Image src={SPPDetailsFilled} />
+            </CarouselItem>
+            <CarouselItem>
+              <Image src={SPPGroupsMain} />
+            </CarouselItem>
+            <CarouselItem>
+              <Image src={SPPVSIProvisioning} />
+            </CarouselItem>
+          </Carousel>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        >
           <Text paddingBottom={lineBreakPadding}>
             In an effort to make deploying resources using SPPs as intuitive as possible, we tested a few options. The flow we decided on mimicked
             the flow of creating VM placement groups, and so we drew parallels to the existing VM placement group and usage flow.

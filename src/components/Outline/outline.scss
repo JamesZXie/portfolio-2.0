@@ -2,7 +2,8 @@
 
 .outline-container {
     font-family: RobotoCondensed;
-    z-index: 9;
+    top: 50%;
+    z-index: 999;
     position:fixed;
     width:33.3333333%;
     left: calc((100% / 12) - 1rem);
@@ -21,7 +22,8 @@
         button{
             background-color: transparent;
             justify-content: flex-start; 
-            border: 1px solid transparent !important;
+            border-radius: 5px !important;
+            border: none !important;
 
             &:hover {
                 color: $text-hover;
@@ -37,10 +39,8 @@
         }
 
         #outline__curr-section {
-            font-size: 5rem !important;
-            color: $text-01;
-            margin-top: 2rem;
-            margin-bottom: 2rem;
+            color: $interactive-01;
+            // background-color: $ui-04;
         }
     }
 }
