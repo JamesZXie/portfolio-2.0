@@ -173,7 +173,7 @@ const Pools = ({}) => {
             Shared processor pools, before the cloud.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            The cloud is very similar to real estate. Using the cloud is like renting an apartment, and PowerVS, our cloud platform,
+            The cloud is very similar to real estate. Making a virtual server instance (a.k.a. a VSI or VM) in the cloud is like renting an apartment, and PowerVS, our cloud platform,
             is like a website that
             {' '}
             <strong>automatically assigns apartments</strong>
@@ -212,13 +212,6 @@ const Pools = ({}) => {
         >
           <Text as="h2">PROBLEM</Text>
           <Text as="h4">Challenges associated with shared processor pool replication.</Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            The issue in bringing SPP to the cloud is that selling homes and managing tenants are fundamentally
-            different, with the latter requiring many more restrictions and rules. There is a delicate balance, and SPP
-            introduced a new restriction that threw the balance off.
-          </Text>
           <Image
             src={SPPSetupRequirements}
             onLoad={onLoad}
@@ -228,8 +221,17 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            Sometimes users need VMs on the same server, other times they need them on different servers.
+            Sometimes users need virtual server instances (VSIs or VMs) on the same server, other times they need them on different servers.
           </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            The issue in adapting SPP in the cloud is comes from the fact that selling homes and
+            managing tenants are fundamentally different, with the latter requiring many more
+            restrictions and rules. There is a delicate balance, and SPP introduced a new
+            restriction that threw the balance off.
+          </Text>
+
           <Text
             paddingBottom={lineBreakPadding}
           >
@@ -242,19 +244,28 @@ const Pools = ({}) => {
             paddingBottom={lineBreakPadding}
           >
             <ListItem>
-              Users can&apos;t choose the exact server they want to place a VM in.
+              Server location assignments are by default automatic in the cloud.
             </ListItem>
             <ListItem>
-              Users sometimes require VMs located on the same server.
+              Users can somewhat override the automatic assignment by grouping servers and applying
+              a single location rule to their deployment. For example, &quot;these three need to be together&quot;
             </ListItem>
             <ListItem>
-              Users sometimes require VMs located on different servers.
+              Certain user workloads require VMs located on the same server.
             </ListItem>
             <ListItem>
-              &#40;New&#41; Resources sharing a license in a SPP must be on the same server.
+              Certain user workloads require VMs located on different servers.
+            </ListItem>
+            <ListItem>
+              <strong>&#40;New&#41;</strong>
+              {' '}
+              Resources using SPP to share licenses must be on the same server.
             </ListItem>
           </OrderedList>
-
+          <Text>
+            Figuring out how to hit #1, #2, and #3 had been hard enough, but with another location requirement baked
+            into the mix, things got tricky.
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -348,16 +359,10 @@ const Pools = ({}) => {
           colEnd={colEnd}
         >
           <Text paddingBottom={lineBreakPadding}>
-            In an effort to make deploying resources using SPPs as intuitive as possible, we tested a few options. The flow we decided on mimicked
-            the flow of creating VM placement groups, and so we drew parallels to the existing VM placement group and usage flow.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            In order to create a VM, a user must:
+            We solved the logic puzzle above by:
             <OrderedList>
               <ListItem>
-                Create a placement group or required VMs.
+                Introducing SPP conceptually as a &apos;folder&apos;, setting expectations about its role, and how it interacts with VMs.
               </ListItem>
               <ListItem>
                 Create the other.
