@@ -10,4 +10,13 @@
     .blurb {
         color: $text-01;
     }
+
+    .chakra-accordion {
+        margin-left: -1rem;
+        margin-right: -1rem;
+
+        li {
+            padding-bottom: .5rem;
+        }
+    }
 }

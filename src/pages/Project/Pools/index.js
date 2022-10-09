@@ -1,17 +1,12 @@
 import React, { useState } from 'react';
 
 import {
-  Grid,
   GridItem,
-  Flex,
   Text,
-  Link,
   Image,
   OrderedList,
   ListItem,
-  Center,
   Box,
-  UnorderedList,
   Accordion,
   AccordionItem,
   AccordionButton,
@@ -78,30 +73,6 @@ const Pools = ({}) => {
     } setNumLoaded(numLoaded + 1);
   };
 
-  const renderProblem = () => (
-    <>
-      <Text paddingBottom={lineBreakPadding}>
-        Before the cloud existed, IBM customers used a certain feature to save millions each year on software licenses.
-      </Text>
-      <Text>
-        Technical impossibilities in bringing it to the cloud required it to be reimagined for our platform.
-      </Text>
-    </>
-  );
-
-  const renderSolution = () => (
-    <>
-      <Text paddingBottom={lineBreakPadding}>
-        We implemented the feature so that its flow feels familiar to any users who are comfortable
-        with the rest of our platform.
-      </Text>
-      <Text>
-        Since it is an advanced feature, the vast majority of its users will fall under this category. We
-        have guidance in place for those who are not advanced.
-      </Text>
-    </>
-  );
-
   return (
     <>
       <PageLoader
@@ -127,11 +98,6 @@ const Pools = ({}) => {
             PSVS POOLS
           </Text>
         </GridItem>
-        {/* <Glance
-          problem={renderProblem()}
-          solution={renderSolution()}
-          onLoad={onLoad}
-        /> */}
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -151,8 +117,7 @@ const Pools = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Certain software licenses &#40;think stuff like Sketch&#41; that are built for IBM&apos;s
-            servers &quot;overcharge&quot; customers.
+            Provisioning &#40;creating a virtual machine&#41; was overwhelming, confusing, and punishing for users.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -161,8 +126,7 @@ const Pools = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            We took an old feature and applied it to the cloud in a way that changes how licenses
-            charge our customers, reducing the cost of licenses by up to 90%.
+            We broke the form up into digestible chunks, and rearranged it to make branching smoother.
           </Text>
         </GridItem>
         <SectionBreak />
@@ -190,7 +154,7 @@ const Pools = ({}) => {
             Shared processor pools, before the cloud.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            The cloud is very similar to real estate. Making a virtual server instance (a.k.a. a VSI or VM) in the cloud is like renting an apartment, and PowerVS, our cloud platform,
+            The cloud is very similar to real estate. Making a virtual server instance &#40;a.k.a. a VSI or VM&#41; in the cloud is like renting an apartment, and PowerVS, our cloud platform,
             is like a website that
             {' '}
             <strong>automatically assigns apartments</strong>
