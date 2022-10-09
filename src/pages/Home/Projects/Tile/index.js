@@ -76,9 +76,6 @@ const Tile = ({
               <ArrowForwardIcon marginLeft=".5rem" />
             </Button>
           </Box>
-          <Box
-            className="projects__fun-box"
-          />
         </Flex>
       </GridItem>
       <GridItem

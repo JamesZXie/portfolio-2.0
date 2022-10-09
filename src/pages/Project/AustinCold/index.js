@@ -77,9 +77,6 @@ const AustinCold = ({}) => {
           colStart={2}
           colSpan={4}
         >
-          <Box
-            className="project-title__fun-box"
-          />
           <Text
             as="h1"
             className="project-title"
