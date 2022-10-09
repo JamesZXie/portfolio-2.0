@@ -150,7 +150,7 @@ const Pools = ({}) => {
           >
             Problem:
           </Text>
-          <Text paddingBottom={lineBreakPadding}>
+          <Text paddingBottom={subSectionBreakPadding}>
             Certain software licenses &#40;think stuff like Sketch&#41; for IBM&apos;s cloud overcharge customers.
           </Text>
           <Text
@@ -160,7 +160,7 @@ const Pools = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            We took an old solution and applied it to the cloud in a way that changes the way licenses charge our customers, reducing the cost of licenses by up to 90%.
+            We took an old feature and applied it to the cloud in a way that changes how licenses charge our customers, reducing the cost of licenses by up to 90%.
           </Text>
         </GridItem>
         <SectionBreak />
@@ -171,7 +171,7 @@ const Pools = ({}) => {
           id="pools-product-context"
         >
           <Text as="h2">CONTEXT</Text>
-          <Text as="h4">Info on PowerVS, the cloud, and overcharging for licenses.</Text>
+          <Text as="h4">Read this if you&apos;re confused about PowerVS, the cloud, or shared processor pools &#40;SPP&#41;.</Text>
           {/* <Image
             src={SPPExplanationDiagram}
             paddingBottom={subSectionBreakPadding}
@@ -211,10 +211,10 @@ const Pools = ({}) => {
             usage in the portion they&apos;re renting out.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            Shared processor pools existed as a pre-cloud feature that allowed users to apply
-            licenses to just a portion of any server
-            {' '}
-            <strong>that they owned.</strong>
+            <strong>
+              Shared processor pools existed as a pre-cloud feature that allowed users to apply
+              licenses to just a portion of any server that they owned.
+            </strong>
 
           </Text>
 
@@ -462,66 +462,41 @@ const Pools = ({}) => {
           id="pools-process"
         >
           <Text as="h2">PROCESS</Text>
-          <Text as="h4">Initial interface testing and addressing challenges</Text>
+          <Text as="h4">From exploration to implementation</Text>
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Image
-            src={SPPResearch}
-            onLoad={onLoad}
-          />
-          <Text as="h5" paddingBottom={subSectionBreakPadding}>Asking sponsor users to assemble simple setups, both with and without an interface</Text>
           <Text
             paddingBottom={lineBreakPadding}
+            as="h3"
           >
-            Because preventing untracked relationships from forming was a hard requirement due to technical constraints,
-            we restricted testing to options that could satisfy this requirement.
+            Exploration
           </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            Initially we were unsure of how to define shared processor pools, because
+          <Text paddingBottom={lineBreakPadding}>
+            We went through a few use cases with users who used SPP before the cloud, to understand the impact of SPP on their workloads, and to get more direction on how to proceed.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            We then talked to SPP developers and our own development team to get a better understanding of the options we could work with on a technical level. Generally this is not a step in our exploration process for features, but adding a restriction to VM placement set off warning bells.
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            We also read a
             {' '}
-            <strong>
-              they were essentially a
-              same-server placement group with more function
-            </strong>
+            <strong>lot</strong>
             {' '}
-            - SPPs bundled VMs on the same host server before
-            reducing licensing costs.
+            of very technical documentation.
           </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            We&apos;d first show the abstracted setups and ask them to assemble them with minimal guidance, just to
-            see the order in which they&apos;d put the pieces together, and to observe how they subconsciously fit SPPs
-            into the hierarchy of other organizational structures, like VM placement groups.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            We&apos;d then give them a few flushed-out prototypes, and ask them to
-            assemble the same setups.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            We primarily tested the following organizational options for SPP:
-            <UnorderedList>
-              <ListItem>
-                Defining shared processor pools as completely separate entities.
-              </ListItem>
-              <ListItem>
-                Making “use as a shared processor pool” a configuration option for placement groups.
-              </ListItem>
-              <ListItem>
-                Shared processor pools as an entity similar to a VM that can have a placement group applied to it alongside other, independent VMs.
-              </ListItem>
-            </UnorderedList>
 
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Ideation
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            We began ideating at an extremely high level using post-it notes and drawings in mural to represent VMs and SPPs, working around user needs and development needs to find potential flows we could test.
           </Text>
         </GridItem>
 
