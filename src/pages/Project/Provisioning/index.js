@@ -10,6 +10,8 @@ import SectionBreak from '../../../components/SectionBreak';
 import YTVideo from '../../../components/YTVideo';
 import Outline from '../../../components/Outline';
 import Carousel, { CarouselItem } from '../../../components/Carousel';
+import Lightbox from '../../../components/Lightbox';
+
 import './provisioning.scss';
 
 import General from '../../../assets/images/Provisioning/provisioning-general.png';
@@ -18,6 +20,8 @@ import Profile from '../../../assets/images/Provisioning/provisioning-profile.pn
 import StorageVolumes from '../../../assets/images/Provisioning/provisioning-storage-volumes.png';
 import NetworkInterfaces from '../../../assets/images/Provisioning/provisioning-network-interfaces.png';
 import Complete from '../../../assets/images/Provisioning/provisioning-complete.png';
+import Invision from '../../../assets/images/Provisioning/provisioning-invision.png';
+import Mural from '../../../assets/images/Provisioning/provisioning-mural.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -334,6 +338,18 @@ const Provisioning = ({}) => {
         >
           <Text as="h2">PROCESS</Text>
           <Text as="h4">Conception to implementation</Text>
+          <Lightbox
+            id="ProvisioningMural"
+            paddingBottom={lineBreakPadding}
+            src={Mural}
+            onLoad={onLoad}
+          />
+          <Lightbox
+            id="ProvisioningInVision"
+            paddingBottom="30rem"
+            src={Invision}
+            onLoad={onLoad}
+          />
         </GridItem>
       </Section>
     </>
