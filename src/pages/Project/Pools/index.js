@@ -377,17 +377,14 @@ const Pools = ({}) => {
         >
           <Text paddingBottom={subSectionBreakPadding}>
             <strong>
-              We introduced SPPs conceptually as &quot;folders&quot; that when wrapped around VMs, would make any external licenses
+              We introduced SPPs conceptually as &quot;folders&quot; that, when wrapped around VMs, would make any external licenses
               automatically charge based on the size of the folder.
             </strong>
             {' '}
             Once created, SPPs were treated as individual entities,
             and location requirements were handled in the exact same way location requirements are currently handled with VMs -
-            through placement groups. A pure UI video walkthrough is available
-            {' '}
-            <a href="https://youtu.be/qeW0qXJCIJc">here</a>
-            {' '}
-            for those who want to see more of the UI.
+            through placement groups.
+
           </Text>
           <Text
             as="h3"
@@ -396,7 +393,7 @@ const Pools = ({}) => {
             Tradeoffs:
           </Text>
           <Accordion
-            paddingBottom={sectionBreakPadding}
+            paddingBottom={subSectionBreakPadding}
             allowMultiple
           >
             <AccordionItem>
@@ -443,6 +440,7 @@ const Pools = ({}) => {
                 <OrderedList>
                   <ListItem>
                     With more complex setups, things can still get confusing, and some more extreme edge cases are completely infeasible.
+                    There were other options where this could have been avoided.
                   </ListItem>
                   <ListItem>
                     The flow is really only easy to pick up for experts, because the base flow for handling location requirements
@@ -453,7 +451,13 @@ const Pools = ({}) => {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-
+          <Text paddingBottom={sectionBreakPadding}>
+            A pure UI video walkthrough is available
+            {' '}
+            <a href="https://youtu.be/qeW0qXJCIJc" target="_blank" rel="noreferrer">here</a>
+            {' '}
+            for those who want to see a functional UI, instead of the key screens above.
+          </Text>
           <SectionBreak />
         </GridItem>
         <GridItem
