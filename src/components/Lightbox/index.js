@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import './lightbox.scss';
 
 const Lightbox = ({
-  src, onLoad, id,
+  src, onLoad, id, paddingTop, paddingBottom,
 }) => {
   const [zoomed, setZoomed] = useState(false);
   const [prevPosition, setPrevPosition] = useState(window.scrollY);
@@ -48,6 +48,13 @@ Lightbox.propTypes = {
   src: PropTypes.object.isRequired,
   onLoad: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
+  paddingTop: PropTypes.string,
+  paddingBottom: PropTypes.string,
+};
+
+Lightbox.defaultProps = {
+  paddingTop: '1rem',
+  paddingBottom: '1rem',
 };
 
 export default Lightbox;

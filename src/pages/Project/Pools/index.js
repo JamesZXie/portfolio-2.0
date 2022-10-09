@@ -500,6 +500,7 @@ const Pools = ({}) => {
           </Text>
           <Lightbox
             id="SPPMuralBoard"
+            paddingBottom={lineBreakPadding}
             src={SPPMuralBoard}
             onLoad={onLoad}
           />
@@ -515,6 +516,7 @@ const Pools = ({}) => {
           </Text>
           <Lightbox
             id="SPPInvisionFreehand"
+            paddingBottom={lineBreakPadding}
             src={SPPInvisionFreehand}
             onLoad={onLoad}
           />
