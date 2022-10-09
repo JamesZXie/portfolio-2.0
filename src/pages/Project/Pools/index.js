@@ -236,52 +236,47 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            Sometimes users need virtual server instances (VSIs or VMs) on the same server, other times they need them on different servers.
+            Sometimes users need virtual server instances &#40;VSIs or VMs&#41; on the same server, other times they need them on different servers.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            The issue in adapting SPP in the cloud is comes from the fact that selling homes and
-            managing tenants are fundamentally different, with the latter requiring many more
-            restrictions and rules. There is a delicate balance, and SPP introduced a new
-            restriction that threw the balance off.
-          </Text>
-
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            <strong>
-              Our challenge was to help users create and
-              use SPPs with all of the following restrictions on user actions in mind:
-            </strong>
+            We needed to help users create and
+            use SPPs with the following VM location requirements in mind:
           </Text>
           <OrderedList
             paddingBottom={lineBreakPadding}
           >
             <ListItem>
-              Server location assignments are automatic in the cloud, but users can influence the automatic
-              assignment by telling us &quot;I want these servers together/separate&quot;. They can only
-              express
+              Certain user workloads require VMs located on the
               {' '}
-              <strong>one</strong>
-              {' '}
-              preference, or optimization goes to sh*t.
+              <strong>same server</strong>
+              .
             </ListItem>
             <ListItem>
-              Certain user workloads require VMs located on the same server.
-            </ListItem>
-            <ListItem>
-              Certain user workloads require VMs located on different servers.
-            </ListItem>
-            <ListItem>
-              <strong>&#40;New&#41;</strong>
+              Certain user workloads require VMs located on
               {' '}
-              Resources using SPP to share licenses must be on the same server.
+              <strong>different servers</strong>
+              .
+            </ListItem>
+            <ListItem>
+              &#40;New&#41; Resources using SPP to share licenses must be on the
+              {' '}
+              <strong>same server</strong>
+              .
             </ListItem>
           </OrderedList>
+          <Text paddingBottom={lineBreakPadding}>
+            Unlike on servers users own, server location assignments in the cloud are mostly automatic.
+            To satisfy requirements #1 and #2, users can tell us &quot;I want a few VMs deployed together/separately&quot;.
+          </Text>
           <Text>
-            Figuring out how to hit #1, #2, and #3 had been hard enough, but with another location requirement baked
-            into the mix, things got tricky.
+            <strong>
+              The issue is that users can only
+              express one such preference per VM, due to technical requirements.
+            </strong>
+            {' '}
+            We started to see issues emerge when baking requirement #3 into setups requiring either #1 or #2.
           </Text>
         </GridItem>
         <GridItem
