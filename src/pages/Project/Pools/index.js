@@ -45,7 +45,6 @@ import SPPDisasterStrikes from '../../../assets/images/Pools/spp-disaster-strike
 
 import UserMSP from '../../../assets/images/Pools/user-msp.png';
 import UserISV from '../../../assets/images/Pools/user-isv.png';
-import Glance from '../../../components/Glance';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -152,7 +151,8 @@ const Pools = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Certain software licenses &#40;think stuff like Sketch&#41; for IBM&apos;s cloud overcharge customers.
+            Certain software licenses &#40;think stuff like Sketch&#41; that are built for IBM&apos;s
+            servers &quot;overcharge&quot; customers.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -161,7 +161,8 @@ const Pools = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            We took an old feature and applied it to the cloud in a way that changes how licenses charge our customers, reducing the cost of licenses by up to 90%.
+            We took an old feature and applied it to the cloud in a way that changes how licenses
+            charge our customers, reducing the cost of licenses by up to 90%.
           </Text>
         </GridItem>
         <SectionBreak />
@@ -211,14 +212,12 @@ const Pools = ({}) => {
             Many users have no choice but to pay for a license on the entire server, instead of just license
             usage in the portion they&apos;re renting out.
           </Text>
-          <Text paddingBottom={lineBreakPadding}>
+          <Text>
             <strong>
               Shared processor pools existed as a pre-cloud feature that allowed users to apply
               licenses to just a portion of any server that they owned.
             </strong>
-
           </Text>
-
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -288,44 +287,6 @@ const Pools = ({}) => {
         >
           <Text as="h2">SOLUTION</Text>
           <Text as="h4">Using existing patterns to make SPP setup intuitive for new and old users alike.</Text>
-          {/* </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-        >
-          <YTVideo>
-            <iframe
-              src="https://www.youtube.com/embed/qeW0qXJCIJc"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </YTVideo>
-          <Text
-            as="h5"
-            paddingBottom=".5rem"
-          >
-            &#40;No sound&#41; Walkthrough of SPP on our test server showcasing group creation, spp creation, and VM deployment into an SPP.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-        > */}
-          {/* <Image
-          src={SPPSolutionConcept}
-          onLoad={onLoad}
-        />
-          <Text
-            as="h5"
-            id="licensing-costs-caption"
-            paddingBottom={subSectionBreakPadding}
-          >
-            We introduced SPP conceptually as a &quot;folder&quot; to put VMs in. Managing placement restrictions for the folders is exactly the same as it is for VMs.
-          </Text> */}
         </GridItem>
         <GridItem
           colStart={1}

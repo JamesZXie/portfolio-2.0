@@ -10,7 +10,6 @@ import SectionBreak from '../../../components/SectionBreak';
 import './provisioning.scss';
 import YTVideo from '../../../components/YTVideo';
 import Outline from '../../../components/Outline';
-import Glance from '../../../components/Glance';
 
 import UserMSP from '../../../assets/images/Pools/user-msp.png';
 import UserISV from '../../../assets/images/Pools/user-isv.png';
@@ -22,14 +21,14 @@ const colStart = [1, 7];
 const colSpan = [12, 6];
 const colEnd = [13, 12];
 const titles = [
+  'SUMMARY',
   'PROBLEM',
   'SOLUTION',
-  'CONTEXT',
 ];
 const ids = [
+  'provisioning-summary',
   'provisioning-the-problem',
   'provisioning-the-solution',
-  'provisioning-product-context',
 ];
 
 const Provisioning = ({}) => {
@@ -85,11 +84,38 @@ const Provisioning = ({}) => {
             PROVISIONING
           </Text>
         </GridItem>
-        {/* <Glance
-          problem={renderProblem()}
-          solution={renderSolution()}
-          onLoad={handleLoad}
-        /> */}
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="provisioning-summary"
+        >
+          <Text
+            paddingBottom={subSectionBreakPadding}
+            as="h2"
+          >
+            SUMMARY
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Problem:
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            Certain software licenses &#40;think stuff like Sketch&#41; for IBM&apos;s cloud overcharge customers.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Solution:
+          </Text>
+          <Text>
+            We took an old feature and applied it to the cloud in a way that changes how licenses charge our customers, reducing the cost of licenses by up to 90%.
+          </Text>
+        </GridItem>
+        <SectionBreak />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -259,86 +285,6 @@ const Provisioning = ({}) => {
           >
             Unfortunately at this very moment I can&apos;t share too much about this enhancement. I will be
             able to soon though! Stay tuned.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="provisioning-product-context"
-        >
-          <Text as="h2">PRODUCT CONTEXT</Text>
-          <Text as="h4">Some context on what PowerVS is, and who its users are</Text>
-          <Text paddingBottom={lineBreakPadding}>
-            PowerVS is, simply put,
-            {' '}
-            <strong>cloud infrastructure for IBM Power hardware users</strong>
-            .
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            IBM Power has better computing power than competitor hardware, but is much more expensive. Most end users have
-            extreme performance-based needs.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            There are really just two types of users:
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={1}
-        >
-          <Image src={UserMSP} />
-        </GridItem>
-        <GridItem
-          colStart={colStart + 1}
-          colSpan={5}
-          colEnd={colEnd}
-          paddingLeft=".5rem"
-        >
-          <Text as="h6">
-            1. Managed cloud service providers &#40;MSPs&#41;
-          </Text>
-          <Text>
-            MSPs account for
-            {' '}
-            <strong>80%</strong>
-            {' '}
-            of our userbase. They are Power experts who manage
-            Power resources for companies who want to build on power, but only understand software. MSPs may have to manage thousands of VMs,
-            due to their large clientele.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={1}
-        >
-          <Image src={UserISV} />
-        </GridItem>
-        <GridItem
-          colStart={colStart + 1}
-          colSpan={5}
-          colEnd={colEnd}
-          paddingLeft=".5rem"
-        >
-          <Text as="h6">
-            2. OS users with hybrid workloads
-          </Text>
-          <Text>
-            Power expertise is extremely hard to find, so only 20% of our userbase have enough expertise to
-            work directly with Power hardware. Still, they tend to have less expertise than MSPs, and work with
-            much smaller workloads.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-process-challenges"
-        >
-          <Text>
-            Both types of users have expertise in Power, and acquired this expertise by working with Power on-premise. New users
-            who want to use IBM Power will go through MSPs the vast majority of the time, rather than hire employees with Power
-            expertise.
           </Text>
         </GridItem>
       </Section>
