@@ -522,9 +522,9 @@ const Pools = ({}) => {
             src={SPPInvisionFreehand}
             onLoad={onLoad}
           />
-          <Text paddingBottom={lineBreakPadding}>
+          <Text paddingBottom="50px">
             We tested a very high-level flows with post-it notes, then narrowed it down into a few flushed out but shoddy wireframes in an InVision freehand.
-            After eliminating a even more options, we tested the remaining flows as high-fidelity InVision prototypes.
+            After eliminating more options, we tested the remaining flows as high-fidelity InVision prototypes.
           </Text>
         </GridItem>
 
