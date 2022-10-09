@@ -23,6 +23,7 @@ import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
 import Outline from '../../../components/Outline';
 import Carousel, { CarouselItem } from '../../../components/Carousel';
+import Lightbox from '../../../components/Lightbox';
 
 import './pools.scss';
 import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
@@ -35,6 +36,8 @@ import SPPMainCreate from '../../../assets/images/Pools/spp-main-create.png';
 import SPPDetailsFilled from '../../../assets/images/Pools/spp-details-filled.png';
 import SPPGroupsMain from '../../../assets/images/Pools/spp-groups-main.png';
 import SPPVSIProvisioning from '../../../assets/images/Pools/spp-vsi-provisioning.png';
+import SPPInvisionFreehand from '../../../assets/images/Pools/spp-invision-freehand.png';
+import SPPMuralBoard from '../../../assets/images/Pools/spp-mural-board.png';
 import SPPSolutionConcept from '../../../assets/images/Pools/spp-solution-concept.png';
 import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
 import SPPDisasterStrikes from '../../../assets/images/Pools/spp-disaster-strikes.png';
@@ -67,7 +70,7 @@ const ids = [
 const Pools = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 8;
+  const total = 9;
 
   const onLoad = () => {
     if (numLoaded + 1 === total) {
@@ -495,8 +498,27 @@ const Pools = ({}) => {
           >
             Ideation
           </Text>
+          <Lightbox
+            src={SPPMuralBoard}
+            onLoad={onLoad}
+          />
+          <Text paddingBottom={subSectionBreakPadding}>
+            We began ideating at an extremely high level using post-it notes and drawings in mural to represent VMs and SPPs, working around user
+            needs and development needs to find potential flows we could test.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Testing
+          </Text>
+          <Image
+            src={SPPInvisionFreehand}
+            onLoad={onLoad}
+          />
           <Text paddingBottom={lineBreakPadding}>
-            We began ideating at an extremely high level using post-it notes and drawings in mural to represent VMs and SPPs, working around user needs and development needs to find potential flows we could test.
+            We tested a very high-level flows with post-it notes, then narrowed it down into a few flushed out but shoddy wireframes in an InVision freehand.
+            After eliminating a even more options, we tested the remaining flows as high-fidelity InVision prototypes.
           </Text>
         </GridItem>
 
