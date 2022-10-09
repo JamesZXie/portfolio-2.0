@@ -11,11 +11,18 @@
 .lightbox-zoomed-true {
     position:absolute;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     z-index: 999;
     left: 0;
-    padding: 1rem;
     background-color: rgba(0, 0, 0, 0.6);
     cursor: zoom-out;
     overflow-y: scroll;
+
+    &__image {
+        position:absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        padding: 2rem;
+    }
 }

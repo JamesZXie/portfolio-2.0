@@ -16,11 +16,20 @@ const Lightbox = ({
 
   const onClick = () => {
     const container = document.getElementById(id);
+    const containerImage = document.getElementById(`${id}-image`);
+
+    const taller = containerImage.naturalHeight > window.innerHeight;
+    const longer = containerImage.naturalHeight / containerImage.naturalWidth > window.innerHeight / window.innerWidth;
 
     if (!zoomed) {
       document.body.classList.add('disable-scroll');
       setZoomed(true);
       setPrevPosition(window.scrollY);
+      if (taller && longer) {
+        containerImage.style.bottom = 'auto';
+      } else {
+        containerImage.style.bottom = '0';
+      }
       container.scrollIntoView();
     } else {
       document.body.classList.remove('disable-scroll');
@@ -31,11 +40,14 @@ const Lightbox = ({
 
   return (
     <Box
+      paddingTop={paddingTop}
+      paddingBottom={paddingBottom}
       className={`lightbox-zoomed-${zoomed}`}
       onClick={onClick}
       id={id}
     >
       <Image
+        id={`${id}-image`}
         src={src}
         className={`lightbox-zoomed-${zoomed}__image`}
         onLoad={onLoad}

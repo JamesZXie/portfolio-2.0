@@ -463,7 +463,7 @@ const Pools = ({}) => {
           id="pools-process"
         >
           <Text as="h2">PROCESS</Text>
-          <Text as="h4">From exploration to implementation</Text>
+          <Text as="h4">From exploration, ideation, and testing</Text>
         </GridItem>
         <GridItem
           colStart={colStart}
