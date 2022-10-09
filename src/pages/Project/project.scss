@@ -3,6 +3,10 @@
 .project-page {
     background-color: $ui-02;
     
+    h1 {
+        padding-top: 2rem;
+    }
+
     .blurb {
         color: $text-01;
     }
