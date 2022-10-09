@@ -38,6 +38,7 @@ import SPPGroupsMain from '../../../assets/images/Pools/spp-groups-main.png';
 import SPPVSIProvisioning from '../../../assets/images/Pools/spp-vsi-provisioning.png';
 import SPPInvisionFreehand from '../../../assets/images/Pools/spp-invision-freehand.png';
 import SPPMuralBoard from '../../../assets/images/Pools/spp-mural-board.png';
+import SPPExploration from '../../../assets/images/Pools/spp-exploration.png';
 import SPPSolutionConcept from '../../../assets/images/Pools/spp-solution-concept.png';
 import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
 import SPPDisasterStrikes from '../../../assets/images/Pools/spp-disaster-strikes.png';
@@ -478,6 +479,10 @@ const Pools = ({}) => {
           >
             Exploration
           </Text>
+          <Image
+            src={SPPExploration}
+            paddingBottom={lineBreakPadding}
+          />
           <Text paddingBottom={lineBreakPadding}>
             We went through a few use cases with users who used SPP before the cloud, to understand the impact of SPP on their workloads, and to get more direction on how to proceed.
           </Text>
