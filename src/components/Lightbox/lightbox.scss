@@ -1,1 +1,24 @@
 @import '../../App.scss';
+
+.disable-scroll {
+    overflow-y:hidden;
+}
+
+.lightbox-zoomed-false {
+    cursor: zoom-in;
+}
+
+.lightbox-zoomed-true {
+    position:absolute;
+    display:flex;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    left: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    cursor: zoom-out;
+    overflow-y: scroll;
+}

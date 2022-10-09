@@ -499,6 +499,7 @@ const Pools = ({}) => {
             Ideation
           </Text>
           <Lightbox
+            id="SPPMuralBoard"
             src={SPPMuralBoard}
             onLoad={onLoad}
           />
@@ -512,7 +513,8 @@ const Pools = ({}) => {
           >
             Testing
           </Text>
-          <Image
+          <Lightbox
+            id="SPPInvisionFreehand"
             src={SPPInvisionFreehand}
             onLoad={onLoad}
           />
