@@ -470,7 +470,7 @@ const Provisioning = ({}) => {
           >
             Again, the broader provisioning experience extends much further than just this page, and this redesign
             is part of a larger effort to make the provisioning experience as a whole faster. We have quite
-            a bit planned for future enhancements, including addressing bulk provisioning, decrease loadtimes,
+            a bit planned for future enhancements, including addressing bulk provisioning, decreasing loadtimes,
             and adding automation to a few of the more annoying processes.
 
           </Text>
