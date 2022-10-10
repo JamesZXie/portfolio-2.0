@@ -20,8 +20,7 @@ import Profile from '../../../assets/images/Provisioning/provisioning-profile.pn
 import StorageVolumes from '../../../assets/images/Provisioning/provisioning-storage-volumes.png';
 import NetworkInterfaces from '../../../assets/images/Provisioning/provisioning-network-interfaces.png';
 import Complete from '../../../assets/images/Provisioning/provisioning-complete.png';
-import Invision from '../../../assets/images/Provisioning/provisioning-invision.png';
-import Mural from '../../../assets/images/Provisioning/provisioning-mural.png';
+import ExplorationMural from '../../../assets/images/Provisioning/provisioning-exploration-mural.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -331,19 +330,105 @@ const Provisioning = ({}) => {
           id="provisioning-process"
         >
           <Text as="h2">PROCESS</Text>
-          <Text as="h4">Conception to implementation</Text>
+          <Text as="h4">Validation, exploration, ideation, and testing</Text>
+          <Text
+            as="h3"
+            paddingBottom={lineBreakPadding}
+          >
+            Validation and Buy-in
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            The biggest reason the provisioning page had deteriorated to this point without a redesign
+            is that its actually not used very often. The provisioning page was so cumbersome that it
+            was used only for workloads involving 1-2 VMs, anything larger and
+            {' '}
+            <strong>
+              customers preferred to
+              interface directly with our API through the command line
+            </strong>
+            , building scripts to perform a
+            variety of bulk-friendly options.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            However, we&apos;re planning on completely refactoring our API. This will introduce a number of
+            breaking changes across the board, and essentially give design a great opportunity to move
+            provisioning into the UI, as devs will have to use the UI while they re-learn our API. If
+            they move back to the CLI, we won&apos;t be able to improve their provisioning experience, since
+            we have no control over it.
+          </Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
+            Using preliminary research,
+            {' '}
+            <strong>
+              we convinced PM and dev that the breaking changes coming from
+              the API refactor are too big of an impediment to users&apos; workflows
+            </strong>
+            {' '}
+            without redesigning provisioning
+            for bulk, and if we do a good job and win our users&apos; trust in provisioning via the UI, we&apos;d
+            open up a lot of opportunities for future experience enhancements, which would drive sales
+            and increase user retention.
+          </Text>
+
+          <Text
+            as="h3"
+          >
+            Exploration
+          </Text>
           <Lightbox
             id="ProvisioningMural"
             paddingBottom={lineBreakPadding}
-            src={Mural}
+            src={ExplorationMural}
             onLoad={onLoad}
           />
-          <Lightbox
-            id="ProvisioningInVision"
-            paddingBottom="30rem"
-            src={Invision}
-            onLoad={onLoad}
-          />
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
+            Once we defined what the provisioning page&apos;s role would be in the newly redesigned provisioning
+            experience &#40;provisioning involves many more steps than just the provisioning page&#41;, we picked it
+            apart and then listed and grouped all of its issues. This helped us decide on a direction
+            for ideation.
+          </Text>
+
+          <Text
+            as="h3"
+            paddingBottom={lineBreakPadding}
+          >
+            Ideation
+          </Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
+            Resource creation as a concept is pretty common throughout IBM&apos;s other cloud platforms. There isn&apos;t
+            a lot of consistency across the products, but there&apos;s an overarching effort to drive consistency -
+            so most of this portion of the process was actually taking existing interfaces and rehashing
+            them to fit our needs. Most of this was done in InVision Freehand.
+          </Text>
+
+          <Text
+            as="h3"
+            paddingBottom={lineBreakPadding}
+          >
+            Testing
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            Because redesigns require very little product-specific context, we took advantage of the broader
+            community of IBM designers and ran a few feedback sessions with various other teams across cloud.
+          </Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
+            Once the general flow had been locked in, we tested smaller variations with users to check very
+            specific things such as scannability or error handling for edge cases.
+          </Text>
         </GridItem>
       </Section>
     </>
