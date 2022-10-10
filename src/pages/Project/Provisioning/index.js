@@ -36,12 +36,14 @@ const titles = [
   'PROBLEM',
   'SOLUTION',
   'PROCESS',
+  'NEXT STEPS',
 ];
 const ids = [
   'provisioning-summary',
   'provisioning-the-problem',
   'provisioning-the-solution',
   'provisioning-process',
+  'provisioning-next-steps',
 ];
 
 const Provisioning = ({}) => {
@@ -336,6 +338,7 @@ const Provisioning = ({}) => {
           <Text as="h4">Validation, exploration, ideation, and testing</Text>
           <Text
             as="h3"
+            paddingBottom={lineBreakPadding}
           >
             Validation and Buy-in
           </Text>
@@ -345,32 +348,39 @@ const Provisioning = ({}) => {
             onLoad={onLoad}
           />
           <Text
+            as="h5"
             paddingBottom={lineBreakPadding}
           >
-            The biggest reason the provisioning page had deteriorated to this point without a redesign
+            Shadowing a user while they provision a 5 VM workload using the command-line interface (CLI)
+
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            The biggest reason the provisioning page had deteriorated so far without a redesign
             is that its actually not used very often. The provisioning page was so cumbersome that it
-            was used only for workloads involving 1-2 VMs, anything larger and
+            was used only for smaller workloads. Anything larger than a few VMs,
             {' '}
             <strong>
-              customers preferred to
-              interface directly with our API through the command line
+              customers would prefer to
+              provision directly via our API using the command line
             </strong>
-            , building scripts to perform a
+            , even building scripts to perform a
             variety of bulk-friendly options.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            However, we&apos;re planning on completely refactoring our API. This will introduce a number of
-            breaking changes across the board, and essentially give design a great opportunity to move
-            provisioning into the UI, as devs will have to use the UI while they re-learn our API. If
-            they move back to the CLI, we won&apos;t be able to improve their provisioning experience, since
-            we have no control over it.
+            However, we&apos;re planning on completely refactoring our API for completely unrelated reasons.
+            This will introduce a number of breaking changes across the board, which gives design an
+            opportunity to move provisioning into the UI, as devs will have to use the UI while they re-learn
+            our API. If they move back to the CLI, we won&apos;t be able to improve their provisioning
+            experience, since we have no control over the CLI.
           </Text>
           <Text
             paddingBottom={subSectionBreakPadding}
           >
-            Using preliminary research,
+            After preliminary research,
             {' '}
             <strong>
               we convinced PM and dev that the breaking changes coming from
@@ -378,7 +388,7 @@ const Provisioning = ({}) => {
             </strong>
             {' '}
             without redesigning provisioning
-            for bulk, and if we do a good job and win our users&apos; trust in provisioning via the UI, we&apos;d
+            for bulk, and if we win our users&apos; trust in provisioning via the UI, we&apos;d
             open up a lot of opportunities for future experience enhancements, which would drive sales
             and increase user retention.
           </Text>
@@ -444,7 +454,25 @@ const Provisioning = ({}) => {
             paddingBottom={subSectionBreakPadding}
           >
             Once the general flow had been locked in, we tested smaller variations with users to check very
-            specific things such as scannability or error handling for edge cases with high-fi prototypes.
+            specific things, such as scannability or error handling for edge cases, with high-fi prototypes.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="provisioning-next-steps"
+        >
+          <Text as="h2">NEXT STEPS</Text>
+          <Text as="h4">Moving on to the broader provisioning experience</Text>
+          <Text
+            padding-bottom={sectionBreakPadding}
+          >
+            Again, the broader provisioning experience extends much further than just this page, and this redesign
+            is part of a larger effort to make the provisioning experience as a whole faster. We have quite
+            a bit planned for future enhancements, including addressing bulk provisioning, decrease loadtimes,
+            and adding automation to a few of the more annoying processes.
+
           </Text>
         </GridItem>
       </Section>
