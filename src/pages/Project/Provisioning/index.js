@@ -117,13 +117,7 @@ const Provisioning = ({}) => {
           id="provisioning-the-problem"
         >
           <Text as="h2">PROBLEM</Text>
-          <Text as="h4">Why we redesigned the page</Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-        >
+          <Text as="h4">Issues with the old provisioning page</Text>
           <YTVideo>
             <iframe
               src="https://www.youtube.com/embed/iOHY29x0d18"
