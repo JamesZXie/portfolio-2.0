@@ -171,6 +171,14 @@ img.icon-32 {
     height: 32px;
 }
 
+.chakra-accordion {
+    button {
+        height: 100% !important;
+        padding-top: .5rem !important;
+        padding-bottom: .5rem !important;
+    }       
+}
+
 .link-button {
     &__primary {
         background-color: $ui-01 !important;
@@ -199,5 +207,4 @@ img.icon-32 {
             border: 1px solid $ui-01 !important;
         }
     }
-
 }
