@@ -117,7 +117,8 @@ const Pools = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Provisioning &#40;creating a virtual machine&#41; was overwhelming, confusing, and punishing for users.
+            Certain software licenses &#40;think stuff like Sketch&#41; that are built for IBM&apos;s
+            servers &quot;overcharge&quot; customers.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -126,7 +127,8 @@ const Pools = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            We broke the form up into digestible chunks, and rearranged it to make branching smoother.
+            We took an old feature and applied it to the cloud in a way that changes how licenses
+            charge our customers, reducing the cost of licenses by up to 90%.
           </Text>
         </GridItem>
         <SectionBreak />
