@@ -101,7 +101,7 @@ const Provisioning = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Certain software licenses &#40;think stuff like Sketch&#41; for IBM&apos;s cloud overcharge customers.
+            Provisioning &#40;creating a virtual machine&#41; was overwhelming, confusing, and punishing for users.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -110,7 +110,7 @@ const Provisioning = ({}) => {
             Solution:
           </Text>
           <Text>
-            We took an old feature and applied it to the cloud in a way that changes how licenses charge our customers, reducing the cost of licenses by up to 90%.
+            We broke the form up into digestible chunks, and rearranged it to make branching smoother.
           </Text>
         </GridItem>
         <SectionBreak />
