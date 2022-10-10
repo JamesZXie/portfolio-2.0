@@ -37,6 +37,13 @@
         &__intro {
             display: inline-block;
         }
+
+        @media (max-width: 480px) {
+            padding-right:0;
+            margin-left: 1rem;
+            width: calc(100% - 2rem);
+            margin-top: 11rem;
+        }
     }
 
     &__headshot {
@@ -48,6 +55,14 @@
         margin: auto 0;
         margin-right: calc(100%/12 - .5rem);
         border-radius: 5px;
+
+        @media (max-width: 480px) {
+            top: 4rem;
+            bottom: auto;
+            left: 1rem;
+            right: 1rem;
+            width: calc(100% - 2rem);
+        }
     }
 
     &__anim-tooltip {
