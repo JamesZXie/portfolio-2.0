@@ -57,11 +57,10 @@
         border-radius: 5px;
 
         @media (max-width: 480px) {
-            top: 4rem;
+            top: 6rem;
             bottom: auto;
-            left: 1rem;
-            right: 1rem;
-            width: calc(100% - 2rem);
+            left: calc(50% - 120px);
+            width: 240px;
         }
     }
 

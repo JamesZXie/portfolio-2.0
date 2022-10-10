@@ -74,8 +74,8 @@ const AustinCold = ({}) => {
           ids={ids}
         />
         <GridItem
-          colStart={2}
-          colSpan={4}
+          colStart={[0, 2]}
+          colSpan={[12, 4]}
         >
           <Text
             as="h1"

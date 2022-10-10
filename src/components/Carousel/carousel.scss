@@ -10,10 +10,6 @@
         transition: transform 0.3s;
     }
 
-    &__arrow-container {
-        justify-content: center;
-    }
-
 }
 
 
@@ -28,8 +24,19 @@
     padding-top: 2rem;
     padding-bottom: 2rem;
 
+    @media (max-width: 480px) {
+        height: 60vh;
+        align-items: flex-start;
+        padding-top: 0;
+    }
+
     img {
         height: 100%;
+
+        @media (max-width: 480px) {
+            height: auto;
+            width: 100%;
+        }
     }
 }
 
@@ -56,6 +63,10 @@
     &:focus {
         box-shadow: .5rem -.5rem 0px 0px $ui-02 !important;
     }
+
+    @media (max-width: 480px) {
+        top: calc(100% - 3.5rem);
+    }
 }
 
 .arrow-left {
@@ -80,5 +91,9 @@
     }
     &:focus {
         box-shadow: -.5rem .5rem 0px 0px $ui-02 !important;
+    }
+
+    @media (max-width: 480px) {
+        top: calc(100% - 3.5rem);
     }
 }
