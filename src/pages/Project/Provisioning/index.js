@@ -454,7 +454,7 @@ const Provisioning = ({}) => {
             paddingBottom={subSectionBreakPadding}
           >
             Once the general flow had been locked in, we tested smaller variations with users to check very
-            specific things, such as scannability or error handling for edge cases, with high-fi prototypes.
+            specific things, such as error handling for edge cases, with high-fi prototypes.
           </Text>
         </GridItem>
         <GridItem
