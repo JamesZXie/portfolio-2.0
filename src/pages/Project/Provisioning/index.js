@@ -20,7 +20,10 @@ import Profile from '../../../assets/images/Provisioning/provisioning-profile.pn
 import StorageVolumes from '../../../assets/images/Provisioning/provisioning-storage-volumes.png';
 import NetworkInterfaces from '../../../assets/images/Provisioning/provisioning-network-interfaces.png';
 import Complete from '../../../assets/images/Provisioning/provisioning-complete.png';
+import Validation from '../../../assets/images/Provisioning/provisioning-validation.png';
 import ExplorationMural from '../../../assets/images/Provisioning/provisioning-exploration-mural.png';
+import Ideation from '../../../assets/images/Provisioning/provisioning-ideation.png';
+import Testing from '../../../assets/images/Provisioning/provisioning-testing.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -44,7 +47,7 @@ const ids = [
 const Provisioning = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 5;
+  const total = 8;
 
   const onLoad = () => {
     if (numLoaded + 1 === total) {
@@ -333,10 +336,14 @@ const Provisioning = ({}) => {
           <Text as="h4">Validation, exploration, ideation, and testing</Text>
           <Text
             as="h3"
-            paddingBottom={lineBreakPadding}
           >
             Validation and Buy-in
           </Text>
+          <Image
+            paddingBottom={lineBreakPadding}
+            src={Validation}
+            onLoad={onLoad}
+          />
           <Text
             paddingBottom={lineBreakPadding}
           >
@@ -398,10 +405,15 @@ const Provisioning = ({}) => {
 
           <Text
             as="h3"
-            paddingBottom={lineBreakPadding}
           >
             Ideation
           </Text>
+          <Lightbox
+            id="IdeationInVision"
+            paddingBottom={lineBreakPadding}
+            src={Ideation}
+            onLoad={onLoad}
+          />
           <Text
             paddingBottom={subSectionBreakPadding}
           >
@@ -413,10 +425,15 @@ const Provisioning = ({}) => {
 
           <Text
             as="h3"
-            paddingBottom={lineBreakPadding}
           >
             Testing
           </Text>
+          <Lightbox
+            id="TestingInVision"
+            paddingBottom={lineBreakPadding}
+            src={Testing}
+            onLoad={onLoad}
+          />
           <Text
             paddingBottom={lineBreakPadding}
           >
@@ -427,7 +444,7 @@ const Provisioning = ({}) => {
             paddingBottom={subSectionBreakPadding}
           >
             Once the general flow had been locked in, we tested smaller variations with users to check very
-            specific things such as scannability or error handling for edge cases.
+            specific things such as scannability or error handling for edge cases with high-fi prototypes.
           </Text>
         </GridItem>
       </Section>
