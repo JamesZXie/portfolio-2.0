@@ -410,17 +410,9 @@ const Pools = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             We went through a few use cases with users who used SPP before the cloud, to understand the impact of SPP on their workloads, and to get more direction on how to proceed.
           </Text>
-          <Text paddingBottom={lineBreakPadding}>
+          <Text paddingBottom={subSectionBreakPadding}>
             We then talked to SPP developers and our own development team to get a better understanding of the options we could work with on a technical level. Generally this is not a step in our exploration process for features, but adding a restriction to VM placement set off warning bells.
           </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            We also read a
-            {' '}
-            <strong>lot</strong>
-            {' '}
-            of very technical documentation.
-          </Text>
-
           <Text
             paddingBottom={lineBreakPadding}
             as="h3"
