@@ -23,7 +23,6 @@ import Lightbox from '../../../components/Lightbox';
 import './pools.scss';
 import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
 import ServerPlacementGroups from '../../../assets/images/Pools/server-placement-groups.png';
-import PlacementGroupsExample from '../../../assets/images/Pools/placement-groups-example.png';
 import SPPResearch from '../../../assets/images/Pools/spp-research.png';
 import SPPSetupRequirements from '../../../assets/images/Pools/spp-setup-requirements.png';
 import SPPMainFilled from '../../../assets/images/Pools/spp-main-filled.png';
@@ -56,9 +55,9 @@ const titles = [
 ];
 const ids = [
   'pools-summary',
-  'pools-product-context',
-  'pools-feature-origin',
-  'pools-feature-implementation',
+  'pools-context',
+  'pools-problem',
+  'pools-solution',
   'pools-process',
 ];
 
@@ -114,11 +113,21 @@ const Pools = ({}) => {
             paddingBottom={lineBreakPadding}
             as="h3"
           >
+            Context:
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            Certain software licenses overcharge users in the cloud by design. A new feature
+            works around software license design to make licenses charge “fairly”.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
             Problem:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Certain software licenses &#40;think stuff like Sketch&#41; that are built for IBM&apos;s
-            servers &quot;overcharge&quot; customers.
+            The new feature requires users to balance performance and
+            cost savings.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -126,9 +135,8 @@ const Pools = ({}) => {
           >
             Solution:
           </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            We took an old feature and applied it to the cloud in a way that changes how licenses
-            charge our customers, reducing the cost of licenses by up to 90%.
+          <Text paddingBottom={subSectionBreakPadding}>
+            We make performance easy to understand and isolate more confusing aspects of setup.
           </Text>
         </GridItem>
         <SectionBreak />
@@ -136,16 +144,11 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-product-context"
+          id="pools-context"
         >
-          <Text as="h2">CONTEXT</Text>
-          <Text as="h4">Read this if you&apos;re confused about PowerVS, the cloud, or shared processor pools &#40;SPP&#41;.</Text>
-          {/* <Image
-            src={SPPExplanationDiagram}
-            paddingBottom={subSectionBreakPadding}
-          /> */}
+          <Text as="h2" paddingBottom={lineBreakPadding}>CONTEXT</Text>
           <Image
-            src={SPPOnPrem}
+            src={SPPExplanationDiagram}
             onLoad={onLoad}
           />
           <Text
@@ -153,35 +156,41 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            Shared processor pools, before the cloud.
+            What customers with licenses would pay for, versus what they should pay for.
+          </Text>
+          <Text as="h3" paddingBottom={lineBreakPadding}>Business problem</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Software licenses on Power are built for Power server owners, and charge based on the
+            size and computing power of an entire server. However, in the cloud, users don&apos;t own servers,
+            they just rent a small portion of a server.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            The cloud is very similar to real estate. Making a virtual server instance &#40;a.k.a. a VSI or VM&#41; in the cloud is like renting an apartment, and PowerVS, our cloud platform,
-            is like a website that
-            {' '}
-            <strong>automatically assigns apartments</strong>
-            {' '}
-            to users based on their specified needs.
+            This means users who would want to use licensed software in the cloud on say, a 1 GB virtual
+            machine would not pay for 1 GB, but for the 10GB the server hosting the virtual machine has.
           </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            Following this analogy, then, you can think of a license like a kind of utility. Say you&apos;re a tenant in one
-            of our apartments and you want to switch providers for the electricity service in your apartment. You can&apos;t
-            apply the change to
+          <Text paddingBottom={subSectionBreakPadding}>
+            As a result,
             {' '}
-            <strong>only</strong>
-            {' '}
-            your apartment, you have to pay to swap out electricity for the entire building,
-            because all the apartments are connected.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            This is how licenses charge, except licenses are a lot more important to customers.
-            Many users have no choice but to pay for a license on the entire server, instead of just license
-            usage in the portion they&apos;re renting out.
-          </Text>
-          <Text>
             <strong>
-              Shared processor pools existed as a pre-cloud feature that allowed users to apply
-              licenses to just a portion of any server that they owned.
+              users who need licensed software won&apos;t move into our cloud because they don&apos;t want
+              to pay 10x more for space they won&apos;t use.
+            </strong>
+          </Text>
+          <Text as="h3" paddingBottom={lineBreakPadding}>Business solution</Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            A shared processor pool is a technical workaround that ropes off a section of the server for users to
+            build cloud resources in, and “tricks” a license into charging only for the size of the pool.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            This way,
+            {' '}
+            <strong>
+              with pools users pay only for what they use, so users who need licensed software no longer have a
+              reason not to use our cloud.
             </strong>
           </Text>
         </GridItem>
@@ -189,10 +198,9 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-feature-origin"
+          id="pools-problem"
         >
           <Text as="h2">PROBLEM</Text>
-          <Text as="h4">Challenges associated with shared processor pool replication.</Text>
           <Image
             src={SPPSetupRequirements}
             onLoad={onLoad}
@@ -202,57 +210,54 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            Sometimes users need virtual server instances &#40;VSIs or VMs&#41; on the same server, other times they need them on different servers.
+            Sometimes users need VMs on the same server, other times they need them on different servers.
           </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            We needed to help users create and
-            use SPPs with the following VM location requirements in mind:
+          <Text>
+            Users face two challenges when using shared processor pools:
           </Text>
           <OrderedList
             paddingBottom={lineBreakPadding}
           >
             <ListItem>
-              Certain user workloads require VMs located on the
+              Any VMs that want to utilize a pool have to be on the same host server. However,
               {' '}
-              <strong>same server</strong>
-              .
+              <strong>certain setups require VMs to be on different host servers.</strong>
             </ListItem>
             <ListItem>
-              Certain user workloads require VMs located on
+              The smaller a pool is, the slower it performs.
               {' '}
-              <strong>different servers</strong>
-              .
-            </ListItem>
-            <ListItem>
-              &#40;New&#41; Resources using SPP to share licenses must be on the
-              {' '}
-              <strong>same server</strong>
-              .
+              <strong>Users are incentivized to consolidate VMs that need the same licenses into one large pool.</strong>
             </ListItem>
           </OrderedList>
-          <Text paddingBottom={lineBreakPadding}>
-            Unlike on servers users own, server location assignments in the cloud are mostly automatic.
-            To satisfy requirements #1 and #2, users can tell us &quot;I want a few VMs deployed together/separately&quot;.
+
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            These challenges make planning a cloud setup using pools something of a balancing act for users, who need to make tradeoffs between cost and performance before they create a setup.
           </Text>
           <Text>
-            <strong>
-              The issue is that users can only
-              express one such preference per VM, due to technical requirements.
-            </strong>
+            This sets our goal to be to
             {' '}
-            We started to see issues emerge when baking requirement #3 into setups requiring either #1 or #2.
+            <strong>help users make optimal decisions by</strong>
+            :
           </Text>
+          <OrderedList>
+            <ListItem>
+              Making it easy to handle conflicting host requirements.
+            </ListItem>
+            <ListItem>
+              Making it easy to understand the performance of a pool.
+            </ListItem>
+          </OrderedList>
+
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-feature-implementation"
+          id="pools-solution"
         >
           <Text as="h2">SOLUTION</Text>
-          <Text as="h4">Using existing patterns to make SPP setup intuitive for new and old users alike.</Text>
         </GridItem>
         <GridItem
           colStart={1}
@@ -298,22 +303,24 @@ const Pools = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Text paddingBottom={subSectionBreakPadding}>
-            <strong>
-              We introduced SPPs conceptually as &quot;folders&quot; that, when wrapped around VMs, would make any external licenses
-              automatically charge based on the size of the folder.
-            </strong>
-            {' '}
-            Once created, SPPs were treated as individual entities,
-            and location requirements were handled in the exact same way location requirements are currently handled with VMs -
-            through placement groups.
-
+          <Text as="h3" paddingBottom={lineBreakPadding}>1. Handle conflicting host requirements</Text>
+          <Image
+            src={SPPSetupRequirements}
+            onLoad={onLoad}
+          />
+          <Text paddingBottom={lineBreakPadding}>
+            Host placement requirements can be separated into requirements associated with licenses or pools,
+            and requirements associated directly with the setup.
           </Text>
-          <Text
-            as="h3"
-            paddingBottom={lineBreakPadding}
-          >
-            Tradeoffs:
+          <Text paddingBottom={lineBreakPadding}>
+            To help users configure their setups, we added “pool placement groups”, a feature that allows users to
+            set a placement rule on a group of pools. Users simply create a group and then choose whether the pools
+            in the group are placed on the same server or on different servers.
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            This lowers the complexity for handling setup requirements because users only need to worry about pool
+            hosting requirements once. After the first setup is created with a pool, future setups can forget about
+            pool-related requirements.
           </Text>
           <Accordion
             paddingBottom={subSectionBreakPadding}
@@ -323,7 +330,7 @@ const Pools = ({}) => {
               <h3>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    Pros
+                    Pros of placement groups
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -331,20 +338,17 @@ const Pools = ({}) => {
               <AccordionPanel pb={4}>
                 <OrderedList>
                   <ListItem>
-                    Introducing SPP as a separate entity from VMs and VM placement groups helped us keep it out of
-                    mind for users who don&apos;t need the feature.
+                    Of the options we explored for handling placement conflicts, placement groups were the only
+                    option that kept pools separate from VMs, which reduced option complexity for
+                    users not looking to use SPP.
                   </ListItem>
                   <ListItem>
-                    Using the same method for handling VM location requirements as SPP location requirements made
-                    using SPP extremely intuitive for advanced users.
+                    “VM placement groups” also exist, and are very commonly used, which makes picking up
+                    pool placement groups intuitive for experienced users.
                   </ListItem>
                   <ListItem>
-                    Implementing SPP as a folder was relatively easy from a development perspective,
-                    and allowed for
-                    {' '}
-                    <strong>much</strong>
-                    {' '}
-                    quicker loadtimes than other options.
+                    Pool placement groups were less technically strenuous to implement than the other options,
+                    meaning less development work and faster loadtimes.
                   </ListItem>
                 </OrderedList>
               </AccordionPanel>
@@ -354,7 +358,7 @@ const Pools = ({}) => {
               <h3>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
-                    Cons
+                    Cons of placement groups
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -362,13 +366,14 @@ const Pools = ({}) => {
               <AccordionPanel pb={4}>
                 <OrderedList>
                   <ListItem>
-                    With more complex setups, things can still get confusing, and some more extreme edge cases are completely infeasible.
-                    There were other options where this could have been avoided.
+                    Does not scale well for some edge case setups; keeping track of pools,
+                    in multiple placement groups, with multiple VM placement groups can get hard.
                   </ListItem>
                   <ListItem>
-                    The flow is really only easy to pick up for experts, because the base flow for handling location requirements
-                    between VMs that we based it off of isn&apos;t super intuitive. New
-                    developers will have to read documentation.
+                    If users misuse the feature they will unintentionally create conflicting placement
+                    requirements that can require them to re-do a lot of work. Preventing this from
+                    happening is possible, but the backend checks to do so would place large loadtimes
+                    on many otherwise simple operations.
                   </ListItem>
                 </OrderedList>
               </AccordionPanel>
@@ -380,6 +385,37 @@ const Pools = ({}) => {
             <a href="https://youtu.be/qeW0qXJCIJc" target="_blank" rel="noreferrer">here</a>
             {' '}
             for those who want to see a functional UI, instead of the key screens above.
+          </Text>
+
+          <Text as="h3" paddingBottom={lineBreakPadding}>2. Understand the performance of a pool</Text>
+          <Image
+            src={SPPSetupRequirements}
+            onLoad={onLoad}
+          />
+          <Text>
+            In a shared processor pool, there are three factors that affect performance:
+          </Text>
+          <OrderedList paddingBottom={lineBreakPadding}>
+            <ListItem>
+              Total reserved cores
+            </ListItem>
+            <ListItem>
+              Ratio of allocated cores to unallocated cores
+            </ListItem>
+            <ListItem>
+              Computing usage while a VM is active
+            </ListItem>
+          </OrderedList>
+          <Text paddingBottom={lineBreakPadding}>
+            Unfortunately we are unable to access live computing stats on VMs, but based off of what kind of applications users are
+            running, they should have a ballpark idea of what their own usage looks like.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            We instead keep track of the #1 and #2, and make it very obvious to users what their performance looks like
+            when its relevant to their objective.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            For example, in the image above, you can see that before a user creates a new instance in a shared processor pool, they can clearly see how much space is still available for allocation, and get a ballpark idea of how their allocation could affect performance.
           </Text>
           <SectionBreak />
         </GridItem>
