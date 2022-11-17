@@ -135,7 +135,7 @@ const Provisioning = ({}) => {
             paddingBottom={lineBreakPadding}
             as="h5"
           >
-            (No audio) A quick UI walkthrough showcasing the four issues of the old provisioning form.
+            &40;No audio&41; A quick UI walkthrough showcasing the four issues of the old provisioning form.
           </Text>
         </GridItem>
         <GridItem
