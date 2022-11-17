@@ -2,10 +2,27 @@
 
 .yt-container {
   position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-  background-color: $ui-02;
+  background-color: transparent;
+ 
+  height: 80vh;
+  align-items: flex-start;
+  padding-top: 0;
+  width: 70%;
+
+  @media (max-width: 768px) {
+    height: 60vh;
+    align-items: flex-start;
+    padding-top: 0;
+    width: 100%;
+  }
+  
+  @media (max-width: 1024px) {
+    height: 80vh;
+    align-items: flex-start;
+    padding-top: 0;
+    width: 70%;
+  }
+
 
   iframe {
     position: absolute;

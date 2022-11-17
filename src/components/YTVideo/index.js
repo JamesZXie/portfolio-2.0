@@ -8,14 +8,9 @@ import {
 } from '@chakra-ui/react';
 
 const YTVideo = ({ children, className }) => (
-  <GridItem
-    colStart={[1, 3]}
-    colSpan={[12, 8]}
-  >
-    <div className="yt-container">
-      {children}
-    </div>
-  </GridItem>
+  <div className="yt-container">
+    {children}
+  </div>
 );
 
 YTVideo.propTypes = {

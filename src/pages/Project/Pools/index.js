@@ -19,11 +19,9 @@ import SectionBreak from '../../../components/SectionBreak';
 import Outline from '../../../components/Outline';
 import Carousel, { CarouselItem } from '../../../components/Carousel';
 import Lightbox from '../../../components/Lightbox';
+import YTVideo from '../../../components/YTVideo';
 
 import './pools.scss';
-import SPPOnPrem from '../../../assets/images/Pools/spp-on-prem.png';
-import ServerPlacementGroups from '../../../assets/images/Pools/server-placement-groups.png';
-import SPPResearch from '../../../assets/images/Pools/spp-research.png';
 import SPPSetupRequirements from '../../../assets/images/Pools/spp-setup-requirements.png';
 import SPPMainFilled from '../../../assets/images/Pools/spp-main-filled.png';
 import SPPMainCreate from '../../../assets/images/Pools/spp-main-create.png';
@@ -33,12 +31,7 @@ import SPPVSIProvisioning from '../../../assets/images/Pools/spp-vsi-provisionin
 import SPPInvisionFreehand from '../../../assets/images/Pools/spp-invision-freehand.png';
 import SPPMuralBoard from '../../../assets/images/Pools/spp-mural-board.png';
 import SPPExploration from '../../../assets/images/Pools/spp-exploration.png';
-import SPPSolutionConcept from '../../../assets/images/Pools/spp-solution-concept.png';
 import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
-import SPPDisasterStrikes from '../../../assets/images/Pools/spp-disaster-strikes.png';
-
-import UserMSP from '../../../assets/images/Pools/user-msp.png';
-import UserISV from '../../../assets/images/Pools/user-isv.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -296,6 +289,17 @@ const Pools = ({}) => {
                 onLoad={onLoad}
                 src={SPPVSIProvisioning}
               />
+            </CarouselItem>
+            <CarouselItem>
+              <YTVideo>
+                <iframe
+                  src="https://www.youtube.com/embed/qeW0qXJCIJc"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </YTVideo>
             </CarouselItem>
           </Carousel>
         </GridItem>
