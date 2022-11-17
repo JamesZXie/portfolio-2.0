@@ -385,14 +385,6 @@ const Pools = ({}) => {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-          {/* <Text paddingBottom={sectionBreakPadding}>
-            A pure UI video walkthrough is available
-            {' '}
-            <a href="https://youtu.be/qeW0qXJCIJc" target="_blank" rel="noreferrer">here</a>
-            {' '}
-            for those who want to see a functional UI, instead of the key screens above.
-          </Text> */}
-
           <Text as="h3" paddingBottom={subSectionBreakPadding}>2. Understand the performance of a pool</Text>
           <Image
             paddingBottom={subSectionBreakPadding}
