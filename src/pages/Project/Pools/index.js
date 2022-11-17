@@ -126,8 +126,8 @@ const Pools = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            The new feature requires users to balance performance and
-            cost savings.
+            Balancing performance and
+            cost savings while configuring a setup gets overwhelming.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -136,7 +136,8 @@ const Pools = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            We make performance easy to understand and isolate more confusing aspects of setup.
+            We made performance easy to understand, and configuration
+            simple with little maintenance required.
           </Text>
         </GridItem>
         <SectionBreak />
