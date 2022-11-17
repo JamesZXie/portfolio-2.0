@@ -156,7 +156,7 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            What customers with licenses would pay for, versus what they should pay for.
+            What customers with licenses pay for, versus what they want to pay for.
           </Text>
           <Text as="h3" paddingBottom={lineBreakPadding}>Business problem</Text>
           <Text paddingBottom={lineBreakPadding}>
