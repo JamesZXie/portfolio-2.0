@@ -64,7 +64,7 @@ const ids = [
 const Pools = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 9;
+  const total = 11;
 
   const onLoad = () => {
     if (numLoaded + 1 === total) {
@@ -146,7 +146,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-context"
         >
-          <Text as="h2" paddingBottom={lineBreakPadding}>CONTEXT</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>CONTEXT</Text>
           <Image
             src={SPPExplanationDiagram}
             onLoad={onLoad}
@@ -200,7 +200,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-problem"
         >
-          <Text as="h2">PROBLEM</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>PROBLEM</Text>
           <Image
             src={SPPSetupRequirements}
             onLoad={onLoad}
@@ -303,9 +303,10 @@ const Pools = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Text as="h3" paddingBottom={lineBreakPadding}>1. Handle conflicting host requirements</Text>
+          <Text as="h3" paddingBottom={subSectionBreakPadding}>1. Handle conflicting host requirements</Text>
           <Image
-            src={SPPSetupRequirements}
+            paddingBottom={subSectionBreakPadding}
+            src={SPPGroupsMain}
             onLoad={onLoad}
           />
           <Text paddingBottom={lineBreakPadding}>
@@ -387,9 +388,10 @@ const Pools = ({}) => {
             for those who want to see a functional UI, instead of the key screens above.
           </Text>
 
-          <Text as="h3" paddingBottom={lineBreakPadding}>2. Understand the performance of a pool</Text>
+          <Text as="h3" paddingBottom={subSectionBreakPadding}>2. Understand the performance of a pool</Text>
           <Image
-            src={SPPSetupRequirements}
+            paddingBottom={subSectionBreakPadding}
+            src={SPPMainFilled}
             onLoad={onLoad}
           />
           <Text>
@@ -410,10 +412,15 @@ const Pools = ({}) => {
             Unfortunately we are unable to access live computing stats on VMs, but based off of what kind of applications users are
             running, they should have a ballpark idea of what their own usage looks like.
           </Text>
-          <Text paddingBottom={lineBreakPadding}>
+          <Text paddingBottom={subSectionBreakPadding}>
             We instead keep track of the #1 and #2, and make it very obvious to users what their performance looks like
             when its relevant to their objective.
           </Text>
+          <Image
+            paddingBottom={subSectionBreakPadding}
+            src={SPPDetailsFilled}
+            onLoad={onLoad}
+          />
           <Text paddingBottom={lineBreakPadding}>
             For example, in the image above, you can see that before a user creates a new instance in a shared processor pool, they can clearly see how much space is still available for allocation, and get a ballpark idea of how their allocation could affect performance.
           </Text>
