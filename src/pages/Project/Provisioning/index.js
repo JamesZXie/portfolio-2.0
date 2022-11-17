@@ -225,6 +225,17 @@ const Provisioning = ({}) => {
                 src={Complete}
               />
             </CarouselItem>
+            <CarouselItem>
+              <YTVideo>
+                <iframe
+                  src="https://www.youtube.com/embed/hN3EjaBQsAI"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </YTVideo>
+            </CarouselItem>
           </Carousel>
         </GridItem>
         <GridItem
