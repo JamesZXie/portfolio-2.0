@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {
   GridItem, Text, Image, OrderedList, ListItem, Box,
   Accordion, AccordionButton, AccordionItem, AccordionIcon, AccordionPanel,
+  UnorderedList,
 } from '@chakra-ui/react';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
@@ -109,8 +110,27 @@ const Provisioning = ({}) => {
           >
             Solution:
           </Text>
-          <Text>
+          <Text paddingBottom={subSectionBreakPadding}>
             We broke the form up into digestible chunks, and rearranged it to make branching smoother.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Impact:
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            <UnorderedList>
+              <ListItem>
+                Increased form completion rate by 13% &#40;58.5% to 66%&#41;
+              </ListItem>
+              <ListItem>
+                Cut average time to complete the form by 55% &#40;263s to 145s&#41;
+              </ListItem>
+              <ListItem>
+                Eliminated 95% of monthly negative NPS reviews about provisioning &#40;18 to 1&#41;
+              </ListItem>
+            </UnorderedList>
           </Text>
         </GridItem>
         <SectionBreak />
@@ -135,7 +155,7 @@ const Provisioning = ({}) => {
             paddingBottom={lineBreakPadding}
             as="h5"
           >
-            &40;No audio&41; A quick UI walkthrough showcasing the four issues of the old provisioning form.
+            &#40;No audio&#41; A quick UI walkthrough showcasing the four issues of the old provisioning form.
           </Text>
         </GridItem>
         <GridItem
@@ -325,7 +345,7 @@ const Provisioning = ({}) => {
                   {' '}
                   <strong>VM templates</strong>
                   , where users can start with a pre-populated form. Understanding what edits they need
-                  to make is important, and this layout allows them to scan each section much easier
+                  to make is important, and this layout allows them to scan pre-filled sections much easier
                   than other options we explored.
                 </Text>
               </AccordionPanel>
@@ -477,14 +497,22 @@ const Provisioning = ({}) => {
           <Text as="h2">NEXT STEPS</Text>
           <Text as="h4">Moving on to the broader provisioning experience</Text>
           <Text
-            padding-bottom={sectionBreakPadding}
+            paddingBottom={lineBreakPadding}
           >
-            Again, the broader provisioning experience extends much further than just this page, and this redesign
+            The biggest addition I would have added to the page, given more time, is motion. I think there
+            are a lot of opportunities to add motion throughout the page, especially to smooth out certain &quot;trigger&quot; actions,
+            such as going from one section to the other, or how certain selections enable or disable
+            other fields.
+          </Text>
+          <Text
+            paddingBottom={sectionBreakPadding}
+          >
+            Also, the broader provisioning experience extends much further than just this page, and this redesign
             is part of a larger effort to make the provisioning experience as a whole faster. We have quite
             a bit planned for future enhancements, including addressing bulk provisioning, decreasing loadtimes,
             and adding automation to a few of the more annoying processes.
-
           </Text>
+
         </GridItem>
       </Section>
     </>

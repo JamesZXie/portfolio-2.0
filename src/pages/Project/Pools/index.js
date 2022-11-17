@@ -12,6 +12,7 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionPanel,
+  UnorderedList,
 } from '@chakra-ui/react';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
@@ -132,6 +133,19 @@ const Pools = ({}) => {
             We made performance easy to understand, and configuration
             simple with little maintenance required.
           </Text>
+          {/* <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Impact:
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            <UnorderedList>
+              <ListItem>
+                I don&apos;t know
+              </ListItem>
+            </UnorderedList>
+          </Text> */}
         </GridItem>
         <SectionBreak />
         <GridItem
