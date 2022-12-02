@@ -30,7 +30,7 @@ const Background = (props) => {
     for (let i = 0; i < numLetters; i += 1) {
       newText.push(
         {
-          l: 'x',
+          l: findRandomLetter(),
           x: findRandomX(),
           y: findRandomY(),
           currDirection: { x: speed, y: 0, d: findRandomDir() },
