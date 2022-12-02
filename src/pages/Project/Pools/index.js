@@ -164,7 +164,7 @@ const Pools = ({}) => {
             id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
           >
-            What customers with licenses pay for, versus what they want to pay for.
+            Customers with high licensing costs avoid the cloud due to external license pricing models.
           </Text>
           <Text as="h3" paddingBottom={lineBreakPadding}>Business problem</Text>
           <Text paddingBottom={lineBreakPadding}>

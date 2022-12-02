@@ -11,7 +11,7 @@ import ArrowUp from '../../../../components/ArrowUp';
 import ArrowDown from '../../../../components/ArrowDown';
 
 const Tile = ({
-  title, description, to, projectImage, className, id, subtitle, order,
+  title, description, to, projectImage, className, id, subtitle, order, label,
 }) => {
   const history = useHistory();
   const location = useLocation();
@@ -58,13 +58,14 @@ const Tile = ({
             {subtitle}
           </Text>
           <Box className="container__solid-rectangle">
+            <Text as="h6">{label}</Text>
             <Text as="h1">{title}</Text>
             <Box marginTop="2rem" textAlign="left">
               {description}
             </Box>
           </Box>
           <Box
-            paddingTop="1rem"
+            paddingTop="2rem"
             textAlign={['right']}
           >
             <Button
@@ -104,11 +105,13 @@ Tile.propTypes = {
   id: PropTypes.string,
   subtitle: PropTypes.string.isRequired,
   order: PropTypes.number.isRequired,
+  label: PropTypes.string,
 };
 
 Tile.defaultProps = {
   className: '',
   projectImage: '',
   id: '',
+  label: '',
 };
 export default Tile;

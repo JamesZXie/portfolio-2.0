@@ -38,6 +38,7 @@ const DwAnswersTile = ({ onLoad }) => {
       className="projects__container"
       id="tile--provisioning"
       description={renderDescription()}
+      label="IBM"
       title="Cloud checkout"
       order={2}
       to="/psvsredesign"

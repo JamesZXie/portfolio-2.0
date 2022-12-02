@@ -30,17 +30,7 @@ const DwAnswersTile = ({ onLoad }) => {
         Description:
       </Text>
       <Text>
-        Implementing a technical feature on IBM&apos;s
-        {' '}
-        <Link
-          target="_blank"
-          href="https://www.ibm.com/products/power-virtual-server"
-        >
-          Power Virtual Server
-
-        </Link>
-        {' '}
-        to save customers millions each year.
+        Dismantling a financial barrier to entry for an IaaS platform.
       </Text>
     </Box>
   );
@@ -50,6 +40,7 @@ const DwAnswersTile = ({ onLoad }) => {
       className="projects__container"
       id="tile--pools"
       description={renderDescription()}
+      label="IBM"
       title="Cloud pools"
       order={1}
       to="/pools"

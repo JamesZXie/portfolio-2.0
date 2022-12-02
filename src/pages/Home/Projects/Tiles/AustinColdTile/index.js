@@ -37,7 +37,8 @@ const AustinColdTile = ({ onLoad }) => {
       id="tile--austin-cold"
       description={renderDescription()}
       order={4}
-      title="AUSTINCOLD"
+      label="CRT (nonprofit)"
+      title="Austincold"
       to="/austin-cold"
       projectImage={(
         <Image

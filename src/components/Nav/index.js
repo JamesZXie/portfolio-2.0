@@ -45,7 +45,7 @@ const Nav = (props) => {
             <Text
               fontWeight="black"
             >
-              XIE
+              JX
             </Text>
           </Box>
         </Box>

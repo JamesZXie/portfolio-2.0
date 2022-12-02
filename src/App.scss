@@ -136,11 +136,11 @@ a {
 }
 
 .container {
-    &__solid-rectangle{
-        border: 1px solid $interactive-01;
+    &__solid-rectangle {
         padding: $spacing-01;
         border-radius: 10px;
         background-color: $ui-01;
+        margin: -1rem;
         
         @media (max-width: 480px) {
             width: 100%;
