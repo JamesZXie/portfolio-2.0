@@ -216,7 +216,7 @@ const Background = (props) => {
       p.noFill();
       p.ellipse(p.mouseX, p.mouseY, 15, 15);
       p.pop();
-      p.fill(200, 200, 200);
+      p.fill(93, 93, 93);
       p.noStroke();
       p.translate(8, 16);
       drawText(p);

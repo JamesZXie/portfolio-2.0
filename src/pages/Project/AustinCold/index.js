@@ -20,7 +20,6 @@ import coldMike from '../../../assets/images/AustinCold/cold-mike.png';
 import needHelpFlow from '../../../assets/images/AustinCold/need-help-flow.png';
 
 import './austin-cold.scss';
-import '../project.scss';
 
 const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
