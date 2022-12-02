@@ -7,6 +7,17 @@
     height: 100vh;
     position: relative;
 
+    h1 {
+        font-weight: bold !important;
+        padding-bottom: 4rem;
+        font-size: 98px !important;
+        
+        @media (max-width: 480px) {
+            padding-bottom: 1rem;
+            font-size: 48px !important;
+        }
+    }
+
     &__container {
         position: absolute;
         top: 0;

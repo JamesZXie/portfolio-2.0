@@ -13,7 +13,7 @@ const AustinColdTile = ({ onLoad }) => {
       className="projects__description"
     >
       <Text fontWeight="bold">
-        ROLES:
+        Roles:
       </Text>
       <Text marginBottom="2rem">
         <UnorderedList>
@@ -26,7 +26,7 @@ const AustinColdTile = ({ onLoad }) => {
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
-        DESCRIPTION:
+        Description:
       </Text>
       <Text>Working with a nonprofit to quickly launch over 400 rescue operations and raise $1.5 million during a natural disaster.</Text>
     </Box>

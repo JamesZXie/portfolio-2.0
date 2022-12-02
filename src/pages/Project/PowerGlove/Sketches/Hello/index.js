@@ -3,7 +3,6 @@ import Sketch from 'react-p5';
 import {
   Box, Button,
 } from '@chakra-ui/react';
-import LoadFont from '../../../../../assets/fonts/Knewave/Knewave-Regular.ttf';
 
 const Hello = ({}) => {
   const [stopDrawing, setStopDrawing] = useState(false);
@@ -42,8 +41,6 @@ const Hello = ({}) => {
     window.addEventListener('resize', (e) => { // TODO: add a removeEventListener
       setDimensions(p, canvasParentRef);
     }, true);
-
-    setFont(p.loadFont(LoadFont));
   };
 
   const renderText = (p, delay) => {

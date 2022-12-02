@@ -14,7 +14,7 @@ const DwAnswersTile = ({ onLoad }) => {
       className="projects__description"
     >
       <Text fontWeight="bold">
-        ROLES:
+        Roles:
       </Text>
       <Text marginBottom="2rem">
         <UnorderedList>
@@ -27,7 +27,7 @@ const DwAnswersTile = ({ onLoad }) => {
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
-        DESCRIPTION:
+        Description:
       </Text>
       <Text>Redesigning the core of the PowerVS platform to make it a fast, guided experience. </Text>
     </Box>
@@ -38,7 +38,7 @@ const DwAnswersTile = ({ onLoad }) => {
       className="projects__container"
       id="tile--provisioning"
       description={renderDescription()}
-      title="PROVISIONING"
+      title="Cloud checkout"
       order={2}
       to="/psvsredesign"
       projectImage={(

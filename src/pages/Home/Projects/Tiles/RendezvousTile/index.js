@@ -13,7 +13,7 @@ const RendezvousTile = ({ onLoad }) => {
       className="projects__description"
     >
       <Text fontWeight="bold">
-        ROLES:
+        Roles:
       </Text>
       <Text marginBottom="2rem">
         <UnorderedList>
@@ -27,7 +27,7 @@ const RendezvousTile = ({ onLoad }) => {
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
-        DESCRIPTION:
+        Description:
       </Text>
       <Text>Helping IBM&apos;s supercomputer test teams scale their resource allocation process.</Text>
     </Box>

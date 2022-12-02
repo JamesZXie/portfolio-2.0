@@ -55,9 +55,6 @@ const Home = (props) => {
       document.getElementById(id).scrollIntoView();
     };
 
-    const right = '6rem';
-    const background = '#FF8A00';
-
     return (
       <Flex
         className="side-menu-container"

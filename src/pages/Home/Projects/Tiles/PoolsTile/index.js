@@ -14,7 +14,7 @@ const DwAnswersTile = ({ onLoad }) => {
       className="projects__description"
     >
       <Text fontWeight="bold">
-        ROLE:
+        Roles:
       </Text>
       <Text marginBottom="2rem">
         <UnorderedList>
@@ -27,14 +27,13 @@ const DwAnswersTile = ({ onLoad }) => {
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
-        DESCRIPTION:
+        Description:
       </Text>
       <Text>
         Implementing a technical feature on IBM&apos;s
         {' '}
         <Link
           target="_blank"
-          color="#FF8A00 !important"
           href="https://www.ibm.com/products/power-virtual-server"
         >
           Power Virtual Server
@@ -51,7 +50,7 @@ const DwAnswersTile = ({ onLoad }) => {
       className="projects__container"
       id="tile--pools"
       description={renderDescription()}
-      title="PSVS POOLS"
+      title="Cloud pools"
       order={1}
       to="/pools"
       projectImage={(

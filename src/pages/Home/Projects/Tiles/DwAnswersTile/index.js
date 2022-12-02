@@ -14,7 +14,7 @@ const DwAnswersTile = ({ onLoad }) => {
       className="projects__description"
     >
       <Text fontWeight="bold">
-        ROLES:
+        Roles:
       </Text>
       <Text marginBottom="2rem">
         <UnorderedList>
@@ -30,7 +30,7 @@ const DwAnswersTile = ({ onLoad }) => {
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
-        DESCRIPTION:
+        Description:
       </Text>
       <Text>Streamlining IBM product support by crowdsourcing solutions for a subset of customer issues.</Text>
     </Box>

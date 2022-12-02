@@ -14,7 +14,6 @@
         z-index: -1;
         color: $interactive-01;
         opacity: .05;
-        font-family: RobotoCondensed;
         font-size: 100vh;
         line-height: 100vh;
         user-select: none;
@@ -25,8 +24,25 @@
     }
 
     &__image-container {
+        height: 100%;
         align-items: center;
         justify-content: center;
+
+        img {   
+            border: 1px solid $interactive-01;
+            padding: 2rem;
+            border-radius: 10px;
+            transition: all .2s ease-in-out;
+        
+
+            &:hover {
+                box-shadow: 1rem 0px 0px 0px $interactive-01;
+            }
+            &:active {
+                box-shadow: 1rem 0px 0px 0px $ui-02 !important;
+                border: 1px dashed $ui-02;
+            }
+        }
 
         &__click-area {
             cursor: pointer;

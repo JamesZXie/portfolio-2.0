@@ -35,7 +35,7 @@ const Hero = ({ total, numLoaded, loading }) => {
         <Flex
           className="hero__intro-container"
         >
-          <Text as="h4" paddingBottom="1rem">Hello</Text>
+          <Text as="h1" className="hero__hello">Hi !</Text>
           <Box
             className="container__solid-rectangle hero__intro-container__intro"
           >

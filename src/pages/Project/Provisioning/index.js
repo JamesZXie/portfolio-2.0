@@ -33,11 +33,11 @@ const colStart = [1, 7];
 const colSpan = [12, 6];
 const colEnd = [13, 12];
 const titles = [
-  'SUMMARY',
-  'PROBLEM',
-  'SOLUTION',
-  'PROCESS',
-  'NEXT STEPS',
+  'Summary',
+  'Problem',
+  'Solution',
+  'Process',
+  'Next Steps',
 ];
 const ids = [
   'provisioning-summary',
@@ -80,7 +80,7 @@ const Provisioning = ({}) => {
             as="h1"
             className="project-title"
           >
-            PROVISIONING
+            Provisioning
           </Text>
         </GridItem>
         <GridItem
@@ -93,7 +93,7 @@ const Provisioning = ({}) => {
             paddingBottom={subSectionBreakPadding}
             as="h2"
           >
-            SUMMARY
+            Summary
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -140,7 +140,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-the-problem"
         >
-          <Text as="h2">PROBLEM</Text>
+          <Text as="h2">Problem</Text>
           <Text as="h4">Issues with the old provisioning page</Text>
           <YTVideo>
             <iframe
@@ -199,7 +199,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-the-solution"
         >
-          <Text as="h2">SOLUTION</Text>
+          <Text as="h2">Solution</Text>
           <Text as="h4">Breaking the form into digestible chunks, and preparing to optimize for bulk</Text>
         </GridItem>
         <GridItem
@@ -365,7 +365,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-process"
         >
-          <Text as="h2">PROCESS</Text>
+          <Text as="h2">Process</Text>
           <Text as="h4">Validation, exploration, ideation, and testing</Text>
           <Text
             as="h3"
@@ -494,7 +494,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-next-steps"
         >
-          <Text as="h2">NEXT STEPS</Text>
+          <Text as="h2">Next steps</Text>
           <Text as="h4">Moving on to the broader provisioning experience</Text>
           <Text
             paddingBottom={lineBreakPadding}

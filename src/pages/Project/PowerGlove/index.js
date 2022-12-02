@@ -39,9 +39,9 @@ const PowerGlove = ({}) => {
   };
 
   const titles = [
-    'ORIGIN',
-    'MECHANISMS',
-    'PROCESS',
+    'Origin',
+    'Mechanisms',
+    'Process',
   ];
   const ids = [
     'powerglove-project-origin',
@@ -71,7 +71,7 @@ const PowerGlove = ({}) => {
             as="h1"
             className="project-title"
           >
-            POWERGLOVE
+            Powerglove
           </Text>
         </GridItem>
         <GridItem
@@ -80,7 +80,7 @@ const PowerGlove = ({}) => {
           colEnd={colEnd}
           id="powerglove-project-origin"
         >
-          <Text as="h2">ORIGIN</Text>
+          <Text as="h2">Origin</Text>
           <Text as="h4">Messing around with IoT devices is a lot of fun</Text>
           <Text paddingBottom={lineBreakPadding}>The PowerGlove is a glove I scrapped together that can &quot;see&quot; what a user&apos;s hand looks like.</Text>
           <Text paddingBottom={sectionBreakPadding}>
@@ -125,7 +125,7 @@ const PowerGlove = ({}) => {
           paddingTop="1rem"
           id="powerglove-how-it-works"
         >
-          <Text as="h2">MECHANISMS</Text>
+          <Text as="h2">Mechanisms</Text>
           <Text as="h4">A quick, high-level tutorial</Text>
           <Text paddingBottom={sectionBreakPadding}>
             A Flex sensor is a special resistor that changes value when bent in a direction.
@@ -187,7 +187,7 @@ const PowerGlove = ({}) => {
           paddingBottom="4rem"
           id="powerglove-process"
         >
-          <Text as="h2">PROCESS</Text>
+          <Text as="h2">Process</Text>
           <Text as="h4">Discovery and testing</Text>
           <Text paddingBottom={subSectionBreakPadding}>
             I did not take nearly enough photos or videos. I was kind of counting on documenting this during the CraftCon event

@@ -58,8 +58,8 @@ const Tile = ({
             {subtitle}
           </Text>
           <Box className="container__solid-rectangle">
-            <Text as="h1" fontWeight="bold !important">{title}</Text>
-            <Box marginTop="1rem" textAlign="left">
+            <Text as="h1">{title}</Text>
+            <Box marginTop="2rem" textAlign="left">
               {description}
             </Box>
           </Box>
@@ -72,7 +72,7 @@ const Tile = ({
               width={['100%', 'auto']}
               className="projects__read-more-button"
             >
-              READ MORE
+              Read more
               <ArrowForwardIcon marginLeft=".5rem" />
             </Button>
           </Box>

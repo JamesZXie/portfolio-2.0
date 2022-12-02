@@ -41,11 +41,11 @@ const colStart = [1, 7];
 const colSpan = [12, 6];
 const colEnd = [12, 12];
 const titles = [
-  'SUMMARY',
-  'CONTEXT',
-  'PROBLEM',
-  'SOLUTION',
-  'PROCESS',
+  'Summary',
+  'Context',
+  'Problem',
+  'Solution',
+  'Process',
 ];
 const ids = [
   'pools-summary',
@@ -88,7 +88,7 @@ const Pools = ({}) => {
             as="h1"
             className="project-title"
           >
-            PSVS POOLS
+            Cloud pools
           </Text>
         </GridItem>
         <GridItem
@@ -101,7 +101,7 @@ const Pools = ({}) => {
             paddingBottom={subSectionBreakPadding}
             as="h2"
           >
-            SUMMARY
+            Summary
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -154,7 +154,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-context"
         >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>CONTEXT</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Context</Text>
           <Image
             src={SPPExplanationDiagram}
             onLoad={onLoad}
@@ -208,7 +208,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-problem"
         >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>PROBLEM</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
           <Image
             src={SPPSetupRequirements}
             onLoad={onLoad}
@@ -265,7 +265,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-solution"
         >
-          <Text as="h2">SOLUTION</Text>
+          <Text as="h2">Solution</Text>
         </GridItem>
         <GridItem
           colStart={1}
@@ -443,7 +443,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-process"
         >
-          <Text as="h2">PROCESS</Text>
+          <Text as="h2">Process</Text>
           <Text as="h4">From exploration, ideation, and testing</Text>
         </GridItem>
         <GridItem

@@ -31,17 +31,9 @@ const Nav = (props) => {
           onClick={() => handleLink('/')}
         >
           <Image
-            display={location.pathname === '/' ? 'none' : 'inline-block'}
+            display="inline-block"
             verticalAlign="top"
             src={logo}
-            alt="logo"
-            height="1.5rem"
-            marginRight=".5rem"
-          />
-          <Image
-            display={location.pathname === '/' ? 'inline-block' : 'none'}
-            verticalAlign="top"
-            src={logo2}
             alt="logo"
             height="1.5rem"
             marginRight=".5rem"
@@ -51,8 +43,7 @@ const Nav = (props) => {
             paddingTop="1px"
           >
             <Text
-              color={location.pathname === '/' ? '#FFFFFF' : '#1D1D1D'}
-              fontWeight="bold"
+              fontWeight="black"
             >
               XIE
             </Text>

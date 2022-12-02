@@ -13,7 +13,7 @@ const PowerGloveTile = ({ onLoad }) => {
       className="projects__description"
     >
       <Text fontWeight="bold">
-        ROLES:
+        Roles:
       </Text>
       <Text marginBottom="2rem">
         <UnorderedList>
@@ -23,7 +23,7 @@ const PowerGloveTile = ({ onLoad }) => {
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
-        DESCRIPTION:
+        Description:
       </Text>
       <Text>A fun solo project turned community project... turned covid failure: interacting with digital art without a mouse and keyboard.</Text>
     </Box>
@@ -35,7 +35,7 @@ const PowerGloveTile = ({ onLoad }) => {
       className="projects__container"
       id="tile--power-glove"
       description={renderDescription()}
-      title="POWERGLOVE"
+      title="Powerglove"
       to="/power-glove"
       order={3}
       projectImage={(

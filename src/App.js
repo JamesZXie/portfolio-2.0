@@ -13,15 +13,9 @@ import Rendezvous from './pages/Project/Rendezvous';
 import Provisioning from './pages/Project/Provisioning';
 import ScrollToTop from './components/ScrollToTop';
 
-const fonts = {
-  body: 'Roboto',
-};
-
-const theme = extendTheme({ fonts });
-
 function App() {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
       <Router>
         <Nav />
         <ScrollToTop>

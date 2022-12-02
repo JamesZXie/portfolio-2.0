@@ -4,7 +4,6 @@ import Sketch from 'react-p5';
 import {
   Box,
 } from '@chakra-ui/react';
-import Knewave from '../../assets/fonts/Knewave/Knewave-Regular.ttf';
 
 import './header.scss';
 
@@ -138,7 +137,6 @@ Header.propTypes = {
 
 Header.defaultProps = {
   id: 'default-header',
-  loadFont: Knewave,
   fontSize: 50,
   fontColor: { r: 0, g: 0, b: 0 },
   strokeWeight: 1,

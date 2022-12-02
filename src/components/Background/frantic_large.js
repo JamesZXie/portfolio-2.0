@@ -4,7 +4,7 @@ import './background.scss';
 import {
   Box, Circle,
 } from '@chakra-ui/react';
-import RobotoCondensed from '../../assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf';
+import Poppins from '../../assets/fonts/Poppins/Poppins-Bold.ttf';
 
 const Background = (props) => {
   let canvas;
@@ -92,7 +92,7 @@ const Background = (props) => {
   };
 
   const preload = (p) => {
-    font = p.loadFont(RobotoCondensed);
+    font = p.loadFont(Poppins);
   };
 
   const setup = (p, canvasParentRef) => {

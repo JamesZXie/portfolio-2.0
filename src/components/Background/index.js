@@ -211,12 +211,12 @@ const Background = (props) => {
     if (!stopDrawing) {
       p.clear(); // no background needed, in scss.
       p.push();
-      p.stroke(121, 225, 243);
-      p.strokeWeight(2);
+      p.stroke(255, 138, 0);
+      p.strokeWeight(1);
       p.noFill();
       p.ellipse(p.mouseX, p.mouseY, 15, 15);
       p.pop();
-      p.fill(121, 225, 243);
+      p.fill(29, 29, 29);
       p.noStroke();
       p.translate(8, 16);
       drawText(p);

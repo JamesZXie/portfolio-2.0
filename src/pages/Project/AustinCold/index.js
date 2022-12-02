@@ -30,13 +30,13 @@ const colSpan = [12, 6];
 const colSpanHalf = [12, 2];
 const colEnd = [13, 12];
 const titles = [
-  'PROBLEM',
-  'SOLUTION',
-  'PROCESS',
-  'WHAT IF?',
-  'USER PROFILE',
-  'INSIGHTS',
-  'RESULT',
+  'Problem',
+  'Solution',
+  'Process',
+  'What if?',
+  'User profile',
+  'Insights',
+  'Result',
 ];
 const ids = [
   'austincold-the-problem',
@@ -91,7 +91,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-the-problem"
         >
-          <Text as="h2">PROBLEM</Text>
+          <Text as="h2">Problem</Text>
           <Text as="h4">ERCOT cut corners when building the isolated power grid</Text>
           <Image
             src={AustinSnow}
@@ -116,7 +116,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-the-solution"
         >
-          <Text as="h2">SOLUTION</Text>
+          <Text as="h2">Solution</Text>
           <Text as="h4">We built a base of operations for CRT&apos;s rescue operations in 5 hours</Text>
           <Link href="https://www.austincold.com" target="blank">
             <Image
@@ -153,7 +153,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-process"
         >
-          <Text as="h2">PROCESS</Text>
+          <Text as="h2">Process</Text>
           <Text as="h4">Priorities and designing without time to test</Text>
           <Text paddingBottom="2rem">
             Our main limitation was time. We started pushing the website five hours
