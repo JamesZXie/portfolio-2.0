@@ -85,8 +85,13 @@ const Pools = ({}) => {
           colSpan={[12, 4]}
         >
           <Text
-            as="h1"
+            as="h6"
             className="project-title"
+          >
+            IBM
+          </Text>
+          <Text
+            as="h1"
           >
             Cloud pools
           </Text>

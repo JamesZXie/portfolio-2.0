@@ -30,24 +30,8 @@ body {
     font-size: 16px;
 }
 
-.project-page {
-    p {
-        max-width: 620px;
-    }    
-    li {
-        max-width: 620px;
-        overflow: wrap;
-    }
-}
-
 .project-title {
-    &__fun-box {
-        margin-top: 1rem; 
-        width: 1rem;
-        height: 1rem; 
-        border: 1px solid $interactive-01; 
-        border-radius: 5px; 
-    }
+    margin-top: 2rem;
 }
 
 h1 {

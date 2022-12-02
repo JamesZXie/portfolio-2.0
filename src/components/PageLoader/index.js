@@ -34,9 +34,12 @@ const PageLoader = ({
     <Box
       className="page-loader__container"
       display={loaded ? 'none' : 'block'}
-      backgroundColor={backgroundColor}
+      backgroundColor="white"
     >
-      <Progress colorScheme="orange" value={increment * numLoaded} />
+      <Progress
+        className="page-loader__loader"
+        value={increment * numLoaded}
+      />
     </Box>
   );
 };

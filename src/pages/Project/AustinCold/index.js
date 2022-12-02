@@ -78,10 +78,15 @@ const AustinCold = ({}) => {
           colSpan={[12, 4]}
         >
           <Text
-            as="h1"
+            as="h6"
             className="project-title"
           >
-            AUSTIN COLD
+            CRT &#40;nonprofit&#41;
+          </Text>
+          <Text
+            as="h1"
+          >
+            Austincold
           </Text>
         </GridItem>
 
@@ -245,7 +250,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-what-if"
         >
-          <Text as="h2">WHAT IF?</Text>
+          <Text as="h2">What if?</Text>
           <Text as="h4">We hit a lot of roadbumps... how might we have avoided them?</Text>
           <Text paddingBottom={sectionBreakPadding}>
             A lot of fires broke out over the 72-hour ordeal, such as returning users struggling to find information as updates changed the website,
@@ -274,7 +279,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-the-user"
         >
-          <Text as="h2">USER PROFILE</Text>
+          <Text as="h2">User profile</Text>
           <Text as="h4">Who are we building for?</Text>
           <Text paddingBottom={lineBreakPadding}>
             Although we never had a user research session, we did have discussions with Community Resilience Trust&apos;s about the
@@ -410,7 +415,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-insights"
         >
-          <Text as="h2">INSIGHTS</Text>
+          <Text as="h2">Insights</Text>
           <Text as="h4">What AustinCold looks like built for Mike</Text>
           <Text>
             Here&apos;s what this means for our design:
@@ -444,7 +449,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-result"
         >
-          <Text paddingTop={sectionBreakPadding} as="h2">RESULT</Text>
+          <Text paddingTop={sectionBreakPadding} as="h2">Result</Text>
           <Text as="h4">Simple 3 steps he can follow</Text>
           <Image
             src={needHelpFlow}
@@ -469,7 +474,7 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           colSpan={colSpan}
         >
-          <Text as="h2">THE TEAM</Text>
+          <Text as="h2">The team</Text>
           <UnorderedList>
             <ListItem>
               <Link

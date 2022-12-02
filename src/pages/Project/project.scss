@@ -2,10 +2,6 @@
 
 .project-page {
     background-color: $ui-01;
-    
-    h1 {
-        padding-top: 2rem;
-    }
 
     .blurb {
         color: $text-02;
@@ -18,5 +14,14 @@
         li {
             padding-bottom: .5rem;
         }
+    }
+
+    p {
+        max-width: 620px;
+    }   
+
+    li {
+        max-width: 620px;
+        overflow: wrap;
     }
 }
