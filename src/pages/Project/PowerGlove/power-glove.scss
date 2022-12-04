@@ -1,1 +1,24 @@
 @import '../../../App.scss';
+
+.power-glove {
+    .yt-container {
+        height: auto;
+        width: 100%;
+        padding-bottom: 56.25%;
+        position: relative;
+
+        @media (max-width: 768px) {
+            height: auto;
+            width: 100%;
+            padding-bottom: 56.25%;
+            position: relative;
+          }
+          
+          @media (max-width: 1024px) {
+            height: auto;
+            width: 100%;
+            padding-bottom: 56.25%;
+            position: relative;
+          }
+        }
+}

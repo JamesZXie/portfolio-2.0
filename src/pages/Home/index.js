@@ -85,7 +85,7 @@ const Home = (props) => {
             onClick={() => handleClick('tile--provisioning')}
             id={currSection === 2 ? 'current-section' : ''}
           >
-            Provisioning
+            Cloud Checkout
           </Button>
           <Button
             className="side-menu__item"

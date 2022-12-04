@@ -77,10 +77,15 @@ const Provisioning = ({}) => {
           colSpan={[12, 4]}
         >
           <Text
-            as="h1"
+            as="h6"
             className="project-title"
           >
-            Provisioning
+            IBM
+          </Text>
+          <Text
+            as="h1"
+          >
+            Cloud checkout
           </Text>
         </GridItem>
         <GridItem
@@ -140,8 +145,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-the-problem"
         >
-          <Text as="h2">Problem</Text>
-          <Text as="h4">Issues with the old provisioning page</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
           <YTVideo>
             <iframe
               src="https://www.youtube.com/embed/iOHY29x0d18"
@@ -200,7 +204,6 @@ const Provisioning = ({}) => {
           id="provisioning-the-solution"
         >
           <Text as="h2">Solution</Text>
-          <Text as="h4">Breaking the form into digestible chunks, and preparing to optimize for bulk</Text>
         </GridItem>
         <GridItem
           colStart={1}
@@ -363,8 +366,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-process"
         >
-          <Text as="h2">Process</Text>
-          <Text as="h4">Validation, exploration, ideation, and testing</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Process</Text>
           <Text
             as="h3"
             paddingBottom={lineBreakPadding}
@@ -492,8 +494,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-next-steps"
         >
-          <Text as="h2">Next steps</Text>
-          <Text as="h4">Moving on to the broader provisioning experience</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Next steps</Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
