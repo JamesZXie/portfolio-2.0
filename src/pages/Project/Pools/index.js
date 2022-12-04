@@ -338,7 +338,17 @@ const Pools = ({}) => {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-          <Text as="h3">2. Making deployment restrictions easy to understand and manage</Text>
+          <Text as="h3" paddingBottom={subSectionBreakPadding}>2. Making deployment restrictions easier to understand and manage</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Shared processor pools introduced a new category of restrictions that required more conscious
+            management, and had a higher chance of wires getting crossed, where users could end up in
+            situations where they could have something that needs to be deployed, but is completely
+            restricted from deployment.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            An existing location restriction system already existed, “placement groups”, which let users
+            create rulesets that let them manage the location restrictions on their stuff.
+          </Text>
           <Lightbox
             id="SPPUnderstandGroups"
             paddingBottom={subSectionBreakPadding}
