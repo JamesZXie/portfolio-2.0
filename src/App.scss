@@ -54,6 +54,8 @@ h2 {
 h3 {
     font-size: 16px !important;
     text-align: left !important;
+    text-decoration: underline 1px $ui-04;
+
 }
 
 h4 {
@@ -88,6 +90,14 @@ ol {
 
 li {
     text-align: left !important;
+    max-width: 620px;
+    overflow: wrap;
+    padding-bottom: .5rem;
+
+    :last-child {
+        padding-bottom: 0px;
+    }
+   
 }
 
 button {

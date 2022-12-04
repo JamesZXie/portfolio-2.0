@@ -325,14 +325,12 @@ const Provisioning = ({}) => {
             allowMultiple
           >
             <AccordionItem>
-              <h3>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    There are many different ways to break a form up. Why choose this layout?
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h3>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  There are many different ways to break a form up. Why choose this layout?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
               <AccordionPanel pb={4}>
                 <Text paddingBottom={lineBreakPadding}>
                   The layout choice actually comes as part of a flow that I&apos;m not covering in this

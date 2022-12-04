@@ -12,7 +12,7 @@ const Outline = ({ titles, ids }) => {
   const [currSection, setCurrSection] = useState(0);
 
   const handleScroll = () => {
-    const buffer = 200;
+    const buffer = 100;
     if (document.getElementById(ids[0])) {
       ids.map((id, i) => {
         const currScroll = window.pageYOffset;

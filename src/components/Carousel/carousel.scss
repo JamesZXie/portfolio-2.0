@@ -45,23 +45,23 @@
     right: 3rem;
     top: calc(50% - 1rem);
     z-index: 999;
-    color: $ui-02;
     border-radius: 10px !important;
-    border: 1px solid $interactive-01 !important;
     width: 2rem !important;
-    background-color: $ui-04 !important;
     transform: rotate(45deg);
     transition: all .2s ease-in-out;
+    color: $ui-01;
+    border: 1px solid $ui-01 !important;
+    background-color: $ui-04 !important;
 
     &__icon {
         transform: rotate(-45deg);
     }
 
     &:hover {
-        box-shadow: .5rem -.5rem 0px 0px $interactive-01;
+        box-shadow: .5rem -.5rem 0px 0px $ui-01;
     }
     &:focus {
-        box-shadow: .5rem -.5rem 0px 0px $ui-02 !important;
+        box-shadow: .5rem -.5rem 0px 0px $interactive-01 !important;
     }
 
     @media (max-width: 480px) {
@@ -74,10 +74,10 @@
     left: 3rem;
     top: calc(50% - 1rem);
     z-index: 999;
-    color: $ui-02;
     border-radius: 10px !important;
-    border: 1px solid $interactive-01 !important;
     width: 2rem !important;
+    color: $ui-01;
+    border: 1px solid $ui-01 !important;
     background-color: $ui-04 !important;
     transform: rotate(45deg);
     transition: all .2s ease-in-out;
@@ -87,10 +87,10 @@
     }
 
     &:hover {
-        box-shadow: -.5rem .5rem 0px 0px $interactive-01;
+        box-shadow: -.5rem .5rem 0px 0px $ui-01;
     }
     &:focus {
-        box-shadow: -.5rem .5rem 0px 0px $ui-02 !important;
+        box-shadow: -.5rem .5rem 0px 0px $interactive-01 !important;
     }
 
     @media (max-width: 480px) {

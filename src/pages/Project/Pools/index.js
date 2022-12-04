@@ -23,7 +23,8 @@ import Lightbox from '../../../components/Lightbox';
 import YTVideo from '../../../components/YTVideo';
 
 import './pools.scss';
-import SPPSetupRequirements from '../../../assets/images/Pools/spp-setup-requirements.png';
+import SPPHappyPathGuidance from '../../../assets/images/Pools/spp-happy-path-guidance.png';
+import SPPHappyPath from '../../../assets/images/Pools/spp-happy-path.png';
 import SPPMainFilled from '../../../assets/images/Pools/spp-main-filled.png';
 import SPPMainCreate from '../../../assets/images/Pools/spp-main-create.png';
 import SPPDetailsFilled from '../../../assets/images/Pools/spp-details-filled.png';
@@ -41,16 +42,18 @@ const colStart = [1, 7];
 const colSpan = [12, 6];
 const colEnd = [12, 12];
 const titles = [
-  'Summary',
-  'Context',
-  'Problem',
+  'Business problem',
+  'Business goals',
+  'User problem',
+  'User goals',
   'Solution',
   'Process',
 ];
 const ids = [
-  'pools-summary',
-  'pools-context',
-  'pools-problem',
+  'pools-business-problem',
+  'pools-business-goals',
+  'pools-user-problem',
+  'pools-user-goals',
   'pools-solution',
   'pools-process',
 ];
@@ -100,169 +103,113 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-summary"
+          id="pools-business-problem"
         >
           <Text
             paddingBottom={subSectionBreakPadding}
             as="h2"
           >
-            Summary
+            Business problem
           </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-            as="h3"
-          >
-            Context:
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            Certain software licenses overcharge users in the cloud by design. A new feature
-            works around software license design to make licenses charge “fairly”.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-            as="h3"
-          >
-            Problem:
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            Balancing performance and
-            cost savings while configuring a setup gets overwhelming.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-            as="h3"
-          >
-            Solution:
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            We made performance easy to understand, and configuration
-            simple with little maintenance required.
-          </Text>
-          {/* <Text
-            paddingBottom={lineBreakPadding}
-            as="h3"
-          >
-            Impact:
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            <UnorderedList>
-              <ListItem>
-                I don&apos;t know
-              </ListItem>
-            </UnorderedList>
-          </Text> */}
-        </GridItem>
-        <SectionBreak />
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-context"
-        >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>Context</Text>
           <Image
             src={SPPExplanationDiagram}
             onLoad={onLoad}
           />
-          <Text
-            as="h5"
-            id="licensing-costs-caption"
-            paddingBottom={subSectionBreakPadding}
-          >
-            Customers with high licensing costs avoid the cloud due to external license pricing models.
+          <Text as="h5" paddingBottom={sectionBreakPadding}>
+            Licenses that charge for an entire system cheat cloud users who only use a portion.
           </Text>
-          <Text as="h3" paddingBottom={lineBreakPadding}>Business problem</Text>
-          <Text paddingBottom={lineBreakPadding}>
-            Software licenses on Power are built for Power server owners, and charge based on the
-            size and computing power of an entire server. However, in the cloud, users don&apos;t own servers,
-            they just rent a small portion of a server.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            This means users who would want to use licensed software in the cloud on say, a 1 GB virtual
-            machine would not pay for 1 GB, but for the 10GB the server hosting the virtual machine has.
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            As a result,
+          <Text>
+            Many companies charge our users a hefty flat fee for software licenses,
+            instead of using a pay-as-you-go model. While this is fine if the user
+            owns the entire server, charging a flat fee kills the value proposition of
+            our pay-as-you-go IaaS platform,
             {' '}
-            <strong>
-              users who need licensed software won&apos;t move into our cloud because they don&apos;t want
-              to pay 10x more for space they won&apos;t use.
-            </strong>
-          </Text>
-          <Text as="h3" paddingBottom={lineBreakPadding}>Business solution</Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            A shared processor pool is a technical workaround that ropes off a section of the server for users to
-            build cloud resources in, and “tricks” a license into charging only for the size of the pool.
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            This way,
-            {' '}
-            <strong>
-              with pools users pay only for what they use, so users who need licensed software no longer have a
-              reason not to use our cloud.
-            </strong>
+            <b>
+              creating a large financial barrier
+              to entry for users who use licensed software
+            </b>
+            .
           </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-problem"
+          id="pools-business-goals"
         >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
-          <Image
-            src={SPPSetupRequirements}
-            onLoad={onLoad}
-          />
           <Text
-            as="h5"
-            id="licensing-costs-caption"
             paddingBottom={subSectionBreakPadding}
+            as="h2"
           >
-            Sometimes users need VMs on the same server, other times they need them on different servers.
+            Business goals
           </Text>
-          <Text>
-            Users face two challenges when using shared processor pools:
-          </Text>
-          <OrderedList
-            paddingBottom={lineBreakPadding}
-          >
-            <ListItem>
-              Any VMs that want to utilize a pool have to be on the same host server. However,
-              {' '}
-              <strong>certain setups require VMs to be on different host servers.</strong>
-            </ListItem>
-            <ListItem>
-              The smaller a pool is, the slower it performs.
-              {' '}
-              <strong>Users are incentivized to consolidate VMs that need the same licenses into one large pool.</strong>
-            </ListItem>
-          </OrderedList>
-
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            These challenges make planning a cloud setup using pools something of a balancing act for users, who need to make tradeoffs between cost and performance before they create a setup.
-          </Text>
-          <Text>
-            This sets our goal to be to
+          <Text paddingBottom={lineBreakPadding}>
+            In order to reduce the large financial barrier to entry, we reduced the cost
+            of licences to
             {' '}
-            <strong>help users make optimal decisions by</strong>
-            :
+            <b>
+              bring license-dependent users onto the platform, while continuing to deliver on
+              its premium infrastructure value proposition
+            </b>
+            .
+          </Text>
+          <Text>
+            The success metric is long-term user growth. This feature has not been out long enough
+            to measure its success &#40;Launched mid-September 2022&#41;.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-user-problem"
+        >
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>User problem</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            To address this financial barrier, development created a feature, “shared processor
+            pools”, that transforms licenses into more of a pay-as-you-go model. However,
+            {' '}
+            <b>
+              it comes with two new restrictions:
+            </b>
           </Text>
           <OrderedList>
-            <ListItem>
-              Making it easy to handle conflicting host requirements.
-            </ListItem>
-            <ListItem>
-              Making it easy to understand the performance of a pool.
-            </ListItem>
+            <li>
+              <b>Performance restriction:</b>
+              {' '}
+              users pay for, but also use, a smaller chunk of the
+              server. A smaller chunk means less processing power.
+            </li>
+            <li>
+              <b>Location restrictions on deployment:</b>
+              {' '}
+              stuff requiring the same license has to
+              be located on the same physical server to share the license.
+            </li>
           </OrderedList>
-
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-user-goals"
+        >
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>User goals</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            With our premium value proposition in mind, we had
+            {' '}
+            <b>two primary design goals for the implementation of pools:</b>
+          </Text>
+          <OrderedList paddingBottom={lineBreakPadding}>
+            <ListItem>
+              Help users optimally balance cost savings and performance.
+            </ListItem>
+            <ListItem>Make deployment restrictions easy to understand and manage.</ListItem>
+          </OrderedList>
+          <Text>
+            If we do not accomplish these goals, license-dependent users will go back off
+            of our platform because we won&apos;t be delivering on our “premium” value proposition.
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -270,7 +217,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-solution"
         >
-          <Text as="h2">Solution</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Solution</Text>
         </GridItem>
         <GridItem
           colStart={1}
@@ -327,118 +274,88 @@ const Pools = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Text as="h3" paddingBottom={subSectionBreakPadding}>1. Handle conflicting host requirements</Text>
-          <Image
-            paddingBottom={subSectionBreakPadding}
-            src={SPPGroupsMain}
+          <Text as="h3" paddingBottom={subSectionBreakPadding}>1. Helping users balance cost savings and performance</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            In a shared processor pool, there are three factors that affect performance:
+          </Text>
+          <OrderedList paddingBottom={lineBreakPadding}>
+            <ListItem>Total reserved cores</ListItem>
+            <ListItem>Ratio of allocated cores to unallocated cores</ListItem>
+            <ListItem>Computing usage while a VM is active</ListItem>
+          </OrderedList>
+          <Text paddingBottom={subSectionBreakPadding}>
+            And of course, the less space a user uses for what they need, the less they pay. Since we aren&apos;t actually
+            allowed to access users&apos; systems to display #3, while users do know what their systems are used for, our goal here is
+            to show the relevant information at key points in the user&apos;s flow to let the user make smart decisions.
+          </Text>
+          <Text as="h4">Happy path</Text>
+          <Lightbox
+            id="SPPHappyPath"
+            paddingBottom={lineBreakPadding}
+            src={SPPHappyPath}
             onLoad={onLoad}
           />
-          <Text paddingBottom={lineBreakPadding}>
-            Host placement requirements can be separated into requirements associated with licenses or pools,
-            and requirements associated directly with the setup.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            To help users configure their setups, we added “pool placement groups”, a feature that allows users to
-            set a placement rule on a group of pools. Users simply create a group and then choose whether the pools
-            in the group are placed on the same server or on different servers.
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            This lowers the complexity for handling setup requirements because users only need to worry about pool
-            hosting requirements once. After the first setup is created with a pool, future setups can forget about
-            pool-related requirements.
-          </Text>
+          <Text as="h4">Happy path guidance</Text>
+          <Lightbox
+            id="SPPHappyPathGuidance"
+            paddingBottom={lineBreakPadding}
+            src={SPPHappyPathGuidance}
+            onLoad={onLoad}
+          />
           <Accordion
             paddingBottom={subSectionBreakPadding}
             allowMultiple
           >
             <AccordionItem>
-              <h3>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    Pros of placement groups
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h3>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  How do users know which pool has which license?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
               <AccordionPanel pb={4}>
-                <OrderedList>
-                  <ListItem>
-                    Of the options we explored for handling placement conflicts, placement groups were the only
-                    option that kept pools separate from VMs, which reduced option complexity for
-                    users not looking to use SPP.
-                  </ListItem>
-                  <ListItem>
-                    “VM placement groups” also exist, and are very commonly used, which makes picking up
-                    pool placement groups intuitive for experienced users.
-                  </ListItem>
-                  <ListItem>
-                    Pool placement groups were less technically strenuous to implement than the other options,
-                    meaning less development work and faster loadtimes.
-                  </ListItem>
-                </OrderedList>
-              </AccordionPanel>
-            </AccordionItem>
+                <Text paddingBottom={lineBreakPadding}>
+                  By name! We&apos;ve found that users naturally use the name of anything they create
+                  on our platform to dictate the purpose + anything else they need to identify the resource.
+                </Text>
+                <Text paddingBottom={lineBreakPadding}>
 
-            <AccordionItem>
-              <h3>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    Cons of placement groups
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h3>
-              <AccordionPanel pb={4}>
-                <OrderedList>
-                  <ListItem>
-                    Does not scale well for some edge case setups; keeping track of pools,
-                    in multiple placement groups, with multiple VM placement groups can get hard.
-                  </ListItem>
-                  <ListItem>
-                    If users misuse the feature they will unintentionally create conflicting placement
-                    requirements that can require them to re-do a lot of work. Preventing this from
-                    happening is possible, but the backend checks to do so would place large loadtimes
-                    on many otherwise simple operations.
-                  </ListItem>
-                </OrderedList>
+                  Forcing users to move the license from the name to say another column on the table would
+                  just make it harder for users to fill in the mandatory name slot, while shortening the
+                  amount of horizontal space on the table.
+                </Text>
+                <Text paddingBottom={lineBreakPadding}>
+                  We spent some time outside this feature exploring the addition of catchall features, such as
+                  tags, but in testing found that users ignored them. Instead of trying to teach users
+                  to use some new feature, we&apos;ve decided to design around their behavior
+                  - and leave as much space for names as possible.
+                </Text>
+                <Text>
+                  Its also worth noting that for users deploying through the CLI, the name of a resource is an unbeatable
+                  catchall identifier.
+                </Text>
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-          <Text as="h3" paddingBottom={subSectionBreakPadding}>2. Understand the performance of a pool</Text>
-          <Image
-            paddingBottom={subSectionBreakPadding}
-            src={SPPMainFilled}
-            onLoad={onLoad}
-          />
-          <Text>
-            In a shared processor pool, there are three factors that affect performance:
-          </Text>
-          <OrderedList paddingBottom={lineBreakPadding}>
-            <ListItem>
-              Total reserved cores
-            </ListItem>
-            <ListItem>
-              Ratio of allocated cores to unallocated cores
-            </ListItem>
-            <ListItem>
-              Computing usage while a VM is active
-            </ListItem>
-          </OrderedList>
-          <Text paddingBottom={lineBreakPadding}>
-            Unfortunately we are unable to access live computing stats on VMs, but based off of what kind of applications users are
-            running, they should have a ballpark idea of what their own usage looks like.
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            We instead keep track of the #1 and #2, and make it very obvious to users what their performance looks like
-            when its relevant to their objective.
-          </Text>
-          <Image
+          <Text as="h3">2. Understand the performance of a pool</Text>
+          <Lightbox
+            id="SPPUnderstandPerformance"
             paddingBottom={subSectionBreakPadding}
             src={SPPDetailsFilled}
             onLoad={onLoad}
           />
           <Text paddingBottom={lineBreakPadding}>
-            For example, in the image above, you can see that before a user creates a new instance in a shared processor pool, they can clearly see how much space is still available for allocation, and get a ballpark idea of how their allocation could affect performance.
+            To prevent wires from getting crossed, we created another category of the same
+            system, to manage restrictions associated specifically with pools. As you can
+            see above, there are now two categories of placement groups: server placement
+            groups and pool placement groups.
+          </Text>
+
+          <Text paddingBottom={subSectionBreakPadding}>
+            Once a user define the restrictions on a pool, adding stuff to it falls under
+            the same defined restrictions and everything stays organized without the user
+            having to think about it again.
+
           </Text>
           <SectionBreak />
         </GridItem>
