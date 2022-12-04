@@ -34,6 +34,7 @@ import SPPInvisionFreehand from '../../../assets/images/Pools/spp-invision-freeh
 import SPPMuralBoard from '../../../assets/images/Pools/spp-mural-board.png';
 import SPPExploration from '../../../assets/images/Pools/spp-exploration.png';
 import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
+import SPPPlacementGroups from '../../../assets/images/Pools/spp-placement-groups.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -337,11 +338,11 @@ const Pools = ({}) => {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-          <Text as="h3">2. Understand the performance of a pool</Text>
+          <Text as="h3">2. Making deployment restrictions easy to understand and manage</Text>
           <Lightbox
-            id="SPPUnderstandPerformance"
+            id="SPPUnderstandGroups"
             paddingBottom={subSectionBreakPadding}
-            src={SPPDetailsFilled}
+            src={SPPPlacementGroups}
             onLoad={onLoad}
           />
           <Text paddingBottom={lineBreakPadding}>
@@ -355,7 +356,6 @@ const Pools = ({}) => {
             Once a user define the restrictions on a pool, adding stuff to it falls under
             the same defined restrictions and everything stays organized without the user
             having to think about it again.
-
           </Text>
           <SectionBreak />
         </GridItem>
@@ -384,10 +384,14 @@ const Pools = ({}) => {
             paddingBottom={lineBreakPadding}
           />
           <Text paddingBottom={lineBreakPadding}>
-            We went through a few use cases with users who used SPP before the cloud, to understand the impact of SPP on their workloads, and to get more direction on how to proceed.
+            We went through a few use cases with users who used SPP before the cloud, to understand
+            the impact of SPP on their workloads, and to get more direction on how to proceed.
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            We then talked to SPP developers and our own development team to get a better understanding of the options we could work with on a technical level. Generally this is not a step in our exploration process for features, but adding a restriction to VM placement set off warning bells.
+            We then talked to SPP developers and our own development team to get a better
+            understanding of the options we could work with on a technical level. Generally this
+            is not a step in our exploration process for features, but adding a restriction to
+            VM placement set off warning bells.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
