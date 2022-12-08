@@ -499,9 +499,9 @@ const Pools = ({}) => {
           <Text
             paddingBottom={lineBreakPadding}
           >
-            The hypothesis we tested here was that a simple flow that trades some performance optimization options may be preferable
-            to users. This exploration surfaced the minimum amount of information and functionality required to help a user save money on VM
-            licenses, cutting out sharing entirely.
+            The hypothesis we tested here was that a simple flow with less customization may be preferable
+            to users than the opposite. This exploration surfaced the minimum amount of information and
+            functionality required to help a user save money on VM licenses.
           </Text>
           <Lightbox
             id="SPPExploration1"
@@ -510,21 +510,15 @@ const Pools = ({}) => {
             onLoad={onLoad}
           />
           <Text
-            paddingBottom={lineBreakPadding}
-          >
-            No sharing means no new category of location restrictions,
-            but this also means that the VMs will not be able to borrow processing power, which is a hit to performance. The user
-            still saves a substantial amount of money, but not the most they could be saving.
-          </Text>
-          <Text
             paddingBottom={subSectionBreakPadding}
           >
-            In the image above,
+            We cut out sharing entirely, since sharing had much less of an impact on cost savings, and without sharing there was
+            no new category of location restrictions. Users couldn&apos;t save as much money, but configuring license savings
+            was incredibly simple, as you can see above, where
             {' '}
             <b>all</b>
             {' '}
-            the changes to the checkout flow are highlighted in red. Its an extremely simple change, which
-            makes deployment a breeze.
+            the necessary steps are highlighted in red.
           </Text>
 
           <Accordion
@@ -534,7 +528,7 @@ const Pools = ({}) => {
             <AccordionItem>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
-                  Can you break down this tradeoff in non-technical terms?
+                  Can you explain this tradeoff simply, ignoring the technical stuff?
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
@@ -617,7 +611,7 @@ const Pools = ({}) => {
             easily complete tasks.
           </Text>
           <Text
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
           >
             Unfortunately, the dev work required to make pools work with the existing restriction management
             flow was overwhelming, and not worth the user experience tradeoff.
@@ -629,7 +623,7 @@ const Pools = ({}) => {
             <AccordionItem>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
-                  Can you re-explain this tradeoff as well?
+                  Can you break this tradeoff down as well?
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
