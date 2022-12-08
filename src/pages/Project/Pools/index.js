@@ -543,7 +543,7 @@ const Pools = ({}) => {
                     Not all kids will draw the same amount
                   </b>
                   ; some will want more space, and others won&apos;t
-                  space that the other kids could have used.
+                  use space that the other kids could have used.
 
                   So its not optimal, but its a very simple solution that requires little input from the parents.
                 </Text>
