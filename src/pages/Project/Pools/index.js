@@ -350,9 +350,20 @@ const Pools = ({}) => {
             <ListItem>Computing usage while a VM is active</ListItem>
           </OrderedList>
           <Text paddingBottom={subSectionBreakPadding}>
-            And of course, the less space a user uses for what they need, the less they pay. Since we aren&apos;t actually
-            allowed to access users&apos; systems to display #3, while users do know what their systems are used for, our goal here is
-            to show the relevant information at key points in the user&apos;s flow to help the user make smart decisions.
+            And of course, the less space a user uses for what they need, the less they pay. Since
+            {' '}
+            <b>we don&apos;t have access to #3</b>
+            ,
+            while
+            {' '}
+            <b>users do have access to #3</b>
+            {' '}
+            (since they use their VMs), our goal here is
+            to show #1 and #2 at key points in the user&apos;s flow to
+            {' '}
+            <b>help the user make smart decisions around #3</b>
+            , as you can see below
+            .
           </Text>
           <Text as="h4">Happy path</Text>
           <Lightbox
@@ -480,7 +491,7 @@ const Pools = ({}) => {
             onLoad={onLoad}
           />
           <Text paddingBottom={subSectionBreakPadding}>
-            I began ideating at an extremely high level using post-it notes and drawings in mural to represent VMs and SPPs, working around user
+            We began ideating at an extremely high level using post-it notes and drawings in mural to represent VMs and SPPs, working around user
             needs and development needs to find potential flows we could test.
           </Text>
 
