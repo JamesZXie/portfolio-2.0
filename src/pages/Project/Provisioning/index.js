@@ -104,7 +104,7 @@ const Provisioning = ({}) => {
             paddingBottom={lineBreakPadding}
             as="h3"
           >
-            Problem:
+            Problem
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
             Our checkout flow for cloud infrastructure was overwhelming, confusing, and punishing for users.
@@ -113,7 +113,7 @@ const Provisioning = ({}) => {
             paddingBottom={lineBreakPadding}
             as="h3"
           >
-            Solution:
+            Solution
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
             I broke the form up into digestible chunks, and rearranged it to make branching smoother.
@@ -122,7 +122,7 @@ const Provisioning = ({}) => {
             paddingBottom={lineBreakPadding}
             as="h3"
           >
-            Accomplishments:
+            Accomplishments
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
             <UnorderedList>

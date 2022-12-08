@@ -35,6 +35,8 @@ import SPPMuralBoard from '../../../assets/images/Pools/spp-mural-board.png';
 import SPPExploration from '../../../assets/images/Pools/spp-exploration.png';
 import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-diagram.png';
 import SPPPlacementGroups from '../../../assets/images/Pools/spp-placement-groups.png';
+import SPPExploration1 from '../../../assets/images/Pools/spp-exploration-1.png';
+import SPPExploration2 from '../../../assets/images/Pools/spp-exploration-2.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -43,6 +45,7 @@ const colStart = [1, 7];
 const colSpan = [12, 6];
 const colEnd = [12, 12];
 const titles = [
+  'Summary',
   'Business problem',
   'Business goals',
   'User problem',
@@ -51,6 +54,7 @@ const titles = [
   'Process',
 ];
 const ids = [
+  'pools-summary',
   'pools-business-problem',
   'pools-business-goals',
   'pools-user-problem',
@@ -100,6 +104,67 @@ const Pools = ({}) => {
             Cloud pools
           </Text>
         </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-summary"
+        >
+          <Text
+            paddingBottom={subSectionBreakPadding}
+            as="h2"
+          >
+            Summary
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Business problem
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            Some users need software that charges them unfairly when not owning
+            the server using it, which prevents them from moving into the cloud.
+          </Text>
+
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Business goals
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            Offer a flexible option for customers that better fits the pricing models of their software better, to bring them into the cloud.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            User problem
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            The flexible option comes with restrictions that make the option require extra management, and make failure easier.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            User goals
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            Make creation and management intuitive, and reduce the possibility of error to ensure user retention.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Accomplishments:
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            This feature has not been out long enough to measure its success (Launched mid-September 2022).
+          </Text>
+        </GridItem>
+        <SectionBreak />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
@@ -376,7 +441,6 @@ const Pools = ({}) => {
           id="pools-process"
         >
           <Text as="h2">Process</Text>
-          <Text as="h4">From exploration, ideation, and testing</Text>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -384,14 +448,14 @@ const Pools = ({}) => {
           colEnd={colEnd}
         >
           <Text
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
             as="h3"
           >
-            Exploration
+            Generative research
           </Text>
           <Image
             src={SPPExploration}
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
           />
           <Text paddingBottom={lineBreakPadding}>
             We went through a few use cases with users who used SPP before the cloud, to understand
@@ -400,7 +464,7 @@ const Pools = ({}) => {
           <Text paddingBottom={subSectionBreakPadding}>
             We then talked to SPP developers and our own development team to get a better
             understanding of the options we could work with on a technical level. Generally this
-            is not a step in our exploration process for features, but adding a restriction to
+            is not a step in my exploration process for features, but adding a restriction to
             VM placement set off warning bells.
           </Text>
           <Text
@@ -416,25 +480,202 @@ const Pools = ({}) => {
             onLoad={onLoad}
           />
           <Text paddingBottom={subSectionBreakPadding}>
-            We began ideating at an extremely high level using post-it notes and drawings in mural to represent VMs and SPPs, working around user
+            I began ideating at an extremely high level using post-it notes and drawings in mural to represent VMs and SPPs, working around user
             needs and development needs to find potential flows we could test.
           </Text>
+
           <Text
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
             as="h3"
           >
             Testing
           </Text>
-          <Lightbox
-            id="SPPInvisionFreehand"
+          <Text
+            paddingBottom={subSectionBreakPadding}
+            as="h4"
+          >
+            Exploration #1: Sacrificing performance for management simplicity
+          </Text>
+          <Text
             paddingBottom={lineBreakPadding}
-            src={SPPInvisionFreehand}
+          >
+            The hypothesis we tested here was that a simple flow that trades some performance optimization options may be preferable
+            to users. This exploration surfaced the minimum amount of information and functionality required to help a user save money on VM
+            licenses, cutting out sharing entirely.
+          </Text>
+          <Lightbox
+            id="SPPExploration1"
+            paddingBottom={lineBreakPadding}
+            src={SPPExploration1}
             onLoad={onLoad}
           />
-          <Text paddingBottom="50px">
-            We tested a very high-level flows with post-it notes, then narrowed it down into a few flushed out but shoddy wireframes in an InVision freehand.
-            After eliminating more options, we tested the remaining flows as high-fidelity InVision prototypes.
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            No sharing means no new category of location restrictions,
+            but this also means that the VMs will not be able to borrow processing power, which is a hit to performance. The user
+            still saves a substantial amount of money, but not the most they could be saving.
           </Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
+            In the image above,
+            {' '}
+            <b>all</b>
+            {' '}
+            the changes to the checkout flow are highlighted in red. Its an extremely simple change, which
+            makes deployment a breeze.
+          </Text>
+
+          <Accordion
+            paddingBottom={subSectionBreakPadding}
+            allowMultiple
+          >
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  Can you break down this tradeoff in non-technical terms?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel pb={4}>
+                <Text paddingBottom={lineBreakPadding}>
+                  Sure! You can think of it this way: we have a bunch of kids that want to draw on a massive canvas.
+                  The hypothesis is that is splitting up the canvas into equal parts so that each kid gets some
+                  space to draw is preferable for the parents.
+                </Text>
+                <Text paddingBottom={lineBreakPadding}>
+                  <b>
+                    Not all kids will draw the same amount
+                  </b>
+                  ; some will want more space, and others won&apos;t
+                  space that the other kids could have used.
+
+                  So its not optimal, but its a very simple solution that requires little input from the parents.
+                </Text>
+                <Text>
+                  Unfortunately, our parents don&apos;t care about the ease of managing the kids, they want their kids
+                  to have the
+                  {' '}
+                  <b>maximum</b>
+                  {' '}
+                  amount of fun. They care significantly more about the fun than the management.
+                </Text>
+
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+
+          <Text paddingBottom={lineBreakPadding}>
+            <b>Pros:</b>
+          </Text>
+          <UnorderedList paddingBottom={lineBreakPadding}>
+            <ListItem>
+              Very simple deployment flow, almost no impact to the experience of other users who don&apos;t care about licenses.
+            </ListItem>
+            <ListItem>
+              Virtually no new learning required to save some money on licenses.
+            </ListItem>
+          </UnorderedList>
+          <Text paddingBottom={lineBreakPadding}>
+            <b>Cons:</b>
+          </Text>
+          <UnorderedList paddingBottom={subSectionBreakPadding}>
+            <ListItem>
+              No optimization or customization options for users.
+            </ListItem>
+          </UnorderedList>
+
+          <Text
+            paddingBottom={subSectionBreakPadding}
+            as="h4"
+          >
+            Exploration #2: Working deployment restrictions into the existing restriction management flow
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            The hypothesis we tested here is a slightly more complex management flow within familiar systems is more
+            intuitive to use and understand than a simpler flow in an entirely new system.
+          </Text>
+          <Lightbox
+            id="SPPExploration2"
+            paddingBottom={subSectionBreakPadding}
+            src={SPPExploration2}
+            onLoad={onLoad}
+          />
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            What that means in practice is we just allowed users to add pools to &quot;placement groups&quot;, the
+            existing restriction management system. It functioned in the same way as before, with no changes.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            In testing, it proved very intuitive to use. There was little to no confusion and users were able to
+            easily complete tasks.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            Unfortunately, the dev work required to make pools work with the existing restriction management
+            flow was overwhelming, and not worth the user experience tradeoff.
+          </Text>
+          <Accordion
+            paddingBottom={subSectionBreakPadding}
+            allowMultiple
+          >
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  Can you re-explain this tradeoff as well?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel pb={4}>
+                <Text paddingBottom={lineBreakPadding}>
+                  Yep! Going back to the idea of kids drawing on a canvas - now we&apos;re asking
+                  parents to take a more active role.
+                </Text>
+                <Text paddingBottom={lineBreakPadding}>
+                  Each adult gets assigned a zone, and as the kids get creative and start needing more space,
+                  an adults will use a dry erase markers to redraw the area a kid can work in. Occasionally,
+                  if kids don&apos;t get along, they have to swap some stuff around.
+                </Text>
+                <Text>
+                  Along the same lines, the solution we ended up with is as if you assigned an adult
+                  two different zones to watch, a zone for slower kids and a zone for faster kids. Less of their attention
+                  has to go to the zone for slower kids, but their attention is still split. Naturally they&apos;ll
+                  pay more attention to the faster kids, so we have to set up systems to alert the adult when the
+                  slower kids need more space.
+                </Text>
+
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
+
+          <Text paddingBottom={lineBreakPadding}>
+            <b>Pros:</b>
+          </Text>
+          <UnorderedList paddingBottom={lineBreakPadding}>
+            <ListItem>
+              Easy to pick up and understand.
+
+            </ListItem>
+            <ListItem>
+              Fully customizable.
+            </ListItem>
+          </UnorderedList>
+          <Text paddingBottom={lineBreakPadding}>
+            <b>Cons:</b>
+          </Text>
+          <UnorderedList paddingBottom={subSectionBreakPadding}>
+            <ListItem>
+              High dev work required to implement.
+            </ListItem>
+          </UnorderedList>
+
         </GridItem>
 
       </Section>
