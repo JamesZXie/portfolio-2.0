@@ -352,7 +352,7 @@ const Pools = ({}) => {
           <Text paddingBottom={subSectionBreakPadding}>
             And of course, the less space a user uses for what they need, the less they pay. Since we aren&apos;t actually
             allowed to access users&apos; systems to display #3, while users do know what their systems are used for, our goal here is
-            to show the relevant information at key points in the user&apos;s flow to let the user make smart decisions.
+            to show the relevant information at key points in the user&apos;s flow to help the user make smart decisions.
           </Text>
           <Text as="h4">Happy path</Text>
           <Lightbox
