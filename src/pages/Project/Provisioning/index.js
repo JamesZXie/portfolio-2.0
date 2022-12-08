@@ -85,7 +85,7 @@ const Provisioning = ({}) => {
           <Text
             as="h1"
           >
-            Cloud checkout
+            Cloud checkout redesign
           </Text>
         </GridItem>
         <GridItem
@@ -107,7 +107,7 @@ const Provisioning = ({}) => {
             Problem:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Provisioning &#40;creating a virtual machine&#41; was overwhelming, confusing, and punishing for users.
+            Our checkout flow for cloud infrastructure was overwhelming, confusing, and punishing for users.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -116,13 +116,13 @@ const Provisioning = ({}) => {
             Solution:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            We broke the form up into digestible chunks, and rearranged it to make branching smoother.
+            I broke the form up into digestible chunks, and rearranged it to make branching smoother.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
             as="h3"
           >
-            Impact:
+            Accomplishments:
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
             <UnorderedList>
@@ -131,9 +131,6 @@ const Provisioning = ({}) => {
               </ListItem>
               <ListItem>
                 Cut average time to complete the form by 55% &#40;263s to 145s&#41;
-              </ListItem>
-              <ListItem>
-                Eliminated 95% of monthly negative NPS reviews about provisioning &#40;18 to 1&#41;
               </ListItem>
             </UnorderedList>
           </Text>
@@ -270,13 +267,13 @@ const Provisioning = ({}) => {
             as="h3"
             paddingBottom={lineBreakPadding}
           >
-            1. Reducing cognitive load
+            1. Reducing the cognitive load of progression
           </Text>
           <Text
             paddingBottom={subSectionBreakPadding}
           >
             By breaking the page up into bite-sized chunks, we can turn a complex process
-            into multiple smaller, simple decisions to reduce cognitive load. With most of the loading
+            into multiple smaller, simple decisions to the reduce cognitive load of progression. With most of the loading
             components hidden, the page also feels faster and simpler.
           </Text>
 
@@ -318,7 +315,7 @@ const Provisioning = ({}) => {
           <Text
             paddingBottom={subSectionBreakPadding}
           >
-            We made scanning easier by improving spacing and typography consistentcy throughout the form, as well as aligning
+            I made scanning easier by improving spacing and typography consistentcy throughout the form, as well as aligning
             everything vertically so the user&apos;s eye didn&apos;t have to jump from left to right. A few color and
             component tweaks brought everything together to give the page a much more modern finish.
           </Text>

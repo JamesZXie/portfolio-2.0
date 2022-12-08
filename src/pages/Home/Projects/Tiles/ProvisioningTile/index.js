@@ -39,7 +39,7 @@ const DwAnswersTile = ({ onLoad }) => {
       id="tile--provisioning"
       description={renderDescription()}
       label="IBM"
-      title="Cloud checkout"
+      title="Cloud checkout redesign"
       order={2}
       to="/psvsredesign"
       projectImage={(
