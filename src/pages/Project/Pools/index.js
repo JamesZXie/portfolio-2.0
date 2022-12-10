@@ -143,7 +143,7 @@ const Pools = ({}) => {
             User problem
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            The flexible option comes with restrictions that make the option require extra management, and make failure easier.
+            The flexible option comes with restrictions that make the it require extra management, and make failure easier.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
