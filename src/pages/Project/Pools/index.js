@@ -134,7 +134,7 @@ const Pools = ({}) => {
             Business goals
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Offer a flexible option for customers that better fits the pricing models of their software better, to bring them into the cloud.
+            Offer a flexible option for customers that fits the pricing models of their software better, to bring them into the cloud.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
