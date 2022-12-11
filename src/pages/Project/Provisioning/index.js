@@ -417,7 +417,7 @@ const Provisioning = ({}) => {
           <Text
             as="h3"
           >
-            Exploration
+            Generative research
           </Text>
           <Lightbox
             id="ProvisioningMural"
