@@ -349,13 +349,6 @@ const Provisioning = ({}) => {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
-          <Text>
-            If you&apos;d like to see the redesign in action, a pure UI video walkthrough is available
-            {' '}
-            <a href="https://youtu.be/hN3EjaBQsAI" target="_blank" rel="noreferrer">here</a>
-            {' '}
-            for those who want to see a functional UI, instead of the key screens above.
-          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
