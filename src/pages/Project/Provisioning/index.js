@@ -116,7 +116,7 @@ const Provisioning = ({}) => {
             Solution
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            I broke the form up into digestible chunks, and rearranged it to make branching smoother.
+            We broke the form up into digestible chunks, and rearranged it to make branching smoother.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
@@ -315,7 +315,7 @@ const Provisioning = ({}) => {
           <Text
             paddingBottom={subSectionBreakPadding}
           >
-            I made scanning easier by improving spacing and typography consistentcy throughout the form, as well as aligning
+            We made scanning easier by improving spacing and typography consistentcy throughout the form, as well as aligning
             everything vertically so the user&apos;s eye didn&apos;t have to jump from left to right. A few color and
             component tweaks brought everything together to give the page a much more modern finish.
           </Text>
