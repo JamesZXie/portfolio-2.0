@@ -29,6 +29,8 @@ import Overwhelming from '../../../assets/images/Provisioning/provisioning-overw
 import Confusing from '../../../assets/images/Provisioning/provisioning-confusing.mov';
 import Punishing from '../../../assets/images/Provisioning/provisioning-punishing.mov';
 import Ugly from '../../../assets/images/Provisioning/provisioning-ugly.mov';
+import CogLoad from '../../../assets/images/Provisioning/provisioning-cogload.mov';
+import Branching from '../../../assets/images/Provisioning/provisioning-branching.mov';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -176,13 +178,13 @@ const Provisioning = ({}) => {
           </Text>
           <Text
             as="h3"
-            paddingBottom={subSectionBreakPadding}
+            paddingBottom={lineBreakPadding}
           >
             1. Overwhelming
           </Text>
           <video autoPlay loop muted playsinline alt="Overwhelming" controls src={Overwhelming} />
           <Text
-            paddingTop={subSectionBreakPadding}
+            paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
             There were too many options to absorb and understand at once.
@@ -190,13 +192,13 @@ const Provisioning = ({}) => {
 
           <Text
             as="h3"
-            paddingBottom={subSectionBreakPadding}
+            paddingBottom={lineBreakPadding}
           >
             2. Confusing
           </Text>
           <video autoPlay loop muted playsinline alt="Confusing" controls src={Confusing} />
           <Text
-            paddingTop={subSectionBreakPadding}
+            paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
             Ignoring the technical complexity of provisioning,
@@ -211,13 +213,13 @@ const Provisioning = ({}) => {
 
           <Text
             as="h3"
-            paddingBottom={subSectionBreakPadding}
+            paddingBottom={lineBreakPadding}
           >
             3. Punishing
           </Text>
           <video autoPlay loop muted playsinline alt="Punishing" controls src={Punishing} />
           <Text
-            paddingTop={subSectionBreakPadding}
+            paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
             Certain options are completely incompatible with others, while other options are completely
@@ -229,13 +231,13 @@ const Provisioning = ({}) => {
 
           <Text
             as="h3"
-            paddingBottom={subSectionBreakPadding}
+            paddingBottom={lineBreakPadding}
           >
             4. Ugly
           </Text>
           <video autoPlay loop muted playsinline alt="Ugly" controls src={Ugly} />
           <Text
-            paddingTop={subSectionBreakPadding}
+            paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
             The form felt outdated and misaligned with its premium price tag due to either poor or inconsistent aesthetic choices.
@@ -316,7 +318,9 @@ const Provisioning = ({}) => {
           >
             1. Reducing the cognitive load of progression
           </Text>
+          <video autoPlay loop muted playsinline alt="Cognitive load" controls src={CogLoad} />
           <Text
+            paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
             By breaking the page up into bite-sized chunks, we can turn a complex process
@@ -330,6 +334,7 @@ const Provisioning = ({}) => {
           >
             2. Eliminating confusion from branching
           </Text>
+          <video autoPlay loop muted playsinline alt="Branching" controls src={Branching} />
           <Text
             paddingBottom={subSectionBreakPadding}
           >
