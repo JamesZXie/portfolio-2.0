@@ -25,6 +25,10 @@ import Validation from '../../../assets/images/Provisioning/provisioning-validat
 import ExplorationMural from '../../../assets/images/Provisioning/provisioning-exploration-mural.png';
 import Ideation from '../../../assets/images/Provisioning/provisioning-ideation.png';
 import Testing from '../../../assets/images/Provisioning/provisioning-testing.png';
+import Overwhelming from '../../../assets/images/Provisioning/provisioning-overwhelming.mov';
+import Confusing from '../../../assets/images/Provisioning/provisioning-confusing.mov';
+import Punishing from '../../../assets/images/Provisioning/provisioning-punishing.mov';
+import Ugly from '../../../assets/images/Provisioning/provisioning-ugly.mov';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -143,7 +147,7 @@ const Provisioning = ({}) => {
           id="provisioning-the-problem"
         >
           <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
-          <YTVideo>
+          {/* <YTVideo>
             <iframe
               src="https://www.youtube.com/embed/iOHY29x0d18"
               title="YouTube video player"
@@ -157,42 +161,85 @@ const Provisioning = ({}) => {
             as="h5"
           >
             &#40;No audio&#41; A quick UI walkthrough showcasing the four issues of the old provisioning form.
-          </Text>
+          </Text> */}
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
         >
+
           <Text
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
           >
-            The old provisioning page, as you can see above, had four substantial issues:
+            The old provisioning page had four substantial issues:
           </Text>
-          <OrderedList>
-            <ListItem>
-              <strong>Overwhelming</strong>
-              : there are too many options to absorb and understand at once.
-            </ListItem>
-            <ListItem>
-              <strong>Confusing</strong>
-              : ignoring the technical complexity of provisioning, many selections can push the user down a new path,
-              with the reflected visual change being
-              {' '}
-              <strong>jarring</strong>
-              . Its hard for users to keep track of their progress, or
-              understand what they should do next.
-            </ListItem>
-            <ListItem>
-              <strong>Punishing</strong>
-              : certain options are completely incompatible with others, while other options are completely
-              dependent on others. Making an error can mean wiping progress.
-            </ListItem>
-            <ListItem>
-              <strong>Ugly</strong>
-              : The form felt outdated and unusable due to either poor or inconsistent aesthetic choices.
-            </ListItem>
-          </OrderedList>
+          <Text
+            as="h3"
+            paddingBottom={subSectionBreakPadding}
+          >
+            1. Overwhelming
+          </Text>
+          <video autoPlay loop muted playsinline alt="Overwhelming" controls src={Overwhelming} />
+          <Text
+            paddingTop={subSectionBreakPadding}
+            paddingBottom={subSectionBreakPadding}
+          >
+            There were too many options to absorb and understand at once.
+          </Text>
+
+          <Text
+            as="h3"
+            paddingBottom={subSectionBreakPadding}
+          >
+            2. Confusing
+          </Text>
+          <video autoPlay loop muted playsinline alt="Confusing" controls src={Confusing} />
+          <Text
+            paddingTop={subSectionBreakPadding}
+            paddingBottom={subSectionBreakPadding}
+          >
+            Ignoring the technical complexity of provisioning,
+            {' '}
+            <b>
+              many selections can push the user down a new path,
+              with the reflected visual change being jarring
+            </b>
+            . Its hard for users to keep track of their progress, or
+            understand what they should do next.
+          </Text>
+
+          <Text
+            as="h3"
+            paddingBottom={subSectionBreakPadding}
+          >
+            3. Punishing
+          </Text>
+          <video autoPlay loop muted playsinline alt="Punishing" controls src={Punishing} />
+          <Text
+            paddingTop={subSectionBreakPadding}
+            paddingBottom={subSectionBreakPadding}
+          >
+            Certain options are completely incompatible with others, while other options are completely
+            dependent on others.
+            {' '}
+            <b>Making an error and changing a value can mean wiping progress</b>
+            .
+          </Text>
+
+          <Text
+            as="h3"
+            paddingBottom={subSectionBreakPadding}
+          >
+            4. Ugly
+          </Text>
+          <video autoPlay loop muted playsinline alt="Ugly" controls src={Ugly} />
+          <Text
+            paddingTop={subSectionBreakPadding}
+            paddingBottom={subSectionBreakPadding}
+          >
+            The form felt outdated and misaligned with its premium price tag due to either poor or inconsistent aesthetic choices.
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
