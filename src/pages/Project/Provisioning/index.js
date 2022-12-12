@@ -336,6 +336,7 @@ const Provisioning = ({}) => {
           </Text>
           <video autoPlay loop muted playsinline alt="Branching" controls src={Branching} />
           <Text
+            paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
             Simplifying the page helps with this, but we also broke the page into sections in such a way to hide
