@@ -240,7 +240,7 @@ const Provisioning = ({}) => {
             paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
-            The form felt outdated and misaligned with its premium price tag due to either poor or inconsistent aesthetic choices.
+            The form felt outdated and misaligned with our IaaS platform's premium price tag due to either poor or inconsistent aesthetic choices.
           </Text>
         </GridItem>
         <GridItem
