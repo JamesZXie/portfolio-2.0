@@ -205,19 +205,18 @@ const PowerGlove = ({}) => {
           />
           <Text as="h5" paddingBottom={lineBreakPadding}>Cheap prototype before I spent like $300 on the actual glove. </Text>
           <Text paddingBottom={lineBreakPadding}>
-            The makelab wasn&apos;t too well equipped at the time, so I had to grab stuff from the IBM kitchen, hence the gloves and coffee stirrers.
+            The makelab wasn&apos;t too well equipped at the time, so I had to grab stuff from the IBM kitchen, hence the plastic server gloves and coffee stirrers.
             I just wanted to see if people would find it fun to use.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
             <strong>It works by completing a circuit</strong>
             {' '}
-            which an arduinos read as on/off. If you have one short stick and one longer stick, and bind the ends together with duct tape, the longer stick will create an arch.
+            which an arduino reads as on/off. If you have one short stick and one longer stick, and bind the ends together with duct tape, the longer stick will create an arch.
             If you push the bottom up from the middle with a knuckle, the top arch doesn&apos;t bend, and so the middles touch - which can make a complete circuit.
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            I literally plugged this into a p5 sketch I had from a youtube tutorial, and then changed the variable dictating speed to
+            I plugged this into a p5 sketch I had from a youtube tutorial, and then changed the variable dictating speed to
             create speed depending on on/off. Loaded the sketch, and told friends to put their hand in and try to squeeze their finger.
-            They weren&apos;t like super impressed but I got a few surprised laughs so I figured it was worth investing into.
           </Text>
           <YTVideo>
             <iframe
