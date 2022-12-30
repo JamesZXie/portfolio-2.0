@@ -27,7 +27,7 @@ $highlight-01: #FF0000;
 
 body {
     margin: 0px;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .project-title {
@@ -52,7 +52,7 @@ h2 {
 }
 
 h3 {
-    font-size: 16px !important;
+    font-size: 18px !important;
     text-align: left !important;
     text-decoration: underline 1px $ui-04;
 
@@ -66,7 +66,7 @@ h4 {
 }
 
 h5 {
-    font-size: 12px !important;
+    font-size: 14px !important;
     font-weight: 100;
     text-align: center;
     color: #525252;
@@ -76,6 +76,10 @@ h5 {
 h6 {
     font-weight: bold !important;
     color: #5D5D5D;
+}
+
+.summary-title {
+    font-style: italic;
 }
 
 p {
@@ -153,6 +157,10 @@ img.icon-32 {
 }
 
 .chakra-accordion {
+    div {
+        font-size: 18px !important;
+    }
+
     button {
         height: 100% !important;
         padding-top: .5rem !important;

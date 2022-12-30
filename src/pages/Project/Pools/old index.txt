@@ -38,16 +38,12 @@ import SPPPlacementGroups from '../../../assets/images/Pools/spp-placement-group
 import SPPExploration1 from '../../../assets/images/Pools/spp-exploration-1.png';
 import SPPExploration2 from '../../../assets/images/Pools/spp-exploration-2.png';
 
-const lineBreakPadding = '1rem';
-const subSectionBreakPadding = '2rem';
-const sectionBreakPadding = '2.5rem';
-const colStart = [2, 4];
+const lineBreakPadding = '.5rem';
+const subSectionBreakPadding = '1.5rem';
+const sectionBreakPadding = '2rem';
+const colStart = [1, 7];
 const colSpan = [12, 6];
-const colEnd = [12, 10];
-
-const sumStart = 4;
-const sumSpan = 3;
-
+const colEnd = [12, 12];
 const titles = [
   'Summary',
   'Business problem',
@@ -88,13 +84,13 @@ const Pools = ({}) => {
       <Section
         className="project-page pools"
       >
-        {/* <Outline
+        <Outline
           titles={titles}
           ids={ids}
-        /> */}
+        />
         <GridItem
-          colStart={colStart}
-          colSpan={[4, 6]}
+          colStart={[0, 2]}
+          colSpan={[12, 4]}
         >
           <Text
             as="h6"
@@ -109,54 +105,63 @@ const Pools = ({}) => {
           </Text>
         </GridItem>
         <GridItem
-          colStart={sumStart}
-          colSpan={sumSpan}
-          marginTop="2rem"
-          id="pools-summary-1"
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-summary"
         >
           <Text
-            paddingBottom={lineBreakPadding}
-            className="summary-title"
+            paddingBottom={subSectionBreakPadding}
+            as="h2"
           >
-            THE CHALLENGE
+            Summary
           </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            Design the experience for setting up, fine-tuning, and maintaining a cost-saving feature
-            on IBM&apos;s cloud that eliminates a financial barrier-to-entry.
-          </Text>
-        </GridItem>
-        <GridItem
-          colSpan={sumSpan}
-          marginTop="2rem"
-          id="pools-summary-2"
-        >
           <Text
             paddingBottom={lineBreakPadding}
-            className="summary-title"
+            as="h3"
           >
-            THE OUTCOME
+            Business problem
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            A relatively intuitive setup and tuning experience with little need for long-term
-            maintenance.
+            Some users need software that charges them unfairly when not owning
+            the server using it, which prevents them from moving into the cloud.
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={sumStart}
-          colSpan={sumSpan}
-          id="pools-summary-3"
-        >
+
           <Text
             paddingBottom={lineBreakPadding}
-            className="summary-title"
+            as="h3"
           >
-            ROLE
+            Business goals
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            I led UX design and research on this feature with support from my design lead
-            {' '}
-            <a href="https://www.linkedin.com/in/jandra-aranguren-9174a1a4/" target="_blank" rel="noreferrer">Jandra</a>
-            .
+            Offer a flexible option for customers that fits the pricing models of their software better, to bring them into the cloud.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            User problem
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            The flexible option comes with restrictions that make the it require extra management, and make failure easier.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            User goals
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            Make creation and management intuitive, and reduce the possibility of error to ensure user retention.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Accomplishments:
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            This feature has not been out long enough to measure its success (Launched mid-September 2022).
           </Text>
         </GridItem>
         <SectionBreak />
@@ -165,36 +170,74 @@ const Pools = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
           id="pools-business-problem"
-          marginTop="1rem"
         >
-          <Text paddingBottom={lineBreakPadding}>
-            While touring apartments in New York, you&apos;re told that if you want heating in an apartment,
-            you have to pay for heating the entire building due to it using a central heating system.
-            Apparently no one else has asked for heating, so as the only one to need it, you would have
-            to front the bill. Ridiculous! Chances are you wouldn&apos;t move in - or at least, that&apos;s what
-            potential IBM Cloud customers chose to do when told that for certain software licenses, they
-            would have to pay for license application to an entire server, instead of just the portion
-            of the server they rent.
+          <Text
+            paddingBottom={subSectionBreakPadding}
+            as="h2"
+          >
+            Business problem
+          </Text>
+          <Image
+            src={SPPExplanationDiagram}
+            onLoad={onLoad}
+          />
+          <Text as="h5" paddingBottom={sectionBreakPadding}>
+            Licenses that charge for an entire system cheat cloud users who only use a portion.
           </Text>
           <Text>
-            Unable to change out the &quot;central heating system&quot;, the engineering and sales team worked together
-            to create a feature that did the equivalent of boarding up heating ducts leading to other units,
-            so that cloud users with licenses could run licensed software in the space they rent without paying
-            license fees for the rest of the server. After creating the technology, they passed it to us to make
-            setting up and managing this heated room intuitive for users.
+            Many companies charge our users a hefty flat fee for software licenses,
+            instead of using a pay-as-you-go model. While this is fine if the user
+            owns the entire server, charging a flat fee kills the value proposition of
+            our pay-as-you-go IaaS platform,
             {' '}
-            <b>We call this room a &quot;shared processor pool&quot;.</b>
+            <b>
+              creating a large financial barrier
+              to entry for users who use licensed software
+            </b>
+            .
           </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-problem"
+          id="pools-business-goals"
         >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+            as="h2"
+          >
+            Business goals
+          </Text>
           <Text paddingBottom={lineBreakPadding}>
-            Utilizing a shared processor pool comes with two restrictions:
+            In order to reduce the large financial barrier to entry, we reduced the cost
+            of licences to
+            {' '}
+            <b>
+              bring license-dependent users onto the platform, while continuing to deliver on
+              its premium infrastructure value proposition
+            </b>
+            .
+          </Text>
+          <Text>
+            The success metric is long-term user growth. This feature has not been out long enough
+            to measure its success &#40;Launched mid-September 2022&#41;.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="pools-user-problem"
+        >
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>User problem</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            To address this financial barrier, development created a feature, “shared processor
+            pools”, that transforms licenses into more of a pay-as-you-go model. However,
+            {' '}
+            <b>
+              it comes with two new restrictions:
+            </b>
           </Text>
           <OrderedList>
             <li>
@@ -217,7 +260,7 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-user-goals"
         >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>Goals</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>User goals</Text>
           <Text paddingBottom={lineBreakPadding}>
             With our premium value proposition in mind, we had
             {' '}
@@ -299,30 +342,37 @@ const Pools = ({}) => {
         >
           <Text as="h3" paddingBottom={subSectionBreakPadding}>1. Helping users balance cost savings and performance</Text>
           <Text paddingBottom={lineBreakPadding}>
-            Simplified,
-            {' '}
-            <b>more space = more money & more performance</b>
-            . In reality, the amount of space VMs need is dynamic, and changes over time.
-            To display space accurately, we have to break it down into three numbers:
+            In a shared processor pool, there are three factors that affect performance:
           </Text>
           <OrderedList paddingBottom={lineBreakPadding}>
-            <ListItem>
-              <b>Total reserved cores: </b>
-              the maximum space a VM can use
-            </ListItem>
-            <ListItem>
-              <b>Allocated cores: </b>
-              the minimum space a VM will need
-            </ListItem>
-            <ListItem>
-              <b>Ratio of allocated to unallocated cores: </b>
-              how much space each VM has on average
-            </ListItem>
+            <ListItem>Total reserved cores</ListItem>
+            <ListItem>Ratio of allocated cores to unallocated cores</ListItem>
+            <ListItem>Computing usage while a VM is active</ListItem>
           </OrderedList>
           <Text paddingBottom={subSectionBreakPadding}>
-            Our goal here is to show these numbers at key points in the user&apos;s creation flow
-            to help the user assess the need for tuning before creating another VM in a pool.
+            And of course, the less space a user uses for what they need, the less they pay. Since
+            {' '}
+            <b>we don&apos;t have access to #3</b>
+            ,
+            while
+            {' '}
+            <b>users do have access to #3</b>
+            {' '}
+            (since they use their VMs), our goal here is
+            to show #1 and #2 at key points in the user&apos;s flow to
+            {' '}
+            <b>help the user make smart decisions around #3</b>
+            , as you can see below
+            .
           </Text>
+          <Text as="h4">Happy path</Text>
+          <Lightbox
+            id="SPPHappyPath"
+            paddingBottom={lineBreakPadding}
+            src={SPPHappyPath}
+            onLoad={onLoad}
+          />
+          <Text as="h4">Happy path guidance</Text>
           <Lightbox
             id="SPPHappyPathGuidance"
             paddingBottom={lineBreakPadding}
@@ -356,6 +406,10 @@ const Pools = ({}) => {
                   tags, but in testing found that users ignored them. Instead of trying to teach users
                   to use some new feature, we&apos;ve decided to design around their behavior
                   - and leave as much space for names as possible.
+                </Text>
+                <Text>
+                  Its also worth noting that for users deploying through the CLI, the name of a resource is an unbeatable
+                  catchall identifier.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -395,18 +449,24 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-generative-research"
+          id="pools-process"
+        >
+          <Text as="h2">Process</Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
         >
           <Text
-            as="h2"
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
+            as="h3"
           >
             Generative research
-
           </Text>
           <Image
             src={SPPExploration}
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
           />
           <Text paddingBottom={lineBreakPadding}>
             We went through a few use cases with users who used SPP before the cloud, to understand
@@ -418,16 +478,9 @@ const Pools = ({}) => {
             is not a step in my exploration process for features, but adding a restriction to
             VM placement set off warning bells.
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-ideation"
-        >
           <Text
-            as="h2"
             paddingBottom={lineBreakPadding}
+            as="h3"
           >
             Ideation
           </Text>
@@ -441,29 +494,23 @@ const Pools = ({}) => {
             We began ideating at an extremely high level using post-it notes and drawings in mural to represent VMs and SPPs, working around user
             needs and development needs to find potential flows we could test.
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-testing"
-        >
+
           <Text
             paddingBottom={subSectionBreakPadding}
-            as="h2"
-          >
-            Testing and exploration
-          </Text>
-          <Text
-            paddingBottom={lineBreakPadding}
             as="h3"
           >
-            Exploration #1: Save money in the simplest way possible
+            Testing
+          </Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+            as="h4"
+          >
+            Exploration #1: Sacrificing performance for management simplicity
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
-            The hypothesis we tested here was that a simple flow with less optimization options may be preferable
+            The hypothesis we tested here was that a simple flow with less customization may be preferable
             to users than the opposite. This exploration surfaced the minimum amount of information and
             functionality required to help a user save money on VM licenses.
           </Text>
@@ -474,20 +521,15 @@ const Pools = ({}) => {
             onLoad={onLoad}
           />
           <Text
-            paddingBottom={lineBreakPadding}
-          >
-            We removed processor sharing to reduce setup complexity, and eliminate location restrictions.
-            Without location restrictions, there is no need for maintenance.
-            Above,
-            {' '}
-            <b>the only two necessary steps for setup and fine-tuning are highlighted.</b>
-            {' '}
-          </Text>
-          <Text
             paddingBottom={subSectionBreakPadding}
           >
-            This exploration failed because even with such a simple setup with no overhead costs,
-            our users preferred being able to optimize.
+            We cut out sharing entirely, since sharing had much less of an impact on cost savings, and without sharing there was
+            no new category of location restrictions. Users couldn&apos;t save as much money, but configuring license savings
+            was incredibly simple, as you can see above, where
+            {' '}
+            <b>all</b>
+            {' '}
+            the necessary steps are highlighted in red.
           </Text>
 
           <Accordion
@@ -504,8 +546,8 @@ const Pools = ({}) => {
               <AccordionPanel pb={4}>
                 <Text paddingBottom={lineBreakPadding}>
                   Sure! You can think of it this way: we have a bunch of kids that want to draw on a massive canvas.
-                  The hypothesis is that automatically splitting up the canvas into equal parts so that each kid gets some
-                  space to draw is preferable to having the parents micromanage their kids.
+                  The hypothesis is that is splitting up the canvas into equal parts so that each kid gets some
+                  space to draw is preferable for the parents.
                 </Text>
                 <Text paddingBottom={lineBreakPadding}>
                   <b>
@@ -551,7 +593,7 @@ const Pools = ({}) => {
 
           <Text
             paddingBottom={subSectionBreakPadding}
-            as="h3"
+            as="h4"
           >
             Exploration #2: Working deployment restrictions into the existing restriction management flow
           </Text>
