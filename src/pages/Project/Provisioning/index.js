@@ -91,7 +91,7 @@ const Provisioning = ({}) => {
           <Text
             as="h1"
           >
-            Cloud checkout redesign
+            Redesigning a cloud platform&apos;s primary checkout flow
           </Text>
         </GridItem>
         <GridItem

@@ -71,12 +71,12 @@ const PowerGlove = ({}) => {
             as="h6"
             className="project-title"
           >
-            Personal project
+            Personal
           </Text>
           <Text
             as="h1"
           >
-            Powerglove
+            Making digital art fun to interact with
           </Text>
         </GridItem>
         <GridItem
@@ -209,10 +209,9 @@ const PowerGlove = ({}) => {
             I just wanted to see if people would find it fun to use.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            <strong>It works by completing a circuit</strong>
-            {' '}
-            which an arduino reads as on/off. If you have one short stick and one longer stick, and bind the ends together with duct tape, the longer stick will create an arch.
-            If you push the bottom up from the middle with a knuckle, the top arch doesn&apos;t bend, and so the middles touch - which can make a complete circuit.
+            The prototype works by simply completing a circuit which an arduino reads as on/off. The top stirrer is longer than the bottom stirrer, and by binding the
+            ends together you can create an arch. If you push the bottom up from the middle with a knuckle, the top arch doesn&apos;t bend,
+            and so the middles touch - which can make a complete circuit.
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
             I plugged this into a p5 sketch I had from a youtube tutorial, and then changed the variable dictating speed to

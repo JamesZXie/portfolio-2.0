@@ -41,7 +41,7 @@ const DwAnswersTile = ({ onLoad }) => {
       id="tile--pools"
       description={renderDescription()}
       label="IBM"
-      title="Cloud pools"
+      title="Helping cloud users circumvent license costs"
       order={1}
       to="/pools"
       projectImage={(

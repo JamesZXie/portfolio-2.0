@@ -101,7 +101,7 @@ const Pools = ({}) => {
           <Text
             as="h1"
           >
-            Cloud pools
+            Helping cloud users circumvent license costs
           </Text>
         </GridItem>
         <GridItem

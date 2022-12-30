@@ -85,7 +85,7 @@ const AustinCold = ({}) => {
           <Text
             as="h1"
           >
-            Austincold
+            Crowdsourcing rescue during a winter storm
           </Text>
         </GridItem>
 

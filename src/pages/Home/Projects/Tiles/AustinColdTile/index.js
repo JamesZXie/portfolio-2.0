@@ -28,7 +28,7 @@ const AustinColdTile = ({ onLoad }) => {
       <Text fontWeight="bold">
         Description:
       </Text>
-      <Text>Working with a nonprofit to quickly launch over 400 rescue operations and raise $1.5 million during a natural disaster.</Text>
+      <Text>Working with a nonprofit to quickly crowdsource over 400 rescue operations and raise $1.5 million during the Texas winter storm of 2021.</Text>
     </Box>
   );
   return (
@@ -38,7 +38,7 @@ const AustinColdTile = ({ onLoad }) => {
       description={renderDescription()}
       order={4}
       label="CRT (nonprofit)"
-      title="Austincold"
+      title="Crowdsourcing rescue during a winter storm"
       to="/austin-cold"
       projectImage={(
         <Image

@@ -18,14 +18,19 @@ const PowerGloveTile = ({ onLoad }) => {
       <Text marginBottom="2rem">
         <UnorderedList>
           <ListItem>
-            Solo project
+            Creator
+          </ListItem>
+          <ListItem>
+            Community organizer
           </ListItem>
         </UnorderedList>
       </Text>
       <Text fontWeight="bold">
         Description:
       </Text>
-      <Text>A fun solo project turned community project... turned covid failure: interacting with digital art without a mouse and keyboard.</Text>
+      <Text>
+        Turning a different way to interact with digital art into a community art project.
+      </Text>
     </Box>
   );
 
@@ -35,8 +40,8 @@ const PowerGloveTile = ({ onLoad }) => {
       className="projects__container"
       id="tile--power-glove"
       description={renderDescription()}
-      label="Hardware project"
-      title="Powerglove"
+      label="Personal"
+      title="Making digital art more interactive"
       to="/power-glove"
       order={3}
       projectImage={(
