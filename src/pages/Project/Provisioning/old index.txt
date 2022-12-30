@@ -4,7 +4,6 @@ import {
   GridItem, Text, Image, OrderedList, ListItem, Box,
   Accordion, AccordionButton, AccordionItem, AccordionIcon, AccordionPanel,
   UnorderedList,
-  List,
 } from '@chakra-ui/react';
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
@@ -36,13 +35,9 @@ import Branching from '../../../assets/images/Provisioning/provisioning-branchin
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
 const sectionBreakPadding = '2rem';
-const colStart = [2, 4];
+const colStart = [1, 7];
 const colSpan = [12, 6];
-const colEnd = [12, 10];
-
-const sumStart = 4;
-const sumSpan = 3;
-
+const colEnd = [13, 12];
 const titles = [
   'Summary',
   'Problem',
@@ -79,13 +74,13 @@ const Provisioning = ({}) => {
       <Section
         className="project-page provisioning"
       >
-        {/* <Outline
+        <Outline
           titles={titles}
           ids={ids}
-        /> */}
+        />
         <GridItem
-          colStart={colStart}
-          colSpan={[4, 6]}
+          colStart={[0, 2]}
+          colSpan={[12, 4]}
         >
           <Text
             as="h6"
@@ -100,68 +95,48 @@ const Provisioning = ({}) => {
           </Text>
         </GridItem>
         <GridItem
-          colStart={sumStart}
-          colSpan={sumSpan}
-          marginTop="2rem"
-          id="pools-summary-1"
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="provisioning-summary"
         >
           <Text
-            paddingBottom={lineBreakPadding}
-            className="summary-title"
+            paddingBottom={subSectionBreakPadding}
+            as="h2"
           >
-            THE CHALLENGE
+            Summary
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h3"
+          >
+            Problem
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Realign a confusing, feature-bloated checkout page with a premium cloud platform’s brand and price point.
+            Our checkout flow for cloud infrastructure was overwhelming, confusing, and punishing for users.
           </Text>
-        </GridItem>
-        <GridItem
-          colSpan={sumSpan}
-          marginTop="2rem"
-          id="pools-summary-1"
-        >
           <Text
             paddingBottom={lineBreakPadding}
-            className="summary-title"
+            as="h3"
           >
-            THE OUTCOME
+            Solution
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            A clean, simple, and guided checkout experience designed with future optimizations in mind.
+            We broke the form up into digestible chunks, and rearranged it to make branching smoother.
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={sumStart}
-          colSpan={sumSpan}
-          id="pools-summary-1"
-        >
           <Text
             paddingBottom={lineBreakPadding}
-            className="summary-title"
+            as="h3"
           >
-            ROLE
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            I led design and research for the redesign with support from my design lead Jandra.
-          </Text>
-        </GridItem>
-        <GridItem
-          colSpan={sumSpan}
-          id="pools-summary-1"
-        >
-          <Text
-            paddingBottom={lineBreakPadding}
-            className="summary-title"
-          >
-            IMPACT
+            Accomplishments
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
             <UnorderedList>
               <ListItem>
-                Increased checkout completion rate by 13% &#40;58.5% to 66%&#41;
+                Increased form completion rate by 13% &#40;58.5% to 66%&#41;
               </ListItem>
               <ListItem>
-                Cut average time to complete checkout by 55% &#40;263s to 145s&#41;
+                Cut average time to complete the form by 55% &#40;263s to 145s&#41;
               </ListItem>
             </UnorderedList>
           </Text>
@@ -171,28 +146,31 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="provisioning-intro"
+          id="provisioning-the-problem"
         >
-          <Text paddingBottom={lineBreakPadding}>
-            The checkout page was a nightmare to navigate.  What started out as a ten-field form had transformed
-            into a monstrosity because its original design didn&apos;t scale with complexity. Amidst a flurry of
-            new features and priority one fixes, we had pushed back applying a more scalable design to the flow
-            until the pile of fields on the form began to affect users&apos; perception of the quality and
-            functionality of our product.
-          </Text>
-          <Text>
-            It was easy to get engineering to buy-in to a redesign; the complexity of the form made it a
-            nightmare to maintain as well. So with engineering and our users behind us we got PM buy-in
-            and stepped back to take a look at the checkout experience. We didn&apos;t like what we saw.
-          </Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
+          {/* <YTVideo>
+            <iframe
+              src="https://www.youtube.com/embed/iOHY29x0d18"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </YTVideo>
+          <Text
+            paddingBottom={lineBreakPadding}
+            as="h5"
+          >
+            &#40;No audio&#41; A quick UI walkthrough showcasing the four issues of the old provisioning form.
+          </Text> */}
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="provisioning-the-problem"
         >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
+
           <Text
             paddingBottom={subSectionBreakPadding}
           >
@@ -425,16 +403,72 @@ const Provisioning = ({}) => {
             </AccordionItem>
           </Accordion>
         </GridItem>
-        <SectionBreak />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="provisioning-generative-research"
+          id="provisioning-process"
         >
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Process</Text>
           <Text
-            as="h2"
+            as="h3"
             paddingBottom={lineBreakPadding}
+          >
+            Validation and Buy-in
+          </Text>
+          <Image
+            paddingBottom={lineBreakPadding}
+            src={Validation}
+            onLoad={onLoad}
+          />
+          <Text
+            as="h5"
+            paddingBottom={lineBreakPadding}
+          >
+            Shadowing a user while they provision a 5 VM workload using the command-line interface (CLI)
+
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            The biggest reason the provisioning page had deteriorated so far without a redesign
+            is that its actually not used very often. The provisioning page was so cumbersome that it
+            was used only for smaller workloads. Anything larger than a few VMs,
+            {' '}
+            <strong>
+              customers would prefer to
+              provision directly via our API using the command line
+            </strong>
+            , even building scripts to perform a
+            variety of bulk-friendly options.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            However, we&apos;re planning on completely refactoring our API for completely unrelated reasons.
+            This will introduce a number of breaking changes across the board, which gives design an
+            opportunity to move provisioning into the UI, as devs will have to use the UI while they re-learn
+            our API. If they move back to the CLI, we won&apos;t be able to improve their provisioning
+            experience, since we have no control over the CLI.
+          </Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
+            After preliminary research,
+            {' '}
+            <strong>
+              we convinced PM and dev that the breaking changes coming from
+              the API refactor are too big of an impediment to users&apos; workflows
+            </strong>
+            {' '}
+            without redesigning provisioning
+            for bulk, and if we win our users&apos; trust in provisioning via the UI, we&apos;d
+            open up a lot of opportunities for future experience enhancements, which would drive sales
+            and increase user retention.
+          </Text>
+
+          <Text
+            as="h3"
           >
             Generative research
           </Text>
@@ -444,22 +478,17 @@ const Provisioning = ({}) => {
             src={ExplorationMural}
             onLoad={onLoad}
           />
-          <Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
             Once we defined what the provisioning page&apos;s role would be in the newly redesigned provisioning
             experience &#40;provisioning involves many more steps than just the provisioning page&#41;, we picked it
             apart and then listed and grouped all of its issues. This helped us decide on a direction
             for ideation.
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="provisioning-ideation"
-        >
+
           <Text
-            as="h2"
-            paddingBottom={lineBreakPadding}
+            as="h3"
           >
             Ideation
           </Text>
@@ -469,22 +498,17 @@ const Provisioning = ({}) => {
             src={Ideation}
             onLoad={onLoad}
           />
-          <Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
             Resource creation as a concept is pretty common throughout IBM&apos;s other cloud platforms. There isn&apos;t
             a lot of consistency across the products, but there&apos;s an overarching effort to drive consistency -
             so most of this portion of the process was actually taking existing interfaces and rehashing
             them to fit our needs. Most of this was done in InVision Freehand.
           </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="provisioning-testing"
-        >
+
           <Text
-            as="h2"
-            paddingBottom={lineBreakPadding}
+            as="h3"
           >
             Testing
           </Text>
@@ -500,7 +524,9 @@ const Provisioning = ({}) => {
             Because redesigns require very little product-specific context, we took advantage of the broader
             community of IBM designers and ran a few feedback sessions with various other teams across cloud.
           </Text>
-          <Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
             Once the general flow had been locked in, we tested smaller variations with users to check very
             specific things, such as error handling for edge cases, with high-fi prototypes.
           </Text>
