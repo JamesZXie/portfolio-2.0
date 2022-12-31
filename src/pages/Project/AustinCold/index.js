@@ -6,28 +6,31 @@ import {
 import Section from '../../../components/Section';
 import PageLoader from '../../../components/PageLoader';
 import SectionBreak from '../../../components/SectionBreak';
+import Lightbox from '../../../components/Lightbox';
 import Outline from '../../../components/Outline';
+import Carousel, { CarouselItem } from '../../../components/Carousel';
 
 // images
 import HelpFormSpanishImage from '../../../assets/images/AustinCold/help-form--spanish.png';
 import InfoArabicImage from '../../../assets/images/AustinCold/info--arabic.png';
-import Mobile2 from '../../../assets/images/AustinCold/mobile2.png';
-import Flow from '../../../assets/images/AustinCold/flow.png';
-import AustinSnow from '../../../assets/images/AustinCold/austin-snow-air.jpg';
-import showcase from '../../../assets/images/AustinCold/showcase.png';
-import mike from '../../../assets/images/AustinCold/mike.png';
-import coldMike from '../../../assets/images/AustinCold/cold-mike.png';
-import needHelpFlow from '../../../assets/images/AustinCold/need-help-flow.png';
+import InitialDesign from '../../../assets/images/AustinCold/austincold-initialdesigns.png';
+import Maps from '../../../assets/images/AustinCold/austincold-maps.png';
+import Resources from '../../../assets/images/AustinCold/austincold-resources.png';
+import Volunteer from '../../../assets/images/AustinCold/austincold-volunteer.png';
 
 import './austin-cold.scss';
 
-const lineBreakPadding = '1rem';
+const lineBreakPadding = '.5rem';
+const subSectionBreakPadding = '1.5rem';
 const sectionBreakPadding = '2rem';
 
-const colStart = [1, 7];
+const colStart = [2, 4];
 const colSpan = [12, 6];
-const colSpanHalf = [12, 2];
-const colEnd = [13, 12];
+const colEnd = [12, 10];
+
+const sumStart = 4;
+const sumSpan = 3;
+
 const titles = [
   'Problem',
   'Solution',
@@ -50,7 +53,7 @@ const ids = [
 const AustinCold = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 6;
+  const total = 4;
 
   const handleLoad = () => {
     if (numLoaded + 1 === total) {
@@ -68,13 +71,13 @@ const AustinCold = ({}) => {
       <Section
         className="project-page austin-cold"
       >
-        <Outline
+        {/* <Outline
           titles={titles}
           ids={ids}
-        />
+        /> */}
         <GridItem
-          colStart={[0, 2]}
-          colSpan={[12, 4]}
+          colStart={colStart}
+          colSpan={colSpan}
         >
           <Text
             as="h6"
@@ -88,31 +91,158 @@ const AustinCold = ({}) => {
             Crowdsourcing rescue during a winter storm
           </Text>
         </GridItem>
-
+        <GridItem
+          colStart={sumStart}
+          colSpan={sumSpan}
+          marginTop="2rem"
+          id="austincold-challenge"
+        >
+          <Text
+            paddingBottom={lineBreakPadding}
+            className="summary-title"
+          >
+            THE CHALLENGE
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            Help a popular Austin nonprofit crowdsource help for Austinites during an extreme winter storm.
+          </Text>
+        </GridItem>
+        <GridItem
+          colSpan={sumSpan}
+          marginTop="2rem"
+          id="austincold-outcome"
+        >
+          <Text
+            paddingBottom={lineBreakPadding}
+            className="summary-title"
+          >
+            THE OUTCOME
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            AustinCold.com, a website that allows users to quickly find or ask for food, water, power, and shelter from others.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={sumStart}
+          colSpan={sumSpan}
+          id="austincold-role"
+        >
+          <Text
+            paddingBottom={lineBreakPadding}
+            className="summary-title"
+          >
+            ROLE
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            I led design and development on the website, with development support from my friends Alexander Melo and Josefina Mancilla.
+          </Text>
+        </GridItem>
+        <GridItem
+          colSpan={sumSpan}
+          id="austincold-impact"
+        >
+          <Text
+            paddingBottom={lineBreakPadding}
+            className="summary-title"
+          >
+            IMPACT
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            <UnorderedList>
+              <ListItem>
+                Recruited 300 volunteers to answer 400 resource / rescue requests
+              </ListItem>
+              <ListItem>
+                Raised $1.5 million in donations used to purchase food and water
+              </ListItem>
+            </UnorderedList>
+          </Text>
+        </GridItem>
+        <SectionBreak />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="austincold-the-problem"
+          id="austincold-intro"
         >
-          <Text as="h2">Problem</Text>
-          <Text as="h4">ERCOT cut corners when building the isolated power grid</Text>
-          <Image
-            src={AustinSnow}
-            height="30rem"
-            objectFit="cover"
-            width="100%"
-            alt="Satellite image of Austin covered in snow"
-            onLoad={handleLoad}
-          />
-          <Center paddingBottom={sectionBreakPadding}>
-            <Text as="h5">Satellite image of Austin covered in snow</Text>
-          </Center>
-          <Text>
-            In Febuary of 2021, Texas froze as three simultaneous winter storms
-            relentlessly battered the state for days on end, killing over 100 people and
-            causing food, water, and power shortages for millions.
+          <Text paddingBottom={lineBreakPadding}>
+            In 1935, Congress passed the Federal Power Act, giving the federal government the power to regulate the transfer
+            of electricity between states. In a show of defiance and state pride, the Texas utility companies
+            came together and decided to eliminate the transfer of electricity in or out of Texas. Almost overnight, the
+            Lone Star became the only state to have a completely independent power grid.
           </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            In 2021, that independent power grid shut down as the
+            {' '}
+            <a href="https://www.texastribune.org/2022/02/15/texas-power-grid-winter-storm-2021/" target="_blank" rel="noreferrer">
+              entirety of Texas froze.
+            </a>
+            {' '}
+            Unable to rely on Texas generators and without the ability to borrow electricity from outside states, other
+            utilities across the state collapsed and millions lost access to electricity, gas, water, and eventually, shelter.
+            Local emergency services were quickly overwhelmed.
+          </Text>
+          <Text>
+            When
+            {' '}
+            <a href="https://communityresiliencetrust.org/" target="_blank" rel="noreferrer">
+              Community Resilience Trust
+            </a>
+            {' '}
+            reached out to the Austin tech community for help establishing volunteer rescue operations,
+            I grabbed two friends who still had access to power and internet, and together we launched AustinCold.com in five hours.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="austincold-problem"
+        >
+          <Text as="h2" paddingBottom={lineBreakPadding}>Problem</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Austinites faced a few problems. In order of decreasing severity:
+          </Text>
+          <OrderedList>
+            <ListItem>
+              Any life-threatening emergency.
+            </ListItem>
+            <ListItem>
+              No shelter, or transportation to get to designated community shelters
+            </ListItem>
+            <ListItem>
+              No access to food, water, and/or power
+            </ListItem>
+            <ListItem>
+              No understanding of proper cold weather safety precautions
+            </ListItem>
+          </OrderedList>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="austincold-goals"
+        >
+          <Text as="h2" paddingBottom={lineBreakPadding}>Goals</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Our primary goal was to reduce the number of Austinites that reach problem #1, a
+            life-threatening emergency. To do so we built the website with the following priorities,
+            in order of decreasing importance:
+            {' '}
+
+          </Text>
+          <OrderedList>
+            <ListItem>
+              Connect volunteers to Austinites who need transportation to shelter, and direct them to areas with available shelter.
+            </ListItem>
+            <ListItem>
+              Connect volunteers to Austinites who need food, water, or power.
+            </ListItem>
+            <ListItem>
+              Communicate best practices for cold weather safety.
+            </ListItem>
+          </OrderedList>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -121,33 +251,45 @@ const AustinCold = ({}) => {
           id="austincold-the-solution"
         >
           <Text as="h2">Solution</Text>
-          <Text as="h4">We built a base of operations for CRT&apos;s rescue operations in 5 hours</Text>
-          <Link href="https://www.austincold.com" target="blank">
-            <Image
-              src={Mobile2}
-              onLoad={handleLoad}
-            />
-          </Link>
+        </GridItem>
+        <GridItem
+          colStart={1}
+          colSpan={12}
+          colEnd={13}
+          marginBottom={subSectionBreakPadding}
+        >
+          <Carousel>
+            <CarouselItem>
+              <Image
+                onLoad={handleLoad}
+                src={Volunteer}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <Image
+                onLoad={handleLoad}
+                src={Maps}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <Image
+                onLoad={handleLoad}
+                src={Resources}
+              />
+            </CarouselItem>
+          </Carousel>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        >
+          <Text paddingBottom={lineBreakPadding}>
+            The website is one page, with less important sections further down the page. The majority of visitors to our site were
+            looking for information within 1-2 scrolls from the top.
+          </Text>
           <Text>
-            Two of my best friends and I still had
-            power, so we teamed up with the nonprofit
-            {' '}
-            <Link href="https://communityresiliencetrust.org/" isExternal>Community Resilience Trust </Link>
-            {' '}
-            to rapidly deploy
-            {' '}
-            <Link href="https://austincold.com" isExternal>austincold.com</Link>
-            , a foundational piece of an emergency relief effort that
-            raised
-            {' '}
-            <strong>$1.5 million</strong>
-            {' '}
-            for aid and deployed community volunteers to
-            rescue over
-            {' '}
-            <strong>400 people and families</strong>
-            {' '}
-            in Austin who were left without shelter.
+            It has been taken down to preserve CRT resources.
           </Text>
         </GridItem>
 
@@ -157,53 +299,49 @@ const AustinCold = ({}) => {
           colEnd={colEnd}
           id="austincold-process"
         >
-          <Text as="h2">Process</Text>
-          <Text as="h4">Priorities and designing without time to test</Text>
-          <Text paddingBottom="2rem">
-            Our main limitation was time. We started pushing the website five hours
-            after we started it, with traffic spiking from thousands of views as
+          <Text as="h2" paddingBottom={lineBreakPadding}>Process</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            While CRT worked with CBS Austin and the mayor&apos;s office to
             {' '}
             <Link
               isExternal
               href="https://cbsaustin.com/news/local/austin-volunteers-create-online-crowdsourcing-hub-to-help-neighbors-in-need-of-storm-aid"
             >
-              the site gained attention from local media
+              get the news out
             </Link>
-            .
+            {' '}
+            about austincold.com, my friends and I got to work.
           </Text>
-          <Center>
-            <Image
-              height="%"
-              objectFit="cover"
-              src={Flow}
-              padding="2rem"
-              onLoad={handleLoad}
-            />
-          </Center>
-          <Center paddingBottom={sectionBreakPadding}>
-            <Text as="h5">How austincold.com helped CRT coordinate efforts</Text>
-          </Center>
-          <Text>
-            We had 4 tasks, by priority:
+          <Text paddingBottom={lineBreakPadding}>
+            CRT didn&apos;t have anyone who could interface with sketch or figma, so I actually made the initial designs
+            in Microsoft word. This way, CRT stakeholders could adjust content and give feedback asynchronously - time was precious
+            and we didn&apos;t have the luxury for a live collaboration session.
           </Text>
-          <OrderedList paddingBottom="2rem">
-            <ListItem>
-              Identify victims
-            </ListItem>
-            <ListItem>
-              Recruit volunteers
-            </ListItem>
-            <ListItem>
-              Help inform rescue efforts
-            </ListItem>
-            <ListItem>
-              Gather information about safety and resources.
-            </ListItem>
-          </OrderedList>
+          <Lightbox
+            id="ProvisioningMural"
+            src={InitialDesign}
+            onLoad={handleLoad}
+          />
+          <Text as="h5" paddingBottom={subSectionBreakPadding}>An iteration of the crude, 2-page microsoft word design</Text>
 
-          <Text paddingBottom="2rem">
-            We sketched initial wireframes in 5 minutes and started building immediately, adjusting designs when necessary
-            to preserve visual hierarchy and trying to leave as much space for site updates as we laid components down.
+          <Text paddingBottom={lineBreakPadding}>
+            Once we were satisfied with the basic outline, we decided to hash out the design details during implementation, and got
+            straight to building.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            In order to direct users to areas with available shelter, we needed to implement a way for users to figure out what the closest
+            shelter was to them. Because launching as soon as humanly possible was our priority, we decided to put feasibility at the
+            forefront of our decision making, and focus on the minimum viable product.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            We started throwing around ideas, and realized with no need for solution scalability, maintenance, or efficient data distribution,
+            there was little value in pulling information from an API or building out a backend. The absolute MVP would be a static image of a map
+            that showed where the shelters were.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            The quickest way we could think of to create an accurate map was to just create a Google maps list, and then embed it directly
+            into the website. We coordinated with CRT to create shelter maps and general resource maps, with a few volunteers assigned to keeping
+            the shelter and resource station availability details up-to-date.
           </Text>
 
           <Flex wrap="wrap" paddingTop="2rem" paddingBottom={sectionBreakPadding}>
@@ -227,7 +365,7 @@ const AustinCold = ({}) => {
             </Center>
           </Flex>
           <Text>
-            We also prioritized language accessibility for communities who needed it most, knowing that
+            We also added language accessibility for communities who needed it most, knowing that
             while Austin&apos;s downtown area was kept warm and lit, less fortunate
             neighborhoods were left in the cold.
           </Text>
@@ -240,268 +378,6 @@ const AustinCold = ({}) => {
           <Text paddingBottom={sectionBreakPadding}>
             We maintained the website for about two weeks,
             updating information about food and water after the storms subsided.
-          </Text>
-          <SectionBreak />
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="austincold-what-if"
-        >
-          <Text as="h2">What if?</Text>
-          <Text as="h4">We hit a lot of roadbumps... how might we have avoided them?</Text>
-          <Text paddingBottom={sectionBreakPadding}>
-            A lot of fires broke out over the 72-hour ordeal, such as returning users struggling to find information as updates changed the website,
-            or trying to stuff in language accessibility after our initial launch. If I could have frozen time and really thought about the design,
-            this is what I would have proposed.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={0}
-          colSpan={12}
-        >
-          <Image
-            src={showcase}
-            objectFit="cover"
-            width="100%"
-            position="relative"
-            zIndex="99"
-            alt="Screen showcase, mostly eye candy."
-            paddingBottom={sectionBreakPadding}
-            onLoad={handleLoad}
-          />
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="austincold-the-user"
-        >
-          <Text as="h2">User profile</Text>
-          <Text as="h4">Who are we building for?</Text>
-          <Text paddingBottom={lineBreakPadding}>
-            Although we never had a user research session, we did have discussions with Community Resilience Trust&apos;s about the
-            target demographics for this project - in short, we&apos;re looking to help &quot;everyone else&quot;.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            Let&apos;s take a look at one of the
-            {' '}
-            <strong>toughest</strong>
-            {' '}
-            users we&apos;re designing for.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpanHalf}
-        >
-          <Image
-            src={mike}
-            objectFit="cover"
-            width="100%"
-            alt="Doodle of mike"
-            paddingBottom={sectionBreakPadding}
-            onLoad={handleLoad}
-            padding={['1rem', '4rem']}
-          />
-        </GridItem>
-        <GridItem
-          colSpan={colSpanHalf}
-        >
-          <Flex
-            height="100%"
-            justify="center"
-            direction="column"
-          >
-            <Box>
-              Mike is a nice dude living in a small homeless camp in East Austin.
-              <UnorderedList>
-                <ListItem>
-                  He&apos;s not too tech saavy, but he does have an iPhone 8 and service -
-                  courtesy of Front Steps, a popular nonprofit.
-                </ListItem>
-                <ListItem>
-                  He has no access to food, water, or power.
-                </ListItem>
-                <ListItem>
-                  911 isn&apos;t interested in helping him yet because his situation
-                  isn&apos;t considered life-threatening.
-                </ListItem>
-                <ListItem>
-                  If he doesn&apos;t get to warm shelter before sundown,
-                  his life may be in danger.
-                </ListItem>
-              </UnorderedList>
-            </Box>
-          </Flex>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-        >
-          <Text paddingBottom={lineBreakPadding}>
-            So what makes Mike hard to design for? Well for starters, Mike is cold.
-            Have you tried using your phone when your hands are frozen?
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            Not only is Mike cold, but he also has no access to internet, shelter, and
-            - worst of all - he can&apos;t charge his phone. He&apos;s checking his battery life
-            every other second, because if it hits 0%,
-            {' '}
-            <strong>he can&apos;t call 911.</strong>
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpanHalf}
-        >
-          <Image
-            src={coldMike}
-            objectFit="cover"
-            width="100%"
-            alt="Doodle of mike, freezing."
-            paddingBottom={sectionBreakPadding}
-            onLoad={handleLoad}
-            padding={['.5rem', '2rem']}
-          />
-        </GridItem>
-        <GridItem
-          colSpan={colSpanHalf}
-        >
-          <Flex align="center" height="100%">
-            <Box>
-              <Text>
-                This means we are designing for someone who:
-              </Text>
-              <OrderedList>
-                <ListItem>
-                  Is pressed for
-                  {' '}
-                  <strong>time and battery life</strong>
-                  .
-                </ListItem>
-                <ListItem>
-                  Has an
-                  {' '}
-                  <strong>old</strong>
-                  ,
-                  {' '}
-                  <strong>slow</strong>
-                  {' '}
-                  phone with
-                  {' '}
-                  <strong>slow</strong>
-                  {' '}
-                  service.
-                </ListItem>
-                <ListItem>
-                  <strong>
-                    Struggles to operate his device
-                  </strong>
-                  {' '}
-                  due to the cold.
-                </ListItem>
-              </OrderedList>
-            </Box>
-          </Flex>
-        </GridItem>
-
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="austincold-insights"
-        >
-          <Text as="h2">Insights</Text>
-          <Text as="h4">What AustinCold looks like built for Mike</Text>
-          <Text>
-            Here&apos;s what this means for our design:
-          </Text>
-          <UnorderedList>
-            <ListItem>
-              <strong>Lightweight:</strong>
-              {' '}
-              Minimal assets with a dev focus on loadtimes and performance.
-            </ListItem>
-            <ListItem>
-              <strong>Big stuff, small screen: </strong>
-              {' '}
-              Design around stiff users and older devices.
-            </ListItem>
-            <ListItem>
-              <strong>Clear steps: </strong>
-              {' '}
-              Getting help has to be clean, simple, and easy to follow.
-            </ListItem>
-            <ListItem>
-              <strong>Drive confidence: </strong>
-              {' '}
-              Mike needs to know that the time and battery life he&apos;s spending to get help will pay off. We can&apos;t let him give up!
-            </ListItem>
-          </UnorderedList>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="austincold-result"
-        >
-          <Text paddingTop={sectionBreakPadding} as="h2">Result</Text>
-          <Text as="h4">Simple 3 steps he can follow</Text>
-          <Image
-            src={needHelpFlow}
-            objectFit="cover"
-            width="100%"
-            alt="Two panel flow to get help"
-            paddingBottom={sectionBreakPadding}
-            onLoad={handleLoad}
-          />
-          <Text>
-            After a one-time selection of language, Mike needs to click 2 very large buttons, and then input his phone number in the resulting form.
-            The current site loads in under 4 seconds on 2G internet speeds according to a Lighthouse assessment, but if we lazy-loaded
-            our maps, we could cut that time in half.
-          </Text>
-          <Text paddingTop={lineBreakPadding}>
-            What I would hope to see from using this flow is a higher conversion rate due to faster loading times,
-            increased confidence in our ability to help everyone who asks, and much clearer steps.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colEnd={colEnd}
-          colSpan={colSpan}
-        >
-          <Text as="h2">The team</Text>
-          <UnorderedList>
-            <ListItem>
-              <Link
-                href="https://www.linkedin.com/in/alexandermelo1/"
-              >
-                Alexander Melo, a bodega enthusiast
-              </Link>
-            </ListItem>
-            <ListItem>
-              <Link
-                href="https://www.linkedin.com/in/josefinamancilla/"
-              >
-                Josefina Mancilla, a great climber of rocks
-              </Link>
-            </ListItem>
-            <ListItem>
-              Me
-            </ListItem>
-          </UnorderedList>
-          <Text paddingTop="2rem">
-            And of course, Angelica Orazo from
-            {' '}
-            <Link href="https://communityresiliencetrust.org">
-              Community Resilience Trust
-            </Link>
-            {' '}
-            who led the charge, as well as the hundreds of volunteers
-            on the ground and thousands who donated.
           </Text>
         </GridItem>
       </Section>

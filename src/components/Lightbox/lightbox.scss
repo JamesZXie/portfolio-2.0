@@ -1,7 +1,7 @@
 @import '../../App.scss';
 
 .disable-scroll {
-    overflow-y:hidden;
+    overflow-y: hidden;
 }
 
 .lightbox-zoomed-false {
@@ -9,9 +9,12 @@
 }
 
 .lightbox-zoomed-true {
-    position:absolute;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     z-index: 999;
     left: 0;
     background-color: rgba(0, 0, 0, 0.6);
@@ -19,10 +22,8 @@
     overflow-y: scroll;
 
     &__image {
-        position:absolute;
-        top: 0;
-        bottom: 0;
-        margin: auto 0;
-        padding: 2rem;
+        margin: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
     }
 }

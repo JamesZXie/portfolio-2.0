@@ -70,7 +70,7 @@ const ids = [
 const Pools = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 11;
+  const total = 10;
 
   const onLoad = () => {
     if (numLoaded + 1 === total) {
@@ -601,19 +601,11 @@ const Pools = ({}) => {
                   Yep! Going back to the idea of kids drawing on a canvas - now we&apos;re asking
                   parents to take a more active role.
                 </Text>
-                <Text paddingBottom={lineBreakPadding}>
+                <Text>
                   Each adult gets assigned a zone, and as the kids get creative and start needing more space,
                   an adults will use a dry erase markers to redraw the area a kid can work in. Occasionally,
                   if kids don&apos;t get along, they have to swap some stuff around.
                 </Text>
-                <Text>
-                  Along the same lines, the solution we ended up with is as if you assigned an adult
-                  two different zones to watch, a zone for slower kids and a zone for faster kids. Less of their attention
-                  has to go to the zone for slower kids, but their attention is still split. Naturally they&apos;ll
-                  pay more attention to the faster kids, so we have to set up systems to alert the adult when the
-                  slower kids need more space.
-                </Text>
-
               </AccordionPanel>
             </AccordionItem>
           </Accordion>

@@ -142,9 +142,10 @@ const PowerGlove = ({}) => {
           id="powerglove-intro"
         >
           <Text paddingBottom={lineBreakPadding}>
-            In 2020 when the IBM Austin design studio asked me to organize its annual Craft Con, a festival
-            celebrating &quot;making with hands&quot;, my closest friends and I jumped at the opportunity. We hung up posters, created
-            promo videos, built a website, and reached out to other designers to submit topics for talks.
+            In 2020 when the IBM Austin design studio asked us to organize its annual Craft Con, a festival
+            celebrating &quot;making with hands&quot;, my closest friends and I jumped at the opportunity.
+            We hung up posters, created  promo videos, built a website, and reached out to other designers
+            to submit topics for talks.
           </Text>
           <Image
             src={CraftCon}
