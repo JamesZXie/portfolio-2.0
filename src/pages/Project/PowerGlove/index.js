@@ -15,6 +15,9 @@ import GloveComplete from '../../../assets/images/PowerGlove/completed-glove.jpg
 import GloveExample from '../../../assets/images/PowerGlove/glove-example.gif';
 import GloveSkeleton from '../../../assets/images/PowerGlove/glove-skeleton.jpg';
 import MK01 from '../../../assets/images/PowerGlove/mk-01.png';
+import CraftCon from '../../../assets/images/PowerGlove/powerglove-craftcon.GIF';
+import PrototypeTest from '../../../assets/images/PowerGlove/powerglove-prototypetest.mov';
+import Complete from '../../../assets/images/PowerGlove/powerglove-complete.mov';
 
 import YTVideo from '../../../components/YTVideo';
 
@@ -23,9 +26,12 @@ import './power-glove.scss';
 const lineBreakPadding = '1rem';
 const sectionBreakPadding = '2rem';
 const subSectionBreakPadding = '1.5rem';
-const colStart = [1, 7];
+const colStart = [2, 4];
 const colSpan = [12, 6];
-const colEnd = [13, 12];
+const colEnd = [12, 10];
+
+const sumStart = 4;
+const sumSpan = 3;
 
 const PowerGlove = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
@@ -59,13 +65,13 @@ const PowerGlove = ({}) => {
       <Section
         className="project-page power-glove"
       >
-        <Outline
+        {/* <Outline
           titles={titles}
           ids={ids}
-        />
+        /> */}
         <GridItem
-          colStart={[0, 2]}
-          colSpan={[12, 4]}
+          colStart={colStart}
+          colSpan={[4, 6]}
         >
           <Text
             as="h6"
@@ -76,81 +82,140 @@ const PowerGlove = ({}) => {
           <Text
             as="h1"
           >
-            Making digital art fun to interact with
+            Making digital art more interactive
           </Text>
         </GridItem>
+        <GridItem
+          colStart={sumStart}
+          colSpan={sumSpan}
+          marginTop="2rem"
+          id="powerglove-challenge"
+        >
+          <Text
+            paddingBottom={lineBreakPadding}
+            className="summary-title"
+          >
+            THE CHALLENGE
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            Create a cool, aesthetic, and interactive exhibit for a
+            festival celebrating &quot;making with hands&quot;.
+          </Text>
+        </GridItem>
+        <GridItem
+          colSpan={sumSpan}
+          marginTop="2rem"
+          id="powerglove-outcome"
+        >
+          <Text
+            paddingBottom={lineBreakPadding}
+            className="summary-title"
+          >
+            THE OUTCOME
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            A glove that the IBM developer and design community can hook
+            up to digital art pieces and make them more interactive.
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={sumStart}
+          colSpan={sumSpan}
+          id="powerglove-role"
+        >
+          <Text
+            paddingBottom={lineBreakPadding}
+            className="summary-title"
+          >
+            ROLE
+          </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            I built the glove and began hosting workshops to teach IBM developers and
+            designers how to interface with it, before covid hit.
+          </Text>
+        </GridItem>
+        <SectionBreak />
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="powerglove-project-origin"
+          id="powerglove-intro"
         >
-          <Text as="h2">Origin</Text>
-          <Text as="h4">Messing around with IoT devices is a lot of fun</Text>
-          <Text paddingBottom={lineBreakPadding}>The PowerGlove is a glove I scrapped together that can &quot;see&quot; what a user&apos;s hand looks like.</Text>
-          <Text paddingBottom={sectionBreakPadding}>
-            It senses voltage changes in a pretty simple circuit that runs through the glove.
-            Thanks to node, johnny-five.js and the power of websockets we can
-            take that information and run it through any javascript application in real time.
-            Check out the code, an example, and a pseudo-api
-            {' '}
-            <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
-            .
-          </Text>
-          {/* <iframe
-        width="560"
-        height="315"
-        src="https://www.youtube.com/embed/XQOroTvtn90"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      /> */}
-          <Center>
-            <Image
-              src={GloveExample}
-              onLoad={handleLoad}
-              height="100%"
-              objectFit="contain !important"
-            />
-          </Center>
-          <Center paddingBottom={lineBreakPadding}>
-            <Text as="h5">The Power Glove hooked up to a WebGL sketch</Text>
-          </Center>
-
           <Text paddingBottom={lineBreakPadding}>
-            Putting on a glove to track hand movements is probably more cumbersome or annoying than using a camera.
-            BUT, this project was more about fun and exploration than practicality.
+            In 2020 when the IBM Austin design studio asked me to organize its annual Craft Con, a festival
+            celebrating &quot;making with hands&quot;, my closest friends and I jumped at the opportunity. We hung up posters, created
+            promo videos, built a website, and reached out to other designers to submit topics for talks.
+          </Text>
+          <Image
+            src={CraftCon}
+            width="100%"
+            onLoad={handleLoad}
+            paddingBottom={lineBreakPadding}
+          />
+          <Text paddingBottom={lineBreakPadding}>
+            The problem is that we were also expected to each submit our own topics for talks, and traditionally
+            the hosts put the most effort into their workshops. The year before, Zak Crapo had done a live screen
+            printing demo, which was cool, aesthetic, and interactive, making it a tough one to follow up on.
+            The most interactive thing I had built to date was a hunk of plastic that made a noise based off of
+            specific motions, such as a bat crack when swung quickly. It was duct taped to a cast, and had the
+            entertainment value of a pull-string toy.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            The extremely general question &quot;what&apos;s a cool, aesthetic, and interactive thing that I can
+            feasibly build&quot; became &quot;how can I make my digital art more interactive&quot;, which led to
+            a spark of inspiration in the IBM kitchen during a snack run.
           </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          paddingTop="1rem"
-          id="powerglove-how-it-works"
+          id="powerglove-prototype"
         >
-          <Text as="h2">Mechanisms</Text>
-          <Text as="h4">A quick, high-level tutorial</Text>
-          <Text paddingBottom={sectionBreakPadding}>
-            A Flex sensor is a special resistor that changes value when bent in a direction.
-            Arduinos can measure voltage at points in a circuit. Making a circuit with
-            two resistors in it, one static and one variable, will make the voltage
-            in between them variable. By measuring this voltage, you can interpret
-            how much the sensor has been bent.
+          <Text as="h2" paddingBottom={lineBreakPadding}>Prototype</Text>
+          <Image
+            src={MK01}
+            width="100%"
+            onLoad={handleLoad}
+            paddingBottom={lineBreakPadding}
+          />
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            I took food serving gloves and coffee stirrers from the kitchen, breaking off one of the coffee stirrers
+            so that it was shorter than the other. Taping the ends together with duct tape formed an arch, and after
+            some simple wiring the result was a glove that let me complete/break a circuit by curling my finger. Not bad!
+          </Text>
+          <video autoPlay loop muted playsinline alt="PrototypeTest" controls src={PrototypeTest} />
+          <Text as="h5">
+            Unfortunately the only video I could find of
+            the prototype - In my excitement, I forgot to document :&#40;
+          </Text>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="powerglove-result"
+        >
+          <Text as="h2" paddingBottom={lineBreakPadding}>Result</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            My friends thought the prototype was fun to use, so I went ahead and substituted the cafeteria components for flex sensors.
+            Flex sensors change resistance based on how much they&apos;re bent, so if you measure voltage across the sensor you
+            can tell how bent they are, which is much more information than a simple on/off.
           </Text>
           <Image
             src={FlexSensorCircuit}
             objectFit="cover"
             onLoad={handleLoad}
           />
-          <Text as="h5" paddingBottom={sectionBreakPadding}>Arduino circuit with flex sensor</Text>
-          <Text marginTop="1rem">
-            Put five of these together, slap them on a glove, and voila! I used an
-            airsoft glove because they have padding you can easily cut up to create
-            a quick shell to protect the sensors, but you can use anything.
+          <Text as="h5" paddingBottom={lineBreakPadding}>The actual circuit I used for each finger, made with circuit.io. The extra resistor is for calibration.</Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Put five of the circuits above together, slap them on a glove, and voila! I used an
+            airsoft glove because they have plastic padding you can easily cut up to create a quick
+            shell to protect the sensors.
           </Text>
-          <Center width="100%" marginTop="2rem">
+          <Center width="100%">
             <Image
               src={GloveSkeleton}
               flex=".5"
@@ -169,131 +234,14 @@ const PowerGlove = ({}) => {
             <Text as="h5">Completed glove</Text>
           </Center>
           <Text paddingBottom={lineBreakPadding}>
-            I meant to open up the power glove to the community after I created it, hosting a few
-            classes and creating a pseudo-api for it so that other developers at IBM could
-            make their own sketches for an upcoming event.
-          </Text>
-          <Text paddingBottom={sectionBreakPadding}>
-            Unfortunately, I was only able to host one class before Covid cut the project short,
-            as not only did it kick us out of the office, but we only had one glove to work with, and as you can imagine
-            passing it around was not an option. The glove itself was lost in the 2021 Texas Freeze
-            when a ceiling pipe burst and water flooded the entire design building, including
-            the lab where it was held. You can find a copy of the repo linked at the top of the page or
+            I made a basic hand sketch to visually prove that the glove was getting proper data, then built an interfacing model
+            &#40;kind of like an API&#41; for pulling data from it. It&apos;s in the IBM github, but I made a copy
             {' '}
             <Link isExternal href="https://github.com/JamesZXie/power-glove">here</Link>
             .
           </Text>
-          <SectionBreak />
+          <video autoPlay loop muted playsinline alt="Complete" controls src={Complete} />
         </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          paddingBottom="4rem"
-          id="powerglove-process"
-        >
-          <Text as="h2">Process</Text>
-          <Text as="h4">Discovery and testing</Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            I did not take nearly enough photos or videos. I was kind of counting on documenting this during the CraftCon event
-            that never happened, but here&apos;s what I do have...
-          </Text>
-          <Image
-            src={MK01}
-            width="100%"
-            onLoad={handleLoad}
-          />
-          <Text as="h5" paddingBottom={lineBreakPadding}>Cheap prototype before I spent like $300 on the actual glove. </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            The makelab wasn&apos;t too well equipped at the time, so I had to grab stuff from the IBM kitchen, hence the plastic server gloves and coffee stirrers.
-            I just wanted to see if people would find it fun to use.
-          </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            The prototype works by simply completing a circuit which an arduino reads as on/off. The top stirrer is longer than the bottom stirrer, and by binding the
-            ends together you can create an arch. If you push the bottom up from the middle with a knuckle, the top arch doesn&apos;t bend,
-            and so the middles touch - which can make a complete circuit.
-          </Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            I plugged this into a p5 sketch I had from a youtube tutorial, and then changed the variable dictating speed to
-            create speed depending on on/off. Loaded the sketch, and told friends to put their hand in and try to squeeze their finger.
-          </Text>
-          <YTVideo>
-            <iframe
-              src="https://www.youtube.com/embed/FuFNcOKOYR8"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </YTVideo>
-          <Text as="h5" paddingBottom={lineBreakPadding}>Flex sensor circuit proof-of-concept test</Text>
-          <Text paddingBottom={subSectionBreakPadding}>
-            This is the sketch I used with the plastic glove, with a similar circuit, but I have an actual flex sensor plugged into the actual planned circuit.
-            The speed was
-            {' '}
-            <strong>supposed</strong>
-            {' '}
-            to depend on how hard you press, but as you can see, its poorly calibrated.
-          </Text>
-          <YTVideo>
-            <iframe
-              src="https://www.youtube.com/embed/MI5E1K1rgJM"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </YTVideo>
-          <Text as="h5" paddingBottom={lineBreakPadding}>Getting the shortest finger, the thumb, to finally work. The other interaction near the end did not.. you were supposed to see pulses.</Text>
-          <Text
-            paddingBottom={sectionBreakPadding}
-          >
-            I also attached and attempted to use an accelerometer as you can see near the end of the clip above. It didn&apos;t really go that well, although I did include info it collected
-            in the API which you can see in the repo above. I attempted to try to calculate position from the acceleration in the accelerometer using kalman filters, but I wasn&apos;t smart
-            enough to figure it out in time for CraftCon.
-          </Text>
-        </GridItem>
-        {/* <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          paddingTop="1rem"
-          display={['none', 'block']}
-        >
-          <SectionBreak />
-          <Text as="h2">More fun</Text>
-          <Text as="h4">A growing museum of web-feasible work I&apos;ve done</Text>
-          <Text
-            paddingBottom={sectionBreakPadding}
-          >
-            I also love creating generative art using web technologies that can
-            be integrated into real websites and web apps. Here&apos;s some
-            &quot;web-feasible&quot; art that I&apos;m periodically translating
-            from python / adding to.
-            <br />
-            <br />
-            A lot of these are taken from a book that challenges artists to draw random things.
-            I decided to try and interpret the challenges through the lens of generative art. You can
-            find the subject / challenge in the top left.
-            <br />
-            <br />
-            Controls:
-            <br />
-            Keyboard and Mouse to interact, if indicated.
-            <br />
-            Click arrows to cycle through installations
-
-          </Text>
-        </GridItem>
-        <GridItem
-          colSpan={12}
-          marginBottom="-3.75rem"
-          overflow="hidden"
-          display={['none', 'block']}
-        >
-          <Sketches />
-        </GridItem> */}
-
       </Section>
     </>
   );

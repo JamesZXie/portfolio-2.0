@@ -103,7 +103,7 @@ const Provisioning = ({}) => {
           colStart={sumStart}
           colSpan={sumSpan}
           marginTop="2rem"
-          id="pools-summary-1"
+          id="provisioning-challenge"
         >
           <Text
             paddingBottom={lineBreakPadding}
@@ -112,13 +112,13 @@ const Provisioning = ({}) => {
             THE CHALLENGE
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Realign a confusing, feature-bloated checkout page with a premium cloud platform’s brand and price point.
+            Realign a confusing, feature-bloated checkout page with a premium cloud platform&apos;s brand and price point.
           </Text>
         </GridItem>
         <GridItem
           colSpan={sumSpan}
           marginTop="2rem"
-          id="pools-summary-1"
+          id="provisioning-outcome"
         >
           <Text
             paddingBottom={lineBreakPadding}
@@ -133,7 +133,7 @@ const Provisioning = ({}) => {
         <GridItem
           colStart={sumStart}
           colSpan={sumSpan}
-          id="pools-summary-1"
+          id="provisioning-role"
         >
           <Text
             paddingBottom={lineBreakPadding}
@@ -147,7 +147,7 @@ const Provisioning = ({}) => {
         </GridItem>
         <GridItem
           colSpan={sumSpan}
-          id="pools-summary-1"
+          id="provisioning-impact"
         >
           <Text
             paddingBottom={lineBreakPadding}
