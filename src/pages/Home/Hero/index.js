@@ -39,10 +39,11 @@ const Hero = ({ total, numLoaded, loading }) => {
           <Box
             className="container__solid-rectangle hero__intro-container__intro"
           >
+            <Text paddingBottom="1rem">
+              I&apos;m James, a technical product design generalist who runs research sessions,
+              designs, and codes on a weekly basis.
+            </Text>
             <Text>
-              I&apos;m James, a product design generalist who runs research sessions, designs, and codes on a weekly basis.
-              <br />
-              <br />
               I&apos;m currently the primary designer for IBM&apos;s PowerVS cloud platform.
             </Text>
           </Box>
