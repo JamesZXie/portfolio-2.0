@@ -168,23 +168,69 @@ const Pools = ({}) => {
           marginTop="1rem"
         >
           <Text paddingBottom={lineBreakPadding}>
-            While touring apartments in New York, you&apos;re told that if you want heating in an apartment,
-            you have to pay for heating the entire building due to it using a central heating system.
-            Apparently no one else has asked for heating, so as the only one to need it, you would have
-            to front the bill. Ridiculous! Chances are you wouldn&apos;t move in - or at least, that&apos;s what
-            potential IBM Cloud customers chose to do when told that for certain software licenses, they
-            would have to pay for license application to an entire server, instead of just the portion
-            of the server they rent.
-          </Text>
-          <Text>
-            Unable to change out the &quot;central heating system&quot;, the engineering and sales team worked together
-            to create a feature that did the equivalent of boarding up heating ducts leading to other units,
-            so that cloud users with licenses could run licensed software in the space they rent without paying
-            license fees for the rest of the server. After creating the technology, they passed it to us to make
-            setting up and managing this heated room intuitive for users.
+            While touring apartments in New York, you&apos;re told that if you want to heat a room, you&apos;d
+            have to heat the entire building. Apparently the apartment uses a central heating system, and since no one else
+            wants heating, you&apos;d have to pay for all of it. Ridiculous! Chances are you wouldn&apos;t move in
+            - or at least, that&apos;s what
+            potential IBM Cloud customers choose when told that to use certain software,
             {' '}
-            <b>We call this room a &quot;shared processor pool&quot;.</b>
+            <b>
+              they
+              would have to pay for a license applied to an entire server, instead of just the portion
+              they rent.
+            </b>
           </Text>
+
+          <Text paddingBottom={subSectionBreakPadding}>
+            In an effort to attract license-dependent customers, the engineering and sales team worked together
+            to create a feature that would allow users to remove the excess costs, with some impact to performance.
+            After creating the technology, they passed it to us to make
+            using this feature and understanding its tradeoffs easy for users.
+            {' '}
+            <b>We call this feature a &quot;shared processor pool&quot;.</b>
+          </Text>
+
+          <Accordion
+            paddingBottom={subSectionBreakPadding}
+            allowMultiple
+          >
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  What is the cloud?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel pb={4}>
+                <Text>
+                  Simply put, a cloud is a place where you can rent a chunk of a &quot;computer&quot; to
+                  use, instead of purchasing the entire thing. The cloud owner is the landlord of multiple
+                  apartments, and users rent rooms from them for a monthly cost.
+                </Text>
+              </AccordionPanel>
+            </AccordionItem>
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  Can you go a bit deeper into how this feature works?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel pb={4}>
+                <Text paddingBottom={lineBreakPadding}>
+                  Usually, chunks that are connected to a bigger computer can actually borrow some help
+                  from the bigger computer. If any part of the larger computer has some downtime after finishing
+                  its assigned task, it looks for other work to do.
+                </Text>
+                <Text>
+                  A shared processor pool is a hard break in the system that cuts off this ability to share tasks,
+                  which makes it so the license software detects a lower computing power - because there is
+                  lower computing power. The software then charges for this lower computing power instead of the max
+                  possible computing power, which could be more than 100x higher.
+                </Text>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -196,20 +242,32 @@ const Pools = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             Utilizing a shared processor pool comes with two restrictions:
           </Text>
-          <OrderedList>
-            <li>
-              <b>Performance restriction:</b>
+          <OrderedList paddingBottom={lineBreakPadding}>
+            <ListItem>
+              <b>Performance restrictions:</b>
               {' '}
-              users pay for, but also use, a smaller chunk of the
-              server. A smaller chunk means less processing power.
-            </li>
-            <li>
-              <b>Location restrictions on deployment:</b>
+              users pay for, but also use, less of a
+              server. Using less means having lower performance than normal.
+            </ListItem>
+            <ListItem>
+              <b>Physical location restrictions:</b>
               {' '}
-              stuff requiring the same license has to
-              be located on the same physical server to share the license.
-            </li>
+
+              to optimize performance, stuff requiring the same license has to
+              be located on the same physical server.
+            </ListItem>
           </OrderedList>
+          <Text>
+            When you add the above two to already existing location restrictions
+            and performance requirements,
+            {' '}
+            <b>
+              using shared processor pools becomes a balancing
+              act between cost and performance
+            </b>
+            {' '}
+            after satisfying location requirements.
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -225,14 +283,10 @@ const Pools = ({}) => {
           </Text>
           <OrderedList paddingBottom={lineBreakPadding}>
             <ListItem>
-              Help users optimally balance cost savings and performance.
+              Help users optimally balance cost and performance.
             </ListItem>
-            <ListItem>Make deployment restrictions easy to understand and manage.</ListItem>
+            <ListItem>Make physical location restrictions easy to understand and manage.</ListItem>
           </OrderedList>
-          <Text>
-            If we do not accomplish these goals, license-dependent users will go back off
-            of our platform because we won&apos;t be delivering on our “premium” value proposition.
-          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -302,8 +356,10 @@ const Pools = ({}) => {
             Simplified,
             {' '}
             <b>more space = more money & more performance</b>
-            . In reality, the amount of space VMs need is dynamic, and changes over time.
-            To display space accurately, we have to break it down into three numbers:
+            . However, the amount of space a VM uses changes over time, which makes
+            it hard to define just how much space a VM needs.
+            To help users gauge usage, and decide on the optimal amount of space to purchase,  we have to break
+            &quot;space&quot; down into three factors:
           </Text>
           <OrderedList paddingBottom={lineBreakPadding}>
             <ListItem>
@@ -312,11 +368,11 @@ const Pools = ({}) => {
             </ListItem>
             <ListItem>
               <b>Allocated cores: </b>
-              the minimum space a VM will need
+              the minimum space a VM will use
             </ListItem>
             <ListItem>
               <b>Ratio of allocated to unallocated cores: </b>
-              how much space each VM has on average
+              The average space a VM uses
             </ListItem>
           </OrderedList>
           <Text paddingBottom={subSectionBreakPadding}>
