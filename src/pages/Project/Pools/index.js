@@ -182,10 +182,12 @@ const Pools = ({}) => {
           </Text>
 
           <Text paddingBottom={subSectionBreakPadding}>
-            In an effort to attract license-dependent customers, the engineering and sales team worked together
-            to create a feature that would allow users to remove the excess costs, with some impact to performance.
+            We couldn&apos;t change how external software companies charged for their licenses, but we still
+            wanted license-dependent companies to be able to use our cloud.
+            In an effort to attract these customers, the engineering and sales team worked together
+            to create a feature that worked around license pricing models, with some downsides to performance.
             After creating the technology, they passed it to us to make
-            using this feature and understanding its tradeoffs easy for users.
+            using it and understanding its tradeoffs easy for users.
             {' '}
             <b>We call this feature a &quot;shared processor pool&quot;.</b>
           </Text>
@@ -212,21 +214,22 @@ const Pools = ({}) => {
             <AccordionItem>
               <AccordionButton>
                 <Box flex="1" textAlign="left">
-                  Can you go a bit deeper into how this feature works?
+                  What is a virtual machine?
                 </Box>
                 <AccordionIcon />
               </AccordionButton>
               <AccordionPanel pb={4}>
                 <Text paddingBottom={lineBreakPadding}>
-                  Usually, chunks that are connected to a bigger computer can actually borrow some help
-                  from the bigger computer. If any part of the larger computer has some downtime after finishing
-                  its assigned task, it looks for other work to do.
+                  A virtual machine is essentially a normal computer that lives on a chunk of another computer &#40;such as a computer
+                  in IBM&apos;s cloud&#41;, and not in the physical world.
+                  Instead of physical hardware, digital software is run on a host computer to emulate the function of physical
+                  hardware. One of the primary functions of the cloud is to host virtual machines.
                 </Text>
                 <Text>
-                  A shared processor pool is a hard break in the system that cuts off this ability to share tasks,
-                  which makes it so the license software detects a lower computing power - because there is
-                  lower computing power. The software then charges for this lower computing power instead of the max
-                  possible computing power, which could be more than 100x higher.
+                  The main value propositions of a virtual machine are convenience and scalability. Instead of waiting 5-7 business
+                  days for a new computer, I can build one in the cloud. I can make it a Mac, a Windows,
+                  and run all sorts of strenuous tests without having to worry about it blowing up in my face. I can easily make copies,
+                  use it as a server for a web app, or even transfer it to another host, without lifting a finger.
                 </Text>
               </AccordionPanel>
             </AccordionItem>
@@ -238,9 +241,15 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-problem"
         >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
+          <Text as="h2" paddingBottom={lineBreakPadding}>Problem</Text>
+          <Lightbox
+            id="SPPExplanation"
+            paddingBottom={lineBreakPadding}
+            src={SPPExplanationDiagram}
+            onLoad={onLoad}
+          />
           <Text paddingBottom={lineBreakPadding}>
-            Utilizing a shared processor pool comes with two restrictions:
+            Using a shared processor pool comes with two restrictions:
           </Text>
           <OrderedList paddingBottom={lineBreakPadding}>
             <ListItem>
@@ -257,17 +266,43 @@ const Pools = ({}) => {
               be located on the same physical server.
             </ListItem>
           </OrderedList>
-          <Text>
-            When you add the above two to already existing location restrictions
-            and performance requirements,
+          <Text paddingBottom={subSectionBreakPadding}>
+            When you add in already existing restrictions,
             {' '}
             <b>
-              using shared processor pools becomes a balancing
-              act between cost and performance
+              creating and using a shared processor pool becomes a balancing
+              act between cost, performance, and location requirements
             </b>
-            {' '}
-            after satisfying location requirements.
+            .
           </Text>
+          <Accordion allowMultiple>
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  What causes these restrictions?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel pb={4}>
+                <Text paddingBottom={lineBreakPadding}>
+                  Usually, chunks that are connected to a bigger computer can actually borrow some help
+                  from the bigger computer. If any part of the larger computer has some downtime after finishing
+                  its assigned task, it looks for other work to do.
+                </Text>
+                <Text paddingBottom={lineBreakPadding}>
+                  A shared processor pool creates an isolated environment in the system that cuts off this ability to share tasks,
+                  which makes it so the license software detects a lower computing power - because there in fact is a
+                  lower computing power. The license software then charges for this lower computing power instead of the max
+                  possible computing power, which could be more than 100x higher.
+                </Text>
+                <Text>
+                  This is why it is optimal to put as many VMs into the same shared processor pool as you can.
+                  If any of the VMs have downtime, they will try to help out their neighbors. If you put each
+                  VM in its own shared processor pool, they can&apos;t help each other.
+                </Text>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -277,7 +312,7 @@ const Pools = ({}) => {
         >
           <Text as="h2" paddingBottom={subSectionBreakPadding}>Goals</Text>
           <Text paddingBottom={lineBreakPadding}>
-            With our premium value proposition in mind, we had
+            We had
             {' '}
             <b>two primary design goals for the implementation of pools:</b>
           </Text>
@@ -355,7 +390,7 @@ const Pools = ({}) => {
           <Text paddingBottom={lineBreakPadding}>
             Simplified,
             {' '}
-            <b>more space = more money & more performance</b>
+            <b>more space = more performance</b>
             . However, the amount of space a VM uses changes over time, which makes
             it hard to define just how much space a VM needs.
             To help users gauge usage, and decide on the optimal amount of space to purchase,  we have to break
@@ -376,8 +411,8 @@ const Pools = ({}) => {
             </ListItem>
           </OrderedList>
           <Text paddingBottom={subSectionBreakPadding}>
-            Our goal here is to show these numbers at key points in the user&apos;s creation flow
-            to help the user assess the need for tuning before creating another VM in a pool.
+            The goal is to show these at key points in the UI
+            to help the user assess the need to add or subtract space before modifying the contents of a pool.
           </Text>
           <Lightbox
             id="SPPHappyPathGuidance"
@@ -399,13 +434,14 @@ const Pools = ({}) => {
               <AccordionPanel pb={4}>
                 <Text paddingBottom={lineBreakPadding}>
                   By name! We&apos;ve found that users naturally use the name of anything they create
-                  on our platform to dictate the purpose + anything else they need to identify the resource.
+                  on our platform to dictate the purpose + anything else they need to identify the resource. For example,
+                  &quot;Figma_JX_DONTTOUCH&quot;.
                 </Text>
                 <Text paddingBottom={lineBreakPadding}>
-
-                  Forcing users to move the license from the name to say another column on the table would
-                  just make it harder for users to fill in the mandatory name slot, while shortening the
-                  amount of horizontal space on the table.
+                  In testing, we&apos;ve found that
+                  even if given the option to input a license, or just generally the purpose of a resource,
+                  users will still include it in the name. Having users input the license would just shorten the
+                  amount of horizontal space on the table left for the name.
                 </Text>
                 <Text paddingBottom={lineBreakPadding}>
                   We spent some time outside this feature exploring the addition of catchall features, such as

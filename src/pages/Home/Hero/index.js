@@ -40,7 +40,7 @@ const Hero = ({ total, numLoaded, loading }) => {
             className="container__solid-rectangle hero__intro-container__intro"
           >
             <Text paddingBottom="1rem">
-              I&apos;m James, a technical product design generalist who runs research sessions,
+              I&apos;m James, a mission-driven product design generalist who runs research sessions,
               designs, and codes on a weekly basis.
             </Text>
             <Text>
