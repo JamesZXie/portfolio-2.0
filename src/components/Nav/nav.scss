@@ -1,7 +1,7 @@
 @import '../../App.scss';
 
 .home-button-container {
-    background-color: transparent !important;
+    background-color: transparent;
     z-index: 999;
     position: relative;
     padding-left: 1rem;
@@ -16,6 +16,10 @@
         font-weight: 100;
         z-index: 9;
         padding-left: 1rem;
+
+        @media (max-width: 480px) {
+            background-color: $ui-01;
+        }
     }
 }
 
