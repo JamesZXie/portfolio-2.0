@@ -36,12 +36,13 @@ import Branching from '../../../assets/images/Provisioning/provisioning-branchin
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
 const sectionBreakPadding = '2rem';
-const colStart = [2, 4];
+const colStart = [1, 4];
 const colSpan = [12, 6];
-const colEnd = [12, 10];
+const colEnd = [14, 10];
 
-const sumStart = 4;
-const sumSpan = 3;
+const sumStart = [1, 4];
+const sum2Start = [1, 7];
+const sumSpan = [14, 3];
 
 const titles = [
   'Summary',
@@ -85,7 +86,7 @@ const Provisioning = ({}) => {
         /> */}
         <GridItem
           colStart={colStart}
-          colSpan={[4, 6]}
+          colSpan={colSpan}
         >
           <Text
             as="h6"
@@ -117,7 +118,8 @@ const Provisioning = ({}) => {
         </GridItem>
         <GridItem
           colSpan={sumSpan}
-          marginTop="2rem"
+          colStart={sum2Start}
+          marginTop={['0rem', '2rem']}
           id="provisioning-outcome"
         >
           <Text
@@ -147,6 +149,7 @@ const Provisioning = ({}) => {
         </GridItem>
         <GridItem
           colSpan={sumSpan}
+          colStart={sum2Start}
           id="provisioning-impact"
         >
           <Text
@@ -275,8 +278,7 @@ const Provisioning = ({}) => {
         </GridItem>
         <GridItem
           colStart={1}
-          colSpan={12}
-          colEnd={13}
+          colSpan={14}
           marginBottom={subSectionBreakPadding}
         >
           <Carousel>

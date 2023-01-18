@@ -95,7 +95,7 @@ const Pools = ({}) => {
         /> */}
         <GridItem
           colStart={colStart}
-          colSpan={[12, 6]}
+          colSpan={colSpan}
         >
           <Text
             as="h6"
