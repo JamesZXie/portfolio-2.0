@@ -1,21 +1,26 @@
 @import '../../App.scss';
 
 .home {
-    scroll-snap-type: mandatory;
-	scroll-snap-type: y mandatory;
-    height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-
-    &__fix {
-        background-color: $ui-01;
-        height: calc(400vh + 5rem);
+    
+    @media (min-width: 480px) {
+       
+        scroll-snap-type: mandatory;
+        scroll-snap-type: y mandatory;
+        height: 100vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        
+        &__fix {
+            background-color: $ui-01;
+            height: calc(400vh + 5rem);
+        }
     }
     
     button {
         font-size: 14px !important;
     }
+
 
 }
 
