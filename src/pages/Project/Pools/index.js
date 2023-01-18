@@ -41,12 +41,13 @@ import SPPExploration2 from '../../../assets/images/Pools/spp-exploration-2.png'
 const lineBreakPadding = '1rem';
 const subSectionBreakPadding = '2rem';
 const sectionBreakPadding = '2.5rem';
-const colStart = [2, 4];
+const colStart = [1, 4];
 const colSpan = [12, 6];
-const colEnd = [12, 10];
+const colEnd = [14, 10];
 
-const sumStart = 4;
-const sumSpan = 3;
+const sumStart = [1, 4];
+const sum2Start = [1, 7];
+const sumSpan = [14, 3];
 
 const titles = [
   'Summary',
@@ -94,7 +95,7 @@ const Pools = ({}) => {
         /> */}
         <GridItem
           colStart={colStart}
-          colSpan={[4, 6]}
+          colSpan={[12, 6]}
         >
           <Text
             as="h6"
@@ -127,7 +128,8 @@ const Pools = ({}) => {
         </GridItem>
         <GridItem
           colSpan={sumSpan}
-          marginTop="2rem"
+          colStart={sum2Start}
+          marginTop={['0rem', '2rem']}
           id="pools-summary-2"
         >
           <Text
@@ -333,8 +335,7 @@ const Pools = ({}) => {
         </GridItem>
         <GridItem
           colStart={1}
-          colSpan={12}
-          colEnd={13}
+          colSpan={14}
           marginBottom={subSectionBreakPadding}
         >
           <Carousel>
