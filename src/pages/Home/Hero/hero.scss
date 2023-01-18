@@ -53,7 +53,7 @@
             padding-right:0;
             margin-left: 1rem;
             width: calc(100% - 2rem);
-            margin-top: 11rem;
+            margin-top: 8rem;
         }
     }
 
@@ -68,10 +68,13 @@
         border-radius: 5px;
 
         @media (max-width: 480px) {
-            top: 6rem;
+            top: 4rem;
             bottom: auto;
-            left: calc(50% - 120px);
-            width: 240px;
+            left: 0;
+            width: 100%;
+            height: 15rem;
+            object-fit: cover;
+            border-radius: 0;
         }
     }
 
