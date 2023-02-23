@@ -139,7 +139,6 @@ a {
     &__solid-rectangle {
         padding: $spacing-01;
         border-radius: 10px;
-        background-color: $ui-01;
         margin: -1rem;
         
         @media (max-width: 480px) {

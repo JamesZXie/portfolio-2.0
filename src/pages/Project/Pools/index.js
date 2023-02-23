@@ -38,6 +38,8 @@ import SPPPlacementGroups from '../../../assets/images/Pools/spp-placement-group
 import SPPExploration1 from '../../../assets/images/Pools/spp-exploration-1.png';
 import SPPExploration2 from '../../../assets/images/Pools/spp-exploration-2.png';
 
+import SPPProcess from '../../../assets/images/Pools/spp-process.mov';
+
 const lineBreakPadding = '1rem';
 const subSectionBreakPadding = '2rem';
 const sectionBreakPadding = '2.5rem';
@@ -122,8 +124,8 @@ const Pools = ({}) => {
             THE CHALLENGE
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            Design the experience for setting up, fine-tuning, and maintaining a cost-saving feature
-            on IBM&apos;s cloud that eliminates a financial barrier-to-entry.
+            If users arrange their cloud stuff in a certain way, they can save a lot of money on software licenses.
+            Unfortunately, the result is complex, and time-consuming to maintain in the long-term.
           </Text>
         </GridItem>
         <GridItem
@@ -139,8 +141,8 @@ const Pools = ({}) => {
             THE OUTCOME
           </Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            A relatively intuitive setup and tuning experience with little need for long-term
-            maintenance.
+            A flow that helps users break up the complexity into digestible pieces, and lets users focus on
+            just the pieces that really matter.
           </Text>
         </GridItem>
         <GridItem
@@ -166,164 +168,54 @@ const Pools = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="pools-business-problem"
+          id="pools-problem"
           marginTop="1rem"
         >
-          <Text paddingBottom={lineBreakPadding}>
-            While touring apartments in New York, you&apos;re told that if you want to heat a room, you&apos;d
-            have to heat the entire building. Apparently the apartment uses a central heating system, and since no one else
-            wants heating, you&apos;d have to pay for all of it. Ridiculous! Chances are you wouldn&apos;t move in
-            - or at least, that&apos;s what
-            potential IBM Cloud customers choose when told that to use certain software,
-            {' '}
-            <b>
-              they
-              would have to pay for a license applied to an entire server, instead of just the portion
-              they rent.
-            </b>
-          </Text>
-
-          <Text paddingBottom={subSectionBreakPadding}>
-            We couldn&apos;t change how external software companies charged for their licenses, but we still
-            wanted license-dependent companies to be able to use our cloud.
-            In an effort to attract these customers, the engineering and sales team worked together
-            to create a feature that worked around license pricing models, with some downsides to performance.
-            After creating the technology, they passed it to us to make
-            using it and understanding its tradeoffs easy for users.
-            {' '}
-            <b>We call this feature a &quot;shared processor pool&quot;.</b>
-          </Text>
-
-          <Accordion
-            paddingBottom={subSectionBreakPadding}
-            allowMultiple
-          >
-            <AccordionItem>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  What is the cloud?
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-              <AccordionPanel pb={4}>
-                <Text>
-                  Simply put, a cloud is a place where you can rent a chunk of a &quot;computer&quot; to
-                  use, instead of purchasing the entire thing. The cloud owner is the landlord of multiple
-                  apartments, and users rent rooms from them for a monthly cost.
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-            <AccordionItem>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  What is a virtual machine?
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-              <AccordionPanel pb={4}>
-                <Text paddingBottom={lineBreakPadding}>
-                  A virtual machine is essentially a normal computer that lives on a chunk of another computer &#40;such as a computer
-                  in IBM&apos;s cloud&#41;, and not in the physical world.
-                  Instead of physical hardware, digital software is run on a host computer to emulate the function of physical
-                  hardware. One of the primary functions of the cloud is to host virtual machines.
-                </Text>
-                <Text>
-                  The main value propositions of a virtual machine are convenience and scalability. Instead of waiting 5-7 business
-                  days for a new computer, I can build one in the cloud. I can make it a Mac, a Windows,
-                  and run all sorts of strenuous tests without having to worry about it blowing up in my face. I can easily make copies,
-                  use it as a server for a web app, or even transfer it to another host, without lifting a finger.
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-problem"
-        >
           <Text as="h2" paddingBottom={lineBreakPadding}>Problem</Text>
-          <Lightbox
-            id="SPPExplanation"
-            paddingBottom={lineBreakPadding}
-            src={SPPExplanationDiagram}
-            onLoad={onLoad}
-          />
           <Text paddingBottom={lineBreakPadding}>
-            Using a shared processor pool comes with two restrictions:
-          </Text>
-          <OrderedList paddingBottom={lineBreakPadding}>
-            <ListItem>
-              <b>Performance restrictions:</b>
-              {' '}
-              users pay for, but also use, less of a
-              server. Using less means having lower performance than normal.
-            </ListItem>
-            <ListItem>
-              <b>Physical location restrictions:</b>
-              {' '}
+            Software licenses will charge users based on how much they can get out of the license. This is dependent on
+            how powerful the computer holding a user&apos;s VM is - the more powerful the host, the more the license can be used.
 
-              to optimize performance, stuff requiring the same license has to
-              be located on the same physical server.
-            </ListItem>
-          </OrderedList>
-          <Text paddingBottom={subSectionBreakPadding}>
-            When you add in already existing restrictions,
-            {' '}
-            <b>
-              creating and using a shared processor pool becomes a balancing
-              act between cost, performance, and location requirements
-            </b>
-            .
           </Text>
-          <Accordion allowMultiple>
-            <AccordionItem>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  What causes these restrictions?
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-              <AccordionPanel pb={4}>
-                <Text paddingBottom={lineBreakPadding}>
-                  Usually, chunks that are connected to a bigger computer can actually borrow some help
-                  from the bigger computer. If any part of the larger computer has some downtime after finishing
-                  its assigned task, it looks for other work to do.
-                </Text>
-                <Text paddingBottom={lineBreakPadding}>
-                  A shared processor pool creates an isolated environment in the system that cuts off this ability to share tasks,
-                  which makes it so the license software detects a lower computing power - because there in fact is a
-                  lower computing power. The license software then charges for this lower computing power instead of the max
-                  possible computing power, which could be more than 100x higher.
-                </Text>
-                <Text>
-                  This is why it is optimal to put as many VMs into the same shared processor pool as you can.
-                  If any of the VMs have downtime, they will try to help out their neighbors. If you put each
-                  VM in its own shared processor pool, they can&apos;t help each other.
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
-          id="pools-user-goals"
-        >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>Goals</Text>
           <Text paddingBottom={lineBreakPadding}>
-            We had
-            {' '}
-            <b>two primary design goals for the implementation of pools:</b>
+            On PowerVS, we host users on supercomputers, so unfortunately this charge ends up being quite high.
+
+            To lower these charges, users must perform a procedure to &quot;weaken&quot; what&apos;s hosting their VMs.
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            To do this, users have to put all of their virtual machines that need licenses into one area on one host.
+            A license is then applied only to this isolated area, and the user is charged accordingly.
+          </Text>
+          <video autoPlay loop muted playsinline alt="SPPProcess" controls src={SPPProcess} />
+          <Text as="h5">
+            How a user might consolidate virtual machines &#40;blue boxes&#41; and create an isolated area to reduce licensing charges (circled in red)
+          </Text>
+          <Text
+            paddingTop={lineBreakPadding}
+            paddingBottom={lineBreakPadding}
+          >
+            Seems simple, right? There are three catches that work together to make this a hard for users:
           </Text>
           <OrderedList paddingBottom={lineBreakPadding}>
             <ListItem>
-              Help users optimally balance cost and performance.
+              The virtual machines have constraints on their placement.
+              Some can&apos;t be together in the same larger area. Others must to be placed in the same area together.
             </ListItem>
-            <ListItem>Make physical location restrictions easy to understand and manage.</ListItem>
+            <ListItem>
+              VMs placed in the same area share work - meaning the more in an area, the better the performance
+              for each VM.
+            </ListItem>
           </OrderedList>
+          <Text paddingBottom={lineBreakPadding}>
+            Due to the first catch, cramming a lot of VMs together creates a nasty web of relationships.
+            The second heavily incentivizes users to, well, cram a lot of VMs together.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            As a result, having to track of a complex web of relationships unavoidable, and in the long run maintaining and expanding
+            upon this web can get extremely tough.
+          </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -332,6 +224,11 @@ const Pools = ({}) => {
           id="pools-solution"
         >
           <Text as="h2" paddingBottom={subSectionBreakPadding}>Solution</Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            The impact of the second catch was out of the design team&apos;s hands - it was
+            just how computers worked. As a result, our design goal was to mitigate the long
+            term costs of this procedure by helping users navigate the inevitable web.
+          </Text>
         </GridItem>
         <GridItem
           colStart={1}
