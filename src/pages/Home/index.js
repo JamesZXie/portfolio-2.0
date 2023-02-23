@@ -50,13 +50,12 @@ const Home = (props) => {
     return home.removeEventListener('scroll', debounce(handleScroll, 100));
   }, [currSection]);
 
-  const renderSideMenu = () => {
+  const renderProgressThing = () => {
     const sections = [1, 2, 3, 4];
     return (
       <Box className="progress__container" left={currSection >= 1 ? '1rem' : -10}>
-        {/* <Box className="progress__circle" backgroundColor={currSection === 1 ? 'black' : 'white'} /> */}
         {sections.map((number) => (
-          <Box className="progress__circle" backgroundColor={currSection === number ? 'black' : 'white'} />
+          <Box className="progress__circle" backgroundColor={currSection === number ? '#1D1D1D' : 'transparent'} />
         ))}
       </Box>
     );
@@ -65,7 +64,7 @@ const Home = (props) => {
   return (
     <Box className="home" id="home">
       <Box className="home__fix">
-        {renderSideMenu()}
+        {renderProgressThing()}
         <Hero
           total={total}
           numLoaded={numLoaded}
