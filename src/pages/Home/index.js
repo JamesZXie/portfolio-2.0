@@ -51,81 +51,30 @@ const Home = (props) => {
   }, [currSection]);
 
   const renderSideMenu = () => {
-    const handleClick = (id) => {
-      document.getElementById(id).scrollIntoView();
-    };
-
+    const sections = [1, 2, 3, 4];
     return (
-      <Flex
-        className="side-menu-container"
-        display={['none', 'flex']}
-      >
-        <Flex
-          direction="column"
-          className="side-menu"
-          id="side-menu"
-          color="white"
-        >
-          <Button
-            className="side-menu__item"
-            onClick={() => handleClick('hero')}
-            id={currSection === 0 ? 'current-section' : ''}
-          >
-            About
-          </Button>
-          <Button
-            className="side-menu__item"
-            onClick={() => handleClick('tile--pools')}
-            id={currSection === 1 ? 'current-section' : ''}
-          >
-            PSVS Pools
-          </Button>
-          <Button
-            className="side-menu__item"
-            onClick={() => handleClick('tile--provisioning')}
-            id={currSection === 2 ? 'current-section' : ''}
-          >
-            Cloud Checkout
-          </Button>
-          <Button
-            className="side-menu__item"
-            onClick={() => handleClick('tile--power-glove')}
-            id={currSection === 3 ? 'current-section' : ''}
-          >
-            Powerglove
-          </Button>
-          {/* <Button
-            className="side-menu__item"
-            onClick={() => handleClick('tile--rendezvous')}
-            id={currSection === 4 ? 'current-section' : ''}
-          >
-            Rendezvous
-          </Button> */}
-          <Button
-            className="side-menu__item"
-            onClick={() => handleClick('tile--austin-cold')}
-            id={currSection === 4 ? 'current-section' : ''}
-          >
-            Austincold
-          </Button>
-        </Flex>
-      </Flex>
+      <Box className="progress__container" left={currSection >= 1 ? '1rem' : -10}>
+        {/* <Box className="progress__circle" backgroundColor={currSection === 1 ? 'black' : 'white'} /> */}
+        {sections.map((number) => (
+          <Box className="progress__circle" backgroundColor={currSection === number ? 'black' : 'white'} />
+        ))}
+      </Box>
     );
   };
 
   return (
     <Box className="home" id="home">
       <Box className="home__fix">
-        {/* {renderSideMenu()} */}
+        {renderSideMenu()}
         <Hero
           total={total}
           numLoaded={numLoaded}
           loading={loading}
         />
-        <PoolsTile
+        <ProvisioningTile
           onLoad={onLoad}
         />
-        <ProvisioningTile
+        <PoolsTile
           onLoad={onLoad}
         />
         <PowerGloveTile
@@ -138,7 +87,6 @@ const Home = (props) => {
           onLoad={onLoad}
         />
       </Box>
-
     </Box>
   );
 };
