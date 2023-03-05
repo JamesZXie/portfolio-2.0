@@ -37,6 +37,7 @@ import SPPExplanationDiagram from '../../../assets/images/Pools/spp-explanation-
 import SPPPlacementGroups from '../../../assets/images/Pools/spp-placement-groups.png';
 import SPPExploration1 from '../../../assets/images/Pools/spp-exploration-1.png';
 import SPPExploration2 from '../../../assets/images/Pools/spp-exploration-2.png';
+import SPPWebExample from '../../../assets/images/Pools/spp-web-example.png';
 
 import SPPProcess from '../../../assets/images/Pools/spp-process.mov';
 
@@ -173,49 +174,88 @@ const Pools = ({}) => {
         >
           <Text as="h2" paddingBottom={lineBreakPadding}>Problem</Text>
           <Text paddingBottom={lineBreakPadding}>
-            Software licenses will charge users based on how much they can get out of the license. This is dependent on
-            how powerful the computer holding a user&apos;s VM is - the more powerful the host, the more the license can be used.
-
+            Software licenses charge users based on how much a user gets out of the license.
+            In the cloud, this is measured by looking at how powerful the computers hosting a
+            user&apos;s virtual machines are - the more powerful the host, the more the license can be used.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
-            On PowerVS, we host users on supercomputers, so unfortunately this charge ends up being quite high.
+            On PowerVS, we host users on supercomputers, so this charge ends up being quite high.
 
-            To lower these charges, users must perform a procedure to &quot;weaken&quot; what&apos;s hosting their VMs.
+            To lower this charge, users must perform a procedure to &quot;weaken&quot; the host supercomputer.
           </Text>
           <Text
             paddingBottom={lineBreakPadding}
           >
             To do this, users have to put all of their virtual machines that need licenses into one area on one host.
-            A license is then applied only to this isolated area, and the user is charged accordingly.
+            The area is isolated, and only then is a license applied.
           </Text>
           <video autoPlay loop muted playsinline alt="SPPProcess" controls src={SPPProcess} />
           <Text as="h5">
             How a user might consolidate virtual machines &#40;blue boxes&#41; and create an isolated area to reduce licensing charges (circled in red)
           </Text>
           <Text
-            paddingTop={lineBreakPadding}
+            paddingTop={subSectionBreakPadding}
             paddingBottom={lineBreakPadding}
           >
-            Seems simple, right? There are three catches that work together to make this a hard for users:
+            In the example above, the user would have initially been charged for 4 supercomputers worth of licensing.
+            After the procedure, they are charged for less than 1.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Seems simple, right? There are two catches that work together to make this a hard for users:
           </Text>
           <OrderedList paddingBottom={lineBreakPadding}>
             <ListItem>
-              The virtual machines have constraints on their placement.
-              Some can&apos;t be together in the same larger area. Others must to be placed in the same area together.
+              Many virtual machines &#40;VMs&#41; have constraints on grouping;
+              some break if placed together on the same host, others break when separated.
             </ListItem>
             <ListItem>
-              VMs placed in the same area share work - meaning the more in an area, the better the performance
-              for each VM.
+              VMs placed in the same area share work. The more in one area, the more they can
+              distribute work, and the better the performance for each VM.
             </ListItem>
           </OrderedList>
-          <Text paddingBottom={lineBreakPadding}>
-            Due to the first catch, cramming a lot of VMs together creates a nasty web of relationships.
-            The second heavily incentivizes users to, well, cram a lot of VMs together.
+          <Text paddingBottom={subSectionBreakPadding}>
+            Due to the first catch, cramming a lot of VMs together creates a nasty web of VM constraints that
+            users have to memorize.
+            The second heavily incentivizes users to, well... cram a lot of VMs together.
           </Text>
-          <Text paddingBottom={lineBreakPadding}>
-            As a result, having to track of a complex web of relationships unavoidable, and in the long run maintaining and expanding
-            upon this web can get extremely tough.
+          <Image
+            onLoad={onLoad}
+            src={SPPWebExample}
+          />
+          <Text
+            as="h5"
+            paddingBottom={subSectionBreakPadding}
+          >
+            A smaller web of constraints each blue box may carry. Users have to remember one of these for each blue box in an area, anytime they want to
+            edit the area.
           </Text>
+          <Text paddingBottom={subSectionBreakPadding}>
+            As a result, this cost-saving procedure makes having to track of a complex web of relationships unavoidable,
+            and in the long run maintaining and expanding upon this web can get tough.
+          </Text>
+          <Accordion
+            allowMultiple
+          >
+            <AccordionItem>
+              <AccordionButton>
+                <Box flex="1" textAlign="left">
+                  Why does cramming VMs together make a larger web?
+                </Box>
+                <AccordionIcon />
+              </AccordionButton>
+              <AccordionPanel pb={4}>
+                <Text paddingBottom={lineBreakPadding}>
+                  Let&apos;s look at VMs as roommates. Say Abe hates Brianna. Chase lives with Brianna, and forgets
+                  that Bri doesn&apos;t get along with Abe. He invites Abe over for a party... chaos ensues.
+                </Text>
+                <Text>
+                  Now let&apos;s say ten years later, Chase now lives with twenty roommates, and all of them are very conflict prone.
+                  If he wants to avoid future conflicts, he is going to have to check in with each roommate before hosting any
+                  other parties. Way more exhausting!
+                </Text>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -223,11 +263,11 @@ const Pools = ({}) => {
           colEnd={colEnd}
           id="pools-solution"
         >
-          <Text as="h2" paddingBottom={subSectionBreakPadding}>Solution</Text>
+          <Text as="h2" paddingBottom={lineBreakPadding}>Solution</Text>
           <Text paddingBottom={subSectionBreakPadding}>
-            The impact of the second catch was out of the design team&apos;s hands - it was
-            just how computers worked. As a result, our design goal was to mitigate the long
-            term costs of this procedure by helping users navigate the inevitable web.
+            We didn&apos;t see any opportunities for design to impact the way processors share work.
+            As a result, we aimed our efforts at organizing and navigating the web of constraints, to
+            make this procedure manageable in the long-term.
           </Text>
         </GridItem>
         <GridItem
@@ -284,15 +324,19 @@ const Pools = ({}) => {
           colSpan={colSpan}
           colEnd={colEnd}
         >
-          <Text as="h3" paddingBottom={subSectionBreakPadding}>1. Helping users balance cost savings and performance</Text>
           <Text paddingBottom={lineBreakPadding}>
-            Simplified,
-            {' '}
-            <b>more space = more performance</b>
-            . However, the amount of space a VM uses changes over time, which makes
-            it hard to define just how much space a VM needs.
-            To help users gauge usage, and decide on the optimal amount of space to purchase,  we have to break
-            &quot;space&quot; down into three factors:
+            Users break constraints into two categories:
+          </Text>
+          <OrderedList paddingBottom={lineBreakPadding}>
+            <ListItem>
+              Constraints related to the specific work being done between VMs.
+            </ListItem>
+            <ListItem>
+              Constraints related to the license applied to the shared processor pool.
+            </ListItem>
+          </OrderedList>
+          <Text paddingBottom={lineBreakPadding}>
+            The former is handled through
           </Text>
           <OrderedList paddingBottom={lineBreakPadding}>
             <ListItem>
