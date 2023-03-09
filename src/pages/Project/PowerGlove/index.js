@@ -28,11 +28,11 @@ const sectionBreakPadding = '2rem';
 const subSectionBreakPadding = '1.5rem';
 const colStart = [1, 4];
 const colSpan = [12, 6];
-const colEnd = [14, 10];
+const colEnd = [12, 10];
 
 const sumStart = [1, 4];
 const sum2Start = [1, 7];
-const sumSpan = [14, 3];
+const sumSpan = [12, 3];
 
 const PowerGlove = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);

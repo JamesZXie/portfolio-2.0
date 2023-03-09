@@ -12,7 +12,7 @@ const Section = ({ children, className }) => (
     <Grid
       templateColumns="repeat(12, 1fr)"
       className={className}
-      gap="1rem"
+      gap="1rem 1rem"
       textAlign={['center', 'left', 'left']}
       paddingTop="3.5rem"
       paddingBottom="3.5rem"
