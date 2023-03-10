@@ -16,7 +16,11 @@ import Lightbox from '../../../components/Lightbox';
 import './workspaces.scss';
 
 import WorkspacesMain from '../../../assets/images/Workspaces/workspaces-main.png';
+import WorkspacesEdit from '../../../assets/images/Workspaces/workspaces-edit.png';
+import WorkspacesCreate from '../../../assets/images/Workspaces/workspaces-create.png';
+import WorkspacesSearch from '../../../assets/images/Workspaces/workspaces-search.png';
 import WorkspacesProblems from '../../../assets/images/Workspaces/workspaces-problems.png';
+import WorkspacesQuickswap from '../../../assets/images/Workspaces/workspaces-quickswap.mov';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -47,7 +51,7 @@ const ids = [
 const Provisioning = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
-  const total = 1;
+  const total = 5;
 
   const onLoad = () => {
     if (numLoaded + 1 === total) {
@@ -73,6 +77,10 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
         >
+          {/* <Image
+            onLoad={onLoad}
+            src={WorkspacesMain}
+          /> */}
           <Text
             as="h6"
             className="project-title"
@@ -154,16 +162,6 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-intro"
         >
-          <Image
-            onLoad={onLoad}
-            src={WorkspacesMain}
-          />
-          <Text
-            as="h5"
-            paddingBottom={sectionBreakPadding}
-          >
-            The workspaces page
-          </Text>
           <Text>
             A workspace is a simple organizational structure for cloud resources, like how folders are for files. The feature was created
             to help users group and organize their many resources.
@@ -197,7 +195,7 @@ const Provisioning = ({}) => {
             as="h5"
             paddingBottom={lineBreakPadding}
           >
-            A mixed bag of smaller issues with their root causes outlined below.
+            A mixed bag of smaller issues, most stemming from long names, or poor assumptions about user behavior.
           </Text>
         </GridItem>
         <GridItem
@@ -206,36 +204,7 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-the-problem"
         >
-          <Text
-            paddingBottom={lineBreakPadding}
-          >
-            There were two underlying reasons for the above issues:
-          </Text>
-          <OrderedList paddingBottom={lineBreakPadding}>
-            <ListItem>
-              <Text>
-                <strong>Really long names</strong>
-                :
-              </Text>
-              <Text>
-                Names for workspaces were typically a bunch of traits listed out into a long string of abbreviations, such as
-                &quot;purpose-location-creator&quot;. Features like tags and location filters were added as band-aids to get
-                users to move some traits from their names into the UI, but the features were rarely used.
-              </Text>
-            </ListItem>
-            <ListItem>
-              <Text>
-                <strong>
-                  Poor layout choice
-                </strong>
-                :
-              </Text>
-              <Text>
-                Using tiles was a purely aesthetic choice, made without functionality in mind. The tile layout didn&apos;t scale,
-                and was hard to scan, making the page cumbersome for users.
-              </Text>
-            </ListItem>
-          </OrderedList>
+          These issues, mostly stemming from users having really long workspace names, combined to add a lot of friction into the workspace selection process.
         </GridItem>
         <GridItem
           colStart={colStart}
@@ -247,7 +216,7 @@ const Provisioning = ({}) => {
           <Text
             paddingBottom={lineBreakPadding}
           >
-            The goal was to help users &quot;autopilot&quot; their way into a workspace and get started immediately.
+            The goal was to help users get into their workspaces as quickly as possible.
           </Text>
         </GridItem>
         <GridItem
@@ -262,7 +231,99 @@ const Provisioning = ({}) => {
                 src={WorkspacesMain}
               />
             </CarouselItem>
+            <CarouselItem>
+              <Image
+                onLoad={onLoad}
+                src={WorkspacesSearch}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <Image
+                onLoad={onLoad}
+                src={WorkspacesCreate}
+              />
+            </CarouselItem>
+            <CarouselItem>
+              <Image
+                onLoad={onLoad}
+                src={WorkspacesEdit}
+              />
+            </CarouselItem>
           </Carousel>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+        >
+          <Text
+            as="h3"
+            paddingBottom={lineBreakPadding}
+          >
+            1. Designing for veteran users
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            Exploratory research revealed that getting users to shorten names or adopt features like tags or filters
+            wasn&apos;t going to happen. Luckily, this also means veteran users eventually train themselves to identify
+            a workspace purely by its name.
+          </Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
+            Taking advantage of this insight, we added a quick-swap feature where users can type the name of the workspace directly into the
+            side menu and select it without going to the workspaces page. Voila!
+          </Text>
+          <video autoPlay loop muted playsinline alt="Overwhelming" controls src={WorkspacesQuickswap} />
+          <Text
+            paddingTop={subSectionBreakPadding}
+            paddingBottom={subSectionBreakPadding}
+          >
+            Veteran users who really know what they&apos;re doing can get started almost immediately.
+          </Text>
+
+          <Text
+            as="h3"
+            paddingBottom={lineBreakPadding}
+          >
+            2. Designing for beginner users
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            For users who aren&apos;t as familiar with the workspace they&apos;re looking for just yet, a page that lets them scan a broader range of
+            options is still necessary.
+          </Text>
+          <Text paddingBottom={lineBreakPadding}>
+            In addition to asking the dev team to implement a fuzzy search instead of an exact search, to allow for typos, we did the following:
+          </Text>
+          <OrderedList>
+            <ListItem>
+              <Text>
+                <strong>Designed the layout around long names</strong>
+              </Text>
+              <Text>
+                The table format makes names easier to scan, and similar names
+                have more prominent differences. Names are no longer truncated.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Reversed the default sorting order to increase consistency</strong>
+              </Text>
+              <Text>
+                The page is now sorted oldest first → newest last. Previously, if anyone created a workspace in a shared account,
+                all of the workspaces would shift in order. Since workspace deletion almost never
+                occurs, users can get used to the position of a workspace on their screen.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <strong>Pruned useless information</strong>
+              </Text>
+              <Text>
+                All the information displayed upfront is relevant to identifying the workspace, except the status which is important for alerting the user to
+                outages. Any excess information has been moved to the expanded area of the table row.
+              </Text>
+            </ListItem>
+          </OrderedList>
         </GridItem>
       </Section>
     </>

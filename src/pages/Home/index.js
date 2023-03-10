@@ -24,7 +24,7 @@ const Home = (props) => {
     setNumLoaded(numLoaded + 1);
   };
 
-  const debounce = (func, timeout = 300) => {
+  const debounce = (func, timeout = 100) => {
     let timer;
     return (...args) => {
       clearTimeout(timer);
