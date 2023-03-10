@@ -3,12 +3,11 @@ import { Flex, Box, Button } from '@chakra-ui/react';
 import Hero from './Hero';
 import './home.scss';
 import './Projects/projects.scss';
-import RendezvousTile from './Projects/Tiles/RendezvousTile';
 import AustinColdTile from './Projects/Tiles/AustinColdTile';
 import PowerGloveTile from './Projects/Tiles/PowerGloveTile';
-import DwAnswersTile from './Projects/Tiles/DwAnswersTile';
 import ProvisioningTile from './Projects/Tiles/ProvisioningTile';
 import PoolsTile from './Projects/Tiles/PoolsTile';
+import WorkspacesTile from './Projects/Tiles/WorkspacesTile';
 
 const Home = (props) => {
   const total = 4;
@@ -47,11 +46,11 @@ const Home = (props) => {
   useEffect(() => {
     const home = document.getElementById('home');
     home.addEventListener('scroll', debounce(handleScroll, 100));
-    return home.removeEventListener('scroll', debounce(handleScroll, 100));
+    return home.removeEventListener('scroll', debounce(handleScroll, 20));
   }, [currSection]);
 
   const renderProgressThing = () => {
-    const sections = [1, 2, 3, 4];
+    const sections = [1, 2, 3, 4, 5];
     return (
       <Box className="progress__container" left={currSection >= 1 ? '1rem' : -10}>
         {sections.map((number) => (
@@ -71,6 +70,9 @@ const Home = (props) => {
           loading={loading}
         />
         <ProvisioningTile
+          onLoad={onLoad}
+        />
+        <WorkspacesTile
           onLoad={onLoad}
         />
         <PoolsTile

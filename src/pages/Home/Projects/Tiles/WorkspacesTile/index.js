@@ -4,11 +4,11 @@ import {
 } from '@chakra-ui/react';
 
 import PropTypes from 'prop-types';
-import ProvisioningPreview from '../../../../../assets/images/Home/provisioning-preview.png';
+import WorkspacesPreview from '../../../../../assets/images/Home/workspaces-preview.png';
 import Tile from '../../Tile';
 import '../../projects.scss';
 
-const ProvisioningTile = ({ onLoad }) => {
+const WorkspacesTile = ({ onLoad }) => {
   const renderDescription = () => (
     <Box
       className="projects__description"
@@ -29,33 +29,32 @@ const ProvisioningTile = ({ onLoad }) => {
       <Text fontWeight="bold">
         Description:
       </Text>
-      <Text>Redesigning the core of the PowerVS platform to make it a fast, guided experience. </Text>
+      <Text>Making the first step in every returning user&apos;s day &quot;autopilot-able&quot;</Text>
     </Box>
   );
 
   return (
     <Tile
       className="projects__container"
-      id="tile--provisioning"
+      id="tile--workspaces"
       description={renderDescription()}
       label="IBM"
-      title="Redesigning a cloud platform's primary checkout flow"
+      title="Making resource access seamless for returning users"
       order={2}
-      to="/psvsredesign"
+      to="/workspaces"
       projectImage={(
         <Image
           className="projects__provisioning-image"
-          src={ProvisioningPreview}
+          src={WorkspacesPreview}
           onLoad={onLoad}
         />
-
 )}
     />
   );
 };
 
-ProvisioningTile.propTypes = {
+WorkspacesTile.propTypes = {
   onLoad: PropTypes.func.isRequired,
 };
 
-export default ProvisioningTile;
+export default WorkspacesTile;
