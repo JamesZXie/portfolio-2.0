@@ -21,6 +21,11 @@ import WorkspacesCreate from '../../../assets/images/Workspaces/workspaces-creat
 import WorkspacesSearch from '../../../assets/images/Workspaces/workspaces-search.png';
 import WorkspacesProblems from '../../../assets/images/Workspaces/workspaces-problems.png';
 import WorkspacesQuickswap from '../../../assets/images/Workspaces/workspaces-quickswap.mov';
+import WorkspacesMainBreakdown from '../../../assets/images/Workspaces/workspaces-main-breakdown.png';
+import WorkspacesNameAnatomy from '../../../assets/images/Workspaces/workspaces-name-anatomy.png';
+import WorkspacesExplorationColumns from '../../../assets/images/Workspaces/workspaces-exploration-columns.png';
+import WorkspacesExplorationFormat from '../../../assets/images/Workspaces/workspaces-exploration-format.png';
+import WorkspacesExplorationSelection from '../../../assets/images/Workspaces/workspaces-exploration-selection.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -41,14 +46,14 @@ const titles = [
   'Next Steps',
 ];
 const ids = [
-  'provisioning-summary',
-  'provisioning-the-problem',
-  'provisioning-the-solution',
-  'provisioning-process',
-  'provisioning-next-steps',
+  'workspaces-summary',
+  'workspaces-the-problem',
+  'workspaces-the-solution',
+  'workspaces-process',
+  'workspaces-next-steps',
 ];
 
-const Provisioning = ({}) => {
+const Workspaces = ({}) => {
   const [numLoaded, setNumLoaded] = useState(0);
   const [loading, setLoading] = useState(true);
   const total = 5;
@@ -97,7 +102,7 @@ const Provisioning = ({}) => {
           colStart={sumStart}
           colSpan={sumSpan}
           marginTop="2rem"
-          id="provisioning-challenge"
+          id="workspaces-challenge"
         >
           <Text
             paddingBottom={lineBreakPadding}
@@ -113,7 +118,7 @@ const Provisioning = ({}) => {
           colSpan={sumSpan}
           colStart={sum2Start}
           marginTop={['0rem', '2rem']}
-          id="provisioning-outcome"
+          id="workspaces-outcome"
         >
           <Text
             paddingBottom={lineBreakPadding}
@@ -128,7 +133,7 @@ const Provisioning = ({}) => {
         <GridItem
           colStart={sumStart}
           colSpan={sumSpan}
-          id="provisioning-role"
+          id="workspaces-role"
         >
           <Text
             paddingBottom={lineBreakPadding}
@@ -143,7 +148,7 @@ const Provisioning = ({}) => {
         <GridItem
           colSpan={sumSpan}
           colStart={sum2Start}
-          id="provisioning-impact"
+          id="workspaces-impact"
         >
           <Text
             paddingBottom={lineBreakPadding}
@@ -160,18 +165,17 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="provisioning-intro"
+          id="workspaces-intro"
         >
           <Text>
-            A workspace is a simple organizational structure for cloud resources, like how folders are for files. The feature was created
-            to help users group and organize their many resources.
+            A workspace is a simple organizational structure for cloud resources, like how folders are for files.
           </Text>
         </GridItem>
         <GridItem
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="provisioning-the-problem"
+          id="workspaces-the-problem"
         >
           <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
           <Text
@@ -184,7 +188,7 @@ const Provisioning = ({}) => {
         <GridItem
           colStart={[1, 3]}
           colSpan={[12, 8]}
-          id="provisioning-the-problem"
+          id="workspaces-the-problem"
         >
           <Image
             onLoad={onLoad}
@@ -202,7 +206,7 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="provisioning-the-problem"
+          id="workspaces-the-problem"
         >
           These issues, mostly stemming from users having really long workspace names, combined to add a lot of friction into the workspace selection process.
         </GridItem>
@@ -210,7 +214,7 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="provisioning-the-problem"
+          id="workspaces-the-problem"
         >
           <Text as="h2" paddingBottom={subSectionBreakPadding}>Solution</Text>
           <Text
@@ -283,12 +287,17 @@ const Provisioning = ({}) => {
 
           <Text
             as="h3"
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
           >
             2. Designing for beginner users
           </Text>
+          <Image
+            src={WorkspacesMainBreakdown}
+            onLoad={onLoad}
+            paddingBottom={subSectionBreakPadding}
+          />
           <Text paddingBottom={lineBreakPadding}>
-            For users who aren&apos;t as familiar with the workspace they&apos;re looking for just yet, a page that lets them scan a broader range of
+            For users who aren&apos;t as familiar with the workspace they&apos;re looking for, a page that lets them scan a broader range of
             options is still necessary.
           </Text>
           <Text paddingBottom={lineBreakPadding}>
@@ -309,9 +318,10 @@ const Provisioning = ({}) => {
                 <strong>Reversed the default sorting order to increase consistency</strong>
               </Text>
               <Text>
-                The page is now sorted oldest first → newest last. Previously, if anyone created a workspace in a shared account,
-                all of the workspaces would shift in order. Since workspace deletion almost never
-                occurs, users can get used to the position of a workspace on their screen.
+                The page is now sorted oldest first → newest last. Previously, if anyone created a workspace on the account,
+                all of the workspaces would shift. Since workspace deletion almost never
+                occurs, with this change the position of a workspace on screen is more consistent, and selecting a workspace
+                can become muscle memory.
               </Text>
             </ListItem>
             <ListItem>
@@ -325,9 +335,94 @@ const Provisioning = ({}) => {
             </ListItem>
           </OrderedList>
         </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="workspaces-research"
+        >
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Early research findings</Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            We started by exploring how workspaces were used by users since they were launched half a year ago. We found that they were primarily used to
+            split resources by project, purpose, or client.
+          </Text>
+          <Text
+            paddingBottom={subSectionBreakPadding}
+          >
+            Afterwards, the majority of our exploratory research was centered around how users created and used workspace names.
+          </Text>
+          <Image
+            src={WorkspacesNameAnatomy}
+            onLoad={onLoad}
+          />
+          <Text as="h5" paddingBottom={subSectionBreakPadding}>
+            Example anatomy of a name &#40;they don&apos;t usually contain everything above&#41;
+          </Text>
+          <Text
+            paddingBottom={lineBreakPadding}
+          >
+            There are two reasons why users will continue to make names a long string of traits:
+          </Text>
+          <OrderedList>
+            <ListItem>
+              <Text>
+                Names are a universal identifier. Anywhere the user sees the workspace, whether on
+                other platforms, error logs, or the CLI, the first thing the user will see is the name.
+              </Text>
+            </ListItem>
+            <ListItem>
+              <Text>
+                Ignoring the length, using the traits of a workspace to identify it is just genuinely easy.
+                Take the extreme case of getting users to reduce the traits they use in a name - say we
+                forbade users from including traits in names. What should a user call workspace? Bob?
+                A20FG04258?
+              </Text>
+            </ListItem>
+          </OrderedList>
+        </GridItem>
+        <GridItem
+          colStart={colStart}
+          colSpan={colSpan}
+          colEnd={colEnd}
+          id="workspaces-testing"
+        >
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Explorations and testing</Text>
+          <Image
+            src={WorkspacesExplorationColumns}
+            onLoad={onLoad}
+          />
+          <Text
+            as="h5"
+            paddingBottom={subSectionBreakPadding}
+          >
+            Experimenting with different column layouts and options to see what users use to identify workspaces &#40;in addition to names&#41;
+          </Text>
+          <Image
+            src={WorkspacesExplorationFormat}
+            onLoad={onLoad}
+          />
+          <Text
+            as="h5"
+            paddingBottom={subSectionBreakPadding}
+          >
+            Seeing if keeping workspace selection in context makes the selection experience feel smoother.
+          </Text>
+          <Image
+            src={WorkspacesExplorationSelection}
+            onLoad={onLoad}
+          />
+          <Text
+            as="h5"
+            paddingBottom={subSectionBreakPadding}
+          >
+            Different ways and flows to select a workspace
+          </Text>
+        </GridItem>
       </Section>
     </>
   );
 };
 
-export default Provisioning;
+export default Workspaces;
