@@ -17,6 +17,7 @@ import Lightbox from '../../../components/Lightbox';
 import './provisioning.scss';
 
 import General from '../../../assets/images/Provisioning/provisioning-general.png';
+import Banner from '../../../assets/images/Provisioning/provisioning-banner.png';
 import BootImage from '../../../assets/images/Provisioning/provisioning-boot-image.png';
 import Profile from '../../../assets/images/Provisioning/provisioning-profile.png';
 import StorageVolumes from '../../../assets/images/Provisioning/provisioning-storage-volumes.png';
@@ -26,7 +27,7 @@ import Validation from '../../../assets/images/Provisioning/provisioning-validat
 import ExplorationMural from '../../../assets/images/Provisioning/provisioning-exploration-mural.png';
 import Ideation from '../../../assets/images/Provisioning/provisioning-ideation.png';
 import Testing from '../../../assets/images/Provisioning/provisioning-testing.png';
-import Overwhelming from '../../../assets/images/Provisioning/provisioning-overwhelming.mov';
+import Overwhelming from '../../../assets/images/Provisioning/provisioning-overwhelming.png';
 import Confusing from '../../../assets/images/Provisioning/provisioning-confusing.mov';
 import Punishing from '../../../assets/images/Provisioning/provisioning-punishing.mov';
 import Ugly from '../../../assets/images/Provisioning/provisioning-ugly.mov';
@@ -99,6 +100,7 @@ const Provisioning = ({}) => {
           >
             Redesigning a cloud platform&apos;s primary checkout flow
           </Text>
+          <Image paddingTop={sectionBreakPadding} src={Banner} />
         </GridItem>
         <GridItem
           colStart={sumStart}
@@ -190,7 +192,8 @@ const Provisioning = ({}) => {
             Unfortunately, our team&apos;s product is significantly more complex than the other
             products in IBM Cloud. As we added more features, we saw two things happen:
           </Text>
-          <Text paddingBottom={sectionBreakPadding}>
+
+          <Text paddingBottom={lineBreakPadding}>
             <OrderedList>
               <ListItem>
                 Completion rate dropped
@@ -199,12 +202,34 @@ const Provisioning = ({}) => {
                 Time-to-complete increased
               </ListItem>
             </OrderedList>
+
+            <Text paddingBottom={sectionBreakPadding}>
+              Below are the two main problems users faced with the old form, identified by early research findings.
+            </Text>
           </Text>
-          <Text as="h3">
+
+          <Text as="h3" paddingBottom={subSectionBreakPadding}>
             1. Users found the form overwhelming
           </Text>
-          <Text as="h3">
+          <Image src={Overwhelming} />
+          <Text
+            paddingTop={subSectionBreakPadding}
+            paddingBottom={sectionBreakPadding}
+          >
+            A ton of information was thrown at users from start to finish, which made the form feel overwhelming.
+            Fields covered the entire page, with diverse visual appearances, adding to the perceived complexity of the form.
+          </Text>
+
+          <Text as="h3" paddingBottom={subSectionBreakPadding}>
             2. Users would become confused when the form changed
+          </Text>
+          <video autoPlay loop muted playsinline alt="Form was confusing" controls src={Confusing} />
+          <Text
+            paddingTop={subSectionBreakPadding}
+            paddingBottom={sectionBreakPadding}
+          >
+            Certain user selections could trigger the introduction, transformation, or removal of fields, as shown above.
+            Processing the result of the changes put a large cognitive load on users, confusing many.
           </Text>
         </GridItem>
         <GridItem
