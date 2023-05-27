@@ -174,98 +174,37 @@ const Provisioning = ({}) => {
           colStart={colStart}
           colSpan={colSpan}
           colEnd={colEnd}
-          id="provisioning-intro"
-        >
-          <Text paddingBottom={lineBreakPadding}>
-            The checkout page was a nightmare to navigate.  What started out as a ten-field form had transformed
-            into a monstrosity because its original design didn&apos;t scale with complexity. Amidst a flurry of
-            new features and priority one fixes, we had pushed back applying a more scalable design to the flow
-            until the pile of fields on the form began to affect users&apos; perception of the quality and
-            functionality of our product.
-          </Text>
-          <Text>
-            It was easy to get engineering to buy-in to a redesign; the complexity of the form made it a
-            nightmare to maintain as well. So with engineering and our users behind us we got PM buy-in
-            and stepped back to take a look at the checkout experience. We didn&apos;t like what we saw.
-          </Text>
-        </GridItem>
-        <GridItem
-          colStart={colStart}
-          colSpan={colSpan}
-          colEnd={colEnd}
           id="provisioning-the-problem"
         >
           <Text as="h2" paddingBottom={subSectionBreakPadding}>Problem</Text>
           <Text
-            paddingBottom={subSectionBreakPadding}
-          >
-            The old provisioning page had four substantial issues:
-          </Text>
-          <Text
-            as="h3"
             paddingBottom={lineBreakPadding}
           >
-            1. Overwhelming
+            The only checkout page IBM Cloud&apos;s design system prescribes is designed around
+            very simple checkout flows. Every field is laid out on one page, and the user makes
+            selections as they go down.
           </Text>
-          <video autoPlay loop muted playsinline alt="Overwhelming" controls src={Overwhelming} />
           <Text
-            paddingTop={lineBreakPadding}
-            paddingBottom={subSectionBreakPadding}
-          >
-            There were too many options to absorb and understand at once.
-          </Text>
-
-          <Text
-            as="h3"
             paddingBottom={lineBreakPadding}
           >
-            2. Confusing
+            Unfortunately, our team&apos;s product is significantly more complex than the other
+            products in IBM Cloud. As we added more features, we saw two things happen:
           </Text>
-          <video autoPlay loop muted playsinline alt="Confusing" controls src={Confusing} />
-          <Text
-            paddingTop={lineBreakPadding}
-            paddingBottom={subSectionBreakPadding}
-          >
-            Ignoring the technical complexity of provisioning,
-            {' '}
-            <b>
-              many selections can push the user down a new path,
-              with the reflected visual change being jarring
-            </b>
-            . Its hard for users to keep track of their progress, or
-            understand what they should do next.
+          <Text paddingBottom={sectionBreakPadding}>
+            <OrderedList>
+              <ListItem>
+                Completion rate dropped
+              </ListItem>
+              <ListItem>
+                Time-to-complete increased
+              </ListItem>
+            </OrderedList>
           </Text>
-
-          <Text
-            as="h3"
-            paddingBottom={lineBreakPadding}
-          >
-            3. Punishing
+          <Text as="h3">
+            1. Users found the form overwhelming
           </Text>
-          <video autoPlay loop muted playsinline alt="Punishing" controls src={Punishing} />
-          <Text
-            paddingTop={lineBreakPadding}
-            paddingBottom={subSectionBreakPadding}
-          >
-            Certain options are completely incompatible with others, while other options are completely
-            dependent on others.
-            {' '}
-            <b>Making an error and changing a value can mean wiping progress</b>
-            .
-          </Text>
-
-          <Text
-            as="h3"
-            paddingBottom={lineBreakPadding}
-          >
-            4. Ugly
-          </Text>
-          <video autoPlay loop muted playsinline alt="Ugly" controls src={Ugly} />
-          <Text
-            paddingTop={lineBreakPadding}
-            paddingBottom={subSectionBreakPadding}
-          >
-            The form felt outdated and misaligned with our IaaS platform&apos;s premium price tag due to either poor or inconsistent aesthetic choices.
+          <Text as="h3">
+            2. Users would become confused when the form changed
           </Text>
         </GridItem>
         <GridItem
