@@ -212,7 +212,7 @@ const Provisioning = ({}) => {
           </Text>
 
           <Text as="h3" paddingBottom={subSectionBreakPadding}>
-            1. Users found the form overwhelming
+            Users found the form overwhelming
           </Text>
           <Image src={Overwhelming} />
           <Text
@@ -224,7 +224,7 @@ const Provisioning = ({}) => {
           </Text>
 
           <Text as="h3" paddingBottom={subSectionBreakPadding}>
-            2. Users would become confused when the form changed
+            Users became confused when the form changed
           </Text>
           <video autoPlay loop muted playsinline alt="Form was confusing" controls src={Confusing} />
           <Text
