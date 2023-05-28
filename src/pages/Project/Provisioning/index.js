@@ -33,6 +33,9 @@ import Punishing from '../../../assets/images/Provisioning/provisioning-punishin
 import Ugly from '../../../assets/images/Provisioning/provisioning-ugly.mov';
 import CogLoad from '../../../assets/images/Provisioning/provisioning-cogload.mov';
 import Branching from '../../../assets/images/Provisioning/provisioning-branching.mov';
+import CompleteCard from '../../../assets/images/Provisioning/provisioning-complete-card.png';
+import IncompleteCard from '../../../assets/images/Provisioning/provisioning-incomplete-card.png';
+import CurrentCard from '../../../assets/images/Provisioning/provisioning-current-card.png';
 
 const lineBreakPadding = '.5rem';
 const subSectionBreakPadding = '1.5rem';
@@ -216,7 +219,7 @@ const Provisioning = ({}) => {
             paddingTop={subSectionBreakPadding}
             paddingBottom={sectionBreakPadding}
           >
-            A ton of information was thrown at users from start to finish, which made the form feel overwhelming.
+            A ton of information was thrown at users from start to finish, which made the old form feel overwhelming.
             Fields covered the entire page, with diverse visual appearances, adding to the perceived complexity of the form.
           </Text>
 
@@ -238,7 +241,12 @@ const Provisioning = ({}) => {
           colEnd={colEnd}
           id="provisioning-the-solution"
         >
-          <Text as="h2">Solution</Text>
+          <Text as="h2" paddingBottom={subSectionBreakPadding}>Solution</Text>
+          <Text paddingBottom={sectionBreakPadding}>
+            Separating the form into card sections solved both of our problems. Users were able to focus more on the fields
+            at hand without being overwhelmed, and the confusing form changes were hidden from sight, making the form feel
+            smoother, faster, and more intentional.
+          </Text>
         </GridItem>
         <GridItem
           colStart={1}
@@ -302,94 +310,59 @@ const Provisioning = ({}) => {
         >
           <Text
             as="h3"
-            paddingBottom={lineBreakPadding}
-          >
-            1. Reducing the cognitive load of progression
-          </Text>
-          <video autoPlay loop muted playsinline alt="Cognitive load" controls src={CogLoad} />
-          <Text
-            paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
-            By breaking the page up into bite-sized chunks, we can turn a complex process
-            into multiple smaller, simple decisions to the reduce cognitive load of progression. With most of the loading
-            components hidden, the page also feels faster and simpler.
+            Complete card
+          </Text>
+          <Image paddingBottom={subSectionBreakPadding} src={CompleteCard} />
+          <Text
+            paddingBottom={sectionBreakPadding}
+          >
+            Complete cards give users a scannable summary of selections they&apos;ve already made. This reduces the complexity of
+            the form, while still keeping info relevant to corresponding choices at hand.
           </Text>
 
           <Text
             as="h3"
-            paddingBottom={lineBreakPadding}
-          >
-            2. Eliminating confusion from branching
-          </Text>
-          <video autoPlay loop muted playsinline alt="Branching" controls src={Branching} />
-          <Text
-            paddingTop={lineBreakPadding}
             paddingBottom={subSectionBreakPadding}
           >
-            Simplifying the page helps with this, but we also broke the page into sections in such a way to hide
-            the vast majority of the changes, making user flow branching easier. Users will only observe small,
-            understandable changes within each section, and when they&apos;re sent down a different path due to a
-            decision on the form, they don&apos;t need to process the change.
+            Incomplete card
+          </Text>
+          <Image paddingBottom={subSectionBreakPadding} src={IncompleteCard} />
+          <Text
+            paddingBottom={sectionBreakPadding}
+          >
+            Incomplete cards give users a preview of what work they have to do while hiding future work, form changes, and
+            intermediate loading so that users don&apos;t feel overwhelmed.
           </Text>
 
           <Text
             as="h3"
-            paddingBottom={lineBreakPadding}
-          >
-            3. Reducing error severity
-          </Text>
-          <Text
             paddingBottom={subSectionBreakPadding}
           >
-            After placing fields into sections to make branching smoother, we rearranged each section to make it so
-            that any changes or fixes to selections can only affect fields below them. This heavily reduces the
-            chances a user steers themselves into making an error that forces them to re-do large swathes of the page.
+            Current card
+          </Text>
+          <Image paddingBottom={subSectionBreakPadding} src={CurrentCard} />
+          <Text
+            paddingBottom={sectionBreakPadding}
+          >
+            Current cards are the focus of the user, and contain all fields relevant to the specified topic. Only one card
+            is “current” at a time.
           </Text>
 
           <Text
             as="h3"
-            paddingBottom={lineBreakPadding}
+            paddingBottom={subSectionBreakPadding}
           >
-            4. Improving consistency and aesthetic
+            Edge cases
           </Text>
+          <Image paddingBottom={subSectionBreakPadding} src={Overwhelming} />
           <Text
-            paddingBottom={subSectionBreakPadding}
+            paddingBottom={sectionBreakPadding}
           >
-            We made scanning easier by improving spacing and typography consistentcy throughout the form, as well as aligning
-            everything vertically so the user&apos;s eye didn&apos;t have to jump from left to right. A few color and
-            component tweaks brought everything together to give the page a much more modern finish.
+            Editing, Incomplete, and Error states are shown below. I won&apos;t dive too deep into these since they aren&apos;t
+            the focus of this case study, but they&apos;re here for those wondering.
           </Text>
-
-          <Accordion
-            paddingBottom={subSectionBreakPadding}
-            allowMultiple
-          >
-            <AccordionItem>
-              <AccordionButton>
-                <Box flex="1" textAlign="left">
-                  There are many different ways to break a form up. Why choose this layout?
-                </Box>
-                <AccordionIcon />
-              </AccordionButton>
-              <AccordionPanel pb={4}>
-                <Text paddingBottom={lineBreakPadding}>
-                  The layout choice actually comes as part of a flow that I&apos;m not covering in this
-                  case study. A lot of our customers have to provison multiple VMs at a time, and
-                  going through the form for every VM is an awful experience.
-                </Text>
-                <Text>
-                  We&apos;re soon going to
-                  implement
-                  {' '}
-                  <strong>VM templates</strong>
-                  , where users can start with a pre-populated form. Understanding what edits they need
-                  to make is important, and this layout allows them to scan pre-filled sections much easier
-                  than other options we explored.
-                </Text>
-              </AccordionPanel>
-            </AccordionItem>
-          </Accordion>
         </GridItem>
         <SectionBreak />
         <GridItem
