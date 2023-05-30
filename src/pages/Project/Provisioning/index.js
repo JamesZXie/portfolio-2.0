@@ -231,7 +231,7 @@ const Provisioning = ({}) => {
             paddingTop={subSectionBreakPadding}
             paddingBottom={sectionBreakPadding}
           >
-            Certain user selections could trigger the introduction, transformation, or removal of fields, as shown above.
+            Many user selections could trigger the introduction, transformation, or removal of fields, as shown above.
             Processing the result of the changes put a large cognitive load on users, confusing many.
           </Text>
         </GridItem>
