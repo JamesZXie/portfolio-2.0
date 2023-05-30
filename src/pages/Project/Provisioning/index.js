@@ -103,7 +103,7 @@ const Provisioning = ({}) => {
           >
             Redesigning a cloud platform&apos;s primary checkout flow
           </Text>
-          <Image paddingTop={sectionBreakPadding} src={Banner} />
+          <Image paddingTop="4rem" src={Banner} />
         </GridItem>
         <GridItem
           colStart={sumStart}
