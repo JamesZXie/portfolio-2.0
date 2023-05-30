@@ -349,20 +349,6 @@ const Provisioning = ({}) => {
             Current cards are the focus of the user, and contain all fields relevant to the specified topic. Only one card
             is “current” at a time.
           </Text>
-
-          <Text
-            as="h3"
-            paddingBottom={subSectionBreakPadding}
-          >
-            Edge cases
-          </Text>
-          <Image paddingBottom={subSectionBreakPadding} src={Overwhelming} />
-          <Text
-            paddingBottom={sectionBreakPadding}
-          >
-            Editing, Incomplete, and Error states are shown below. I won&apos;t dive too deep into these since they aren&apos;t
-            the focus of this case study, but they&apos;re here for those wondering.
-          </Text>
         </GridItem>
         <SectionBreak />
         <GridItem
