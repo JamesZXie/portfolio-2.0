@@ -209,6 +209,50 @@ const Provisioning = ({}) => {
             <Text paddingBottom={sectionBreakPadding}>
               Below are the two main problems users faced with the old form, identified by early research findings.
             </Text>
+
+            <Accordion
+              allowMultiple
+              paddingBottom={sectionBreakPadding}
+            >
+              <AccordionItem>
+                <AccordionButton>
+                  <Box flex="1" textAlign="left">
+                    Who are our users?
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+                <AccordionPanel pb={4}>
+                  <Text paddingBottom={lineBreakPadding}>
+                    There are three main users that care about our checkout flow:
+                  </Text>
+                  <OrderedList>
+                    <ListItem>
+                      <b>Decision makers</b>
+                      {' '}
+                      <br />
+                      {' '}
+                      Non-technical folk looking to understand the capabilities of our Cloud, as well as the price.
+                    </ListItem>
+                    <ListItem>
+                      <b>Business partners</b>
+                      {' '}
+                      <br />
+                      {' '}
+                      Middlemen. Seasoned experts that offer their expertise as a service to other companies that don&apos;t want to deal
+                      with Power hardware, or our cloud. They use our platform daily, with up to thousands of workloads to manage. Account for 80% of our users.
+                    </ListItem>
+                    <ListItem>
+                      <b>Individual contributors</b>
+                      {' '}
+                      <br />
+                      {' '}
+                      Developers, technical sales, and technical consultants that really only touch our platform a few times a month. They have
+                      few workloads to manage, and vary in expertise.
+                    </ListItem>
+                  </OrderedList>
+                </AccordionPanel>
+              </AccordionItem>
+            </Accordion>
           </Text>
 
           <Text as="h3" paddingBottom={subSectionBreakPadding}>
