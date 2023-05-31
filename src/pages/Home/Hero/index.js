@@ -44,7 +44,10 @@ const Hero = ({ total, numLoaded, loading }) => {
               designs, and codes on a weekly basis.
             </Text>
             <Text>
-              I&apos;m currently the primary designer for IBM&apos;s PowerVS cloud platform.
+              I&apos;m currently the primary designer for IBM&apos;s
+              {' '}
+              <a href="https://cloud.ibm.com/power/overview" target="_blank" rel="noreferrer">PowerVS cloud platform</a>
+              .
             </Text>
           </Box>
         </Flex>
