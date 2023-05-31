@@ -225,7 +225,7 @@ const Provisioning = ({}) => {
                   <Text paddingBottom={lineBreakPadding}>
                     There are three main users that care about our checkout flow:
                   </Text>
-                  <OrderedList>
+                  <OrderedList paddingBottom={lineBreakPadding}>
                     <ListItem>
                       <b>Decision makers</b>
                       {' '}
@@ -250,6 +250,10 @@ const Provisioning = ({}) => {
                       few workloads to manage, and vary in expertise.
                     </ListItem>
                   </OrderedList>
+                  <Text>
+                    Typically the checkout page is used for one-time purchases, or to preview / estimate the cost of a purchase. Most experts will
+                    use the command line interface for bulk creation.
+                  </Text>
                 </AccordionPanel>
               </AccordionItem>
             </Accordion>
